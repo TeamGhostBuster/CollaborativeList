@@ -1,0 +1,109 @@
+{
+    "docs": [
+        {
+            "location": "/",
+            "text": "Collaborative Lists\n\u00b6",
+            "title": "Collaborative Lists"
+        },
+        {
+            "location": "/#collaborative-lists",
+            "text": "",
+            "title": "Collaborative Lists"
+        },
+        {
+            "location": "/requirement-document/project-overview/",
+            "text": "",
+            "title": "Project Overview"
+        },
+        {
+            "location": "/requirement-document/project-glossary/",
+            "text": "",
+            "title": "Project Glossary"
+        },
+        {
+            "location": "/requirement-document/storyboard/",
+            "text": "",
+            "title": "Storyboard"
+        },
+        {
+            "location": "/requirement-document/user-stories/",
+            "text": "User Story\n\u00b6\n\n\nCreate\n\u00b6\n\n\n\n\nAs a user, I can create a reading list.\n\n\nAs a user, I can create a reading group.\n\n\nAs a user, I can add metadata tags to each item.\n\n\n\n\nEdit\n\u00b6\n\n\n\n\nAs a user, I can make note on each item.\n\n\nAs a user, I can comment on each item.\n\n\nAs a user, I can rename lists.\n\n\nAs a user, I can merge lists.\n\n\nAs a user, I can partite lists.\n\n\nAs a user, I can copy items from one list to another.\n\n\nAs a user, I can move items from one list to another.\n\n\nAs a user, I can archive lists.\n\n\nAs a user, I can retrived archived lists.\n\n\n\n\nShare\n\u00b6\n\n\n\n\nAs a user, I can grant/revoke read/write access of reading list to others.\n\n\nAs a user, I can share my reading list to a group.\n\n\nAs a user, I can upvote/downvote item.\n\n\nAs a user, I can hide my comments on items.\n\n\n\n\nSearch/Filter\n\u00b6\n\n\n\n\nAs a user, I can search item by metadata (tags).\n\n\nAs a user, I can search item by content (keyword).\n\n\nAs a user, I can filter item by metadata (tags).\n\n\nAs a user, I can filter item by content (keyword).",
+            "title": "User Story"
+        },
+        {
+            "location": "/requirement-document/user-stories/#user-story",
+            "text": "",
+            "title": "User Story"
+        },
+        {
+            "location": "/requirement-document/user-stories/#create",
+            "text": "As a user, I can create a reading list.  As a user, I can create a reading group.  As a user, I can add metadata tags to each item.",
+            "title": "Create"
+        },
+        {
+            "location": "/requirement-document/user-stories/#edit",
+            "text": "As a user, I can make note on each item.  As a user, I can comment on each item.  As a user, I can rename lists.  As a user, I can merge lists.  As a user, I can partite lists.  As a user, I can copy items from one list to another.  As a user, I can move items from one list to another.  As a user, I can archive lists.  As a user, I can retrived archived lists.",
+            "title": "Edit"
+        },
+        {
+            "location": "/requirement-document/user-stories/#share",
+            "text": "As a user, I can grant/revoke read/write access of reading list to others.  As a user, I can share my reading list to a group.  As a user, I can upvote/downvote item.  As a user, I can hide my comments on items.",
+            "title": "Share"
+        },
+        {
+            "location": "/requirement-document/user-stories/#searchfilter",
+            "text": "As a user, I can search item by metadata (tags).  As a user, I can search item by content (keyword).  As a user, I can filter item by metadata (tags).  As a user, I can filter item by content (keyword).",
+            "title": "Search/Filter"
+        },
+        {
+            "location": "/requirement-document/technical-resources/",
+            "text": "Technical Resources\n\u00b6\n\n\nFront-end\n\u00b6\n\n\n\n\nReact\n\n\nReact Components for Elasticsearch\n\n\n\n\nDeployment\n\u00b6\n\n\n\n\nDocker",
+            "title": "Technical Resources"
+        },
+        {
+            "location": "/requirement-document/technical-resources/#technical-resources",
+            "text": "",
+            "title": "Technical Resources"
+        },
+        {
+            "location": "/requirement-document/technical-resources/#front-end",
+            "text": "React  React Components for Elasticsearch",
+            "title": "Front-end"
+        },
+        {
+            "location": "/requirement-document/technical-resources/#deployment",
+            "text": "Docker",
+            "title": "Deployment"
+        },
+        {
+            "location": "/requirement-document/similar-products/",
+            "text": "Similar Products\n\u00b6\n\n\n\n\nTrello\n\n\ndapulse",
+            "title": "Similar Products"
+        },
+        {
+            "location": "/requirement-document/similar-products/#similar-products",
+            "text": "Trello  dapulse",
+            "title": "Similar Products"
+        },
+        {
+            "location": "/credits/",
+            "text": "Credit\n\u00b6\n\n\nContributors\n\u00b6\n\n\n\n\nAaron(Hongyang) Liu\n\n\nMichael(Zichun) Lin\n\n\nMichael Rijlaarsdam\n\n\nStephen Larsen\n\n\n\n\nOpen Source Components\n\u00b6\n\n\n\n\nBackend\n\n\nElasticsearch",
+            "title": "Credit"
+        },
+        {
+            "location": "/credits/#credit",
+            "text": "",
+            "title": "Credit"
+        },
+        {
+            "location": "/credits/#contributors",
+            "text": "Aaron(Hongyang) Liu  Michael(Zichun) Lin  Michael Rijlaarsdam  Stephen Larsen",
+            "title": "Contributors"
+        },
+        {
+            "location": "/credits/#open-source-components",
+            "text": "Backend  Elasticsearch",
+            "title": "Open Source Components"
+        }
+    ]
+}
