@@ -4,12 +4,15 @@
 * As a user, I can login using my Google account
 
 ## Notification
+* As a user, I can receive voting notification whenever it changes.
+* As a user, I can receive notification when the voting end.
 
 ## Create
 * As a user, I can create a reading list.
 * As a user, I can create a reading group.
 * As a user, I can add metadata tags to each item.
 * As an admin, I can create reading lists for the group.
+
 ## Edit
 * As a user, I can make note on each item.
 * As a user, I can comment on each item.
