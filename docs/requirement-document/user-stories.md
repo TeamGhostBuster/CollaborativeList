@@ -1,10 +1,15 @@
 # User Story
 
+## Authancation
+* As a user, I can login using my Google account
+
+## Notification
+
 ## Create
 * As a user, I can create a reading list.
 * As a user, I can create a reading group.
 * As a user, I can add metadata tags to each item.
-
+* As an admin, I can create reading lists for the group.
 ## Edit
 * As a user, I can make note on each item.
 * As a user, I can comment on each item.
@@ -13,6 +18,7 @@
 * As a user, I can partite lists.
 * As a user, I can copy items from one list to another.
 * As a user, I can move items from one list to another.
+* As a user, I can delete items from lists.
 * As a user, I can archive lists.
 * As a user, I can retrived archived lists.
 
@@ -21,6 +27,12 @@
 * As a user, I can share my reading list to a group.
 * As a user, I can upvote/downvote item.
 * As a user, I can hide my comments on items.
+
+## Admin
+* As an admin, I can invite people to join my group.
+* As an admin, I can block people in my group.
+* As an admin, I can kick out people from my group.
+* As an admin, I can delete an item and keep people from reposting it.
 
 ## Search/Filter
 * As a user, I can search item by metadata (tags).
