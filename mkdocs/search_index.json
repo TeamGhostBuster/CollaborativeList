@@ -106,6 +106,21 @@
             "title": "Similar Products"
         },
         {
+            "location": "/software-design/software-design/",
+            "text": "Software Design\n\u00b6\n\n\nArchitecture Diagram\n\u00b6",
+            "title": "System Overview"
+        },
+        {
+            "location": "/software-design/software-design/#software-design",
+            "text": "",
+            "title": "Software Design"
+        },
+        {
+            "location": "/software-design/software-design/#architecture-diagram",
+            "text": "",
+            "title": "Architecture Diagram"
+        },
+        {
             "location": "/credits/",
             "text": "Credit\n\u00b6\n\n\nContributors\n\u00b6\n\n\n\n\nAaron(Hongyang) Liu\n\n\nMichael(Zichun) Lin\n\n\nMichael Rijlaarsdam\n\n\nStephen Larsen\n\n\n\n\nOpen Source Components\n\u00b6\n\n\n\n\nBackend\n\n\nElasticsearch",
             "title": "Credit"
