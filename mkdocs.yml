@@ -9,6 +9,8 @@ pages:
         - User Story: requirement-document/user-stories.md
         - Technical Resources: requirement-document/technical-resources.md
         - Similar Products: requirement-document/similar-products.md
+    - Software Design:
+        - System Overview: software-design/software-design.md
     - Credit: credits.md
 
 markdown_extensions:
