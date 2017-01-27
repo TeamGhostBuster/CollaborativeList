@@ -36,6 +36,7 @@
 * As an admin, I can block people in my group.
 * As an admin, I can kick out people from my group.
 * As an admin, I can delete an item and keep people from reposting it.
+* As an admin, I can set a limit on how many suggestions each person can submit
 
 ## Search/Filter
 * As a user, I can search item by metadata (tags).
