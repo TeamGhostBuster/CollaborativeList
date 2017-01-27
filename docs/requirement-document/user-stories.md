@@ -28,7 +28,7 @@
 ## Share
 * As a user, I can grant/revoke read/write access of reading list to others.
 * As a user, I can share my reading list to a group.
-* As a user, I can upvote/downvote item.
+* As a user, I can upvote/downvote each item once.
 * As a user, I can hide my comments on items.
 
 ## Admin
@@ -43,3 +43,4 @@
 * As a user, I can search item by content (keyword).
 * As a user, I can filter item by metadata (tags).
 * As a user, I can filter item by content (keyword).
+* As a user, I can search a group by group name (keyword).
