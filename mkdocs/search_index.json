@@ -27,48 +27,13 @@
         },
         {
             "location": "/requirement-document/user-stories/",
-            "text": "User Story\n\u00b6\n\n\nAuthancation\n\u00b6\n\n\n\n\nAs a user, I can login using my Google account\n\n\n\n\nCreate\n\u00b6\n\n\n\n\nAs a user, I can create a reading list.\n\n\nAs a user, I can create a reading group.\n\n\nAs a user, I can add metadata tags to each item.\n\n\nAs an admin, I can create reading lists for the group.\n\n\n\n\nEdit\n\u00b6\n\n\n\n\nAs a user, I can make note on each item.\n\n\nAs a user, I can comment on each item.\n\n\nAs a user, I can rename lists.\n\n\nAs a user, I can merge lists.\n\n\nAs a user, I can partite lists.\n\n\nAs a user, I can copy items from one list to another.\n\n\nAs a user, I can move items from one list to another.\n\n\nAs a user, I can delete items from lists.\n\n\nAs a user, I can archive lists.\n\n\nAs a user, I can retrived archived lists.\n\n\n\n\nShare\n\u00b6\n\n\n\n\nAs a user, I can grant/revoke read/write access of reading list to others.\n\n\nAs a user, I can share my reading list to a group.\n\n\nAs a user, I can upvote/downvote each item once.\n\n\nAs a user, I can hide my comments on items.\n\n\n\n\nAdmin\n\u00b6\n\n\n\n\nAs an admin, I can invite people to join my group.\n\n\nAs an admin, I can block people in my group.\n\n\nAs an admin, I can kick out people from my group.\n\n\nAs an admin, I can delete an item and keep people from reposting it.\n\n\nAs an admin, I can set a limit on how many suggestions each person can submit\n\n\n\n\nSearch/Filter\n\u00b6\n\n\n\n\nAs a user, I can search item by metadata (tags).\n\n\nAs a user, I can search item by content (keyword).\n\n\nAs a user, I can filter item by metadata (tags).\n\n\nAs a user, I can filter item by content (keyword).\n\n\nAs a user, I can search a group by group name (keyword).\n\n\n\n\nNotification\n\u00b6\n\n\n\n\nAs a user, I can receive voting notification whenever it changes.\n\n\nAs a user, I can receive notification when the voting end.",
+            "text": "User Story\n\u00b6\n\n\n\n\n\n\nAuthancation\n  1.1 As a user, I can login using my Google account\n\n\n\n\n\n\nCreate\n  2.1 As a user, I can create a reading list.\n  2.2 As a user, I can create a reading group.\n  2.3 As a user, I can add metadata tags to each item.\n  2.4 As a user, I can create reading lists for the group.\n\n\n\n\n\n\nEdit\n  3.1 As a user, I can make note on each item.\n  3.2 As a user, I can comment on each item.\n  3.3 As a user, I can rename lists.\n  3.4 As a user, I can merge lists.\n  3.5 As a user, I can partite lists.\n  3.6 As a user, I can copy items from one list to another.\n  3.7 As a user, I can move items from one list to another.\n  3.8 As a user, I can delete items from lists.\n  3.9 As a user, I can archive lists.\n  3.10 As a user, I can retrived archived lists.\n\n\n\n\n\n\nShare\n  4.1 As a user, I can grant/revoke read/write access of reading list to others.\n  4.2 As a user, I can share my reading list to a group.\n  4.3 As a user, I can upvote/downvote each item once.\n  4.4 As a user, I can hide my comments on items.\n\n\n\n\n\n\nAdmin\n  5.1 As an admin, I can invite people to join my group.\n  5.2 As an admin, I can block people in my group.\n  5.3 As an admin, I can kick out people from my group.\n  5.4 As an admin, I can delete an item and keep people from reposting it.\n  5.5 As an admin, I can set a limit on how many suggestions each person can submit\n  5.6 As an admin, I can make someone else in the group the admin.\n\n\n\n\n\n\nSearch/Filter\n  6.1 As a user, I can search item by metadata (tags).\n  6.2 As a user, I can search item by content (keyword).\n  6.3 As a user, I can filter item by metadata (tags).\n  6.4 As a user, I can filter item by content (keyword).\n  6.5 As a user, I can search a group by group name (keyword).\n\n\n\n\n\n\nNotification\n  7.1 As a user, I can receive voting notification whenever it changes.\n  7.2 As a user, I can receive notification when the voting end.",
             "title": "User Story"
         },
         {
             "location": "/requirement-document/user-stories/#user-story",
-            "text": "",
+            "text": "Authancation\n  1.1 As a user, I can login using my Google account    Create\n  2.1 As a user, I can create a reading list.\n  2.2 As a user, I can create a reading group.\n  2.3 As a user, I can add metadata tags to each item.\n  2.4 As a user, I can create reading lists for the group.    Edit\n  3.1 As a user, I can make note on each item.\n  3.2 As a user, I can comment on each item.\n  3.3 As a user, I can rename lists.\n  3.4 As a user, I can merge lists.\n  3.5 As a user, I can partite lists.\n  3.6 As a user, I can copy items from one list to another.\n  3.7 As a user, I can move items from one list to another.\n  3.8 As a user, I can delete items from lists.\n  3.9 As a user, I can archive lists.\n  3.10 As a user, I can retrived archived lists.    Share\n  4.1 As a user, I can grant/revoke read/write access of reading list to others.\n  4.2 As a user, I can share my reading list to a group.\n  4.3 As a user, I can upvote/downvote each item once.\n  4.4 As a user, I can hide my comments on items.    Admin\n  5.1 As an admin, I can invite people to join my group.\n  5.2 As an admin, I can block people in my group.\n  5.3 As an admin, I can kick out people from my group.\n  5.4 As an admin, I can delete an item and keep people from reposting it.\n  5.5 As an admin, I can set a limit on how many suggestions each person can submit\n  5.6 As an admin, I can make someone else in the group the admin.    Search/Filter\n  6.1 As a user, I can search item by metadata (tags).\n  6.2 As a user, I can search item by content (keyword).\n  6.3 As a user, I can filter item by metadata (tags).\n  6.4 As a user, I can filter item by content (keyword).\n  6.5 As a user, I can search a group by group name (keyword).    Notification\n  7.1 As a user, I can receive voting notification whenever it changes.\n  7.2 As a user, I can receive notification when the voting end.",
             "title": "User Story"
-        },
-        {
-            "location": "/requirement-document/user-stories/#authancation",
-            "text": "As a user, I can login using my Google account",
-            "title": "Authancation"
-        },
-        {
-            "location": "/requirement-document/user-stories/#create",
-            "text": "As a user, I can create a reading list.  As a user, I can create a reading group.  As a user, I can add metadata tags to each item.  As an admin, I can create reading lists for the group.",
-            "title": "Create"
-        },
-        {
-            "location": "/requirement-document/user-stories/#edit",
-            "text": "As a user, I can make note on each item.  As a user, I can comment on each item.  As a user, I can rename lists.  As a user, I can merge lists.  As a user, I can partite lists.  As a user, I can copy items from one list to another.  As a user, I can move items from one list to another.  As a user, I can delete items from lists.  As a user, I can archive lists.  As a user, I can retrived archived lists.",
-            "title": "Edit"
-        },
-        {
-            "location": "/requirement-document/user-stories/#share",
-            "text": "As a user, I can grant/revoke read/write access of reading list to others.  As a user, I can share my reading list to a group.  As a user, I can upvote/downvote each item once.  As a user, I can hide my comments on items.",
-            "title": "Share"
-        },
-        {
-            "location": "/requirement-document/user-stories/#admin",
-            "text": "As an admin, I can invite people to join my group.  As an admin, I can block people in my group.  As an admin, I can kick out people from my group.  As an admin, I can delete an item and keep people from reposting it.  As an admin, I can set a limit on how many suggestions each person can submit",
-            "title": "Admin"
-        },
-        {
-            "location": "/requirement-document/user-stories/#searchfilter",
-            "text": "As a user, I can search item by metadata (tags).  As a user, I can search item by content (keyword).  As a user, I can filter item by metadata (tags).  As a user, I can filter item by content (keyword).  As a user, I can search a group by group name (keyword).",
-            "title": "Search/Filter"
-        },
-        {
-            "location": "/requirement-document/user-stories/#notification",
-            "text": "As a user, I can receive voting notification whenever it changes.  As a user, I can receive notification when the voting end.",
-            "title": "Notification"
         },
         {
             "location": "/requirement-document/technical-resources/",
