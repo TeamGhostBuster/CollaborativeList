@@ -3,10 +3,6 @@
 ## Authancation
 * As a user, I can login using my Google account
 
-## Notification
-* As a user, I can receive voting notification whenever it changes.
-* As a user, I can receive notification when the voting end.
-
 ## Create
 * As a user, I can create a reading list.
 * As a user, I can create a reading group.
@@ -44,3 +40,9 @@
 * As a user, I can filter item by metadata (tags).
 * As a user, I can filter item by content (keyword).
 * As a user, I can search a group by group name (keyword).
+
+## Notification
+* As a user, I can receive voting notification whenever it changes.
+* As a user, I can receive notification when the voting end.
+
+
