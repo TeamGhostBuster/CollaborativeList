@@ -32,6 +32,11 @@
         },
         {
             "location": "/requirement-document/storyboard/",
+            "text": "Storyboard\n\u00b6",
+            "title": "Storyboard"
+        },
+        {
+            "location": "/requirement-document/storyboard/#storyboard",
             "text": "",
             "title": "Storyboard"
         },
