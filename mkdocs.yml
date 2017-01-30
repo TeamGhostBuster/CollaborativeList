@@ -1,4 +1,9 @@
 site_name: Collaborative Up Voting Lists
+
+# Repository
+repo_name: 'CollaborativeList'
+repo_url: 'https://github.com/TeamGhostBuster/CollaborativeList'
+
 theme: material
 pages:
     - Collaborative Lists: index.md
