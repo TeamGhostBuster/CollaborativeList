@@ -106,6 +106,31 @@
             "title": "Architecture Diagram"
         },
         {
+            "location": "/software-design/detail-design/",
+            "text": "Object-\u00adoriented Analysis\n\u00b6\n\n\nComponent Model\n\u00b6\n\n\nLogical Model (Back-end)\n\u00b6\n\n\n\n\nCore Dynamics Behaviours\n\u00b6",
+            "title": "Detail Design"
+        },
+        {
+            "location": "/software-design/detail-design/#object-oriented-analysis",
+            "text": "",
+            "title": "Object-\u00adoriented Analysis"
+        },
+        {
+            "location": "/software-design/detail-design/#component-model",
+            "text": "",
+            "title": "Component Model"
+        },
+        {
+            "location": "/software-design/detail-design/#logical-model-back-end",
+            "text": "",
+            "title": "Logical Model (Back-end)"
+        },
+        {
+            "location": "/software-design/detail-design/#core-dynamics-behaviours",
+            "text": "",
+            "title": "Core Dynamics Behaviours"
+        },
+        {
             "location": "/contribution-code/",
             "text": "Contribution Code\n\u00b6\n\n\nStyle Guide\n\u00b6\n\n\nPEP8 -- Style Guide for Python Code\n\n\nPull Request\n\u00b6\n\n\nAll changes to the code in the future should be submitted as a PR, and each PR should be reviewed and tested before being merge to the master branch.",
             "title": "Contribution Code"
