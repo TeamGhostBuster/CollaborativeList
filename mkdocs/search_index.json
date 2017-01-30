@@ -107,7 +107,7 @@
         },
         {
             "location": "/software-design/detail-design/",
-            "text": "Object-\u00adoriented Analysis\n\u00b6\n\n\nComponent Model\n\u00b6\n\n\nLogical Model (Back-end)\n\u00b6\n\n\n\n\nCore Dynamics Behaviours\n\u00b6",
+            "text": "Object-\u00adoriented Analysis\n\u00b6\n\n\nComponent Model\n\u00b6\n\n\nLogical Model (Back-end)\n\u00b6\n\n\n\n\nCore Dynamics Behaviours and Information Flow\n\u00b6",
             "title": "Detail Design"
         },
         {
@@ -126,9 +126,9 @@
             "title": "Logical Model (Back-end)"
         },
         {
-            "location": "/software-design/detail-design/#core-dynamics-behaviours",
+            "location": "/software-design/detail-design/#core-dynamics-behaviours-and-information-flow",
             "text": "",
-            "title": "Core Dynamics Behaviours"
+            "title": "Core Dynamics Behaviours and Information Flow"
         },
         {
             "location": "/contribution-code/",
