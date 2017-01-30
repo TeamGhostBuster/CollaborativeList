@@ -1,6 +1,6 @@
 # User Story
 
-1. Authancation
+1. Authentication
     - 1.1 As a user, I can login using my Google account
 
 2. Create
@@ -14,12 +14,12 @@
     - 3.2 As a user, I can comment on each item.
     - 3.3 As a user, I can rename lists.
     - 3.4 As a user, I can merge lists.
-    - 3.5 As a user, I can partite lists.
+    - 3.5 As a user, I can partition lists.
     - 3.6 As a user, I can copy items from one list to another.
     - 3.7 As a user, I can move items from one list to another.
     - 3.8 As a user, I can delete items from lists.
     - 3.9 As a user, I can archive lists.
-    - 3.10 As a user, I can retrived archived lists.
+    - 3.10 As a user, I can retrieve archived lists.
 
 4. Share
     - 4.1 As a user, I can grant/revoke read/write access of reading list to others.
@@ -27,13 +27,13 @@
     - 4.3 As a user, I can upvote/downvote each item once.
     - 4.4 As a user, I can hide my comments on items.
 
-5. Admin
-    - 5.1 As an admin, I can invite people to join my group.
-    - 5.2 As an admin, I can block people in my group.
-    - 5.3 As an admin, I can kick out people from my group.
-    - 5.4 As an admin, I can delete an item and keep people from reposting it.
-    - 5.5 As an admin, I can set a limit on how many suggestions each person can submit
-    - 5.6 As an admin, I can make someone else in the group the admin.
+5. Moderator
+    - 5.1 As a moderator, I can invite people to join my group.
+    - 5.2 As a moderator, I can block people in my group.
+    - 5.3 As a moderator, I can kick out people from my group.
+    - 5.4 As a moderator, I can delete an item and keep people from reposting it.
+    - 5.5 As a moderator, I can set a limit on how many suggestions each person can submit
+    - 5.6 As a moderator, I can make someone else in the group the moderator.
 
 6. Search/Filter
     - 6.1 As a user, I can search item by metadata (tags).
