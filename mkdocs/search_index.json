@@ -106,6 +106,26 @@
             "title": "Architecture Diagram"
         },
         {
+            "location": "/contribution-code/",
+            "text": "Contribution Code\n\u00b6\n\n\nStyle Guide\n\u00b6\n\n\nPEP8 -- Style Guide for Python Code\n\n\nPull Request\n\u00b6\n\n\nAll changes to the code in the future should be submitted as a PR, and each PR should be reviewed and tested before being merge to the master branch.",
+            "title": "Contribution Code"
+        },
+        {
+            "location": "/contribution-code/#contribution-code",
+            "text": "",
+            "title": "Contribution Code"
+        },
+        {
+            "location": "/contribution-code/#style-guide",
+            "text": "PEP8 -- Style Guide for Python Code",
+            "title": "Style Guide"
+        },
+        {
+            "location": "/contribution-code/#pull-request",
+            "text": "All changes to the code in the future should be submitted as a PR, and each PR should be reviewed and tested before being merge to the master branch.",
+            "title": "Pull Request"
+        },
+        {
             "location": "/credits/",
             "text": "Credit\n\u00b6\n\n\nContributors\n\u00b6\n\n\n\n\nAaron(Hongyang) Liu\n\n\nMichael(Zichun) Lin\n\n\nMichael Rijlaarsdam\n\n\nStephen Larsen\n\n\n\n\nOpen Source Components\n\u00b6\n\n\n\n\nBackend\n\n\nElasticsearch",
             "title": "Credit"
