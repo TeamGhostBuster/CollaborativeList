@@ -11,6 +11,7 @@ pages:
         - Similar Products: requirement-document/similar-products.md
     - Software Design:
         - System Overview: software-design/software-design.md
+    - Contribution Code: contribution-code.md
     - Credit: credits.md
 
 markdown_extensions:
