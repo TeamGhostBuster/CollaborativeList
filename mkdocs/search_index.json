@@ -27,8 +27,13 @@
         },
         {
             "location": "/requirement-document/project-glossary/",
-            "text": "",
+            "text": "Collaborative List Glossary\n\u00b6\n\n\nThe following terms and definitions are to be taken into consideration for all documentation of our product, unless stated otherwise.\n\n\nThis list is not static and may be subject to alteration.\n\n\n\n\n\n\nArticle\n: An external link to a scholarly paper saved by the user; may include comments, private tags, etc.\n\n\n\n\n\n\nElection\n: The process by which the members of a group vote up or down other members' nominations; the winner of an election is then assumed to be the group consensus\n\n\n\n\n\n\nLibrary\n: A user's total collection of articles\n\n\n\n\n\n\nModerator\n: The leader of a reading group; has unique privileges relative to other group members\n\n\n\n\n\n\nNominate\n: The process of a group member suggesting an article for the group to collectively study\n\n\n\n\n\n\nReading Group\n: A collection of users where each individual can nominate articles and/or vote on others' suggestions, lead by a single moderator\n\n\n\n\n\n\nReading List\n: A subset of a user's library that contains articles selected by the user; may be named or ordered however the user wishes\n\n\n\n\n\n\nUser\n: Anybody who logs into the application with a valid account",
             "title": "Project Glossary"
+        },
+        {
+            "location": "/requirement-document/project-glossary/#collaborative-list-glossary",
+            "text": "The following terms and definitions are to be taken into consideration for all documentation of our product, unless stated otherwise.  This list is not static and may be subject to alteration.    Article : An external link to a scholarly paper saved by the user; may include comments, private tags, etc.    Election : The process by which the members of a group vote up or down other members' nominations; the winner of an election is then assumed to be the group consensus    Library : A user's total collection of articles    Moderator : The leader of a reading group; has unique privileges relative to other group members    Nominate : The process of a group member suggesting an article for the group to collectively study    Reading Group : A collection of users where each individual can nominate articles and/or vote on others' suggestions, lead by a single moderator    Reading List : A subset of a user's library that contains articles selected by the user; may be named or ordered however the user wishes    User : Anybody who logs into the application with a valid account",
+            "title": "Collaborative List Glossary"
         },
         {
             "location": "/requirement-document/storyboard/",
