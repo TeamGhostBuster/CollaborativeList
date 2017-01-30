@@ -6,4 +6,5 @@
 ## Logical Model (Back-end)
 ![img](uml-class-diagram-server.png)
 
-## Core Dynamics Behaviours
+## Core Dynamics Behaviours and Information Flow
+![img](uml-sequence-diagram.png)
