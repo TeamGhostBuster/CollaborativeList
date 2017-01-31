@@ -7,7 +7,7 @@ repo_url: 'https://github.com/TeamGhostBuster/CollaborativeList'
 theme: material
 pages:
     - Collaborative Lists: index.md
-    - Software Requirenments:
+    - Software Requirements:
         - Project Overview: requirement-document/project-overview.md
         - Project Glossary: requirement-document/project-glossary.md
         - Storyboard: requirement-document/storyboard.md
