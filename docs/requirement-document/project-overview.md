@@ -1,4 +1,3 @@
 # Project Overview
 
-## Overall
-Collaborative list is a project management application for people from academia to collaborate with their research and seminar. The application provides a web-based interface that individuals can have a list of reading materials, be able to organize a meeting with others, and be able to discuss with each other within the group. The application can run on any modern web browser without any painful setup.
+__Collaborative Lists__ is a project management tool for academics and their colleagues to facilitate and coordinate group study sessions. Via a web-based interface, users can save and organize external links to scholarly papers (or journal articles, videos, etc.), share them with the other members of their reading group(s), and participate in a voting system determining which of the shared articles the group will collectively study. Designed to be lightweight and user-friendly, the application can run on any modern browser with a minimum-effort installation.
