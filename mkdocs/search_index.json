@@ -1,173 +1,168 @@
 {
     "docs": [
         {
-            "location": "/",
-            "text": "Collaborative Lists\n\u00b6",
+            "location": "/", 
+            "text": "Collaborative Lists", 
             "title": "Collaborative Lists"
-        },
+        }, 
         {
-            "location": "/#collaborative-lists",
-            "text": "",
+            "location": "/#collaborative-lists", 
+            "text": "", 
             "title": "Collaborative Lists"
-        },
+        }, 
         {
-            "location": "/requirement-document/project-overview/",
-            "text": "Project Overview\n\u00b6\n\n\nOverall\n\u00b6\n\n\nCollaborative list is a project management application for people from academia to collaborate with their research and seminar. The application provides a web-based interface that individuals can have a list of reading materials, be able to organize a meeting with others, and be able to discuss with each other within the group. The application can run on any modern web browser without any painful setup.",
+            "location": "/requirement-document/project-overview/", 
+            "text": "Project Overview\n\n\nCollaborative Lists\n is a project management tool for academics and their colleagues to facilitate and coordinate group study sessions. Via a web-based interface, users can save and organize external links to scholarly papers (or journal articles, videos, etc.), share them with the other members of their reading group(s), and participate in a voting system determining which of the shared articles the group will collectively study. Designed to be lightweight and user-friendly, the application can run on any modern browser with a minimum-effort installation.", 
             "title": "Project Overview"
-        },
+        }, 
         {
-            "location": "/requirement-document/project-overview/#project-overview",
-            "text": "",
+            "location": "/requirement-document/project-overview/#project-overview", 
+            "text": "Collaborative Lists  is a project management tool for academics and their colleagues to facilitate and coordinate group study sessions. Via a web-based interface, users can save and organize external links to scholarly papers (or journal articles, videos, etc.), share them with the other members of their reading group(s), and participate in a voting system determining which of the shared articles the group will collectively study. Designed to be lightweight and user-friendly, the application can run on any modern browser with a minimum-effort installation.", 
             "title": "Project Overview"
-        },
+        }, 
         {
-            "location": "/requirement-document/project-overview/#overall",
-            "text": "Collaborative list is a project management application for people from academia to collaborate with their research and seminar. The application provides a web-based interface that individuals can have a list of reading materials, be able to organize a meeting with others, and be able to discuss with each other within the group. The application can run on any modern web browser without any painful setup.",
-            "title": "Overall"
-        },
-        {
-            "location": "/requirement-document/project-glossary/",
-            "text": "Collaborative List Glossary\n\u00b6\n\n\nThe following terms and definitions are to be taken into consideration for all documentation of our product, unless stated otherwise.\n\n\nThis list is not static and may be subject to alteration.\n\n\n\n\n\n\nArticle\n: An external link to a scholarly paper saved by the user; may include comments, private tags, etc.\n\n\n\n\n\n\nElection\n: The process by which the members of a group vote up or down other members' nominations; the winner of an election is then assumed to be the group consensus\n\n\n\n\n\n\nLibrary\n: A user's total collection of articles\n\n\n\n\n\n\nModerator\n: The leader of a reading group; has unique privileges relative to other group members\n\n\n\n\n\n\nNominate\n: The process of a group member suggesting an article for the group to collectively study\n\n\n\n\n\n\nReading Group\n: A collection of users where each individual can nominate articles and/or vote on others' suggestions, lead by a single moderator\n\n\n\n\n\n\nReading List\n: A subset of a user's library that contains articles selected by the user; may be named or ordered however the user wishes\n\n\n\n\n\n\nUser\n: Anybody who logs into the application with a valid account",
+            "location": "/requirement-document/project-glossary/", 
+            "text": "Collaborative List Glossary\n\n\nThe following terms and definitions are to be taken into consideration for all documentation of our product, unless stated otherwise.\n\n\nThis list is not static and may be subject to alteration.\n\n\n\n\n\n\nArticle\n: An external link to a scholarly paper saved by the user; may include comments, private tags, etc.\n\n\n\n\n\n\nElection\n: The process by which the members of a group vote up or down other members' nominations; the winner of an election is then assumed to be the group consensus\n\n\n\n\n\n\nLibrary\n: A user's total collection of articles\n\n\n\n\n\n\nModerator\n: The leader of a reading group; has unique privileges relative to other group members\n\n\n\n\n\n\nNominate\n: The process of a group member suggesting an article for the group to collectively study\n\n\n\n\n\n\nReading Group\n: A collection of users where each individual can nominate articles and/or vote on others' suggestions, lead by a single moderator\n\n\n\n\n\n\nReading List\n: A subset of a user's library that contains articles selected by the user; may be named or ordered however the user wishes\n\n\n\n\n\n\nUser\n: Anybody who logs into the application with a valid account", 
             "title": "Project Glossary"
-        },
+        }, 
         {
-            "location": "/requirement-document/project-glossary/#collaborative-list-glossary",
-            "text": "The following terms and definitions are to be taken into consideration for all documentation of our product, unless stated otherwise.  This list is not static and may be subject to alteration.    Article : An external link to a scholarly paper saved by the user; may include comments, private tags, etc.    Election : The process by which the members of a group vote up or down other members' nominations; the winner of an election is then assumed to be the group consensus    Library : A user's total collection of articles    Moderator : The leader of a reading group; has unique privileges relative to other group members    Nominate : The process of a group member suggesting an article for the group to collectively study    Reading Group : A collection of users where each individual can nominate articles and/or vote on others' suggestions, lead by a single moderator    Reading List : A subset of a user's library that contains articles selected by the user; may be named or ordered however the user wishes    User : Anybody who logs into the application with a valid account",
+            "location": "/requirement-document/project-glossary/#collaborative-list-glossary", 
+            "text": "The following terms and definitions are to be taken into consideration for all documentation of our product, unless stated otherwise.  This list is not static and may be subject to alteration.    Article : An external link to a scholarly paper saved by the user; may include comments, private tags, etc.    Election : The process by which the members of a group vote up or down other members' nominations; the winner of an election is then assumed to be the group consensus    Library : A user's total collection of articles    Moderator : The leader of a reading group; has unique privileges relative to other group members    Nominate : The process of a group member suggesting an article for the group to collectively study    Reading Group : A collection of users where each individual can nominate articles and/or vote on others' suggestions, lead by a single moderator    Reading List : A subset of a user's library that contains articles selected by the user; may be named or ordered however the user wishes    User : Anybody who logs into the application with a valid account", 
             "title": "Collaborative List Glossary"
-        },
+        }, 
         {
-            "location": "/requirement-document/storyboard/",
-            "text": "Storyboard\n\u00b6",
+            "location": "/requirement-document/storyboard/", 
+            "text": "Storyboard", 
             "title": "Storyboard"
-        },
+        }, 
         {
-            "location": "/requirement-document/storyboard/#storyboard",
-            "text": "",
+            "location": "/requirement-document/storyboard/#storyboard", 
+            "text": "", 
             "title": "Storyboard"
-        },
+        }, 
         {
-            "location": "/requirement-document/user-stories/",
-            "text": "User Story\n\u00b6\n\n\n\n\n\n\nAuthentication\n\n\n\n\n1.1 As a user, I can login using my Google account\n\n\n\n\n\n\n\n\nCreate\n\n\n\n\n2.1 As a user, I can create a reading list.\n\n\n2.2 As a user, I can create a reading group.\n\n\n2.3 As a user, I can add metadata tags to each article.\n\n\n2.4 As a user, I can create reading lists for the group.\n\n\n\n\n\n\n\n\nEdit\n\n\n\n\n3.1 As a user, I can make note on each article.\n\n\n3.2 As a user, I can comment on each article.\n\n\n3.3 As a user, I can rename lists.\n\n\n3.4 As a user, I can merge lists.\n\n\n3.5 As a user, I can partition lists.\n\n\n3.6 As a user, I can copy articles from one list to another.\n\n\n3.7 As a user, I can move articles from one list to another.\n\n\n3.8 As a user, I can delete articles from lists.\n\n\n3.9 As a user, I can archive lists.\n\n\n3.10 As a user, I can retrieve archived lists.\n\n\n\n\n\n\n\n\nShare\n\n\n\n\n4.1 As a user, I can grant/revoke read/write access of reading list to others.\n\n\n4.2 As a user, I can share my reading list to a group.\n\n\n4.3 As a user, I can upvote/downvote each article once.\n\n\n4.4 As a user, I can hide my comments on articles.\n\n\n\n\n\n\n\n\nModerator\n\n\n\n\n5.1 As a moderator, I can invite people to join my group.\n\n\n5.2 As a moderator, I can block people in my group.\n\n\n5.3 As a moderator, I can kick out people from my group.\n\n\n5.4 As a moderator, I can delete an article and keep people from reposting it.\n\n\n5.5 As a moderator, I can set a limit on how many suggestions each person can submit\n\n\n5.6 As a moderator, I can make someone else in the group the moderator.\n\n\n\n\n\n\n\n\nSearch/Filter\n\n\n\n\n6.1 As a user, I can search article by metadata (tags).\n\n\n6.2 As a user, I can search article by content (keyword).\n\n\n6.3 As a user, I can filter article by metadata (tags).\n\n\n6.4 As a user, I can filter article by content (keyword).\n\n\n6.5 As a user, I can search a group by group name (keyword).\n\n\n\n\n\n\n\n\nNotification\n\n\n\n\n7.1 As a user, I can receive voting notification whenever it changes.\n\n\n7.2 As a user, I can receive notification when the voting end.",
+            "location": "/requirement-document/user-stories/", 
+            "text": "User Story\n\n\n\n\n\n\nAuthentication\n\n\n\n\n1.1 As a user, I can login using my Google account\n\n\n\n\n\n\n\n\nCreate\n\n\n\n\n2.1 As a user, I can create a reading list.\n\n\n2.2 As a user, I can create a reading group.\n\n\n2.3 As a user, I can add metadata tags to each article.\n\n\n2.4 As a user, I can create reading lists for the group.\n\n\n\n\n\n\n\n\nEdit\n\n\n\n\n3.1 As a user, I can make note on each article.\n\n\n3.2 As a user, I can comment on each article.\n\n\n3.3 As a user, I can rename lists.\n\n\n3.4 As a user, I can merge lists.\n\n\n3.5 As a user, I can partition lists.\n\n\n3.6 As a user, I can copy articles from one list to another.\n\n\n3.7 As a user, I can move articles from one list to another.\n\n\n3.8 As a user, I can delete articles from lists.\n\n\n3.9 As a user, I can archive lists.\n\n\n3.10 As a user, I can retrieve archived lists.\n\n\n\n\n\n\n\n\nShare\n\n\n\n\n4.1 As a user, I can grant/revoke read/write access of reading list to others.\n\n\n4.2 As a user, I can share my reading list to a group.\n\n\n4.3 As a user, I can upvote/downvote each article once.\n\n\n4.4 As a user, I can hide my comments on articles.\n\n\n\n\n\n\n\n\nModerator\n\n\n\n\n5.1 As a moderator, I can invite people to join my group.\n\n\n5.2 As a moderator, I can block people in my group.\n\n\n5.3 As a moderator, I can kick out people from my group.\n\n\n5.4 As a moderator, I can delete an article and keep people from reposting it.\n\n\n5.5 As a moderator, I can set a limit on how many suggestions each person can submit\n\n\n5.6 As a moderator, I can make someone else in the group the moderator.\n\n\n\n\n\n\n\n\nSearch/Filter\n\n\n\n\n6.1 As a user, I can search article by metadata (tags).\n\n\n6.2 As a user, I can search article by content (keyword).\n\n\n6.3 As a user, I can filter article by metadata (tags).\n\n\n6.4 As a user, I can filter article by content (keyword).\n\n\n6.5 As a user, I can search a group by group name (keyword).\n\n\n\n\n\n\n\n\nNotification\n\n\n\n\n7.1 As a user, I can receive voting notification whenever it changes.\n\n\n7.2 As a user, I can receive notification when the voting end.", 
             "title": "User Story"
-        },
+        }, 
         {
-            "location": "/requirement-document/user-stories/#user-story",
-            "text": "Authentication   1.1 As a user, I can login using my Google account     Create   2.1 As a user, I can create a reading list.  2.2 As a user, I can create a reading group.  2.3 As a user, I can add metadata tags to each article.  2.4 As a user, I can create reading lists for the group.     Edit   3.1 As a user, I can make note on each article.  3.2 As a user, I can comment on each article.  3.3 As a user, I can rename lists.  3.4 As a user, I can merge lists.  3.5 As a user, I can partition lists.  3.6 As a user, I can copy articles from one list to another.  3.7 As a user, I can move articles from one list to another.  3.8 As a user, I can delete articles from lists.  3.9 As a user, I can archive lists.  3.10 As a user, I can retrieve archived lists.     Share   4.1 As a user, I can grant/revoke read/write access of reading list to others.  4.2 As a user, I can share my reading list to a group.  4.3 As a user, I can upvote/downvote each article once.  4.4 As a user, I can hide my comments on articles.     Moderator   5.1 As a moderator, I can invite people to join my group.  5.2 As a moderator, I can block people in my group.  5.3 As a moderator, I can kick out people from my group.  5.4 As a moderator, I can delete an article and keep people from reposting it.  5.5 As a moderator, I can set a limit on how many suggestions each person can submit  5.6 As a moderator, I can make someone else in the group the moderator.     Search/Filter   6.1 As a user, I can search article by metadata (tags).  6.2 As a user, I can search article by content (keyword).  6.3 As a user, I can filter article by metadata (tags).  6.4 As a user, I can filter article by content (keyword).  6.5 As a user, I can search a group by group name (keyword).     Notification   7.1 As a user, I can receive voting notification whenever it changes.  7.2 As a user, I can receive notification when the voting end.",
+            "location": "/requirement-document/user-stories/#user-story", 
+            "text": "Authentication   1.1 As a user, I can login using my Google account     Create   2.1 As a user, I can create a reading list.  2.2 As a user, I can create a reading group.  2.3 As a user, I can add metadata tags to each article.  2.4 As a user, I can create reading lists for the group.     Edit   3.1 As a user, I can make note on each article.  3.2 As a user, I can comment on each article.  3.3 As a user, I can rename lists.  3.4 As a user, I can merge lists.  3.5 As a user, I can partition lists.  3.6 As a user, I can copy articles from one list to another.  3.7 As a user, I can move articles from one list to another.  3.8 As a user, I can delete articles from lists.  3.9 As a user, I can archive lists.  3.10 As a user, I can retrieve archived lists.     Share   4.1 As a user, I can grant/revoke read/write access of reading list to others.  4.2 As a user, I can share my reading list to a group.  4.3 As a user, I can upvote/downvote each article once.  4.4 As a user, I can hide my comments on articles.     Moderator   5.1 As a moderator, I can invite people to join my group.  5.2 As a moderator, I can block people in my group.  5.3 As a moderator, I can kick out people from my group.  5.4 As a moderator, I can delete an article and keep people from reposting it.  5.5 As a moderator, I can set a limit on how many suggestions each person can submit  5.6 As a moderator, I can make someone else in the group the moderator.     Search/Filter   6.1 As a user, I can search article by metadata (tags).  6.2 As a user, I can search article by content (keyword).  6.3 As a user, I can filter article by metadata (tags).  6.4 As a user, I can filter article by content (keyword).  6.5 As a user, I can search a group by group name (keyword).     Notification   7.1 As a user, I can receive voting notification whenever it changes.  7.2 As a user, I can receive notification when the voting end.", 
             "title": "User Story"
-        },
+        }, 
         {
-            "location": "/requirement-document/technical-resources/",
-            "text": "Technical Resources\n\u00b6\n\n\nFront-end\n\u00b6\n\n\n\n\nReact\n\n\nReact Components for Elasticsearch\n\n\n\n\nBack-end\n\u00b6\n\n\n\n\nFlask\n\n\nauthomatic - Oauth Library\n\n\n\n\n\n\nDeployment\n\u00b6\n\n\n\n\nDocker",
+            "location": "/requirement-document/technical-resources/", 
+            "text": "Technical Resources\n\n\nFront-end\n\n\n\n\nReact\n\n\nReact Components for Elasticsearch\n\n\n\n\nBack-end\n\n\n\n\nFlask\n\n\nauthomatic - Oauth Library\n\n\n\n\n\n\nDeployment\n\n\n\n\nDocker", 
             "title": "Technical Resources"
-        },
+        }, 
         {
-            "location": "/requirement-document/technical-resources/#technical-resources",
-            "text": "",
+            "location": "/requirement-document/technical-resources/#technical-resources", 
+            "text": "", 
             "title": "Technical Resources"
-        },
+        }, 
         {
-            "location": "/requirement-document/technical-resources/#front-end",
-            "text": "React  React Components for Elasticsearch",
+            "location": "/requirement-document/technical-resources/#front-end", 
+            "text": "React  React Components for Elasticsearch", 
             "title": "Front-end"
-        },
+        }, 
         {
-            "location": "/requirement-document/technical-resources/#back-end",
-            "text": "Flask  authomatic - Oauth Library",
+            "location": "/requirement-document/technical-resources/#back-end", 
+            "text": "Flask  authomatic - Oauth Library", 
             "title": "Back-end"
-        },
+        }, 
         {
-            "location": "/requirement-document/technical-resources/#deployment",
-            "text": "Docker",
+            "location": "/requirement-document/technical-resources/#deployment", 
+            "text": "Docker", 
             "title": "Deployment"
-        },
+        }, 
         {
-            "location": "/requirement-document/similar-products/",
-            "text": "Similar Products\n\u00b6\n\n\n\n\nTrello\n\n\ndapulse",
+            "location": "/requirement-document/similar-products/", 
+            "text": "Similar Products\n\n\n\n\nTrello\n\n\ndapulse", 
             "title": "Similar Products"
-        },
+        }, 
         {
-            "location": "/requirement-document/similar-products/#similar-products",
-            "text": "Trello  dapulse",
+            "location": "/requirement-document/similar-products/#similar-products", 
+            "text": "Trello  dapulse", 
             "title": "Similar Products"
-        },
+        }, 
         {
-            "location": "/software-design/software-design/",
-            "text": "Software Design\n\u00b6\n\n\nArchitecture Diagram\n\u00b6",
+            "location": "/software-design/software-design/", 
+            "text": "Software Design\n\n\nArchitecture Diagram", 
             "title": "System Overview"
-        },
+        }, 
         {
-            "location": "/software-design/software-design/#software-design",
-            "text": "",
+            "location": "/software-design/software-design/#software-design", 
+            "text": "", 
             "title": "Software Design"
-        },
+        }, 
         {
-            "location": "/software-design/software-design/#architecture-diagram",
-            "text": "",
+            "location": "/software-design/software-design/#architecture-diagram", 
+            "text": "", 
             "title": "Architecture Diagram"
-        },
+        }, 
         {
-            "location": "/software-design/detail-design/",
-            "text": "Object-\u00adoriented Analysis\n\u00b6\n\n\nComponent Model\n\u00b6\n\n\nLogical Model (Back-end)\n\u00b6\n\n\n\n\nCore Dynamics Behaviours and Information Flow\n\u00b6",
+            "location": "/software-design/detail-design/", 
+            "text": "Object-\u00adoriented Analysis\n\n\nComponent Model\n\n\nLogical Model (Back-end)\n\n\n\n\nCore Dynamics Behaviours and Information Flow", 
             "title": "Detail Design"
-        },
+        }, 
         {
-            "location": "/software-design/detail-design/#object-oriented-analysis",
-            "text": "",
+            "location": "/software-design/detail-design/#object-oriented-analysis", 
+            "text": "", 
             "title": "Object-\u00adoriented Analysis"
-        },
+        }, 
         {
-            "location": "/software-design/detail-design/#component-model",
-            "text": "",
+            "location": "/software-design/detail-design/#component-model", 
+            "text": "", 
             "title": "Component Model"
-        },
+        }, 
         {
-            "location": "/software-design/detail-design/#logical-model-back-end",
-            "text": "",
+            "location": "/software-design/detail-design/#logical-model-back-end", 
+            "text": "", 
             "title": "Logical Model (Back-end)"
-        },
+        }, 
         {
-            "location": "/software-design/detail-design/#core-dynamics-behaviours-and-information-flow",
-            "text": "",
+            "location": "/software-design/detail-design/#core-dynamics-behaviours-and-information-flow", 
+            "text": "", 
             "title": "Core Dynamics Behaviours and Information Flow"
-        },
+        }, 
         {
-            "location": "/contribution-code/",
-            "text": "Contribution Code\n\u00b6\n\n\nStyle Guide\n\u00b6\n\n\nPEP8 -- Style Guide for Python Code\n\n\nPull Request\n\u00b6\n\n\nAll changes to the code in the future should be submitted as a PR, and each PR should be reviewed and tested before being merge to the master branch.",
+            "location": "/contribution-code/", 
+            "text": "Contribution Code\n\n\nStyle Guide\n\n\nPEP8 -- Style Guide for Python Code\n\n\nPull Request\n\n\nAll changes to the code in the future should be submitted as a PR, and each PR should be reviewed and tested before being merge to the master branch.", 
             "title": "Contribution Code"
-        },
+        }, 
         {
-            "location": "/contribution-code/#contribution-code",
-            "text": "",
+            "location": "/contribution-code/#contribution-code", 
+            "text": "", 
             "title": "Contribution Code"
-        },
+        }, 
         {
-            "location": "/contribution-code/#style-guide",
-            "text": "PEP8 -- Style Guide for Python Code",
+            "location": "/contribution-code/#style-guide", 
+            "text": "PEP8 -- Style Guide for Python Code", 
             "title": "Style Guide"
-        },
+        }, 
         {
-            "location": "/contribution-code/#pull-request",
-            "text": "All changes to the code in the future should be submitted as a PR, and each PR should be reviewed and tested before being merge to the master branch.",
+            "location": "/contribution-code/#pull-request", 
+            "text": "All changes to the code in the future should be submitted as a PR, and each PR should be reviewed and tested before being merge to the master branch.", 
             "title": "Pull Request"
-        },
+        }, 
         {
-            "location": "/credits/",
-            "text": "Credit\n\u00b6\n\n\nContributors\n\u00b6\n\n\n\n\nAaron(Hongyang) Liu\n\n\nMichael(Zichun) Lin\n\n\nMichael Rijlaarsdam\n\n\nStephen Larsen\n\n\n\n\nOpen Source Components\n\u00b6\n\n\n\n\nBackend\n\n\nElasticsearch",
+            "location": "/credits/", 
+            "text": "Credit\n\n\nContributors\n\n\n\n\nAaron(Hongyang) Liu\n\n\nMichael(Zichun) Lin\n\n\nMichael Rijlaarsdam\n\n\nStephen Larsen\n\n\n\n\nOpen Source Components\n\n\n\n\nBackend\n\n\nElasticsearch", 
             "title": "Credit"
-        },
+        }, 
         {
-            "location": "/credits/#credit",
-            "text": "",
+            "location": "/credits/#credit", 
+            "text": "", 
             "title": "Credit"
-        },
+        }, 
         {
-            "location": "/credits/#contributors",
-            "text": "Aaron(Hongyang) Liu  Michael(Zichun) Lin  Michael Rijlaarsdam  Stephen Larsen",
+            "location": "/credits/#contributors", 
+            "text": "Aaron(Hongyang) Liu  Michael(Zichun) Lin  Michael Rijlaarsdam  Stephen Larsen", 
             "title": "Contributors"
-        },
+        }, 
         {
-            "location": "/credits/#open-source-components",
-            "text": "Backend  Elasticsearch",
+            "location": "/credits/#open-source-components", 
+            "text": "Backend  Elasticsearch", 
             "title": "Open Source Components"
         }
     ]
