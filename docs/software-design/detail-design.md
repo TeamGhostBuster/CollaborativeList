@@ -1,7 +1,7 @@
 # Object-­oriented Analysis
 
 ## Component Model
-
+![img](uml-component-diagram.png)
 
 ## Logical Model (Back-end)
 ![img](uml-class-diagram-server.png)
