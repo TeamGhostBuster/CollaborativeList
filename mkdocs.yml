@@ -17,6 +17,7 @@ pages:
     - Software Design:
         - System Overview: software-design/software-design.md
         - Detail Design: software-design/detail-design.md
+        - Testing: software-design/testing.md
     - Contribution Code: contribution-code.md
     - Credit: credits.md
 
