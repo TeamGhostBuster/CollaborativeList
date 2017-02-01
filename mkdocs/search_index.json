@@ -126,6 +126,26 @@
             "title": "Core Dynamics Behaviours and Information Flow (Service-level)"
         },
         {
+            "location": "/software-design/testing/",
+            "text": "Testing Strategy\n\u00b6\n\n\nCoverage\n\u00b6\n\n\nWe believe over test cases would be able to cover around 70% of user stories.\n\n\nMethod\n\u00b6\n\n\nBusiness logic can be test with Python Unit Test framework by mocking out possible network call and interaction with database.",
+            "title": "Testing"
+        },
+        {
+            "location": "/software-design/testing/#testing-strategy",
+            "text": "",
+            "title": "Testing Strategy"
+        },
+        {
+            "location": "/software-design/testing/#coverage",
+            "text": "We believe over test cases would be able to cover around 70% of user stories.",
+            "title": "Coverage"
+        },
+        {
+            "location": "/software-design/testing/#method",
+            "text": "Business logic can be test with Python Unit Test framework by mocking out possible network call and interaction with database.",
+            "title": "Method"
+        },
+        {
             "location": "/contribution-code/",
             "text": "Contribution Code\n\u00b6\n\n\nStyle Guide\n\u00b6\n\n\nPEP8 -- Style Guide for Python Code\n\n\nPull Request\n\u00b6\n\n\nAll changes to the code in the future should be submitted as a PR, and each PR should be reviewed and tested before being merge to the master branch.",
             "title": "Contribution Code"

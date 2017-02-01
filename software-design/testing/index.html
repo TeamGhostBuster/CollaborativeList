@@ -15,7 +15,7 @@
     
     
       
-        <title>User Story - Collaborative Up Voting Lists</title>
+        <title>Testing - Collaborative Up Voting Lists</title>
       
     
     
@@ -75,11 +75,11 @@
             
               
                 <span class="md-header-nav__parent">
-                  Software Requirements
+                  Software Design
                 </span>
               
             
-            User Story
+            Testing
           
         </span>
       </div>
@@ -187,7 +187,7 @@
       
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
     
     <label class="md-nav__link" for="nav-2">
       Software Requirements
@@ -203,7 +203,7 @@
           
   <li class="md-nav__item">
     
-      <a href="../project-overview/" title="Project Overview" class="md-nav__link">
+      <a href="../../requirement-document/project-overview/" title="Project Overview" class="md-nav__link">
         Project Overview
       </a>
     
@@ -214,7 +214,7 @@
           
   <li class="md-nav__item">
     
-      <a href="../project-glossary/" title="Project Glossary" class="md-nav__link">
+      <a href="../../requirement-document/project-glossary/" title="Project Glossary" class="md-nav__link">
         Project Glossary
       </a>
     
@@ -225,7 +225,7 @@
           
   <li class="md-nav__item">
     
-      <a href="../storyboard/" title="Storyboard" class="md-nav__link">
+      <a href="../../requirement-document/storyboard/" title="Storyboard" class="md-nav__link">
         Storyboard
       </a>
     
@@ -236,23 +236,9 @@
           
   <li class="md-nav__item">
     
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
-    
-      
-    
-    
-    <a href="./" title="User Story" class="md-nav__link md-nav__link--active">
-      User Story
-    </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-</nav>
+      <a href="../../requirement-document/user-stories/" title="User Story" class="md-nav__link">
+        User Story
+      </a>
     
   </li>
 
@@ -261,7 +247,7 @@
           
   <li class="md-nav__item">
     
-      <a href="../technical-resources/" title="Technical Resources" class="md-nav__link">
+      <a href="../../requirement-document/technical-resources/" title="Technical Resources" class="md-nav__link">
         Technical Resources
       </a>
     
@@ -272,7 +258,7 @@
           
   <li class="md-nav__item">
     
-      <a href="../similar-products/" title="Similar Products" class="md-nav__link">
+      <a href="../../requirement-document/similar-products/" title="Similar Products" class="md-nav__link">
         Similar Products
       </a>
     
@@ -288,7 +274,7 @@
       
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
     
     <label class="md-nav__link" for="nav-3">
       Software Design
@@ -304,7 +290,7 @@
           
   <li class="md-nav__item">
     
-      <a href="../../software-design/software-design/" title="System Overview" class="md-nav__link">
+      <a href="../software-design/" title="System Overview" class="md-nav__link">
         System Overview
       </a>
     
@@ -315,7 +301,7 @@
           
   <li class="md-nav__item">
     
-      <a href="../../software-design/detail-design/" title="Detail Design" class="md-nav__link">
+      <a href="../detail-design/" title="Detail Design" class="md-nav__link">
         Detail Design
       </a>
     
@@ -326,9 +312,46 @@
           
   <li class="md-nav__item">
     
-      <a href="../../software-design/testing/" title="Testing" class="md-nav__link">
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
         Testing
-      </a>
+      </label>
+    
+    <a href="./" title="Testing" class="md-nav__link md-nav__link--active">
+      Testing
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#coverage" title="Coverage" class="md-nav__link">
+    Coverage
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#method" title="Method" class="md-nav__link">
+    Method
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -377,6 +400,25 @@
     
   
   
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#coverage" title="Coverage" class="md-nav__link">
+    Coverage
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#method" title="Method" class="md-nav__link">
+    Method
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -388,76 +430,11 @@
                
               
                 
-                <h1 id="user-story">User Story<a class="headerlink" href="#user-story" title="Permanent link">&para;</a></h1>
-<ol>
-<li>
-<p>Authentication</p>
-<ul>
-<li>1.1 As a user, I can login using my Google account</li>
-</ul>
-</li>
-<li>
-<p>Create</p>
-<ul>
-<li>2.1 As a user, I can create a reading list.</li>
-<li>2.2 As a user, I can create a reading group.</li>
-<li>2.3 As a user, I can add metadata tags to each article.</li>
-<li>2.4 As a user, I can create reading lists for the group.</li>
-</ul>
-</li>
-<li>
-<p>Edit</p>
-<ul>
-<li>3.1 As a user, I can make note on each article.</li>
-<li>3.2 As a user, I can comment on each article.</li>
-<li>3.3 As a user, I can rename lists.</li>
-<li>3.4 As a user, I can merge lists.</li>
-<li>3.5 As a user, I can partition lists.</li>
-<li>3.6 As a user, I can copy articles from one list to another.</li>
-<li>3.7 As a user, I can move articles from one list to another.</li>
-<li>3.8 As a user, I can delete articles from lists.</li>
-<li>3.9 As a user, I can archive lists.</li>
-<li>3.10 As a user, I can retrieve archived lists.</li>
-</ul>
-</li>
-<li>
-<p>Share</p>
-<ul>
-<li>4.1 As a user, I can grant/revoke read/write access of reading list to others.</li>
-<li>4.2 As a user, I can share my reading list to a group.</li>
-<li>4.3 As a user, I can upvote/downvote each article once.</li>
-<li>4.4 As a user, I can hide my comments on articles.</li>
-</ul>
-</li>
-<li>
-<p>Moderator</p>
-<ul>
-<li>5.1 As a moderator, I can invite people to join my group.</li>
-<li>5.2 As a moderator, I can block people in my group.</li>
-<li>5.3 As a moderator, I can kick out people from my group.</li>
-<li>5.4 As a moderator, I can delete an article and keep people from reposting it.</li>
-<li>5.5 As a moderator, I can set a limit on how many suggestions each person can submit</li>
-<li>5.6 As a moderator, I can make someone else in the group the moderator.</li>
-</ul>
-</li>
-<li>
-<p>Search/Filter</p>
-<ul>
-<li>6.1 As a user, I can search article by metadata (tags).</li>
-<li>6.2 As a user, I can search article by content (keyword).</li>
-<li>6.3 As a user, I can filter article by metadata (tags).</li>
-<li>6.4 As a user, I can filter article by content (keyword).</li>
-<li>6.5 As a user, I can search a group by group name (keyword).</li>
-</ul>
-</li>
-<li>
-<p>Notification</p>
-<ul>
-<li>7.1 As a user, I can receive voting notification whenever it changes.</li>
-<li>7.2 As a user, I can receive notification when the voting end.</li>
-</ul>
-</li>
-</ol>
+                <h1 id="testing-strategy">Testing Strategy<a class="headerlink" href="#testing-strategy" title="Permanent link">&para;</a></h1>
+<h2 id="coverage">Coverage<a class="headerlink" href="#coverage" title="Permanent link">&para;</a></h2>
+<p>We believe over test cases would be able to cover around 70% of user stories.</p>
+<h2 id="method">Method<a class="headerlink" href="#method" title="Permanent link">&para;</a></h2>
+<p>Business logic can be test with Python Unit Test framework by mocking out possible network call and interaction with database.</p>
               
             </article>
           </div>
@@ -470,7 +447,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../storyboard/" title="Storyboard" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../detail-design/" title="Detail Design" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -479,19 +456,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Storyboard
+                Detail Design
               </span>
             </div>
           </a>
         
         
-          <a href="../technical-resources/" title="Technical Resources" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../../contribution-code/" title="Contribution Code" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Technical Resources
+                Contribution Code
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
