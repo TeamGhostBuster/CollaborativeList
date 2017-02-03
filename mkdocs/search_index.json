@@ -52,7 +52,7 @@
         },
         {
             "location": "/requirement-document/technical-resources/",
-            "text": "Technical Resources\n\u00b6\n\n\nFront-end\n\u00b6\n\n\n\n\nReact\n\n\nReact Components for Elasticsearch\n\n\n\n\nBack-end\n\u00b6\n\n\n\n\nFlask\n\n\nauthomatic - Oauth Library\n\n\n\n\n\n\nDeployment\n\u00b6\n\n\n\n\nDocker",
+            "text": "Technical Resources\n\u00b6\n\n\nFront-end\n\u00b6\n\n\n\n\nReact\n\n\nReact Components for Elasticsearch\n\n\n\n\nBack-end\n\u00b6\n\n\n\n\nFlask\n\n\nauthomatic - Oauth Library\n\n\nFlask-OAuthlib\n\n\nMongoEngine\n\n\n\n\nDeployment\n\u00b6\n\n\n\n\nDocker\n\n\nGit-Webhook",
             "title": "Technical Resources"
         },
         {
@@ -67,12 +67,12 @@
         },
         {
             "location": "/requirement-document/technical-resources/#back-end",
-            "text": "Flask  authomatic - Oauth Library",
+            "text": "Flask  authomatic - Oauth Library  Flask-OAuthlib  MongoEngine",
             "title": "Back-end"
         },
         {
             "location": "/requirement-document/technical-resources/#deployment",
-            "text": "Docker",
+            "text": "Docker  Git-Webhook",
             "title": "Deployment"
         },
         {
