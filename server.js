@@ -19,5 +19,4 @@ new WebpackDevServer(webpack(config), {
   }
 
   console.log(`Listening at http://${ip}:${port}`)
-  console.log('fuck')
 })
