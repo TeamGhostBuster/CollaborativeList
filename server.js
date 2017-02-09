@@ -3,7 +3,7 @@ const webpack = require('webpack')
 const WebpackDevServer = require('webpack-dev-server')
 const config = require('./webpack.config')
 
-const ip = process.env.IP || 'api.vfree.org'
+const ip = process.env.IP || '127.0.0.1'
 const port = process.env.PORT || 5000
 
 new WebpackDevServer(webpack(config), {
