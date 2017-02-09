@@ -1,6 +1,12 @@
 # Documentations
 site/
 
+# IDEA
+.idea/
+
+# build
+lib/*
+
 # Logs
 logs
 *.log
