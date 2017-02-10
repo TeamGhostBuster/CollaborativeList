@@ -9,3 +9,7 @@
 ## Open Source Components
 * Backend
     - [Elasticsearch](https://www.elastic.co/)
+    - [Flask](http://flask.pocoo.org/)
+
+* Front-end
+    - [ReactJS](https://facebook.github.io/react/)
