@@ -87,7 +87,7 @@
         },
         {
             "location": "/requirement-document/technical-resources/",
-            "text": "Technical Resources\n\u00b6\n\n\nFront-end\n\u00b6\n\n\n\n\nReact\n\n\nReact Components for Elasticsearch\n\n\n\n\nBack-end\n\u00b6\n\n\n\n\nFlask\n\n\nauthomatic - Oauth Library\n\n\nFlask-OAuthlib\n\n\nMongoEngine\n\n\n\n\nDeployment\n\u00b6\n\n\n\n\nDocker\n\n\nGit-Webhook",
+            "text": "Technical Resources\n\u00b6\n\n\nFront-end\n\u00b6\n\n\n\n\nReact\n\n\nReact Components for Elasticsearch\n\n\n\n\nBack-end\n\u00b6\n\n\n\n\nFlask\n\n\nMongoEngine\n\n\nMongoDB Schema Design\n\n\n\n\nDeployment\n\u00b6\n\n\n\n\nDocker\n\n\nGit-Webhook",
             "title": "Technical Resources"
         },
         {
@@ -102,7 +102,7 @@
         },
         {
             "location": "/requirement-document/technical-resources/#back-end",
-            "text": "Flask  authomatic - Oauth Library  Flask-OAuthlib  MongoEngine",
+            "text": "Flask  MongoEngine  MongoDB Schema Design",
             "title": "Back-end"
         },
         {
@@ -202,7 +202,7 @@
         },
         {
             "location": "/credits/",
-            "text": "Credit\n\u00b6\n\n\nContributors\n\u00b6\n\n\n\n\nAaron(Hongyang) Liu\n\n\nMichael(Zichun) Lin\n\n\nMichael Rijlaarsdam\n\n\nStephen Larsen\n\n\n\n\nOpen Source Components\n\u00b6\n\n\n\n\nBackend\n\n\nElasticsearch",
+            "text": "Credit\n\u00b6\n\n\nContributors\n\u00b6\n\n\n\n\nAaron(Hongyang) Liu\n\n\nMichael(Zichun) Lin\n\n\nMichael Rijlaarsdam\n\n\nStephen Larsen\n\n\n\n\nOpen Source Components\n\u00b6\n\n\n\n\n\n\nBackend\n\n\n\n\nElasticsearch\n\n\nFlask\n\n\n\n\n\n\n\n\nFront-end\n\n\n\n\nReactJS",
             "title": "Credit"
         },
         {
@@ -217,7 +217,7 @@
         },
         {
             "location": "/credits/#open-source-components",
-            "text": "Backend  Elasticsearch",
+            "text": "Backend   Elasticsearch  Flask     Front-end   ReactJS",
             "title": "Open Source Components"
         }
     ]
