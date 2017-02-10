@@ -393,16 +393,32 @@
 <li>
 <p>Authentication</p>
 <ul>
-<li>1.1 As a user, I can login using my Google account</li>
+<li>1.1 As a user, I can login through Oauth2 provider (Google/Facebook/Github).<ul>
+<li>Login button is recognizable.</li>
+<li>Cliking the login button will direct user to the provider's page for authentication</li>
+</ul>
+</li>
 </ul>
 </li>
 <li>
 <p>Create</p>
 <ul>
-<li>2.1 As a user, I can create a reading list.</li>
-<li>2.2 As a user, I can create a reading group.</li>
-<li>2.3 As a user, I can add metadata tags to each article.</li>
-<li>2.4 As a user, I can create reading lists for the group.</li>
+<li>2.1 As a user, I can create a reading list.<ul>
+<li>The reading list is displayed.</li>
+</ul>
+</li>
+<li>2.2 As a user, I can create a reading group.<ul>
+<li>The group is displayed.</li>
+</ul>
+</li>
+<li>2.3 As a user, I can add metadata tags to each article.<ul>
+<li>The tag is displayed.</li>
+</ul>
+</li>
+<li>2.4 As a user, I can create reading lists for the group.<ul>
+<li>The list is displayed under the group.</li>
+</ul>
+</li>
 </ul>
 </li>
 <li>
@@ -410,14 +426,43 @@
 <ul>
 <li>3.1 As a user, I can make note on each article.</li>
 <li>3.2 As a user, I can comment on each article.</li>
-<li>3.3 As a user, I can rename lists.</li>
-<li>3.4 As a user, I can merge lists.</li>
-<li>3.5 As a user, I can partition lists.</li>
-<li>3.6 As a user, I can copy articles from one list to another.</li>
-<li>3.7 As a user, I can move articles from one list to another.</li>
-<li>3.8 As a user, I can delete articles from lists.</li>
-<li>3.9 As a user, I can archive lists.</li>
-<li>3.10 As a user, I can retrieve archived lists.</li>
+<li>3.3 As a user, I can rename lists.<ul>
+<li>The list name is changed.</li>
+<li>The new list name is dieplayed.</li>
+</ul>
+</li>
+<li>3.4 As a user, I can merge lists.<ul>
+<li>The new list is displayed</li>
+<li>Previous lists are gone.</li>
+</ul>
+</li>
+<li>3.5 As a user, I can partition lists.<ul>
+<li>A new list is displayed.</li>
+<li>Previous list is splited into two.</li>
+</ul>
+</li>
+<li>3.6 As a user, I can copy articles from one list to another.<ul>
+<li>A duplicated article is displayed in another list.</li>
+</ul>
+</li>
+<li>3.7 As a user, I can move articles from one list to another.<ul>
+<li>The article is displyed in another list.</li>
+<li>The article is no longer in the previous list.</li>
+</ul>
+</li>
+<li>3.8 As a user, I can delete articles from lists.<ul>
+<li>The article is not in the list anymore.</li>
+</ul>
+</li>
+<li>3.9 As a user, I can archive lists.<ul>
+<li>The list will not be displayed.</li>
+<li>User may retrive it.</li>
+</ul>
+</li>
+<li>3.10 As a user, I can retrieve archived lists.<ul>
+<li>The list is displayed.</li>
+</ul>
+</li>
 </ul>
 </li>
 <li>
