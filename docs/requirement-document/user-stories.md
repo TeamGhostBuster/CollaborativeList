@@ -1,25 +1,44 @@
 # User Story
 
 1. Authentication
-    - 1.1 As a user, I can login using my Google account
+    - 1.1 As a user, I can login through Oauth2 provider (Google/Facebook/Github).
+        * Login button is recognizable.
+        * Cliking the login button will direct user to the provider's page for authentication
 
 2. Create
     - 2.1 As a user, I can create a reading list.
+        * The reading list is displayed.
     - 2.2 As a user, I can create a reading group.
+        * The group is displayed.
     - 2.3 As a user, I can add metadata tags to each article.
+        * The tag is displayed.
     - 2.4 As a user, I can create reading lists for the group.
+        * The list is displayed under the group.
 
 3. Edit
     - 3.1 As a user, I can make note on each article.
     - 3.2 As a user, I can comment on each article.
     - 3.3 As a user, I can rename lists.
+        * The list name is changed.
+        * The new list name is dieplayed.
     - 3.4 As a user, I can merge lists.
+        * The new list is displayed
+        * Previous lists are gone.
     - 3.5 As a user, I can partition lists.
+        * A new list is displayed.
+        * Previous list is splited into two.
     - 3.6 As a user, I can copy articles from one list to another.
+        * A duplicated article is displayed in another list.
     - 3.7 As a user, I can move articles from one list to another.
+        * The article is displyed in another list.
+        * The article is no longer in the previous list.
     - 3.8 As a user, I can delete articles from lists.
+        * The article is not in the list anymore.
     - 3.9 As a user, I can archive lists.
+        * The list will not be displayed.
+        * User may retrive it.
     - 3.10 As a user, I can retrieve archived lists.
+        * The list is displayed.
 
 4. Share
     - 4.1 As a user, I can grant/revoke read/write access of reading list to others.
