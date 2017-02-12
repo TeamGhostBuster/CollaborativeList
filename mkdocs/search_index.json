@@ -97,7 +97,7 @@
         },
         {
             "location": "/requirement-document/technical-resources/",
-            "text": "Technical Resources\n\u00b6\n\n\nFront-end\n\u00b6\n\n\n\n\nReact\n\n\nReact Components for Elasticsearch\n\n\n\n\nBack-end\n\u00b6\n\n\n\n\nFlask\n\n\nMongoEngine\n\n\nMongoDB Schema Design\n\n\n\n\nDeployment\n\u00b6\n\n\n\n\nDocker\n\n\nGit-Webhook",
+            "text": "Technical Resources\n\u00b6\n\n\nFront-end\n\u00b6\n\n\n\n\nReact\n\n\nReact Components for Elasticsearch\n\n\n\n\nBack-end\n\u00b6\n\n\n\n\nFlask\n\n\nMongoEngine\n\n\nMongoDB Schema Design\n\n\n\n\nPush Notification\n\u00b6\n\n\n\n\nOneSignal\n\n\n\n\nDeployment\n\u00b6\n\n\n\n\nDocker\n\n\nGit-Webhook",
             "title": "Technical Resources"
         },
         {
@@ -114,6 +114,11 @@
             "location": "/requirement-document/technical-resources/#back-end",
             "text": "Flask  MongoEngine  MongoDB Schema Design",
             "title": "Back-end"
+        },
+        {
+            "location": "/requirement-document/technical-resources/#push-notification",
+            "text": "OneSignal",
+            "title": "Push Notification"
         },
         {
             "location": "/requirement-document/technical-resources/#deployment",
