@@ -513,14 +513,18 @@
 <ul>
 <li>2.1 As a user, I can create a reading list.<ul>
 <li>The reading list is displayed.</li>
+<li>Creating a list will lead to a form filling in the necessary information about the list.</li>
+<li>When the action is done, there should be a list object on the server.</li>
 </ul>
 </li>
 <li>2.2 As a user, I can create a reading group.<ul>
 <li>The group is displayed.</li>
+<li>When the action is done, there should be a new group object on the server.</li>
 </ul>
 </li>
 <li>2.3 As a user, I can add metadata tags to each article.<ul>
 <li>The tag is displayed.</li>
+<li>The tag is associated with the article</li>
 </ul>
 </li>
 <li>2.4 As a user, I can create reading lists for the group.<ul>
@@ -530,11 +534,11 @@
 </ul>
 <h2 id="3-edit">3. Edit<a class="headerlink" href="#3-edit" title="Permanent link">&para;</a></h2>
 <ul>
-<li>3.1 As a user, I can make note on each article.</li>
+<li>3.1 As a user, I can add description to each article.</li>
 <li>3.2 As a user, I can comment on each article.</li>
 <li>3.3 As a user, I can rename lists.<ul>
 <li>The list name is changed.</li>
-<li>The new list name is dieplayed.</li>
+<li>The new list name is displayed.</li>
 </ul>
 </li>
 <li>3.4 As a user, I can merge lists.<ul>
@@ -572,32 +576,90 @@
 </ul>
 <h2 id="4-share">4. Share<a class="headerlink" href="#4-share" title="Permanent link">&para;</a></h2>
 <ul>
-<li>4.1 As a user, I can grant/revoke read/write access of reading list to others.</li>
-<li>4.2 As a user, I can share my reading list to a group.</li>
-<li>4.3 As a user, I can upvote/downvote each article once.</li>
-<li>4.4 As a user, I can hide my comments on articles.</li>
+<li>4.1 As a user, I can grant/revoke read/write access of reading list to others.<ul>
+<li>Others will able/unable to read/write my list.</li>
+</ul>
+</li>
+<li>4.2 As a user, I can share my reading list to a group.<ul>
+<li>The reading list will show up in the group's reading list.</li>
+<li>The group has ownership to the new list.</li>
+</ul>
+</li>
+<li>4.3 As a user, I can upvote/downvote each article once.<ul>
+<li>It will indicate that the vote has changed.</li>
+</ul>
+</li>
+<li>4.4 As a user, I can hide my comments on articles.<ul>
+<li>Other user cannot see my comment.</li>
+</ul>
+</li>
 </ul>
 <h2 id="5-moderator">5. Moderator<a class="headerlink" href="#5-moderator" title="Permanent link">&para;</a></h2>
 <ul>
-<li>5.1 As a moderator, I can invite people to join my group.</li>
-<li>5.2 As a moderator, I can block people in my group.</li>
-<li>5.3 As a moderator, I can kick out people from my group.</li>
-<li>5.4 As a moderator, I can delete an article and keep people from reposting it.</li>
-<li>5.5 As a moderator, I can set a limit on how many suggestions each person can submit</li>
-<li>5.6 As a moderator, I can make someone else in the group the moderator.</li>
+<li>5.1 As a moderator, I can invite people to join my group.<ul>
+<li>The group will show up in the user's group list.</li>
+</ul>
+</li>
+<li>5.2 As a moderator, I can block people in my group.<ul>
+<li>The user who got blocked will no longer able to take any action in the group.</li>
+</ul>
+</li>
+<li>5.3 As a moderator, I can kick out people from my group.<ul>
+<li>The user who got kicked will lose access to the group.</li>
+</ul>
+</li>
+<li>5.4 As a moderator, I can delete an article and keep people from reposting it.<ul>
+<li>The article I deleted cannot be posted by other user.</li>
+</ul>
+</li>
+<li>5.5 As a moderator, I can set a limit on how many suggestions each person can submit<ul>
+<li>User cannot suggest amount of articles above the limit.</li>
+<li>When user excess the limit, the user will receive a alert.</li>
+</ul>
+</li>
+<li>5.6 As a moderator, I can make someone else in the group the moderator.<ul>
+<li>The user will have ownership of the group.</li>
+</ul>
+</li>
 </ul>
 <h2 id="6-searchfilter">6. Search/Filter<a class="headerlink" href="#6-searchfilter" title="Permanent link">&para;</a></h2>
 <ul>
-<li>6.1 As a user, I can search article by metadata (tags).</li>
-<li>6.2 As a user, I can search article by content (keyword).</li>
-<li>6.3 As a user, I can filter article by metadata (tags).</li>
-<li>6.4 As a user, I can filter article by content (keyword).</li>
-<li>6.5 As a user, I can search a group by group name (keyword).</li>
+<li>6.1 As a user, I can search article by tags.<ul>
+<li>I can see articles that match.</li>
+<li>I can add one of them to my own list.</li>
+</ul>
+</li>
+<li>6.2 As a user, I can search article by name and description.<ul>
+<li>I can see articles that match.</li>
+<li>I can add one of them to my own list.</li>
+</ul>
+</li>
+<li>6.3 As a user, I can filter article by tags.<ul>
+<li>I can see articles that match.</li>
+<li>I can add one of them to my own list.</li>
+</ul>
+</li>
+<li>6.4 As a user, I can filter article by name and description.<ul>
+<li>I can see articles that match.</li>
+<li>I can add one of them to my own list.</li>
+</ul>
+</li>
+<li>6.5 As a user, I can search a group by group name.<ul>
+<li>I can see articles that match.</li>
+<li>I can add one of them to my own list.</li>
+</ul>
+</li>
 </ul>
 <h2 id="7-notification">7. Notification<a class="headerlink" href="#7-notification" title="Permanent link">&para;</a></h2>
 <ul>
-<li>7.1 As a user, I can receive voting notification whenever it changes.</li>
-<li>7.2 As a user, I can receive notification when the voting end.</li>
+<li>7.1 As a user, I can receive voting notification whenever it changes.<ul>
+<li>I can see a alert on my browser.</li>
+</ul>
+</li>
+<li>7.2 As a user, I can receive notification when the voting end.<ul>
+<li>I can see a alert on my browser.</li>
+</ul>
+</li>
 </ul>
               
             </article>
