@@ -8,6 +8,9 @@
 ## 2. Create
 - 2.1 As a user, I can create a reading list.
     * The reading list is displayed.
+    * Creating a list will lead to a form filling in the necessary information about the list.
+    * When the action is done, there should be a list object on the sercver.
+    
 - 2.2 As a user, I can create a reading group.
     * The group is displayed.
 - 2.3 As a user, I can add metadata tags to each article.
@@ -16,7 +19,7 @@
     * The list is displayed under the group.
 
 ## 3. Edit
-- 3.1 As a user, I can make note on each article.
+- 3.1 As a user, I can add description to each article.
 - 3.2 As a user, I can comment on each article.
 - 3.3 As a user, I can rename lists.
     * The list name is changed.
@@ -55,11 +58,11 @@
 - 5.6 As a moderator, I can make someone else in the group the moderator.
 
 ## 6. Search/Filter
-- 6.1 As a user, I can search article by metadata (tags).
-- 6.2 As a user, I can search article by content (keyword).
-- 6.3 As a user, I can filter article by metadata (tags).
-- 6.4 As a user, I can filter article by content (keyword).
-- 6.5 As a user, I can search a group by group name (keyword).
+- 6.1 As a user, I can search article by tags.
+- 6.2 As a user, I can search article by name and description.
+- 6.3 As a user, I can filter article by tags.
+- 6.4 As a user, I can filter article by name and description.
+- 6.5 As a user, I can search a group by group name.
 
 ## 7. Notification
 - 7.1 As a user, I can receive voting notification whenever it changes.
