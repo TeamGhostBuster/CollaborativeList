@@ -1,7 +1,7 @@
 # CollaborativeList
 
 ## Contribution Code
-**Please read** the [Contribution Code](https://teamghostbuster.github.io/contribution-code/)
+**Please read** the [Contribution Code](https://teamghostbuster.github.io/CollaborativeList/contribution-code/)
 
 ## Documentation
 * [Requirement Documentation](https://teamghostbuster.github.io/CollaborativeList/)
