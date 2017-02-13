@@ -177,7 +177,7 @@
         },
         {
             "location": "/software-design/testing/",
-            "text": "Testing Strategy\n\u00b6\n\n\nCoverage\n\u00b6\n\n\nWe believe over test cases would be able to cover around 70% of user stories.\n\n\nMethod\n\u00b6\n\n\nBusiness logic can be test with Python Unit Test framework by mocking out possible network call and interaction with database.",
+            "text": "Testing Strategy\n\u00b6\n\n\nCoverage\n\u00b6\n\n\nWe believe over test cases would be able to cover around 70% of user stories.\n\n\nMethod\n\u00b6\n\n\nBusiness logic can be test with Python Unit Test framework by mocking out possible network call and interaction with database.\n\n\nTest Cases\n\u00b6\n\n\nTBA",
             "title": "Testing"
         },
         {
@@ -194,6 +194,11 @@
             "location": "/software-design/testing/#method",
             "text": "Business logic can be test with Python Unit Test framework by mocking out possible network call and interaction with database.",
             "title": "Method"
+        },
+        {
+            "location": "/software-design/testing/#test-cases",
+            "text": "TBA",
+            "title": "Test Cases"
         },
         {
             "location": "/contribution-code/",
