@@ -21,7 +21,11 @@
 
 ## 3. Edit
 - 3.1 As a user, I can add description to each article.
+    * I can see the description.
+    * It is saved to the database.
 - 3.2 As a user, I can comment on each article.
+    * I can see the comment.
+    * It is saved to the database.
 - 3.3 As a user, I can rename lists.
     * The list name is changed.
     * The new list name is displayed.
