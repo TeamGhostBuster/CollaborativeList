@@ -2,7 +2,7 @@ import React from 'react'
 import { Route, IndexRoute, Redirect, browserHistory } from 'react-router'
 
 import App from 'components/App'
-import { HomePage, LoginPage } from 'components'
+import { HomePage, LoginPage, ListsPage, ArticlePage } from 'components'
 
 import cookie from 'react-cookie'
 
@@ -37,7 +37,14 @@ function requireLogIn(nextState, replace) {
 
 const routes = (
   <Route path='/' component={App}>
-    <IndexRoute component={HomePage} onEnter={requireLogIn}/>
+    /*<IndexRoute component={HomePage} onEnter={requireLogIn}/>*/
+    <IndexRoute component={HomePage}/>
+    <Route path='/personal' component={ListsPage} >
+      <Route path="/aritical" component={ArticlePage} />
+    </Route>
+    <Route path='/group' component={ListsPage} >
+      <Route path="/aritical" component={ArticlePage} />
+    </Route>
     <Route path='/login' component={LoginPage} />
     {/*<Route path='/home' component={HomePage} onEnter={} />*/}
   </Route>
