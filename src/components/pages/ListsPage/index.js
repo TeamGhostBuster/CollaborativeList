@@ -2,49 +2,56 @@ import React from 'react'
 import {browserHistory} from 'react-router'
 import List from './subComponent/List'
 import cookie from 'react-cookie'
-
+import Axios from 'axios'
 
 export default class ListsPage extends React.Component {
   constructor(){
     super();
     this.getLists = this.getLists.bind(this);
-    this.lists=[];
+    this.state = {lists:[]};
+  }
+
+  componentDidMount(){
+    var that = this;
+    const cb = (response) => {
+      console.log(response)
+      that.setState({ lists: response['lists']});
+    };
+    this.getLists(cb);
   }
 
   getLists(callback){
-    var xhr = new XMLHttpRequest();
-    //todo: change it later
-    const host = "http://"+window.location.host;
-    //const host = "https://api.vfree.org";
-    xhr.open('GET', host+'/user/lists');
-    //todo: change it back to not hard-coded
-    xhr.setRequestHeader("Access-Token","ya29.Glz5AzA3XFq6DSUDSeeIYIIxIXSPe5rdwIqvRe-tSqUrKW5tyW25ql5S9zs8eRdknLyzK4cGgoAdOVyRWKurMAjTwN7wGNva2WuByptXut8Crljlvgq72IKHjLz4ow");
-    //xhr.setRequestHeader("Access-Token",cookie.load("Access-Token"));
-    xhr.onreadystatechange = () => {
-      if (xhr.readyState === 4){
-        if (xhr.status === 200){
-          console.log(xhr.response);
-          const response = JSON.parse(xhr.response);
-          callback(response);
-        } else {
-          console.log(xhr.status);
-          console.log("bad request for getting lists");
-          //browserHistory.push('/login');
+    //todo: remove the hardcoded part
+    const host = window.location.host;
+    const token = cookie.load('Access-Token');
+
+    var http = Axios.create({
+      baseURL: "https://api.vfree.org",
+      responseType: "json",
+      headers: {"Access-Token":"michaellam.lzc"},
+    });
+
+    http.get('/user/lists')
+      .then((respond) =>{
+        if (respond.status===200){
+
+          callback(respond.data);
         }
-      }
-    };
-    xhr.send(null);
+      })
+      .catch((err) => {
+        console.log(err);
+        if (err.status===401){
+          console.log("invalid token");
+        } else {
+          console.log("invalid request of lists info1111");
+        }
+      })
   }
 
   render() {
-    const cb = (response) => {
-      this.lists = response['lists'];
-    };
 
-    this.getLists(cb);
-
-    const liItems = this.lists.map((listObject) =>
-      <List id={listObject['id']} name={listObject['name']} />
+    const liItems = this.state.lists.map((listObject) =>
+      <List key={listObject['id']} id=={listObject['id']} name={listObject['name']} />
     );
 
     return(
@@ -57,3 +64,4 @@ export default class ListsPage extends React.Component {
     );
   }
 }
+

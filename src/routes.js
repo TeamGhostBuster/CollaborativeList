@@ -3,7 +3,7 @@ import { Route, IndexRoute, Redirect, browserHistory } from 'react-router'
 
 import App from 'components/App'
 import { HomePage, LoginPage, ListsPage, ArticlePage } from 'components'
-
+import Axois from 'axios'
 import cookie from 'react-cookie'
 
 
@@ -13,6 +13,10 @@ function requireLogIn(nextState, replace) {
     browserHistory.push('/login')
   } else {
     const url = 'https://www.googleapis.com/oauth2/v3/tokeninfo?access_token='+token;
+    var http = Axois.create({
+
+    })
+
     var xhr = new XMLHttpRequest();
     xhr.open('POST', url);
     xhr.onreadystatechange = function(){
