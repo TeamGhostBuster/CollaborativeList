@@ -43,13 +43,13 @@ const routes = (
   <Route path='/' component={App}>
     /*<IndexRoute component={HomePage} onEnter={requireLogIn}/>*/
     <IndexRoute component={HomePage}/>
-    <Route path='/personal' component={ListsPage} >
-      <Route path="/aritical" component={ArticlePage} />
+    <Route path='personal' component={ListsPage} >
+      <Route path="article" component={ArticlePage} />
     </Route>
-    <Route path='/group' component={ListsPage} >
-      <Route path="/aritical" component={ArticlePage} />
+    <Route path='group' component={ListsPage} >
+      <Route path="article" component={ArticlePage} />
     </Route>
-    <Route path='/login' component={LoginPage} />
+    <Route path='login' component={LoginPage} />
     {/*<Route path='/home' component={HomePage} onEnter={} />*/}
   </Route>
 );

@@ -7,7 +7,7 @@ export default class ArticleCard extends React.Component {
   render() {
     return(
       <li style={{border: 'solid 1px black', backgroundColor:'red'}}>
-        title: {this.props.title}<br/>
+        title: {this.props.title} <br/>
       </li>
     );
   }
