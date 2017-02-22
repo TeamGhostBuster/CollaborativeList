@@ -14,11 +14,11 @@ export default class ListsPage extends React.Component {
   getLists(callback){
     var xhr = new XMLHttpRequest();
     //todo: change it later
-    //const host = "https://"+window.location.host;
-    const host = "https://api.vfree.org";
-    xhr.open('GET', host+'/user/list');
+    const host = "http://"+window.location.host;
+    //const host = "https://api.vfree.org";
+    xhr.open('GET', host+'/user/lists');
     //todo: change it back to not hard-coded
-    xhr.setRequestHeader('Access-Token',"ya29.Glz5AzA3XFq6DSUDSeeIYIIxIXSPe5rdwIqvRe-tSqUrKW5tyW25ql5S9zs8eRdknLyzK4cGgoAdOVyRWKurMAjTwN7wGNva2WuByptXut8Crljlvgq72IKHjLz4ow")
+    xhr.setRequestHeader("Access-Token","ya29.Glz5AzA3XFq6DSUDSeeIYIIxIXSPe5rdwIqvRe-tSqUrKW5tyW25ql5S9zs8eRdknLyzK4cGgoAdOVyRWKurMAjTwN7wGNva2WuByptXut8Crljlvgq72IKHjLz4ow");
     //xhr.setRequestHeader("Access-Token",cookie.load("Access-Token"));
     xhr.onreadystatechange = () => {
       if (xhr.readyState === 4){
