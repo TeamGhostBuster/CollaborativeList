@@ -13,6 +13,7 @@ export default class ListsPage extends React.Component {
     super();
     this.getLists = this.getLists.bind(this);
     this.state = {lists:[<div key="something"></div>]};
+    this.componentWillMount = this.componentWillMount.bind(this);
     this.styles = {
       root: {
         display: 'flex',
@@ -77,7 +78,7 @@ export default class ListsPage extends React.Component {
         <div style={this.styles.root}>
           <ul style={this.styles.List}>
             {this.state.lists}
-            <CreateList/>
+            <CreateList reloadCallback={this.componentWillMount}/>
           </ul>
         </div>
         {console.log(this.props.location.pathname === '/personal')}

@@ -2,7 +2,7 @@ import React from 'react'
 import { Route, IndexRoute, browserHistory } from 'react-router'
 
 import App from 'components/App'
-import { HomePage, LoginPage, ListsPage, ArticlePage, CreateArticlePage} from 'components'
+import { HomePage, LoginPage, ListsPage, ArticlePage} from 'components'
 
 
 
@@ -15,8 +15,6 @@ const routes = (
     <Route path='/group' component={ListsPage} />
     <Route path="/group/article" component={ArticlePage} />
     <Route path='/login' component={LoginPage} />
-    <Route path='/createArticlePage' component={CreateArticlePage} />
-    <Route path='/createListPage' component={CreateArticlePage} />
     {/*<Route path='/home' component={HomePage} onEnter={} />*/}
   </Route>
 );

@@ -36,8 +36,8 @@ export default class UpperSection extends React.Component {
     return (
       <div style={this.styles.root}>
         <ul>
-        <Card onClick={this.goToLists}>
-          <CardText>
+        <Card expandable={true} onExpandChange={this.goToLists}>
+          <CardText actAsExpander={true}>
             Personal Lists <br/><br/><br/>
           </CardText>
         </Card>

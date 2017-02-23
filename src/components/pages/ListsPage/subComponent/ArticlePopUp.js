@@ -151,9 +151,12 @@ export default class CreateList extends React.Component {
   tagDelete(key) {
     //todo change this.state.tags
     this.tagsData = this.state.tagsData;
+    this.tags = this.state.tags;
     const chipToDelete = this.tagsData.map((chip) => chip.key).indexOf(key);
     this.tagsData.splice(chipToDelete, 1);
+    this.tags.splice(chipToDelete, 1);
     this.setState({tagsData: this.tagsData});
+    this.setState({tags:this.tags});
   };
 
   rendeTag(data) {
