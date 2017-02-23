@@ -2,8 +2,8 @@ import React from 'react'
 import { Route, IndexRoute, Redirect, browserHistory } from 'react-router'
 
 import App from 'components/App'
-import { HomePage, LoginPage, ListsPage, ArticlePage } from 'components'
-import Axois from 'axios'
+import { HomePage, LoginPage, ListsPage, ArticlePage, CreateArticlePage} from 'components'
+import Axios from 'axios'
 import cookie from 'react-cookie'
 
 
@@ -13,7 +13,7 @@ function requireLogIn(nextState, replace) {
     browserHistory.push('/login')
   } else {
     const url = 'https://www.googleapis.com/oauth2/v3/tokeninfo?access_token='+token;
-    var http = Axois.create({
+    var http = Axios.create({
 
     })
 
@@ -41,15 +41,15 @@ function requireLogIn(nextState, replace) {
 
 const routes = (
   <Route path='/' component={App}>
-    /*<IndexRoute component={HomePage} onEnter={requireLogIn}/>*/
-    <IndexRoute component={HomePage}/>
-    <Route path='personal' component={ListsPage} >
-      <Route path="article" component={ArticlePage} />
-    </Route>
-    <Route path='group' component={ListsPage} >
-      <Route path="article" component={ArticlePage} />
-    </Route>
-    <Route path='login' component={LoginPage} />
+    <IndexRoute component={HomePage} onEnter={requireLogIn}/>
+    /*<IndexRoute component={HomePage}/>*/
+    <Route path='/personal' component={ListsPage} />
+    <Route path="/personal/article" component={ArticlePage} />
+    <Route path='/group' component={ListsPage} />
+    <Route path="/group/article" component={ArticlePage} />
+    <Route path='/login' component={LoginPage} />
+    <Route path='/createArticlePage' component={CreateArticlePage} />
+    <Route path='/createListPage' component={CreateArticlePage} />
     {/*<Route path='/home' component={HomePage} onEnter={} />*/}
   </Route>
 );

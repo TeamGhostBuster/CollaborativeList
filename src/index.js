@@ -6,6 +6,7 @@ import { useScroll } from 'react-router-scroll'
 
 import routes from 'routes'
 
+
 const root = document.getElementById('app')
 
 const renderApp = () => (

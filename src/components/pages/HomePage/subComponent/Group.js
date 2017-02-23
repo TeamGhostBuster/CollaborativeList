@@ -7,6 +7,10 @@ export default class Group extends React.Component {
   }
 
   render() {
-    return
+    return(
+      <div style={{border: 'solid 1px', width:'350px', height:'200px', textAlign:'center'}} onClick={this.goToLists}>
+        Personal Lists
+      </div>
+    );
   }
 }

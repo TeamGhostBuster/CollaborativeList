@@ -1,18 +1,31 @@
 
 import React from 'react'
-import {brwoserHistory} from 'react-router'
+import {browserHistory} from 'react-router'
 import cookie from 'react-cookie'
 import ArticleCard from './ArticleCard'
 import Axios from 'axios'
+import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card'
+import AppBar from 'material-ui/AppBar'
+import CreateArticle from './CreateArticle'
+
 
 export default class List extends React.Component {
   constructor(){
     super();
     this.getArticles = this.getArticles.bind(this);
     this.state = {articles:[]}
+    this.styles = {
+      list: {
+        paddingLeft: '10px',
+        paddingRight: '10px'
+      },
+      articleList: {
+        padding:'0'
+      }
+    }
   }
 
-  componentDidMount(){
+  componentWillMount(){
     var that = this;
     const cb = (response) => {
       that.setState({articles: response["articles"]})
@@ -50,18 +63,26 @@ export default class List extends React.Component {
 
   }
 
+
+
   render() {
+    console.log("djkdkjdkjk");
     const liItems = this.state.articles.map((article) =>
       <ArticleCard key={article['id']} id={article['id']} title={article['title']} />
     );
 
     return(
-      <li style={{border:'solid read 2px'}}>
-        {console.log(this.props.name)}
-        {this.props.name}
-        <ul>
-          {liItems}
-        </ul>
+      <li style={this.styles.list}>
+        <Card>
+          {console.log(this.props.name)}
+          <CardMedia>
+            <AppBar title={this.props.name} iconElementLeft={<div/>} iconElementRight={<div/>}/>
+            <ul style={this.styles.articleList}>
+              {liItems}
+              <CreateArticle/>
+            </ul>
+          </CardMedia>
+        </Card>
       </li>
     );
   }

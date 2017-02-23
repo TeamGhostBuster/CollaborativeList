@@ -3,19 +3,39 @@ import {browserHistory} from 'react-router'
 import List from './subComponent/List'
 import cookie from 'react-cookie'
 import Axios from 'axios'
+import CreateList from './subComponent/CreateList'
+import {AppBar, RaisedButton, GridList} from 'material-ui'
+
 
 export default class ListsPage extends React.Component {
   constructor(){
     super();
     this.getLists = this.getLists.bind(this);
-    this.state = {lists:[]};
+    this.state = {lists:[<div key="something"></div>]};
+    this.styles = {
+      root: {
+        display: 'flex',
+        flexWrap: 'wrap',
+        justifyContent: 'flex-start',
+        height: '100%'
+      },
+      List: {
+        listStyle:'none',
+        display: 'flex',
+        flexWrap: 'nowrap',
+        overflowX: 'auto',
+        padding: '0'
+      }
+    };
   }
 
-  componentDidMount(){
+  componentWillMount(){
     var that = this;
     const cb = (response) => {
       console.log(response)
-      that.setState({ lists: response['lists']});
+      const listObjs = response['lists'];
+      this.setState({lists:listObjs.map((listObject) =>
+              <List key={listObject['id']} id={listObject['id']} name={listObject['name']} />)})
     };
     this.getLists(cb);
   }
@@ -48,18 +68,19 @@ export default class ListsPage extends React.Component {
       })
   }
 
-  render() {
 
-    const liItems = this.state.lists.map((listObject) =>
-      <List key={listObject['id']} id=={listObject['id']} name={listObject['name']} />
-    );
-
+  render(){
     return(
       <div>
-        <ul>
-          {liItems}
-        </ul>
+        <AppBar title='Personal' iconElementRight={<RaisedButton label='back' onClick={browserHistory.goBack}/>} iconElementLeft={<div></div>}/>
+        <div style={this.styles.root}>
+          <ul style={this.styles.List}>
+            {this.state.lists}
+            <CreateList/>
+          </ul>
+        </div>
         {console.log(this.props.location.pathname === '/personal')}
+
       </div>
     );
   }
