@@ -13,7 +13,8 @@ export default class List extends React.Component {
   constructor(){
     super();
     this.getArticles = this.getArticles.bind(this);
-    this.state = {articles:[]}
+    this.state = {articles:[]};
+    this.componentWillMount = this.componentWillMount.bind(this);
     this.styles = {
       list: {
         paddingLeft: '10px',
@@ -70,7 +71,7 @@ export default class List extends React.Component {
     const liItems = this.state.articles.map((article) =>
       <ArticleCard key={article['id']} id={article['id']} title={article['title']} />
     );
-
+    //todo:archive
     return(
       <li style={this.styles.list}>
         <Card>
@@ -79,7 +80,7 @@ export default class List extends React.Component {
             <AppBar title={this.props.name} iconElementLeft={<div/>} iconElementRight={<div/>}/>
             <ul style={this.styles.articleList}>
               {liItems}
-              <CreateArticle listId={this.props.id}/>
+              <CreateArticle listId={this.props.id} callback={this.componentWillMount}/>
             </ul>
           </CardMedia>
         </Card>

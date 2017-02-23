@@ -34,7 +34,7 @@ export default class ListsPage extends React.Component {
     const cb = (response) => {
       console.log(response)
       const listObjs = response['lists'];
-      this.setState({lists:listObjs.map((listObject) =>
+      this.setState({lists:listObjs.filter((obj)=>!obj['archived']).map((listObject) =>
               <List key={listObject['id']} id={listObject['id']} name={listObject['name']} />)})
     };
     this.getLists(cb);

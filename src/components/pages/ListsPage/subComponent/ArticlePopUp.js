@@ -5,8 +5,9 @@ import TextField from 'material-ui/TextField'
 import ContentAdd from 'material-ui/svg-icons/content/add'
 import deepOrangeA400 from 'material-ui/styles/colors';
 import FlatButton from 'material-ui/FlatButton'
-
+import Chip from 'material-ui/Chip'
 import Axios from 'axios'
+import cookie from 'react-cookie'
 
 export default class CreateList extends React.Component {
   constructor(props){
@@ -82,17 +83,21 @@ export default class CreateList extends React.Component {
       responseType: "json",
       headers: {
         "Access-Token":"michaellam.lzc",
-        "list_id":listId,
-        "title":this.state.title,
-        "description":this.state.description,
-        "url":this.state.url,
-        "tags":this.state.tags
-      },
+        "Content-Type":"application/json",
+        "Content-Length":"10"
+      }
     });
 
-    http.post('/user/article/')
+    http.post('/user/article', {
+        list_id:listId,
+        title:this.state.title,
+        description:this.state.description,
+        url:this.state.url,
+        tags:this.state.tags,
+      })
       .then((respond) =>{
         if (respond.status===200){
+          this.props.callback();
           callback();
         }
       })
@@ -121,12 +126,13 @@ export default class CreateList extends React.Component {
 
   /*=======================================================*/
   TagOpen(){
-    this.setState({AddTag:true});
+    console.log(this.state.Add);
+    this.setState({addTag:true});
   }
 
   TagClose(){
     this.setState({tag:''});
-    this.setState({AddTag:false});
+    this.setState({addTag:false});
   }
 
   TagFinish() {
@@ -138,16 +144,12 @@ export default class CreateList extends React.Component {
       this.setState({tags:this.newTags});
       this.setState({tagsData:this.newTagsData});
       this.setState({tag:''});
-      this.setState({AddTag:false});
+      this.setState({addTag:false});
     }
   }
 
   tagDelete(key) {
-    if (key === 3) {
-      alert('Why would you want to delete React?! :)');
-      return;
-    }
-
+    //todo change this.state.tags
     this.tagsData = this.state.tagsData;
     const chipToDelete = this.tagsData.map((chip) => chip.key).indexOf(key);
     this.tagsData.splice(chipToDelete, 1);
@@ -203,7 +205,7 @@ export default class CreateList extends React.Component {
     return (
       <div>
         <RaisedButton label="Add Article" fullWidth={true} primary={true} icon={<ContentAdd/>}  onTouchTap={this.handleOpen}/>
-        <Dialog open={this.state.open} actions={formActions} modal={true} title="Create Article">
+        <Dialog open={this.state.open} actions={formActions} modal={true} title="Create Article" autoScrollBodyContent={true}>
           {form}
         </Dialog>
       </div>
