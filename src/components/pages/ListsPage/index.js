@@ -1,4 +1,5 @@
 import React from 'react'
+import { PageTemplate } from 'components'
 import {browserHistory} from 'react-router'
 import List from './subComponent/List'
 import cookie from 'react-cookie'
@@ -71,7 +72,7 @@ export default class ListsPage extends React.Component {
 
   render(){
     return(
-      <div>
+      <PageTemplate>
         <AppBar title='Personal' iconElementRight={<RaisedButton label='back' onClick={browserHistory.goBack}/>} iconElementLeft={<div></div>}/>
         <div style={this.styles.root}>
           <ul style={this.styles.List}>
@@ -81,7 +82,7 @@ export default class ListsPage extends React.Component {
         </div>
         {console.log(this.props.location.pathname === '/personal')}
 
-      </div>
+      </PageTemplate>
     );
   }
 }
