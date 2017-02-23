@@ -79,7 +79,7 @@ export default class List extends React.Component {
             <AppBar title={this.props.name} iconElementLeft={<div/>} iconElementRight={<div/>}/>
             <ul style={this.styles.articleList}>
               {liItems}
-              <CreateArticle/>
+              <CreateArticle listId={this.props.id}/>
             </ul>
           </CardMedia>
         </Card>
