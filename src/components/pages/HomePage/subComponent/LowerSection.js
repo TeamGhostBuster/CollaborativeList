@@ -19,7 +19,7 @@ export default class LowerSection extends React.Component {
       this.setState({lists:listObjs.map((listObject) =>
               <List key={listObject['id']} id={listObject['id']} name={listObject['name']} />)})
     };
-    this.getLists(cb);
+    //this.getLists(cb);
   }
 
   getGroups(){

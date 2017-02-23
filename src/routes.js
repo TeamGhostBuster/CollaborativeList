@@ -9,13 +9,11 @@ import cookie from 'react-cookie'
 
 function requireLogIn(nextState, replace) {
   const token = cookie.load('Access-Token');
+  console.log("hereeeee");
   if (token === undefined){
     browserHistory.push('/login')
   } else {
     const url = 'https://www.googleapis.com/oauth2/v3/tokeninfo?access_token='+token;
-    var http = Axios.create({
-
-    })
 
     var xhr = new XMLHttpRequest();
     xhr.open('POST', url);
