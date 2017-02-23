@@ -12,7 +12,7 @@ import cookie from 'react-cookie'
 export default class CreateList extends React.Component {
   constructor(props){
     super(props);
-    this.state = {open:false, addTag:false, title:'', description:'', url:'', tag:'', tags:[], tagsData:[]};
+    this.state = {open:false, addTag:false, title:'', description:'', url:'', tag:'', tags:[], tagsData:[], requireTitle:"required", requireDescription:"required"};
 
     this.styles = {
       chip: {
@@ -45,10 +45,20 @@ export default class CreateList extends React.Component {
   /*=====================handling text field==================================*/
   titleChange(event) {
     this.setState({title :event.target.value});
+    if (event.target.value !== ""){
+      this.setState({requireTitle:""});
+    } else {
+      this.setState({requireTitle:"required"});
+    }
   }
 
   descriptionChange(event){
     this.setState({description :event.target.value});
+    if (event.target.value !==""){
+      this.setState({requireDescription:""});
+    } else {
+      this.setState({requireDescription:"required"});
+    }
   }
 
   urlChange(event){
@@ -69,6 +79,8 @@ export default class CreateList extends React.Component {
     this.setState({description:''});
     this.setState({url:''});
     this.setState({tags:[]});
+    this.setState({requireTitle:"required"});
+    this.setState({requireDescription:"required"});
     this.setState({open:false});
   }
 
@@ -84,7 +96,6 @@ export default class CreateList extends React.Component {
       headers: {
         "Access-Token":"michaellam.lzc",
         "Content-Type":"application/json",
-        "Content-Length":"10"
       }
     });
 
@@ -118,6 +129,8 @@ export default class CreateList extends React.Component {
         this.setState({description:''});
         this.setState({url:''});
         this.setState({tags:[]});
+        this.setState({requireTitle:"required"});
+        this.setState({requireDescription:"required"});
         this.setState({open:false});
       };
       this.submitToServer(cb)
@@ -185,9 +198,9 @@ export default class CreateList extends React.Component {
 
     const form = [
       <div key="form">
-        <TextField hintText="Required" hintStyle={{color: deepOrangeA400}} floatingLabelText="Title" errorText="required" onChange={this.titleChange}/>
+        <TextField hintText="Required" hintStyle={{color: deepOrangeA400}} floatingLabelText="Title" errorText={this.state.requireTitle} onChange={this.titleChange}/>
         <br/>
-        <TextField hintText="Required" hintStyle={{color: deepOrangeA400}} floatingLabelText="Description" errorText="required" onChange={this.descriptionChange}/>
+        <TextField hintText="Required" hintStyle={{color: deepOrangeA400}} floatingLabelText="Description" errorText={this.state.requireDescription} onChange={this.descriptionChange}/>
         <br/>
         <TextField hintText="Optional" floatingLabelText="URL" onChange={this.urlChange}/>
         <br/><br/>
