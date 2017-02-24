@@ -1,5 +1,4 @@
 import React from 'react'
-import RaisedButton from 'material-ui/RaisedButton'
 import Dialog from 'material-ui/Dialog'
 import TextField from 'material-ui/TextField'
 import ContentAdd from 'material-ui/svg-icons/content/add'
@@ -7,6 +6,7 @@ import deepOrangeA400 from 'material-ui/styles/colors';
 import FlatButton from 'material-ui/FlatButton'
 import Axios from 'axios'
 import cookie from 'react-cookie'
+import FloatingActionButton from 'material-ui/FloatingActionButton';
 
 export default class CreateList extends React.Component {
   constructor(props){
@@ -18,6 +18,15 @@ export default class CreateList extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.submitToServer = this.submitToServer.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.styles = {
+      float:{
+        position: 'fixed',
+        right: '10px',
+        bottom: '10px',
+        width: '50px',
+        height: '50px',
+      }
+    }
   }
 
   handleChange(event){
@@ -90,8 +99,8 @@ export default class CreateList extends React.Component {
     ];
     return (
       <li style={{listStyle:'none'}}>
-        <RaisedButton label="Create LIST!" fullWidth={true} primary={true} icon={<ContentAdd/>} onTouchTap={this.handleOpen}/>
-        <Dialog open={this.state.open} title="Create List" actions={actions}>
+        <FloatingActionButton style={this.styles.float} onTouchTap={this.handleOpen}><ContentAdd/></FloatingActionButton>
+        <Dialog open={this.state.open} title="Create List" actions={actions} autoScrollBodyContent={true}>
           <TextField hintText="Required" hintStyle={{color: deepOrangeA400}} floatingLabelText="List Name" errorText={this.state.requireName} onChange={this.handleChange}/>
         </Dialog>
       </li>

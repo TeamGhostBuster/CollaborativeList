@@ -5,8 +5,8 @@ import List from './subComponent/List'
 import cookie from 'react-cookie'
 import Axios from 'axios'
 import CreateList from './subComponent/CreateList'
-import {AppBar, RaisedButton, GridList} from 'material-ui'
-
+import {AppBar, IconButton} from 'material-ui'
+import Back from 'material-ui/svg-icons/hardware/keyboard-backspace'
 
 export default class ListsPage extends React.Component {
   constructor(){
@@ -15,6 +15,11 @@ export default class ListsPage extends React.Component {
     this.state = {lists:[<div key="something"></div>]};
     this.componentWillMount = this.componentWillMount.bind(this);
     this.styles = {
+      bar: {
+        width: '100%'
+      },
+      backButton: {
+      },
       root: {
         display: 'flex',
         flexWrap: 'wrap',
@@ -23,9 +28,8 @@ export default class ListsPage extends React.Component {
       },
       List: {
         listStyle:'none',
-        display: 'flex',
+        display: 'inline-flex',
         flexWrap: 'nowrap',
-        overflowX: 'auto',
         padding: '0'
       }
     };
@@ -74,7 +78,9 @@ export default class ListsPage extends React.Component {
   render(){
     return(
       <PageTemplate>
-        <AppBar title='Personal' iconElementRight={<RaisedButton label='back' onClick={browserHistory.goBack}/>} iconElementLeft={<div></div>}/>
+        <AppBar style={this.styles.bar} title='Personal' iconElementLeft={<IconButton style={this.styles.backButton} iconStyle={this.styles.backButton} onTouchTap={browserHistory.goBack}
+        ><Back color={'#ffffff'}/></IconButton>}/>
+
         <div style={this.styles.root}>
           <ul style={this.styles.List}>
             {this.state.lists}

@@ -17,11 +17,13 @@ export default class UpperSection extends React.Component {
         height: '100%'
       },
       List: {
-        listStyle:'none',
-        display: 'flex',
-        flexWrap: 'nowrap',
-        overflowX: 'auto',
-        padding: '0'
+        width:'350px',
+        height:'200px',
+        textAlign:'center'
+      },
+      cardText:{
+        height: '100%',
+        fontSize: '200%'
       }
     }
   }
@@ -36,9 +38,9 @@ export default class UpperSection extends React.Component {
     return (
       <div style={this.styles.root}>
         <ul>
-        <Card expandable={true} onExpandChange={this.goToLists}>
-          <CardText actAsExpander={true}>
-            Personal Lists <br/><br/><br/>
+        <Card style={this.styles.List} expandable={true} onExpandChange={this.goToLists}>
+          <CardText style={this.styles.cardText} actAsExpander={true}>
+            Personal Lists
           </CardText>
         </Card>
         </ul>

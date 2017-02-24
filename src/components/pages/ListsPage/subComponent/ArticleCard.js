@@ -10,19 +10,25 @@ import Chip from 'material-ui/Chip';
 export default class ArticleCard extends React.Component {
 
   render() {
+    this.styles={
+      smallIcon: {
+        padding:'0', width:'20px',height:'20px'
+      }
+    };
     return(
       <li style={{listStyle:'none', padding:'2%'}}>
         <Card>
           <CardHeader title={this.props.title}/>
-          <CardActions style={{displa:'flex',wrap:"nowrap"}}>
-              <IconButton style={{padding:'0'}}>
+          <CardText/>
+          <CardActions style={{display:'inline-flex', flexWrap:'nowrap', width:'100%'}}>
+              <IconButton iconStyle={this.styles.smallIcon}>
                 <Up/>
               </IconButton>
-              <Chip>0</Chip>
-
-              <IconButton style={{padding:'0'}}>
+              <Chip labelStyle={{paddingTop: '6px', height:'20px'}} backgroundColor={'#ffffff'}>0</Chip>
+              <IconButton iconStyle={this.styles.smallIcon}>
                 <Down/>
               </IconButton>
+
           </CardActions>
         </Card>
       </li>
