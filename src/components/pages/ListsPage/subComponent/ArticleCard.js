@@ -15,21 +15,24 @@ export default class ArticleCard extends React.Component {
         padding:'0', width:'20px',height:'20px'
       }
     };
+    const voteButtons = ()=>
+       this.props.group!=='true' ? <CardActions/> :
+         <CardActions style={{display:'inline-flex', flexWrap:'nowrap', width:'100%'}}>
+           <IconButton iconStyle={this.styles.smallIcon}>
+             <Up/>
+           </IconButton>
+           <Chip labelStyle={{paddingTop: '6px', height:'20px'}} backgroundColor={'#ffffff'}>0</Chip>
+           <IconButton iconStyle={this.styles.smallIcon}>
+             <Down/>
+           </IconButton>
+         </CardActions>;
+
     return(
       <li style={{listStyle:'none', padding:'2%'}}>
         <Card>
           <CardHeader title={this.props.title}/>
           <CardText/>
-          <CardActions style={{display:'inline-flex', flexWrap:'nowrap', width:'100%'}}>
-              <IconButton iconStyle={this.styles.smallIcon}>
-                <Up/>
-              </IconButton>
-              <Chip labelStyle={{paddingTop: '6px', height:'20px'}} backgroundColor={'#ffffff'}>0</Chip>
-              <IconButton iconStyle={this.styles.smallIcon}>
-                <Down/>
-              </IconButton>
-
-          </CardActions>
+          {voteButtons()}
         </Card>
       </li>
     );

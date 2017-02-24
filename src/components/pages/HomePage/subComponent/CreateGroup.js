@@ -76,7 +76,7 @@ export default class CreateGroup extends React.Component {
       baseURL: "https://api.vfree.org",
       responseType: "json",
       headers: {
-        "Access-Token":"michaellam.lzc",
+        "Access-Token":token,
         "Content-Type":"application/json",
       }
     });
