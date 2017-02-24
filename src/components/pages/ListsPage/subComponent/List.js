@@ -73,7 +73,7 @@ export default class List extends React.Component {
   archiveList(){
     //Todo remove hardcode
      this.props.group==='true' ? this.path = '/group/list/'+this.props.id+'/archive': this.path = '/user/list/'+this.props.id+'/archive';
-     this.props.group==='true' ? this.body = {id:this.props.id, group_id:this.props.groupId} : this.body = {id:this.props.id};
+     this.props.group==='true' ? this.body = {data: {group_id:this.props.groupId}} : this.body = {};
      const token = cookie.load("Access-Token");
 
     var http = Axios.create({
