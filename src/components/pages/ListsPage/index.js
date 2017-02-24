@@ -27,7 +27,6 @@ export default class ListsPage extends React.Component {
       },
       List: {
         listStyle: 'none',
-        width: '300px',
         display: 'inline-flex',
         flexWrap: 'nowrap',
         padding: '0'

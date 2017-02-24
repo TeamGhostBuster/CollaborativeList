@@ -22,7 +22,7 @@ export default class List extends React.Component {
     this.archiveList = this.archiveList.bind(this);
     this.styles = {
       list: {
-        width:'100%',
+        width:'300px',
         paddingLeft: '10px',
         paddingRight: '10px'
       },
@@ -72,8 +72,8 @@ export default class List extends React.Component {
 
   archiveList(){
     //Todo remove hardcode
-    const path = '/user/list/'+this.props.id+'/archive'
-;    const token = cookie.load("Access-Token");
+     this.props.group==='true' ? this.path = '/group/list/'+this.props.id+'/archive': this.path = '/user/list/'+this.props.id+'/archive';
+     const token = cookie.load("Access-Token");
 
     var http = Axios.create({
       baseURL: "https://api.vfree.org",
@@ -81,7 +81,7 @@ export default class List extends React.Component {
       headers: {"Access-Token":token}
     });
 
-    http.delete(path,{list_id:this.props.id})
+    http.delete(this.path,{list_id:this.props.id})
       .then((respond)=>{if(respond.status === 200){this.props.reloadCallback();}})
       .catch((err)=>{
         console.log(err);
@@ -102,12 +102,12 @@ export default class List extends React.Component {
       <MenuItem primaryText="Archive" onTouchTap={this.archiveList}/>
     </IconMenu> ;
 
-  CreateArticle = () =>
-    this.props.group==='true' ? <CreateArticle listId={this.props.id} callback={this.componentWillMount} group="true" groupId={this.props.groupId}/> : <CreateArticle listId={this.props.id} callback={this.componentWillMount}/>
+  // CreateArticle = () =>
+  //   this.props.group==='true' ? <CreateArticle listId={this.props.id} callback={this.componentWillMount} group="true" groupId={this.props.groupId}/> : <CreateArticle listId={this.props.id} callback={this.componentWillMount}/>
   render() {
     console.log("djkdkjdkjk");
     const liItems = this.state.articles.map((article) =>
-      <ArticleCard key={article['id']} id={article['id']} title={article['title']} />
+      <ArticleCard key={article['id']} id={article['id']} title={article['title']} group={this.props.group} />
     );
     //todo:archive
     return(

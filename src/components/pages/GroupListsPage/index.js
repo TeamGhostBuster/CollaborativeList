@@ -28,7 +28,6 @@ export default class GroupListsPage extends React.Component {
       },
       List: {
         listStyle:'none',
-        width: '300px',
         display: 'inline-flex',
         flexWrap: 'nowrap',
         padding: '0'
@@ -42,7 +41,7 @@ export default class GroupListsPage extends React.Component {
       console.log(response);
       const listObjs = response['lists'];
       this.setState({lists:listObjs.filter((obj)=>!obj['archived']).map((listObject) =>
-        <List key={listObject['id']} id={listObject['id']} name={listObject['name']} reloadCallback={this.componentWillMount} group="true" groupId={this.props.location.query.id} />)})
+        <List key={listObject['id']} id={listObject['id']} name={listObject['name']} reloadCallback={this.componentWillMount} group="true" />)})
     };
     this.getLists(cb);
   }
