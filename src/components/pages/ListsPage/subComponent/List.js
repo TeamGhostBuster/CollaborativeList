@@ -73,6 +73,7 @@ export default class List extends React.Component {
   archiveList(){
     //Todo remove hardcode
      this.props.group==='true' ? this.path = '/group/list/'+this.props.id+'/archive': this.path = '/user/list/'+this.props.id+'/archive';
+     this.props.group==='true' ? this.body = {id:this.props.id, group_id:this.props.groupId} : this.body = {id:this.props.id};
      const token = cookie.load("Access-Token");
 
     var http = Axios.create({
@@ -81,7 +82,8 @@ export default class List extends React.Component {
       headers: {"Access-Token":token}
     });
 
-    http.delete(this.path,{list_id:this.props.id})
+    console.log(this.body);
+    http.delete(this.path,this.body)
       .then((respond)=>{if(respond.status === 200){this.props.reloadCallback();}})
       .catch((err)=>{
         console.log(err);
