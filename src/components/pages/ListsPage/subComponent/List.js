@@ -7,6 +7,10 @@ import Axios from 'axios'
 import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card'
 import AppBar from 'material-ui/AppBar'
 import CreateArticle from './CreateArticle'
+import IconButton from 'material-ui/IconButton';
+import IconMenu from 'material-ui/IconMenu';
+import MenuItem from 'material-ui/MenuItem';
+import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
 
 
 export default class List extends React.Component {
@@ -15,8 +19,10 @@ export default class List extends React.Component {
     this.getArticles = this.getArticles.bind(this);
     this.state = {articles:[]};
     this.componentWillMount = this.componentWillMount.bind(this);
+    this.archiveList = this.archiveList.bind(this);
     this.styles = {
       list: {
+        width:'100%',
         paddingLeft: '10px',
         paddingRight: '10px'
       },
@@ -44,7 +50,7 @@ export default class List extends React.Component {
     var http = Axios.create({
       baseURL: "https://api.vfree.org",
       responseType: "json",
-      headers: {"Access-Token":"michaellam.lzc"},
+      headers: {"Access-Token":token},
     });
 
     http.get('/user/list/' + this.props.id)
@@ -64,8 +70,40 @@ export default class List extends React.Component {
 
   }
 
+  archiveList(){
+    //Todo remove hardcode
+    const path = '/user/list/'+this.props.id+'/archive'
+;    const token = cookie.load("Access-Token");
 
+    var http = Axios.create({
+      baseURL: "https://api.vfree.org",
+      responseType: "json",
+      headers: {"Access-Token":token}
+    });
 
+    http.delete(path,{list_id:this.props.id})
+      .then((respond)=>{if(respond.status === 200){this.props.reloadCallback();}})
+      .catch((err)=>{
+        console.log(err);
+        if (err.status===401){
+          console.log("invalid token");
+        } else {
+          console.log("invalid request of lists info00000000000000000000");
+        }
+      })
+  }
+
+  Menu = (props) =>
+    <IconMenu {...props}
+      iconButtonElement={<IconButton><MoreVertIcon/></IconButton>}
+      targetOrigin={{horizontal: 'left', vertical: 'top'}}
+      anchorOrigin={{horizontal: 'left', vertical: 'top'}}
+    >
+      <MenuItem primaryText="Archive" onTouchTap={this.archiveList}/>
+    </IconMenu> ;
+
+  CreateArticle = () =>
+    this.props.group==='true' ? <CreateArticle listId={this.props.id} callback={this.componentWillMount} group="true" groupId={this.props.groupId}/> : <CreateArticle listId={this.props.id} callback={this.componentWillMount}/>
   render() {
     console.log("djkdkjdkjk");
     const liItems = this.state.articles.map((article) =>
@@ -77,7 +115,7 @@ export default class List extends React.Component {
         <Card>
           {console.log(this.props.name)}
           <CardMedia>
-            <AppBar title={this.props.name} iconElementLeft={<div/>} iconElementRight={<div/>}/>
+            <AppBar title={this.props.name} titleStyle={{fontSize:'1.3em'}} iconElementLeft={<div/>} iconElementRight={this.Menu()}/>
             <ul style={this.styles.articleList}>
               {liItems}
               <CreateArticle listId={this.props.id} callback={this.componentWillMount}/>

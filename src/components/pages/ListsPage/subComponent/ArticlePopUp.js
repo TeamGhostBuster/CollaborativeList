@@ -94,7 +94,7 @@ export default class CreateList extends React.Component {
       baseURL: "https://api.vfree.org",
       responseType: "json",
       headers: {
-        "Access-Token":"michaellam.lzc",
+        "Access-Token":token,
         "Content-Type":"application/json",
       }
     });
@@ -162,7 +162,6 @@ export default class CreateList extends React.Component {
   }
 
   tagDelete(key) {
-    //todo change this.state.tags
     this.tagsData = this.state.tagsData;
     this.tags = this.state.tags;
     const chipToDelete = this.tagsData.map((chip) => chip.key).indexOf(key);

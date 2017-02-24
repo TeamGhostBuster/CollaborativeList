@@ -31,7 +31,7 @@ export default class LowerSection extends React.Component {
     var http= Axios.create({
       baseURL: "https://api.vfree.org",
       responseType: "json",
-      headers: {"Access-Token":"michaellam.lzc"},
+      headers: {"Access-Token":token},
     });
 
     http.get('/user/groups')

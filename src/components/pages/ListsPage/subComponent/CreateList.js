@@ -58,6 +58,7 @@ export default class CreateList extends React.Component {
   }
 
   submitToServer(){
+    const that = this;
     //todo: remove the hardcoded part
     const host = window.location.host;
     const token = cookie.load('Access-Token');
@@ -67,30 +68,37 @@ export default class CreateList extends React.Component {
       baseURL: "https://api.vfree.org",
       responseType: "json",
       headers: {
-        "Access-Token":"michaellam.lzc",
+        "Access-Token":token,
         "Content-Type":"application/json",
       }
     });
 
-    http.post('/user/list', {
-        name:this.state.name
-      })
-      .then((respond) =>{
-        if (respond.status===200){
-          this.props.reloadCallback();
-          this.setState({name:''});
-          this.setState({requireName:"required"})
-        }
-      })
-      .catch((err) => {
-        console.log(err);
-        if (err.status===401){
-          console.log("invalid token");
-        } else {
-          console.log("invalid request of lists info1111");
-        }
-      })
-  }
+    if (this.props.group === 'true'){
+      that.path='/group/list';
+      that.body={name:this.state.name,group_id:this.props.groupId};
+    } else {
+      that.path = '/user/list';
+      that.body = {name: this.state.name};
+    }
+
+      http.post(that.path, that.body)
+        .then((respond) => {
+          if (respond.status === 200) {
+            this.props.reloadCallback();
+            this.setState({name: ''});
+            this.setState({requireName: "required"})
+          }
+        })
+        .catch((err) => {
+          console.log(err);
+          if (err.status === 401) {
+            console.log("invalid token");
+          } else {
+            console.log("invalid request of lists info1111");
+          }
+        })
+    }
+
 
   render() {
     const actions = [
