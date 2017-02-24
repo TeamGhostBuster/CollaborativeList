@@ -1,7 +1,7 @@
 version: '2'
 services:
     raspberry:
-        build: .
+        image: raspberry:latest
         container_name: raspberry
         ports:
             - 3000:80
