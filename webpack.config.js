@@ -21,7 +21,8 @@ const config = {
   },
   plugins: [
     new webpack.DefinePlugin({
-      'process.env.NODE_ENV': `'${process.env.NODE_ENV}'`
+      'process.env.NODE_ENV': `'${process.env.NODE_ENV}'`,
+      'process.env.GOOGLE_CLIENT_ID': `'${process.env.GOOGLE_CLIENT_ID}'`
     }),
     new HtmlWebpackPlugin({
       filename: 'index.html',

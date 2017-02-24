@@ -8,7 +8,6 @@ COPY ./ /workspace/
 WORKDIR /workspace
 
 # install node and yarn
-RUN export PATH=/usr/bin:/bin:/opt:$PATH && \
-    yarn install && \
+RUN yarn install && \
     yarn run build && \
     cp dist/* /usr/share/nginx/html/
