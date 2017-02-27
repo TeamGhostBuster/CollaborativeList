@@ -52,7 +52,7 @@ Reference     | [US 3.8](https://teamghostbuster.github.io/CollaborativeList/req
 Item          | Detail
 :-----------: | :----------------
 Purpose       | Verify that user would be able to archive a personal list.
-Reference     | [US 3.9]https://teamghostbuster.github.io/CollaborativeList/requirement-document/user-stories/#3-edit)
+Reference     | [US 3.9](https://teamghostbuster.github.io/CollaborativeList/requirement-document/user-stories/#3-edit)
 
 ### Test Case 6
 Item          | Detail
