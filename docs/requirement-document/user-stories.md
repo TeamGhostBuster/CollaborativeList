@@ -18,6 +18,10 @@
     * The tag is associated with the article
 - 2.4 As a user, I can create reading lists for the group.
     * The list is displayed under the group.
+- 2.5 As a user, I can create reading a new article in my personal list.
+    * The article is displayed in the coressponding list.
+    * The article is saved into the database.
+    * The article is duplicated to the ElasticSearch.
 
 ## 3. Edit
 - 3.1 As a user, I can add description to each article.
