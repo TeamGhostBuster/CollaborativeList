@@ -109,7 +109,7 @@ export default class CreateList extends React.Component {
       <li style={{listStyle:'none'}}>
         <FloatingActionButton style={this.styles.float} onTouchTap={this.handleOpen}><ContentAdd/></FloatingActionButton>
         <Dialog open={this.state.open} title="Create List" actions={actions} autoScrollBodyContent={true}>
-          <TextField hintText="Required" hintStyle={{color: deepOrangeA400}} floatingLabelText="List Name" errorText={this.state.requireName} onChange={this.handleChange}/>
+          <TextField hintText="Required" hintStyle={{color: deepOrangeA400}} autoFocus floatingLabelText="List Name" errorText={this.state.requireName} onChange={this.handleChange}/>
         </Dialog>
       </li>
     );
