@@ -6,9 +6,26 @@ import IconButton from 'material-ui/IconButton'
 import Up from 'material-ui/svg-icons/hardware/keyboard-arrow-up'
 import Down from 'material-ui/svg-icons/hardware/keyboard-arrow-down'
 import Chip from 'material-ui/Chip';
+import RaisedButton from 'material-ui/RaisedButton'
+import ArticleDialog from './ArticleDialog'
 
 export default class ArticleCard extends React.Component {
+  constructor(props){
+    // props: { id: string, title: string, group: bool}
+    super(props);
+    this.state = {open:false};
 
+    this.closeDialog = this.closeDialog.bind(this);
+    this.openDialog = this.openDialog.bind(this);
+  }
+
+  closeDialog(){
+    this.setState({open:false});
+  }
+
+  openDialog(){
+    this.setState({open:true});
+  }
   render() {
     this.styles={
       smallIcon: {
@@ -16,8 +33,9 @@ export default class ArticleCard extends React.Component {
       }
     };
     const voteButtons = ()=>
-       this.props.group!=='true' ? <CardActions/> :
+      this.props.group!=='true' ? <CardActions><RaisedButton buttonStyle={{height:'100%'}} label="Details" onTouchTap={this.openDialog}/></CardActions> :
          <CardActions style={{display:'inline-flex', flexWrap:'nowrap', width:'100%'}}>
+           <RaisedButton buttonStyle={{height:'100%'}} label="Details" onTouchTap={this.openDialog}/>
            <IconButton iconStyle={this.styles.smallIcon}>
              <Up/>
            </IconButton>
@@ -34,6 +52,7 @@ export default class ArticleCard extends React.Component {
           <CardText/>
           {voteButtons()}
         </Card>
+        <ArticleDialog isOpen={this.state.open} close={this.closeDialog} id={this.props.id}/>
       </li>
     );
   }

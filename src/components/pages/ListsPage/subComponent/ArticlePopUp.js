@@ -99,8 +99,7 @@ export default class CreateList extends React.Component {
       }
     });
 
-    http.post('/user/article', {
-        list_id:listId,
+    http.post('/user/list/'+listId+'/article', {
         title:this.state.title,
         description:this.state.description,
         url:this.state.url,
@@ -139,7 +138,6 @@ export default class CreateList extends React.Component {
 
   /*=======================================================*/
   TagOpen(){
-    console.log(this.state.Add);
     this.setState({addTag:true});
   }
 
@@ -197,11 +195,11 @@ export default class CreateList extends React.Component {
 
     const form = [
       <div key="form">
-        <TextField hintText="Required" hintStyle={{color: deepOrangeA400}} floatingLabelText="Title" errorText={this.state.requireTitle} onChange={this.titleChange}/>
+        <TextField fullWidth={true} multiLine={true} hintText="Required" hintStyle={{color: deepOrangeA400}} floatingLabelText="Title" errorText={this.state.requireTitle} onChange={this.titleChange}/>
         <br/>
-        <TextField hintText="Required" hintStyle={{color: deepOrangeA400}} floatingLabelText="Description" errorText={this.state.requireDescription} onChange={this.descriptionChange}/>
+        <TextField fullWidth={true} multiLine={true} hintText="Required" hintStyle={{color: deepOrangeA400}} floatingLabelText="Description" errorText={this.state.requireDescription} onChange={this.descriptionChange}/>
         <br/>
-        <TextField hintText="Optional" floatingLabelText="URL" onChange={this.urlChange}/>
+        <TextField fullWidth={true} multiLine={true} hintText="Optional" floatingLabelText="URL" onChange={this.urlChange}/>
         <br/><br/>
 
         <div style={this.styles.wrapper}>
