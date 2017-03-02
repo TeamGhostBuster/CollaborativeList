@@ -15,7 +15,7 @@
     
     
       
-        <title>Credit - Collaborative Up Voting Lists</title>
+        <title>Installation - Collaborative Up Voting Lists</title>
       
     
     
@@ -75,7 +75,7 @@
             
               
             
-            Credit
+            Installation
           
         </span>
       </div>
@@ -183,9 +183,53 @@
       
   <li class="md-nav__item">
     
-      <a href="../installation/" title="Installation" class="md-nav__link">
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
         Installation
-      </a>
+      </label>
+    
+    <a href="./" title="Installation" class="md-nav__link md-nav__link--active">
+      Installation
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#requirements" title="Requirements" class="md-nav__link">
+    Requirements
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#steps" title="Steps" class="md-nav__link">
+    Steps
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration" title="Configuration" class="md-nav__link">
+    Configuration
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -346,46 +390,9 @@
       
   <li class="md-nav__item">
     
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="toc">
+      <a href="../credits/" title="Credit" class="md-nav__link">
         Credit
-      </label>
-    
-    <a href="./" title="Credit" class="md-nav__link md-nav__link--active">
-      Credit
-    </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#contributors" title="Contributors" class="md-nav__link">
-    Contributors
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#open-source-components" title="Open Source Components" class="md-nav__link">
-    Open Source Components
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
+      </a>
     
   </li>
 
@@ -411,15 +418,22 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#contributors" title="Contributors" class="md-nav__link">
-    Contributors
+  <a href="#requirements" title="Requirements" class="md-nav__link">
+    Requirements
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#open-source-components" title="Open Source Components" class="md-nav__link">
-    Open Source Components
+  <a href="#steps" title="Steps" class="md-nav__link">
+    Steps
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration" title="Configuration" class="md-nav__link">
+    Configuration
   </a>
   
 </li>
@@ -437,29 +451,32 @@
                
               
                 
-                <h1 id="credit">Credit<a class="headerlink" href="#credit" title="Permanent link">&para;</a></h1>
-<h2 id="contributors">Contributors<a class="headerlink" href="#contributors" title="Permanent link">&para;</a></h2>
+                <h1 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h1>
+<h2 id="requirements">Requirements<a class="headerlink" href="#requirements" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Aaron(Hongyang) Liu</li>
-<li>Michael(Zichun) Lin</li>
-<li>Michael Rijlaarsdam</li>
-<li>Stephen Larsen</li>
+<li><a href="https://www.docker.com/products/overview">Docker</a></li>
+<li><a href="https://docs.docker.com/compose/">Docker Compose</a></li>
 </ul>
-<h2 id="open-source-components">Open Source Components<a class="headerlink" href="#open-source-components" title="Permanent link">&para;</a></h2>
-<ul>
+<h2 id="steps">Steps<a class="headerlink" href="#steps" title="Permanent link">&para;</a></h2>
+<ol>
 <li>
-<p>Backend</p>
-<ul>
-<li><a href="https://www.elastic.co/">Elasticsearch</a></li>
-<li><a href="http://flask.pocoo.org/">Flask</a></li>
-</ul>
+<p>Clone our project from Github.<br />
+<code class="codehilite">$ git clone https://github.com/TeamGhostBuster/restful-api.git</code><br />
+<code class="codehilite">$ git clone https://github.com/TeamGhostBuster/CollaborativeList.git</code></p>
 </li>
 <li>
-<p>Front-end</p>
-<ul>
-<li><a href="https://facebook.github.io/react/">ReactJS</a></li>
-</ul>
+<p>For the <code class="codehilite">restful-api</code>, if you run into any error, just try to restart the container that fails. <br />
+<code class="codehilite">$ docker-compose up -d</code></p>
 </li>
+<li>
+<p>For the <code class="codehilite">CollaborativeList</code>, it can be accessed through <code class="codehilite">http://localhost:3000</code> by default.<br />
+<code class="codehilite">$ docker-compose up -d</code></p>
+</li>
+</ol>
+<h2 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Modify the <code class="codehilite">docker-compose.yml</code> file under the <code class="codehilite">CollaborativeList</code> folder, set <code class="codehilite">GOOGLE_CLIENT_ID</code> environment variable to the one you obtain from Google Developer Console.</li>
+<li>Modify the <code class="codehilite">docker-compose.yml</code> file under the <code class="codehilite">CollaborativeList</code> folder, set <code class="codehilite">API_URL</code> environment able to the host where you are running the <code class="codehilite">restful-api</code>.</li>
 </ul>
               
             </article>
@@ -473,7 +490,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../contribution-code/" title="Contribution Code" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href=".." title="Collaborative Lists" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -482,11 +499,25 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Contribution Code
+                Collaborative Lists
               </span>
             </div>
           </a>
         
+        
+          <a href="../requirement-document/project-overview/" title="Project Overview" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Project Overview
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
         
       </nav>
     </div>
