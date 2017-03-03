@@ -109,7 +109,7 @@ export default class List extends React.Component {
   render() {
     console.log("djkdkjdkjk");
     const liItems = this.state.articles.map((article) =>
-      <ArticleCard key={article['id']} id={article['id']} title={article['title']} group={this.props.group} />
+      <ArticleCard key={article['id']} id={article['id']} list_id={this.props.id} title={article['title']} group={this.props.group} refresh={this.componentWillMount}/>
     );
     //todo:archive
     return(
