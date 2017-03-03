@@ -1,46 +1,15 @@
 version: '2'
 services:
-    elastic:
-        image: docker.elastic.co/elasticsearch/elasticsearch:5.1.2
-        container_name: elastic
+    raspberry:
+        image: raspberry:latest
+        container_name: raspberry
         ports:
-            - 9200:9200
-        volumes:
-            - esdata:/usr/share/elasticsearch/data
+            - 3000:80
         networks:
             - esnet
         environment:
-            - http.host=0.0.0.0
-            - transport.host=127.0.0.1
-            - cluster.name=collabrative_list_docker_cluster
-            - bootstrap.memory_lock=true
-            - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
-        ulimits:
-            memlock:
-                soft: -1
-                hard: -1
-            nofile:
-                soft: 65536
-                hard: 65536
-        mem_limit: 1g
-        cap_add:
-            - IPC_LOCK
-    kibana:
-        image: docker.elastic.co/kibana/kibana:5.1.2
-        container_name: kibana
-        ports:
-            - 5601:5601
-        networks:
-            - esnet
-        environment:
-            - ELASTICSEARCH_PASSWORD=changeme
-            - ELASTICSEARCH_USERNAME=elastic
-        links:
-            - elastic:elasticsearch
-
-volumes:
-    esdata:
-        driver: local
+            - GOOGLE_CLIENT_ID=224926533228-4jcfs0862eib0vo9j81b9d6h8agqh30f.apps.googleusercontent.com
+            - API_URL=https://api.vfree.org
 
 networks:
     esnet:
