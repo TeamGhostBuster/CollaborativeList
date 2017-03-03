@@ -8,6 +8,7 @@ import Paper from 'material-ui/Paper'
 import {Card, CardMedia, CardTitle, CardActions, CardText} from 'material-ui/Card'
 import RaisedButton from 'material-ui/RaisedButton'
 
+
 // callback function after login
 const success = (response) => {
   console.log('Login in');
@@ -53,6 +54,7 @@ export default class LoginPage extends React.Component {
       textAlign: 'center',
       justifyContent: 'space-around',
     };
+    const GOOGLE_CLIENT_ID = process.env.GOOGLE_CLIENT_ID || '224926533228-4jcfs0862eib0vo9j81b9d6h8agqh30f.apps.googleusercontent.com'
     return (
       <div>
         <AppBar title="LogIn Page" iconElementLeft={<div></div>}/>
@@ -62,7 +64,7 @@ export default class LoginPage extends React.Component {
 
 
             <GoogleLogin
-              clientId='224926533228-4jcfs0862eib0vo9j81b9d6h8agqh30f.apps.googleusercontent.com'
+              clientId={GOOGLE_CLIENT_ID}
               onSuccess={success}
               onFailure={error}
               buttonText='Login with Google'
