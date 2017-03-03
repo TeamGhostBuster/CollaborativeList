@@ -32,7 +32,7 @@ function checkLogIn() {
       if (xhr.readyState == 4 && xhr.status == 200) {
         var response = JSON.parse(xhr.response);
         if (response['aud'] !== undefined) {
-          browserHistory.push('/')
+          browserHistory.goBack();
         }
       }
     };

@@ -11,7 +11,7 @@ import ArticleDialog from './ArticleDialog'
 
 export default class ArticleCard extends React.Component {
   constructor(props){
-    // props: { id: string, title: string, group: bool}
+    // props: { id: string, title: string, group: bool, list_id, refresh: function}
     super(props);
     this.state = {open:false};
 
@@ -20,6 +20,7 @@ export default class ArticleCard extends React.Component {
   }
 
   closeDialog(){
+    this.props.refresh();
     this.setState({open:false});
   }
 
@@ -32,7 +33,7 @@ export default class ArticleCard extends React.Component {
         padding:'0', width:'20px',height:'20px'
       }
     };
-    const voteButtons = ()=>
+    const cardActions = ()=>
       this.props.group!=='true' ? <CardActions><RaisedButton buttonStyle={{height:'100%'}} label="Details" onTouchTap={this.openDialog}/></CardActions> :
          <CardActions style={{display:'inline-flex', flexWrap:'nowrap', width:'100%'}}>
            <RaisedButton buttonStyle={{height:'100%'}} label="Details" onTouchTap={this.openDialog}/>
@@ -50,9 +51,9 @@ export default class ArticleCard extends React.Component {
         <Card>
           <CardHeader title={this.props.title}/>
           <CardText/>
-          {voteButtons()}
+          {cardActions()}
         </Card>
-        <ArticleDialog isOpen={this.state.open} close={this.closeDialog} id={this.props.id}/>
+        <ArticleDialog isOpen={this.state.open} close={this.closeDialog} list_id={this.props.list_id} id={this.props.id}/>
       </li>
     );
   }
