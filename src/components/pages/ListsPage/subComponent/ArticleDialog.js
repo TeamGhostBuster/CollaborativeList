@@ -11,6 +11,8 @@ import Delete from 'material-ui/svg-icons/action/delete'
 import {Toolbar, ToolbarGroup, ToolbarTitle} from 'material-ui/Toolbar';
 import Paper from 'material-ui/Paper'
 import Divider from 'material-ui/Divider'
+import Comment from './Comment'
+import AddComment from './AddComment'
 
 export default class ArticleDialog extends React.Component{
   constructor(props){
@@ -20,6 +22,7 @@ export default class ArticleDialog extends React.Component{
 
     this.getArticalInfo = this.getArticalInfo.bind(this);
     this.remove = this.remove.bind(this);
+    this.componentWillMount = this.componentWillMount.bind(this);
 
     this.styles = {
       chip: {
@@ -80,7 +83,15 @@ export default class ArticleDialog extends React.Component{
         this.setState({tags:divWraper(tagChips)})
       }
       if (response['comments']){
-        this.setState({comments:response["comments"]})
+        const comments = response['comments'].map(
+          (comment)=> [<Divider/>,<Comment key={comment['id']} author={comment["author"]} time={comment["created_at"]} content={comment["content"]}/>]
+          // [ <Divider/> ,
+          //   <CardText>
+          //   {comment["content"]} -
+          //   <span style={{color:'blue'}}>{comment["author"]}</span> <span style={{color:'gray'}}>{comment["created_at"]}</span>
+          // </CardText>]
+        );
+        this.setState({comments:comments})
       }
     };
 
@@ -119,9 +130,8 @@ export default class ArticleDialog extends React.Component{
     const actions = [
       <FlatButton label='Cancel' primary={true} onTouchTap={this.props.close} />,
     ];
-
     return (
-      <Dialog open={this.props.isOpen} actions={actions} >
+      <Dialog open={this.props.isOpen} actions={actions} autoScrollBodyContent={true} >
         <Paper>
           <Toolbar>
             <ToolbarGroup>
@@ -138,12 +148,11 @@ export default class ArticleDialog extends React.Component{
             {this.state.description}
             {this.state.url}
           </CardText>
+          {this.state.comments}
           <Divider/>
-          <CardText>I'm comment 1</CardText>
-          <Divider/>
-          <CardText>I'm comment 2</CardText>
-          <Divider/>
-          <CardText>add comment</CardText>
+
+            <AddComment id={this.props.id} refresh={this.componentWillMount}/>
+
         </Paper>
       </Dialog>
     );
