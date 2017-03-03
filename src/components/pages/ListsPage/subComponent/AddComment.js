@@ -93,7 +93,7 @@ export default class AddComment extends React.Component{
           <Toolbar style={{backgroundColor:'white'}}>
             <ToolbarGroup/>
             <ToolbarGroup >
-              <Checkbox style={{margin:'20px'}} checked={this.state.public} label="public" onCheck={this.handleCheck}/>
+              <Checkbox style={{margin:'20px', width:'auto'}} checked={this.state.public} label="public" onCheck={this.handleCheck}/>
               <FlatButton style={{margin:'0'}} label="Cancel" labelStyle={{color:'grey'}} onTouchTap={this.onClose} />
               <FlatButton style={{margin:'0'}} label="Submit" labelStyle={{color:'grey'}} onTouchTap={this.submit} />
             </ToolbarGroup>
