@@ -431,6 +431,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#test-case-9" title="Test Case 9" class="md-nav__link">
+    Test Case 9
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -575,6 +582,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#test-case-9" title="Test Case 9" class="md-nav__link">
+    Test Case 9
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -598,8 +612,8 @@
 <p>For the backend, we will have another instance of software running in a isolated docker container isolated with our production environment for unit testing. The unit test runs with pytest, a Python test framework, and it can run automatically. Since the backend essentially is providing RESTful API to the client, the way we test the API is by send HTTP request to our testing server to verify responses' status code and content. By doing so, we can easily implement new feature, refactor code, or make any other changes, then test it with existing test cases.</p>
 <h2 id="test-cases-backend">Test Cases (Backend)<a class="headerlink" href="#test-cases-backend" title="Permanent link">&para;</a></h2>
 <h3 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h3>
-<p>The test cases is located under the <code class="codehilite">tests</code> folder.<br />
-<code class="codehilite">$ make <span class="nb">test</span></code></p>
+<p>The test cases is located under the <code class="codehilite">tests</code> folder, replace the access token with your own one.</p>
+<p><code class="codehilite">$ make <span class="nb">test</span></code></p>
 <h3 id="sample-console-output">Sample Console Output<a class="headerlink" href="#sample-console-output" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span>==================================================== test session starts ====================================================
 platform linux -- Python 3.5.2, pytest-3.0.6, py-1.4.32, pluggy-0.4.0
@@ -796,6 +810,29 @@ test/test_list.py ....
 <tr>
 <td align="center">Reference</td>
 <td align="left"><a href="https://teamghostbuster.github.io/CollaborativeList/requirement-document/user-stories/#2-create">US 2.2</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="test-case-9">Test Case 9<a class="headerlink" href="#test-case-9" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th align="center">Item</th>
+<th align="left">Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">Name</td>
+<td align="left"><code class="codehilite">test_create_group_list</code></td>
+</tr>
+<tr>
+<td align="center">Purpose</td>
+<td align="left">Verify that user can create a list in a group</td>
+</tr>
+<tr>
+<td align="center">Reference</td>
+<td align="left"><a href="https://teamghostbuster.github.io/CollaborativeList/requirement-document/user-stories/#2-create">US 2.4</a></td>
 </tr>
 </tbody>
 </table>
