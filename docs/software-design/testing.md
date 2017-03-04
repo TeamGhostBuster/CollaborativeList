@@ -6,7 +6,8 @@ For the backend, we will have another instance of software running in a isolated
 ## Test Cases (Backend)
 
 ### Usage
-The test cases is located under the `tests` folder.  
+The test cases is located under the `tests` folder, replace the access token with your own one.
+
 `$ make test`
 
 ### Sample Console Output
@@ -27,35 +28,62 @@ test/test_list.py ....
 ### Test Case 1
 Item          | Detail
 :-----------: | :----------------
+Name          | `test_create_user_list`
 Purpose       | Verify that user would be able to create a reading list.
 Reference     | [US 2.1](https://teamghostbuster.github.io/CollaborativeList/requirement-document/user-stories/#2-create)
 
 ### Test Case 2
 Item          | Detail
 :-----------: | :----------------
+Name          | `test_get_user_all_lists`
 Purpose       | Verify that user would be able to get his reading lists.
 Reference     | [US 2.1](https://teamghostbuster.github.io/CollaborativeList/requirement-document/user-stories/#2-create)
 
 ### Test Case 3
 Item          | Detail
 :-----------: | :----------------
+Name          | `test_create_article_for_user`
 Purpose       | Verify that user would be able to create an article under a personal list.
-Reference     | [US 2.5](https://teamghostbuster.github.io/CollaborativeList/requirement-document/user-stories/#2-create)
+Reference     | [US 2.5](https://teamghostbuster.github.io/CollaborativeList/requirement-document/user-stories/#2-create) [US 2.3](https://teamghostbuster.github.io/CollaborativeList/requirement-document/user-stories/#2-create) [US 3.1](https://teamghostbuster.github.io/CollaborativeList/requirement-document/user-stories/#3-edit)
 
 ### Test Case 4
 Item          | Detail
 :-----------: | :----------------
+Name          | `test_delete_article_from_list`
 Purpose       | Verify that user would be able to delete an article under a personal list.
 Reference     | [US 3.8](https://teamghostbuster.github.io/CollaborativeList/requirement-document/user-stories/#3-edit)
 
 ### Test Case 5
 Item          | Detail
 :-----------: | :----------------
+Name          | `test_archive_user_list`
 Purpose       | Verify that user would be able to archive a personal list.
 Reference     | [US 3.9](https://teamghostbuster.github.io/CollaborativeList/requirement-document/user-stories/#3-edit)
 
 ### Test Case 6
 Item          | Detail
 :-----------: | :----------------
+Name          | `test_retrieve_user_list`
 Purpose       | Verify that user would be able to retrieve a archived personal list.
 Reference     | [US 3.10](https://teamghostbuster.github.io/CollaborativeList/requirement-document/user-stories/#3-edit)
+
+### Test Case 7
+Item          | Detail
+:-----------: | :----------------
+Name          | `test_post_comment_to_article`
+Purpose       | Verify that user can post comment to a article
+Reference     | [US 3.2](https://teamghostbuster.github.io/CollaborativeList/requirement-document/user-stories/#3-edit)
+
+### Test Case 8
+Item          | Detail
+:-----------: | :----------------
+Name          | `test_create_group`
+Purpose       | Verify that user can create a reading group
+Reference     | [US 2.2](https://teamghostbuster.github.io/CollaborativeList/requirement-document/user-stories/#2-create)
+
+### Test Case 9
+Item          | Detail
+:-----------: | :----------------
+Name          | `test_create_group_list`
+Purpose       | Verify that user can create a list in a group
+Reference     | [US 2.4](https://teamghostbuster.github.io/CollaborativeList/requirement-document/user-stories/#2-create)
