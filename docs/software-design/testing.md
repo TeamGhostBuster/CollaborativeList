@@ -1,9 +1,9 @@
 # Testing
 
-## Strategy
-For the backend, we will have another instance of software running in a isolated docker container isolated with our production environment for unit testing. The unit test runs with pytest, a Python test framework, and it can run automatically. Since the backend essentially is providing RESTful API to the client, the way we test the API is by send HTTP request to our testing server to verify responses' status code and content. By doing so, we can easily implement new feature, refactor code, or make any other changes, then test it with existing test cases.
-
 ## Test Cases (Backend)
+
+### Strategy
+For the backend, we will have another instance of software running in a isolated docker container isolated with our production environment for unit testing. The unit test runs with pytest, a Python test framework, and it can run automatically. Since the backend essentially is providing RESTful API to the client, the way we test the API is by send HTTP request to our testing server to verify responses' status code and content. By doing so, we can easily implement new feature, refactor code, or make any other changes, then test it with existing test cases.
 
 ### Usage
 The test cases is located under the `tests` folder, replace the access token with your own one.
@@ -87,3 +87,31 @@ Item          | Detail
 Name          | `test_create_group_list`
 Purpose       | Verify that user can create a list in a group
 Reference     | [US 2.4](https://teamghostbuster.github.io/CollaborativeList/requirement-document/user-stories/#2-create)
+
+### Test Case 10
+Item          | Detail
+:-----------: | :----------------
+Name          | `test_create_article_for_group`
+Purpose       | Verify that user can create article in a group list
+Reference     | [US 2.5](https://teamghostbuster.github.io/CollaborativeList/requirement-document/user-stories/#2-create)
+
+### Test Case 11
+Item          | Detail
+:-----------: | :----------------
+Name          | `test_upvote_article`
+Purpose       | Verify that user can up vote article
+Reference     | [US 4.3](https://teamghostbuster.github.io/CollaborativeList/requirement-document/user-stories/#4-share)
+
+### Test Case 12
+Item          | Detail
+:-----------: | :----------------
+Name          | `test_downvote_article`
+Purpose       | Verify that user can down vote article
+Reference     | [US 4.3](https://teamghostbuster.github.io/CollaborativeList/requirement-document/user-stories/#4-share)
+
+### Test Case 13
+Item          | Detail
+:-----------: | :----------------
+Name          | `test_user_cannot_vote_twice`
+Purpose       | Verify that user can vote twice
+Reference     | [US 4.3](https://teamghostbuster.github.io/CollaborativeList/requirement-document/user-stories/#4-share)
