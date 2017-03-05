@@ -15,6 +15,7 @@ import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
 
 export default class List extends React.Component {
   constructor(){
+    // props: {id: list id, name: list name, reloadCallback:fucntion, group: "true", groupId }
     super();
     this.getArticles = this.getArticles.bind(this);
     this.state = {articles:[]};
@@ -113,7 +114,8 @@ export default class List extends React.Component {
   render() {
     console.log("djkdkjdkjk");
     const liItems = this.state.articles.map((article) =>
-      <ArticleCard key={article['id']} id={article['id']} list_id={this.props.id} title={article['title']} group={this.props.group} refresh={this.componentWillMount} vote={article['vote_count']}/>
+      <ArticleCard key={article['id']} id={article['id']} list_id={this.props.id} title={article['title']} group={this.props.group} groupId = {this.props.groupId}
+                   refresh={this.componentWillMount} vote={article['vote_count']}/>
     );
     //todo:archive
     return(
@@ -124,7 +126,7 @@ export default class List extends React.Component {
             <AppBar title={this.props.name} titleStyle={{fontSize:'1.3em'}} iconElementLeft={<div/>} iconElementRight={this.Menu()}/>
             <ul style={this.styles.articleList}>
               {liItems}
-              <CreateArticle listId={this.props.id} callback={this.componentWillMount}/>
+              <CreateArticle listId={this.props.id} callback={this.componentWillMount} group={this.props.group} groupId={this.props.groupId}/>
             </ul>
           </CardMedia>
         </Card>
