@@ -10,6 +10,9 @@ ADD .yarn-cache.tgz /
 # Install packages
 RUN cd /tmp && yarn
 
+# Overwrite nginx conf
+COPY raspberry.conf /etc/nginx/conf.d/default.conf
+
 # Go to Work directory
 WORKDIR /workspace
 
