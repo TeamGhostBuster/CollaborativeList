@@ -44,18 +44,21 @@ export default class List extends React.Component {
     //todo: undo hardcode
     //const host = "http://"+window.location.host;
     const host = "https://api.vfree.org";
-    const url = host + '/user/list/' + this.props.id;
+    const url = this.props.group==='true'? "/group/"+this.props.groupId+"/list/"+ this.props.id+"/articles":'/user/list/' + this.props.id+'/articles';
     const token = cookie.load("Access-Token");
 
     var http = Axios.create({
-      baseURL: "https://api.vfree.org",
+      baseURL: host,
       responseType: "json",
       headers: {"Access-Token":token},
     });
 
-    http.get('/user/list/' + this.props.id)
+    http.get(url)
       .then(
-        (respond) => {callback(respond.data)}
+        (respond) => {
+          console.log(respond.data);
+          callback(respond.data)
+        }
       )
       .catch(
         (err) => {
@@ -109,7 +112,7 @@ export default class List extends React.Component {
   render() {
     console.log("djkdkjdkjk");
     const liItems = this.state.articles.map((article) =>
-      <ArticleCard key={article['id']} id={article['id']} list_id={this.props.id} title={article['title']} group={this.props.group} refresh={this.componentWillMount}/>
+      <ArticleCard key={article['id']} id={article['id']} list_id={this.props.id} title={article['title']} group={this.props.group} refresh={this.componentWillMount} vote={article['vote_count']}/>
     );
     //todo:archive
     return(
