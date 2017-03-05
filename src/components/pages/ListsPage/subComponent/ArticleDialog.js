@@ -112,7 +112,9 @@ export default class ArticleDialog extends React.Component{
 
     http.delete(path)
       .then(
-        this.props.close()
+        (respond)=>{
+          this.props.close()
+        }
       )
       .catch(
         (err) => {

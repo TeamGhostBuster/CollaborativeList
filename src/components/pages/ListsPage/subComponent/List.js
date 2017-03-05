@@ -56,6 +56,7 @@ export default class List extends React.Component {
     http.get(url)
       .then(
         (respond) => {
+          console.log("here!");
           console.log(respond.data);
           callback(respond.data)
         }

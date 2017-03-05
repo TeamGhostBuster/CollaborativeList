@@ -20,8 +20,9 @@ export default class ArticleCard extends React.Component {
   }
 
   closeDialog(){
-    this.props.refresh();
     this.setState({open:false});
+    this.props.refresh();
+
   }
 
   openDialog(){
@@ -40,7 +41,7 @@ export default class ArticleCard extends React.Component {
            <IconButton iconStyle={this.styles.smallIcon}>
              <Up/>
            </IconButton>
-           <Chip labelStyle={{paddingTop: '6px', height:'20px'}} backgroundColor={'#ffffff'}>0</Chip>
+           <Chip labelStyle={{paddingTop: '6px', height:'20px'}} backgroundColor={'#ffffff'}>{this.props.vote}</Chip>
            <IconButton iconStyle={this.styles.smallIcon}>
              <Down/>
            </IconButton>
@@ -53,7 +54,7 @@ export default class ArticleCard extends React.Component {
           <CardText/>
           {cardActions()}
         </Card>
-        <ArticleDialog isOpen={this.state.open} close={this.closeDialog} list_id={this.props.list_id} id={this.props.id}/>
+        <ArticleDialog isOpen={this.state.open} close={this.closeDialog} list_id={this.props.list_id} id={this.props.id} />
       </li>
     );
   }
