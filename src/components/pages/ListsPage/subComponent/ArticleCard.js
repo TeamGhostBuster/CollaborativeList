@@ -1,13 +1,11 @@
 import React from 'react'
 import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card'
 import IconButton from 'material-ui/IconButton'
-//import ThumbUp from 'material-ui/svg-icons/action/thumb-up'
-//import ThumbDown from 'material-ui/svg-icons/action/thumb-down'
-import Up from 'material-ui/svg-icons/hardware/keyboard-arrow-up'
-import Down from 'material-ui/svg-icons/hardware/keyboard-arrow-down'
 import Chip from 'material-ui/Chip';
 import RaisedButton from 'material-ui/RaisedButton'
 import ArticleDialog from './ArticleDialog'
+import VoteButton from './VoteButton'
+import {Toolbar, ToolbarGroup} from 'material-ui/Toolbar'
 
 export default class ArticleCard extends React.Component {
   constructor(props){
@@ -29,23 +27,25 @@ export default class ArticleCard extends React.Component {
     this.setState({open:true});
   }
   render() {
-    this.styles={
-      smallIcon: {
-        padding:'0', width:'20px',height:'20px'
-      }
-    };
+
     const cardActions = ()=>
-      this.props.group!=='true' ? <CardActions><RaisedButton buttonStyle={{height:'100%'}} label="Details" onTouchTap={this.openDialog}/></CardActions> :
-         <CardActions style={{display:'inline-flex', flexWrap:'nowrap', width:'100%'}}>
+      this.props.group!=='true' ?
+        <Toolbar  style={{backgroundColor:"white"}}>
+          <ToolbarGroup firstChild={true}>
+            <RaisedButton buttonStyle={{height:'100%'}} label="Details" onTouchTap={this.openDialog}/>
+          </ToolbarGroup>
+        </Toolbar>
+        :
+        <Toolbar style={{backgroundColor:"white"}}>
+         <ToolbarGroup firstChild={true}>
            <RaisedButton buttonStyle={{height:'100%'}} label="Details" onTouchTap={this.openDialog}/>
-           <IconButton iconStyle={this.styles.smallIcon}>
-             <Up/>
-           </IconButton>
-           <Chip labelStyle={{paddingTop: '6px', height:'20px'}} backgroundColor={'#ffffff'}>{this.props.vote}</Chip>
-           <IconButton iconStyle={this.styles.smallIcon}>
-             <Down/>
-           </IconButton>
-         </CardActions>;
+         </ToolbarGroup>
+         <ToolbarGroup>
+          <VoteButton id={this.props.id} action="up"/>
+          <Chip backgroundColor={'#ffffff'}>{this.props.vote}</Chip>
+           <VoteButton id={this.props.id} action="down"/>
+         </ToolbarGroup>
+        </Toolbar>;
 
     return(
       <li style={{listStyle:'none', padding:'2%'}}>

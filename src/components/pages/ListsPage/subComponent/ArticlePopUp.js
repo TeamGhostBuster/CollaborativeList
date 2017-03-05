@@ -11,6 +11,7 @@ import cookie from 'react-cookie'
 
 export default class CreateList extends React.Component {
   constructor(props){
+    // props { lisdTd, callback, group, groupId}
     super(props);
     this.state = {open:false, addTag:false, title:'', description:'', url:'', tag:'', tags:[], tagsData:[], requireTitle:"required", requireDescription:"required"};
 
@@ -86,9 +87,11 @@ export default class CreateList extends React.Component {
 
   submitToServer(callback){
     //todo: remove the hardcoded part
-    const host = window.location.host;
+    const path = this.props.group === "true"?
+      "/group/"+this.props.groupId+"/list/"+this.props.listId+"/article" :
+      "/user/list/"+this.props.listId+"/article";
+
     const token = cookie.load('Access-Token');
-    const listId = this.props.listId;
 
     var http = Axios.create({
       baseURL: "https://api.vfree.org",
@@ -99,7 +102,7 @@ export default class CreateList extends React.Component {
       }
     });
 
-    http.post('/user/list/'+listId+'/article', {
+    http.post(path, {
         title:this.state.title,
         description:this.state.description,
         url:this.state.url,
