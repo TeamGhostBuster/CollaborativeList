@@ -9,7 +9,7 @@ import {Toolbar, ToolbarGroup} from 'material-ui/Toolbar'
 
 export default class ArticleCard extends React.Component {
   constructor(props){
-    // props: { id: string, title: string, group: bool, list_id, refresh: function}
+    // props: { id: string, title: string, group: bool, groupId, list_id, refresh: function}
     super(props);
     this.state = {open:false};
 
@@ -41,9 +41,9 @@ export default class ArticleCard extends React.Component {
            <RaisedButton buttonStyle={{height:'100%'}} label="Details" onTouchTap={this.openDialog}/>
          </ToolbarGroup>
          <ToolbarGroup>
-          <VoteButton id={this.props.id} action="up"/>
+          <VoteButton id={this.props.id} action="up" refresh={this.props.refresh} groupId={this.props.groupId} listId={this.props.list_id}/>
           <Chip backgroundColor={'#ffffff'}>{this.props.vote}</Chip>
-           <VoteButton id={this.props.id} action="down"/>
+           <VoteButton id={this.props.id} action="down" refresh={this.props.refresh} groupId={this.props.groupId} listId={this.props.list_id}/>
          </ToolbarGroup>
         </Toolbar>;
 
