@@ -137,7 +137,7 @@ export default class ArticleDialog extends React.Component{
         <Paper>
           <Toolbar>
             <ToolbarGroup>
-              <ToolbarTitle text={this.state.title} style={{color:'black'}}/>
+              <ToolbarTitle text={this.state.title} style={{color:'black',textOverflow:'clip ellipsis', width:'500px'}} />
             </ToolbarGroup>
             <ToolbarGroup>
               <IconButton tooltip="Edit"><Edit/></IconButton>

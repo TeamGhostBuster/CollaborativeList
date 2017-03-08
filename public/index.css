@@ -1,0 +1,14 @@
+
+html {
+  position:absolute;min-width:100%;
+}
+
+body {
+  display:inline-block;
+  min-width:100%;
+  top:0;
+  bottom: 0;
+  right: 0;
+  left:0;
+}
+
