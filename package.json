@@ -12,7 +12,7 @@
     "build:clean": "del \"dist/!(.git*|Procfile)**\"",
     "build:copy": "copyfiles -u 1 public/* public/**/* dist",
     "prebuild": "npm run build:clean && npm run build:copy",
-    "build": "cross-env NODE_ENV=production webpack"
+    "build": "cross-env NODE_ENV=production GOOGLE_CLIENT_ID=$GOOGLE_CLIENT_ID webpack"
   },
   "jest": {
     "modulePathIgnorePatterns": [
@@ -67,6 +67,7 @@
     "material-ui": "^0.17.0",
     "react": "^15.4.1",
     "react-cookie": "^1.0.4",
+    "react-dnd": "^2.2.4",
     "react-dom": "^15.4.1",
     "react-google-login": "^2.8.0",
     "react-hot-loader": "^3.0.0-beta.6",

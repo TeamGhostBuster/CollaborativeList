@@ -33,7 +33,7 @@ function requireLogIn() {
 const PageTemplate = (props) => {
   requireLogIn()
   return (
-    <div {...props} style={{}} >
+    <div {...props}  >
     </div>
   )
 };

@@ -15,6 +15,7 @@ import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
 
 export default class List extends React.Component {
   constructor(){
+    // props: {id: list id, name: list name, reloadCallback:fucntion, group: "true", groupId }
     super();
     this.getArticles = this.getArticles.bind(this);
     this.state = {articles:[]};
@@ -44,18 +45,22 @@ export default class List extends React.Component {
     //todo: undo hardcode
     //const host = "http://"+window.location.host;
     const host = "https://api.vfree.org";
-    const url = host + '/user/list/' + this.props.id;
+    const url = this.props.group==='true'? "/group/"+this.props.groupId+"/list/"+ this.props.id+"/articles":'/user/list/' + this.props.id+'/articles';
     const token = cookie.load("Access-Token");
 
     var http = Axios.create({
-      baseURL: "https://api.vfree.org",
+      baseURL: host,
       responseType: "json",
       headers: {"Access-Token":token},
     });
 
-    http.get('/user/list/' + this.props.id)
+    http.get(url)
       .then(
-        (respond) => {callback(respond.data)}
+        (respond) => {
+          console.log("here!");
+          console.log(respond.data);
+          callback(respond.data)
+        }
       )
       .catch(
         (err) => {
@@ -109,7 +114,8 @@ export default class List extends React.Component {
   render() {
     console.log("djkdkjdkjk");
     const liItems = this.state.articles.map((article) =>
-      <ArticleCard key={article['id']} id={article['id']} title={article['title']} group={this.props.group} />
+      <ArticleCard key={article['id']} id={article['id']} list_id={this.props.id} title={article['title']} group={this.props.group} groupId = {this.props.groupId}
+                   refresh={this.componentWillMount} vote={article['vote_count']}/>
     );
     //todo:archive
     return(
@@ -120,7 +126,7 @@ export default class List extends React.Component {
             <AppBar title={this.props.name} titleStyle={{fontSize:'1.3em'}} iconElementLeft={<div/>} iconElementRight={this.Menu()}/>
             <ul style={this.styles.articleList}>
               {liItems}
-              <CreateArticle listId={this.props.id} callback={this.componentWillMount}/>
+              <CreateArticle listId={this.props.id} callback={this.componentWillMount} group={this.props.group} groupId={this.props.groupId}/>
             </ul>
           </CardMedia>
         </Card>
