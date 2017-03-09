@@ -1,39 +1,60 @@
 import React from 'react'
 import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card'
 import IconButton from 'material-ui/IconButton'
-//import ThumbUp from 'material-ui/svg-icons/action/thumb-up'
-//import ThumbDown from 'material-ui/svg-icons/action/thumb-down'
-import Up from 'material-ui/svg-icons/hardware/keyboard-arrow-up'
-import Down from 'material-ui/svg-icons/hardware/keyboard-arrow-down'
 import Chip from 'material-ui/Chip';
+import RaisedButton from 'material-ui/RaisedButton'
+import ArticleDialog from './ArticleDialog'
+import VoteButton from './VoteButton'
+import {Toolbar, ToolbarGroup} from 'material-ui/Toolbar'
 
 export default class ArticleCard extends React.Component {
+  constructor(props){
+    // props: { id: string, title: string, group: bool, groupId, list_id, refresh: function}
+    super(props);
+    this.state = {open:false};
 
+    this.closeDialog = this.closeDialog.bind(this);
+    this.openDialog = this.openDialog.bind(this);
+  }
+
+  closeDialog(){
+    this.setState({open:false});
+    this.props.refresh();
+
+  }
+
+  openDialog(){
+    this.setState({open:true});
+  }
   render() {
-    this.styles={
-      smallIcon: {
-        padding:'0', width:'20px',height:'20px'
-      }
-    };
-    const voteButtons = ()=>
-       this.props.group!=='true' ? <CardActions/> :
-         <CardActions style={{display:'inline-flex', flexWrap:'nowrap', width:'100%'}}>
-           <IconButton iconStyle={this.styles.smallIcon}>
-             <Up/>
-           </IconButton>
-           <Chip labelStyle={{paddingTop: '6px', height:'20px'}} backgroundColor={'#ffffff'}>0</Chip>
-           <IconButton iconStyle={this.styles.smallIcon}>
-             <Down/>
-           </IconButton>
-         </CardActions>;
+
+    const cardActions = ()=>
+      this.props.group!=='true' ?
+        <Toolbar  style={{backgroundColor:"white"}}>
+          <ToolbarGroup firstChild={true}>
+            <RaisedButton buttonStyle={{height:'100%'}} label="Details" onTouchTap={this.openDialog}/>
+          </ToolbarGroup>
+        </Toolbar>
+        :
+        <Toolbar style={{backgroundColor:"white"}}>
+         <ToolbarGroup firstChild={true}>
+           <RaisedButton buttonStyle={{height:'100%'}} label="Details" onTouchTap={this.openDialog}/>
+         </ToolbarGroup>
+         <ToolbarGroup>
+          <VoteButton id={this.props.id} action="up" refresh={this.props.refresh} groupId={this.props.groupId} listId={this.props.list_id}/>
+          <Chip backgroundColor={'#ffffff'}>{this.props.vote}</Chip>
+           <VoteButton id={this.props.id} action="down" refresh={this.props.refresh} groupId={this.props.groupId} listId={this.props.list_id}/>
+         </ToolbarGroup>
+        </Toolbar>;
 
     return(
       <li style={{listStyle:'none', padding:'2%'}}>
         <Card>
           <CardHeader title={this.props.title}/>
           <CardText/>
-          {voteButtons()}
+          {cardActions()}
         </Card>
+        <ArticleDialog isOpen={this.state.open} close={this.closeDialog} list_id={this.props.list_id} id={this.props.id} />
       </li>
     );
   }

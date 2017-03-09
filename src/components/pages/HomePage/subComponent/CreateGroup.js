@@ -112,11 +112,11 @@ export default class CreateGroup extends React.Component {
       <li style={{listStyle:'none'}}>
         <FloatingActionButton style={this.styles.float} onTouchTap={this.handleOpen}><ContentAdd/></FloatingActionButton>
         <Dialog open={this.state.open} title="Create A Group" actions={actions} autoScrollBodyContent={true}>
-          <TextField hintText="Required" hintStyle={{color: deepOrangeA400}} floatingLabelText="Group Name" errorText={this.state.requireName} onChange={this.nameChange}/>
+          <TextField fullWidth={true} multiLine={true} hintText="Required" hintStyle={{color: deepOrangeA400}} floatingLabelText="Group Name" errorText={this.state.requireName} onChange={this.nameChange}/>
           <br/>
-          <TextField hintText="Optional"  floatingLabelText="Member" onChange={this.memberChange}/>
+          <TextField fullWidth={true} multiLine={true} hintText="Optional"  floatingLabelText="Member" onChange={this.memberChange}/>
           <br/>
-          <TextField hintText="Optional"  floatingLabelText="Description" onChange={this.descriptionChange}/>
+          <TextField fullWidth={true} multiLine={true} hintText="Optional"  floatingLabelText="Description" onChange={this.descriptionChange}/>
         </Dialog>
       </li>
     );

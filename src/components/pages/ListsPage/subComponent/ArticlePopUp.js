@@ -11,6 +11,7 @@ import cookie from 'react-cookie'
 
 export default class CreateList extends React.Component {
   constructor(props){
+    // props { lisdTd, callback, group, groupId}
     super(props);
     this.state = {open:false, addTag:false, title:'', description:'', url:'', tag:'', tags:[], tagsData:[], requireTitle:"required", requireDescription:"required"};
 
@@ -86,9 +87,11 @@ export default class CreateList extends React.Component {
 
   submitToServer(callback){
     //todo: remove the hardcoded part
-    const host = window.location.host;
+    const path = this.props.group === "true"?
+      "/group/"+this.props.groupId+"/list/"+this.props.listId+"/article" :
+      "/user/list/"+this.props.listId+"/article";
+
     const token = cookie.load('Access-Token');
-    const listId = this.props.listId;
 
     var http = Axios.create({
       baseURL: "https://api.vfree.org",
@@ -99,8 +102,7 @@ export default class CreateList extends React.Component {
       }
     });
 
-    http.post('/user/article', {
-        list_id:listId,
+    http.post(path, {
         title:this.state.title,
         description:this.state.description,
         url:this.state.url,
@@ -139,7 +141,6 @@ export default class CreateList extends React.Component {
 
   /*=======================================================*/
   TagOpen(){
-    console.log(this.state.Add);
     this.setState({addTag:true});
   }
 
@@ -197,11 +198,11 @@ export default class CreateList extends React.Component {
 
     const form = [
       <div key="form">
-        <TextField hintText="Required" hintStyle={{color: deepOrangeA400}} floatingLabelText="Title" errorText={this.state.requireTitle} onChange={this.titleChange}/>
+        <TextField fullWidth={true} multiLine={true} hintText="Required" hintStyle={{color: deepOrangeA400}} floatingLabelText="Title" errorText={this.state.requireTitle} onChange={this.titleChange}/>
         <br/>
-        <TextField hintText="Required" hintStyle={{color: deepOrangeA400}} floatingLabelText="Description" errorText={this.state.requireDescription} onChange={this.descriptionChange}/>
+        <TextField fullWidth={true} multiLine={true} hintText="Required" hintStyle={{color: deepOrangeA400}} floatingLabelText="Description" errorText={this.state.requireDescription} onChange={this.descriptionChange}/>
         <br/>
-        <TextField hintText="Optional" floatingLabelText="URL" onChange={this.urlChange}/>
+        <TextField fullWidth={true} multiLine={true} hintText="Optional" floatingLabelText="URL" onChange={this.urlChange}/>
         <br/><br/>
 
         <div style={this.styles.wrapper}>

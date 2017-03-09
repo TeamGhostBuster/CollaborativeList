@@ -11,9 +11,7 @@ const routes = (
     <IndexRoute component={HomePage}/>
     /*<IndexRoute component={HomePage}/>*/
     <Route path='/personal' component={ListsPage}/>
-    <Route path="/personal/article" component={ArticlePage} />
     <Route path='/group' component={GroupListsPage} />
-    <Route path="/group/article" component={ArticlePage} />
     <Route path='/login' component={LoginPage} />
     {/*<Route path='/home' component={HomePage} onEnter={} />*/}
   </Route>
