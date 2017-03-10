@@ -50,7 +50,6 @@ const searchkit = new SearchkitManager("https://elastic.vfree.org/raspberry")
 export default class SearchApp extends SearchkitComponent {
 
 
-
   render() {
     return (
       <SearchkitProvider searchkit={searchkit}>
