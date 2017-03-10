@@ -2,7 +2,7 @@ import React from 'react'
 import { Route, IndexRoute, browserHistory } from 'react-router'
 
 import App from 'components/App'
-import { HomePage, LoginPage, ListsPage, ArticlePage, GroupListsPage, SearchBar} from 'components'
+import { HomePage, LoginPage, ListsPage, ArticlePage, GroupListsPage} from 'components'
 
 
 
@@ -13,7 +13,6 @@ const routes = (
     <Route path='/personal' component={ListsPage}/>
     <Route path='/group' component={GroupListsPage} />
     <Route path='/login' component={LoginPage} />
-    <Route path='/search' component={SearchBar} />
     {/*<Route path='/home' component={HomePage} onEnter={} />*/}
   </Route>
 );
