@@ -115,3 +115,130 @@ Item          | Detail
 Name          | `test_user_cannot_vote_twice`
 Purpose       | Verify that user can vote twice
 Reference     | [US 4.3](https://teamghostbuster.github.io/CollaborativeList/requirement-document/user-stories/#4-share)
+
+## Test Cases (Frontend)
+
+### Strategy
+For the frontend, we will run a local instance of the software and bypass the google login by providing it with a mock server. The automation test is using Selenium with firefox, written in python.We will test the application by checking if it is sending the right HTTP requests and displaying the right output based on the HTTP response from backend.
+
+### Usage
+The frontend automation test is going to be implemented in sprint 4.
+
+### Test Case 1
+Item          | Detail
+:-----------: | :----------------
+Name          | `test_authenticationt`
+Purpose       | Verify that the login button is clear and clickable
+Reference     | [US 1](https://teamghostbuster.github.io/CollaborativeList/requirement-document/user-stories/#1-Authentication)
+
+### Test Case 2
+Item          | Detail
+:-----------: | :----------------
+Name          | `test_redirection_to_personal_lists`
+Purpose       | Verify that click on the personal_list will direct user to the right url
+
+### Test Case 3
+Item          | Detail
+:-----------: | :----------------
+Name          | `test_create_group`
+Purpose       | -Verify that click on create group button will open a dialog
+              | -Verify that click on cancel button will close the dialog
+              | -Verify that click on submit without required field won't close the dialog
+              | -Verify that click on submit with required field will close the dialog and a new group with correct name will show up
+Reference     |[US 2.2](https://teamghostbuster.github.io/CollaborativeList/requirement-document/user-stories/#2-Create)
+
+### Test Case 4
+Item          | Detail
+:-----------: | :----------------
+Name          | `test_redirection_to_group_lists`
+Purpose       | Verify that click on a group list will direct user to the right url
+
+### Test Case 5
+Item          | Detail
+:-----------: | :----------------
+Name          | `test_create_personal_reading_list`
+Purpose       | -Verify that click on create list button will open a dialog
+              | -Verify that click on cancel button will close the dialog
+              | -Verify that click on submit without required field won't close the dialog
+              | -Verify that click on submit with required field will close the dialog and a new list with correct name will show up
+Reference     |[US 2.1](https://teamghostbuster.github.io/CollaborativeList/requirement-document/user-stories/#2-Create)
+
+
+### Test Case 6
+Item          | Detail
+:-----------: | :----------------
+Name          | `test_archive_personal_reading_list`
+Purpose       | -Verify that archive an empty personal reading list, it will disapear from the page
+              | -Verify that archive an non-empty personal reading list, it will disapear from the page
+Reference     |[US 3.9](https://teamghostbuster.github.io/CollaborativeList/requirement-document/user-stories/#3-Edit)
+
+### Test Case 7
+Item          | Detail
+:-----------: | :----------------
+Name          | `test_create_article_for_person_list`
+Purpose       | -Verify that click on add article button will open a dialog
+              | -Verify that click on cancel button will close the dialog
+              | -Verify that click on submit without required field won't close the dialog
+              | -Verify that click on submit with required field will close the dialog and a new article with correct name will show up
+Reference     |[US 2.5](https://teamghostbuster.github.io/CollaborativeList/requirement-document/user-stories/#2-Create)
+
+### Test Case 8
+Item          | Detail
+:-----------: | :----------------
+Name          | `test_view_article_from_person_list`
+Purpose       | -Verify that click on details button, a dialog with correct name, descriptipn, tag and url will pop up
+              | -Verify that click on cancel button will close the dialog
+Reference     |[US 2.3](https://teamghostbuster.github.io/CollaborativeList/requirement-document/user-stories/#2-Create)
+
+### Test Case 9
+Item          | Detail
+:-----------: | :----------------
+Name          | `test_delete_article_for_person_list`
+Purpose       | -Verify that click on remove button will close the details dialog
+              | -Verify that the article is not shown in the list
+Reference     |[US 3.8](https://teamghostbuster.github.io/CollaborativeList/requirement-document/user-stories/#2-Create)
+
+### Test Case 10
+Item          | Detail
+:-----------: | :----------------
+Name          | `test_create_group_reading_list`
+Purpose       | -Verify that click on create list button will open a dialog
+              | -Verify that click on cancel button will close the dialog
+              | -Verify that click on submit without required field won't close the dialog
+              | -Verify that click on submit with required field will close the dialog and a new list with correct name and 0 vote count will show up 
+Reference     |[US 2.4](https://teamghostbuster.github.io/CollaborativeList/requirement-document/user-stories/#2-Create)
+
+
+### Test Case 11
+Item          | Detail
+:-----------: | :----------------
+Name          | `test_archive_group_reading_list`
+Purpose       | -Verify that archive an empty group reading list, it will disapear from the page
+              | -Verify that archive an non-empty group reading list, it will disapear from the page
+Reference     |[US 3.9](https://teamghostbuster.github.io/CollaborativeList/requirement-document/user-stories/#3-Edit)
+
+### Test Case 12
+Item          | Detail
+:-----------: | :----------------
+Name          | `test_create_article_for_group_list`
+Purpose       | -Verify that click on add article button will open a dialog
+              | -Verify that click on cancel button will close the dialog
+              | -Verify that click on submit without required field won't close the dialog
+              | -Verify that click on submit with required field will close the dialog and a new article with correct name will show up
+Reference     |[US 2.5](https://teamghostbuster.github.io/CollaborativeList/requirement-document/user-stories/#2-Create)
+
+### Test Case 8
+Item          | Detail
+:-----------: | :----------------
+Name          | `test_view_article_from_person_list`
+Purpose       | -Verify that click on details button, a dialog with correct name, descriptipn, tag and url will pop up
+              | -Verify that click on cancel button will close the dialog
+Reference     |[US 2.3](https://teamghostbuster.github.io/CollaborativeList/requirement-document/user-stories/#2-Create)
+
+### Test Case 9
+Item          | Detail
+:-----------: | :----------------
+Name          | `test_delete_article_for_person_list`
+Purpose       | -Verify that click on remove button will close the details dialog
+              | -Verify that the article is not shown in the list
+Reference     |[US 3.8](https://teamghostbuster.github.io/CollaborativeList/requirement-document/user-stories/#2-Create)
