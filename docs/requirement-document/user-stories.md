@@ -22,7 +22,7 @@
     * The article is displayed in the coressponding list.
     * The article is saved into the database.
     * The article is duplicated to the ElasticSearch.
-- 2.5 As a user, I can create a new article in group list.
+- 2.6 As a user, I can create a new article in group list.
     * The article is displayed in the coressponding list.
     * The article is saved into the database.
     * The article is duplicated to the ElasticSearch.
