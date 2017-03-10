@@ -242,3 +242,8 @@ Name          | `test_delete_article_for_person_list`
 Purpose       | -Verify that click on remove button will close the details dialog
               | -Verify that the article is not shown in the list
 Reference     |[US 3.8](https://teamghostbuster.github.io/CollaborativeList/requirement-document/user-stories/#2-Create)
+=======
+
+### Note
+More tests will be added upon next release.
+
