@@ -54,7 +54,7 @@ export default class LoginPage extends React.Component {
       textAlign: 'center',
       justifyContent: 'space-around',
     };
-    const GOOGLE_CLIENT_ID ='224926533228-4jcfs0862eib0vo9j81b9d6h8agqh30f.apps.googleusercontent.com'
+    const GOOGLE_CLIENT_ID = process.env.GOOGLE_CLIENT_ID || '224926533228-4jcfs0862eib0vo9j81b9d6h8agqh30f.apps.googleusercontent.com'
     return (
       <div>
         <AppBar title="LogIn Page" iconElementLeft={<div></div>}/>
