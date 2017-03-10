@@ -4,12 +4,9 @@ import {browserHistory} from 'react-router'
 import UpperSection from './subComponent/UpperSection'
 import LowerSection from './subComponent/LowerSection'
 import AppBar from 'material-ui/AppBar'
-import {
-  SearchkitManager, SearchkitProvider, SearchkitComponent
-} from "searchkit"
 import Divider from 'material-ui/Divider';
 
-export default class HomePage extends SearchkitComponent {
+export default class HomePage extends React.Component {
 
   render() {
     return (
