@@ -47,7 +47,8 @@ const searchkit = new SearchkitManager("https://elastic.vfree.org/raspberry")
  })
  */
 
-export default class SearchApp extends SearchkitComponent {
+
+export default class HomePage extends SearchkitComponent {
 
 
   render() {
