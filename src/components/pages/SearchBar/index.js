@@ -14,9 +14,10 @@ import {
   Pagination,
   SearchkitManager,
   SearchkitProvider,
-  TermQuery,
-  FilteredQuery,
-  BoolShould,
+    //used in express
+    TermQuery,
+    FilteredQuery,
+    BoolShould,
   ResetFilters
 } from "searchkit";
 /*
@@ -32,21 +33,23 @@ SearchkitExpress({
         //then return it
         return query
     }
-}, app)
-*/
+  }, app)
+  */
 
 const searchkit = new SearchkitManager("https://elastic.vfree.org/raspberry")
 /*searchkit.addDefaultQuery((query)=> {
     return query.addQuery(FilteredQuery({
-        filter:BoolShould([
-            TermQuery("colour", "red"),
-            TermQuery("colour", "orange")
-        ])
+      filter:BoolShould([
+        TermQuery("colour", "red"),
+        TermQuery("colour", "orange")
+      ])
     }))
-})
-*/
+ })
+ */
 
 export default class SearchApp extends SearchkitComponent {
+
+
 
   render() {
     return (
