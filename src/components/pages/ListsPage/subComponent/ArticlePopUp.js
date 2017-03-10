@@ -200,7 +200,7 @@ export default class CreateList extends React.Component {
       <div key="form">
         <TextField fullWidth={true} multiLine={true} hintText="Required" hintStyle={{color: deepOrangeA400}} floatingLabelText="Title" errorText={this.state.requireTitle} onChange={this.titleChange}/>
         <br/>
-        <TextField hintText="Required" hintStyle={{color: deepOrangeA400}} floatingLabelText="Description" errorText={this.state.requireDescription} onChange={this.descriptionChange}/>
+        <TextField fullWidth={true} multiLine={true} hintText="Required" hintStyle={{color: deepOrangeA400}} floatingLabelText="Description" errorText={this.state.requireDescription} onChange={this.descriptionChange}/>
         <br/>
         <TextField fullWidth={true} multiLine={true} hintText="Optional" floatingLabelText="URL" onChange={this.urlChange}/>
         <br/><br/>
@@ -210,7 +210,7 @@ export default class CreateList extends React.Component {
         </div>
 
         <Dialog open={this.state.addTag} actions={tagActions} modal={true} contentStyle={{width:'50%'}} title="Add Tag">
-          <TextField hintText="Optional" floatingLabelText="Enter Tag Here" onChange={this.tagChange}/>
+          <TextField hintText="Optional" floatingLabelText="Enter Tag Here" onChange={this.tagChange} autoFocus fullWidth={true}/>
         </Dialog>
 
         <RaisedButton label="Add Tag" icon={<ContentAdd/>} secondary={true} onTouchTap={this.TagOpen} />

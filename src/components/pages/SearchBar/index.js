@@ -14,14 +14,39 @@ import {
   Pagination,
   SearchkitManager,
   SearchkitProvider,
+  TermQuery,
+  FilteredQuery,
+  BoolShould,
   ResetFilters
 } from "searchkit";
 
-const searchkit = new SearchkitManager("http://elastic.vfree.org/")
+SearchkitExpress = require("searchkit-express")
+var app = express()
+/*
+SearchkitExpress({
+    host:process.env.ELASTIC_URL || "http://elastic.vfree.org",
+    index:'raspberry',
+    queryProcessor:function(query, req, res){
+        //do neccessery permissions, prefilters to query object
 
-export default class HomePage extends SearchkitComponent {
+        //then return it
+        return query
+    }
+}, app)
+*/
 
+const searchkit = new SearchkitManager("https://elastic.vfree.org/raspberry")
+/*searchkit.addDefaultQuery((query)=> {
+    return query.addQuery(FilteredQuery({
+        filter:BoolShould([
+            TermQuery("colour", "red"),
+            TermQuery("colour", "orange")
+        ])
+    }))
+})
+*/
 
+export default class SearchApp extends SearchkitComponent {
 
   render() {
     return (

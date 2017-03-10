@@ -4,7 +4,7 @@ import ArticlePopUp from './ArticlePopUp'
 
 export default class CreateList extends React.Component {
 
-  // porps: {listId, callback:mount list, group, groupId}
+  // props: {listId, callback:mount list, group, groupId}
   render() {
     return (
       <li style={{listStyle:'none'}}>
