@@ -115,3 +115,7 @@ Item          | Detail
 Name          | `test_user_cannot_vote_twice`
 Purpose       | Verify that user can vote twice
 Reference     | [US 4.3](https://teamghostbuster.github.io/CollaborativeList/requirement-document/user-stories/#4-share)
+
+
+### Test Case 14
+More tests will be added upon next release.
