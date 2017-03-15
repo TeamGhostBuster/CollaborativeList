@@ -1,10 +1,9 @@
 import React from 'react'
-import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card'
-import IconButton from 'material-ui/IconButton'
+import {Card, CardHeader, CardText} from 'material-ui/Card'
 import Chip from 'material-ui/Chip';
 import RaisedButton from 'material-ui/RaisedButton'
-import ArticleDialog from './ArticleDialog'
-import VoteButton from './VoteButton'
+import ArticleDialog from './ArticleSub/ArticleDialog'
+import VoteButton from './ArticleSub/VoteButton'
 import {Toolbar, ToolbarGroup} from 'material-ui/Toolbar'
 
 export default class ArticleCard extends React.Component {
@@ -26,8 +25,9 @@ export default class ArticleCard extends React.Component {
   openDialog(){
     this.setState({open:true});
   }
-  render() {
 
+  render() {
+    // not factored out because of dependencies
     const cardActions = ()=>
       this.props.group!=='true' ?
         <Toolbar  style={{backgroundColor:"white"}}>

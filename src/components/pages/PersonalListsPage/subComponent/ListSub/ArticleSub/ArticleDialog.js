@@ -11,8 +11,10 @@ import Delete from 'material-ui/svg-icons/action/delete'
 import {Toolbar, ToolbarGroup, ToolbarTitle} from 'material-ui/Toolbar';
 import Paper from 'material-ui/Paper'
 import Divider from 'material-ui/Divider'
-import Comment from './Comment'
-import AddComment from './AddComment'
+import Comment from './ArticleDetailSub/Comment'
+import AddComment from './ArticleDetailSub/AddComment'
+import ArchiveArticleRequest from '../../../../../Requests/ArchiveArticleRequest'
+import GetArticleDetailRequest from '../../../../../Requests/GetArticleDetailRequest'
 
 export default class ArticleDialog extends React.Component{
   constructor(props){
@@ -20,7 +22,7 @@ export default class ArticleDialog extends React.Component{
     super(props);
     this.state = {title:"", description:"", url:undefined, tags:undefined, comments:undefined};
 
-    this.getArticalInfo = this.getArticalInfo.bind(this);
+    this.getArticleInfo = this.getArticleInfo.bind(this);
     this.remove = this.remove.bind(this);
     this.componentWillMount = this.componentWillMount.bind(this);
 
@@ -36,95 +38,49 @@ export default class ArticleDialog extends React.Component{
   }
 
   componentWillMount(){
-    this.getArticalInfo();
+    this.getArticleInfo();
   }
 
-  sendRequest(callback){
-    const host = "https://api.vfree.org";
-    const path = '/user/article/' + this.props.id;
-    const token = cookie.load("Access-Token");
 
-    var http = Axios.create({
-      baseURL: host,
-      responseType: "json",
-      headers: {"Access-Token":token},
-    });
-
-    http.get(path)
-      .then(
-        (respond) => {callback(respond.data)}
-      )
-      .catch(
-        (err) => {
-          console.log(err);
-          if (err.status===401){
-            console.log("invalid token");
-          } else {
-            console.log("invalid request of lists info");
-          }
-        })
-  }
-
-  getArticalInfo(){
+  getArticleInfo(){
     const cb = (response)=>{
       this.setState({title:response["title"],description:response["description"]});
       if (response["url"]){
-        const urlElem = <p style={{color:'grey'}}>
-                          <br/>
-                          URL:
-                          <br/>
+        // create url section
+        const urlElem = <p style={{color:'grey'}}><br/>
+                          URL:<br/>
                           <a href={response["url"]}>{response["url"]}</a>
                         </p>;
         this.setState({url:urlElem})
       }
       if (response["tags"]){
+        // create tag section, the divWraper is to make the tags displayed as wrapped elements
         const divWraper = (child) => <div style={this.styles.wrapper}>{child}</div>;
         const tagChips = response["tags"].map( (tag)=> <Chip key={tag} style={this.styles.chip}>{tag}</Chip> );
         this.setState({tags:divWraper(tagChips)})
       }
       if (response['comments']){
+        // create comment section
         const comments = response['comments'].map(
           (comment)=> [<Divider/>,<Comment key={comment['id']} author={comment["author"]} time={comment["created_at"]} content={comment["content"]}/>]
-          // [ <Divider/> ,
-          //   <CardText>
-          //   {comment["content"]} -
-          //   <span style={{color:'blue'}}>{comment["author"]}</span> <span style={{color:'gray'}}>{comment["created_at"]}</span>
-          // </CardText>]
         );
         this.setState({comments:comments})
       }
     };
 
-    this.sendRequest(cb);
+    // send out the get request
+    GetArticleDetailRequest.get(this.props.id, cb);
 
   }
 
   remove(){
-    const host = "https://api.vfree.org";
-    const path = '/user/list/' +this.props.list_id+'/article/'+ this.props.id;
-    const token = cookie.load("Access-Token");
+    // send the delete request
+    ArchiveArticleRequest.delete(
+      this.props.list_id,
+      this.props.id,
+      this.props.close
+    );
 
-    var http = Axios.create({
-      baseURL: host,
-      responseType: "json",
-      headers: {"Access-Token":token},
-    });
-
-    http.delete(path)
-      .then(
-        (respond)=>{
-          this.props.close()
-        }
-      )
-      .catch(
-        (err) => {
-          console.log(err);
-          if (err.status===401){
-            console.log("invalid token");
-          } else {
-            console.log("invalid request of lists info");
-          }
-        })
   }
 
   render (){
@@ -140,8 +96,8 @@ export default class ArticleDialog extends React.Component{
               <ToolbarTitle text={this.state.title} style={{color:'black',textOverflow:'clip ellipsis', width:'500px'}} />
             </ToolbarGroup>
             <ToolbarGroup>
-              <IconButton tooltip="Edit"><Edit/></IconButton>
-              <IconButton tooltip="Remove" onTouchTap={this.remove}><Delete/></IconButton>
+              <IconButton name="EditButton" tooltip="Edit"><Edit/></IconButton>
+              <IconButton name="RemoveButton" tooltip="Remove" onTouchTap={this.remove}><Delete/></IconButton>
             </ToolbarGroup>
           </Toolbar>
           <CardHeader subtitle={this.state.tags}/>
