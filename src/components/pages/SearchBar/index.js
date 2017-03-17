@@ -37,7 +37,7 @@ SearchkitExpress({
   }, app)
 */
 
-const searchkit = new SearchkitManager("https://elastic.vfree.org/raspberry/")
+const searchkit = new SearchkitManager("https://elastic.vfree.org/", {basicAuth:"test:12345678"})
 /*searchkit.addDefaultQuery((query)=> {
     return query.addQuery(FilteredQuery({
       filter:BoolShould([
