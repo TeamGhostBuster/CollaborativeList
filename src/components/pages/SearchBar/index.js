@@ -20,10 +20,11 @@ import {
     BoolShould,
   ResetFilters
 } from "searchkit";
+
 /*
 SearchkitExpress = require("searchkit-express")
 var app = express()
-/*
+
 SearchkitExpress({
     host:process.env.ELASTIC_URL || "http://elastic.vfree.org",
     index:'raspberry',
@@ -34,9 +35,9 @@ SearchkitExpress({
         return query
     }
   }, app)
-  */
+*/
 
-const searchkit = new SearchkitManager("https://elastic.vfree.org/raspberry")
+const searchkit = new SearchkitManager("https://elastic.vfree.org/raspberry/")
 /*searchkit.addDefaultQuery((query)=> {
     return query.addQuery(FilteredQuery({
       filter:BoolShould([
@@ -53,13 +54,15 @@ export default class HomePage extends SearchkitComponent {
 
   render() {
     return (
-      <SearchkitProvider searchkit={searchkit}>
         <div>
-          <SearchBox/>
-          <Hits/>
-          <NoHits />
+          <SearchkitProvider searchkit={searchkit}>
+            <div>
+              <SearchBox/>
+              <Hits mod="sk-hits-grid" hitsPerPage={10}/>
+              <NoHits />
+            </div>
+          </SearchkitProvider>
         </div>
-      </SearchkitProvider>
     );
   }
 }
