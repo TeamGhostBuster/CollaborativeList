@@ -1,6 +1,6 @@
 {
   "name": "arc",
-  "version": "0.1.0",
+  "version": "1.0.1",
   "private": true,
   "scripts": {
     "start": "node server",
@@ -62,6 +62,7 @@
   "dependencies": {
     "axios": "^0.15.3",
     "babel-cli": "^6.22.2",
+    "base-64": "^0.1.0",
     "history": "3.0.0",
     "lodash": "^4.17.4",
     "material-ui": "^0.17.0",
@@ -82,6 +83,7 @@
     "searchkit-express": "^0.2.1",
     "styled-components": "^1.2.1",
     "styled-theme": "^0.3.0",
-    "styled-tools": "^0.1.2"
+    "styled-tools": "^0.1.2",
+    "utf8": "^2.1.2"
   }
 }

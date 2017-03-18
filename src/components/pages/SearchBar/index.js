@@ -1,64 +1,40 @@
 import React from 'react';
-import ReactDOM from 'react';
+import Base64 from 'base-64';
+import UTF8 from 'utf8';
 import { PageTemplate } from 'components'
+import Axios from 'axios'
 import {
   SearchBox,
-  RefinementListFilter,
   Hits,
   NoHits,
-  HitsStats,
   SearchkitComponent,
-  SelectedFilters,
-  MenuFilter,
-  HierarchicalMenuFilter,
-  Pagination,
   SearchkitManager,
-  SearchkitProvider,
-    //used in express
-    TermQuery,
-    FilteredQuery,
-    BoolShould,
-  ResetFilters
+  SearchkitProvider
 } from "searchkit";
 
-/*
-SearchkitExpress = require("searchkit-express")
-var app = express()
-
-SearchkitExpress({
-    host:process.env.ELASTIC_URL || "http://elastic.vfree.org",
-    index:'raspberry',
-    queryProcessor:function(query, req, res){
-        //do neccessery permissions, prefilters to query object
-
-        //then return it
-        return query
-    }
-  }, app)
-*/
-
-const searchkit = new SearchkitManager("https://elastic.vfree.org/", {basicAuth:"test:12345678"})
+const sk = new SearchkitManager("https://elastic.vfree.org/raspberry", {basicAuth:"ZWxhc3RpYzpjaGFuZ2VtZQ=="});
+var http = Axios.create({
+  baseURL: "https://api.vfree.org",
+  responseType: "json",
+  headers: {"Access-Token": token},
+});
+//const sk = new SearchkitManager("http://demo.searchkit.co/api/movies/")
 /*searchkit.addDefaultQuery((query)=> {
-    return query.addQuery(FilteredQuery({
-      filter:BoolShould([
-        TermQuery("colour", "red"),
-        TermQuery("colour", "orange")
-      ])
-    }))
- })
- */
+  return query.addQuery(FilteredQuery({
+    filter:BoolShould([
+      TermQuery("tags", "123")
+    ])
+  }))
+})*/
 
-
-export default class HomePage extends SearchkitComponent {
-
-
+export default class Searchbar extends SearchkitComponent {
   render() {
     return (
         <div>
-          <SearchkitProvider searchkit={searchkit}>
+          <SearchkitProvider searchkit={sk}>
             <div>
-              <SearchBox/>
-              <Hits mod="sk-hits-grid" hitsPerPage={10}/>
+              <SearchBox />
+              <Hits />
               <NoHits />
             </div>
           </SearchkitProvider>
@@ -67,12 +43,3 @@ export default class HomePage extends SearchkitComponent {
   }
 }
 
-/*
-ReactDOM.render((
-  <SearchkitProvider searchkit={searchkit}>
-    <div>
-      <SearchApp/>
-    </div>
-  </SearchkitProvider>
-),  document.getElementById('root'))
-*/
