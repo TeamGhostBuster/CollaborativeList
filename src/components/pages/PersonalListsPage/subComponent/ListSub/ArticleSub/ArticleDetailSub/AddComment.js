@@ -7,6 +7,7 @@ import Axios from 'axios'
 import cookie from 'react-cookie'
 import Checkbox from 'material-ui/Checkbox';
 import {Toolbar, ToolbarGroup} from 'material-ui/Toolbar';
+import CreateCommentRequest from '../../../../../../Requests/CreateCommentRequest'
 
 export default class AddComment extends React.Component{
   constructor(props){
@@ -38,45 +39,26 @@ export default class AddComment extends React.Component{
   }
 
   postComment(callback){
-    //todo: remove the hardcoded part
-    const path = '/article/'+this.props.id+'/comment';
-    const token = cookie.load('Access-Token');
 
-    var http = Axios.create({
-      baseURL: "https://api.vfree.org",
-      responseType: "json",
-      headers: {
-        "Access-Token":token,
-        "Content-Type":"application/json",
-      }
-    });
-
-    http.post(path, {
-      comment:this.state.content,
-      public:this.state.public
-    })
-      .then((respond) =>{
-        if (respond.status===200){
-          callback();
-        }
-      })
-      .catch((err) => {
-        console.log(err);
-        if (err.status===401){
-          console.log("invalid token");
-        } else {
-          console.log("invalid request of lists info1111");
-        }
-      })
   }
 
   submit(){
+    // submit the post request
     if (this.state.content !== '') {
       const cb = () => {
         this.props.refresh();
         this.setState({expanded: false, content:''})
       };
-      this.postComment(cb)
+
+      const data = {
+        comment:this.state.content,
+        public:this.state.public
+      };
+
+      CreateCommentRequest.post(
+        this.props.id, data, cb
+      );
+
     }
   };
 

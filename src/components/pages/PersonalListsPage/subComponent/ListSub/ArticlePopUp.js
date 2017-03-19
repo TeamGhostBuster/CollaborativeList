@@ -6,8 +6,7 @@ import ContentAdd from 'material-ui/svg-icons/content/add'
 import deepOrangeA400 from 'material-ui/styles/colors';
 import FlatButton from 'material-ui/FlatButton'
 import Chip from 'material-ui/Chip'
-import Axios from 'axios'
-import cookie from 'react-cookie'
+import CreateArticleRequest from '../../../../Requests/CreateArticleRequest'
 
 export default class CreateList extends React.Component {
   constructor(props){
@@ -70,7 +69,7 @@ export default class CreateList extends React.Component {
     this.setState({tag :event.target.value});
   }
 
-  /*=======================================================*/
+  /*======================= handle the form ================================*/
   handleOpen() {
     this.setState({open:true});
   }
@@ -86,47 +85,26 @@ export default class CreateList extends React.Component {
   }
 
   submitToServer(callback){
-    //todo: remove the hardcoded part
-    const path = this.props.group === "true"?
-      "/group/"+this.props.groupId+"/list/"+this.props.listId+"/article" :
-      "/user/list/"+this.props.listId+"/article";
+    const data = {
+      title:this.state.title,
+      description:this.state.description,
+      url:this.state.url,
+      tags:this.state.tags,
+    };
 
-    const token = cookie.load('Access-Token');
+    CreateArticleRequest.post(
+      this.props.listId,
+      this.props.group,
+      this.props.groupId,
+      data, callback
+    );
 
-    var http = Axios.create({
-      baseURL: "https://api.vfree.org",
-      responseType: "json",
-      headers: {
-        "Access-Token":token,
-        "Content-Type":"application/json",
-      }
-    });
-
-    http.post(path, {
-        title:this.state.title,
-        description:this.state.description,
-        url:this.state.url,
-        tags:this.state.tags,
-      })
-      .then((respond) =>{
-        if (respond.status===200){
-          this.props.callback();
-          callback();
-        }
-      })
-      .catch((err) => {
-        console.log(err);
-        if (err.status===401){
-          console.log("invalid token");
-        } else {
-          console.log("invalid request of lists info1111");
-        }
-      })
   }
 
   handleSubmit() {
     if (this.state.title!=='' && this.state.description!==''){
       const cb = () => {
+        this.props.callback();
         this.setState({title:''});
         this.setState({description:''});
         this.setState({url:''});
@@ -139,7 +117,7 @@ export default class CreateList extends React.Component {
     }
   }
 
-  /*=======================================================*/
+  /*======================== handle the tags ===============================*/
   TagOpen(){
     this.setState({addTag:true});
   }
@@ -196,6 +174,8 @@ export default class CreateList extends React.Component {
       <FlatButton label='Finish' primary={true} onTouchTap={this.TagFinish} />
     ];
 
+
+    // this one is not factored out because there are too many dependencies
     const form = [
       <div key="form">
         <TextField fullWidth={true} multiLine={true} hintText="Required" hintStyle={{color: deepOrangeA400}} floatingLabelText="Title" errorText={this.state.requireTitle} onChange={this.titleChange}/>
