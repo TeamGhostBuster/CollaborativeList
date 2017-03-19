@@ -8,12 +8,12 @@ module.exports = {
     const http = Axios.create({
       baseURL: host,
       responseType: 'json',
-      headers: { 'Access-Token': token }
+      headers: {'Access-Token': token}
     });
 
     const path = group === 'true' ? `/group/list/${listId}/archive` : `/user/list/${listId}/archive`;
 
-    const body = group === 'true' ? { data: { group_id: groupId } } : {};
+    const body = group === 'true' ? {data: {group_id: groupId}} : {};
 
     http.delete(path, body)
       .then(

@@ -1,5 +1,5 @@
 module.exports = {
-  get : function (callback) {
+  get: function (callback) {
     let cookie = require('react-cookie');
     let Axios = require('axios');
     const token = cookie.load('Access-Token');
@@ -14,10 +14,10 @@ module.exports = {
       .then(
         // success call back
         (respond) => {
-        if (respond.status === 200) {
+          if (respond.status === 200) {
 
-          callback(respond.data);
-        }
-      })
+            callback(respond.data);
+          }
+        })
   }
 };

@@ -1,14 +1,14 @@
 import React from 'react'
-import { PageTemplate } from 'components'
+import {PageTemplate} from 'components'
 import List from '../PersonalListsPage/subComponent/List'
 import CreateList from '../PersonalListsPage/subComponent/CreateList'
 import MyAppBar from '../CommenComponents/MyAppBar'
 import GetGroupListsRequest from '../../Requests/GetGroupListsRequest'
 
 export default class GroupListsPage extends React.Component {
-  constructor(){
+  constructor() {
     super();
-    this.state = {lists:[<div key="something"></div>]};
+    this.state = {lists: [<div key="something"></div>]};
 
     // bind the function
     this.componentWillMount = this.componentWillMount.bind(this);
@@ -22,7 +22,7 @@ export default class GroupListsPage extends React.Component {
         height: '100%'
       },
       List: {
-        listStyle:'none',
+        listStyle: 'none',
         display: 'inline-flex',
         flexWrap: 'nowrap',
         padding: '0'
@@ -30,7 +30,7 @@ export default class GroupListsPage extends React.Component {
     };
   }
 
-  componentWillMount(){
+  componentWillMount() {
     // thi is part of the constructor, but it can be used as a callback function for a child node.
 
     // call back function for getLists request function
@@ -38,11 +38,12 @@ export default class GroupListsPage extends React.Component {
       console.log(response);
       const listObjs = response['lists'];
       this.setState({
-        lists:listObjs
-                .filter((obj)=>!obj['archived'])
-                .map((listObject) =>
-        <List key={listObject['id']} id={listObject['id']} name={listObject['name']}
-              reloadCallback={this.componentWillMount} group="true" groupId={this.props.location.query.id}/>)})
+        lists: listObjs
+          .filter((obj) => !obj['archived'])
+          .map((listObject) =>
+            <List key={listObject['id']} id={listObject['id']} name={listObject['name']}
+                  reloadCallback={this.componentWillMount} group="true" groupId={this.props.location.query.id}/>)
+      })
     };
 
     // send out the request
@@ -50,9 +51,8 @@ export default class GroupListsPage extends React.Component {
   }
 
 
-
-  render(){
-    return(
+  render() {
+    return (
       <PageTemplate>
         <MyAppBar title={this.props.location.query.name}/>
         <div style={this.styles.root}>

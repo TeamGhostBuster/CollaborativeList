@@ -8,10 +8,10 @@ import FloatingActionButton from 'material-ui/FloatingActionButton';
 import CreateListRequest from '../../../Requests/CreateListRequest'
 
 export default class CreateList extends React.Component {
-  constructor(reloadCallback){
+  constructor(reloadCallback) {
     // props: reloadCallback, group, groupId
     super(reloadCallback);
-    this.state = {open:false, name:"", requireName:"required"};
+    this.state = {open: false, name: "", requireName: "required"};
 
     this.handleOpen = this.handleOpen.bind(this);
     this.handleClose = this.handleClose.bind(this);
@@ -20,7 +20,7 @@ export default class CreateList extends React.Component {
     this.handleChange = this.handleChange.bind(this);
 
     this.styles = {
-      float:{
+      float: {
         position: 'fixed',
         right: '10px',
         bottom: '10px',
@@ -30,38 +30,38 @@ export default class CreateList extends React.Component {
     }
   }
 
-  handleChange(event){
-    this.setState({name :event.target.value});
-    if (event.target.value === ""){
-      this.setState({requireName:"require"});
+  handleChange(event) {
+    this.setState({name: event.target.value});
+    if (event.target.value === "") {
+      this.setState({requireName: "require"});
     } else {
-      this.setState({requireName:""});
+      this.setState({requireName: ""});
     }
   }
 
   handleOpen() {
-    this.setState({open:true});
+    this.setState({open: true});
   }
 
-  handleClose(){
-    this.setState({name:''});
-    this.setState({open:false})
+  handleClose() {
+    this.setState({name: ''});
+    this.setState({open: false})
   }
 
-  handleSubmit(){
-    if (this.state.name !== ''){
+  handleSubmit() {
+    if (this.state.name !== '') {
       this.submitToServer();
-      this.setState({open:false})
+      this.setState({open: false})
     } else {
       console.log("name field is empty")
     }
 
   }
 
-  submitToServer(){
+  submitToServer() {
 
-    if (this.props.group === 'true'){
-      this.body={name:this.state.name,group_id:this.props.groupId};
+    if (this.props.group === 'true') {
+      this.body = {name: this.state.name, group_id: this.props.groupId};
     } else {
       this.body = {name: this.state.name};
     }
@@ -74,19 +74,19 @@ export default class CreateList extends React.Component {
       }
     };
 
-    CreateListRequest.post(this.props.group,this.body,callback)
+    CreateListRequest.post(this.props.group, this.body, callback)
   }
 
 
   render() {
     // actions on the bottom of the dialog
     const actions = [
-      <FlatButton label='Cancel' primary={true} onTouchTap={this.handleClose} />,
-      <FlatButton label='Submit' primary={true} onTouchTap={this.handleSubmit} />
+      <FlatButton label='Cancel' primary={true} onTouchTap={this.handleClose}/>,
+      <FlatButton label='Submit' primary={true} onTouchTap={this.handleSubmit}/>
     ];
 
     return (
-      <li style={{listStyle:'none'}}>
+      <li style={{listStyle: 'none'}}>
         <FloatingActionButton style={this.styles.float} onTouchTap={this.handleOpen}>
           <ContentAdd/>
         </FloatingActionButton>

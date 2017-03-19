@@ -1,4 +1,4 @@
-module.exports={
+module.exports = {
   post: function (listId, group, groupId, dataObject, callback) {
     let Axios = require('axios');
     let cookie = require('react-cookie');
@@ -9,24 +9,24 @@ module.exports={
       baseURL: host,
       responseType: "json",
       headers: {
-        "Access-Token":token,
-        "Content-Type":"application/json",
+        "Access-Token": token,
+        "Content-Type": "application/json",
       }
     });
 
 
-    const path = group === "true"?
-      "/group/"+groupId+"/list/"+listId+"/article" :
-      "/user/list/"+listId+"/article";
+    const path = group === "true" ?
+      "/group/" + groupId + "/list/" + listId + "/article" :
+      "/user/list/" + listId + "/article";
 
 
     http.post(path, dataObject)
-      .then((respond) =>{
+      .then((respond) => {
         callback();
       })
       .catch((err) => {
         console.log(err);
-        if (err.status===401){
+        if (err.status === 401) {
           console.log("invalid token");
         } else {
           console.log("invalid request of lists info1111");

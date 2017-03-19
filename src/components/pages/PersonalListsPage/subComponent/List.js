@@ -12,11 +12,11 @@ import ArchiveListRequest from '../../../Requests/ArchiveListRequest';
 import PartitionDialog from './ListSub/PartitionDialog'
 
 export default class List extends React.Component {
-  constructor(){
+  constructor() {
     // props: {id: list id, name: list name, reloadCallback:fucntion, group: "true", groupId }
     super();
 
-    this.state = {articles:[], partitionDialog:false};
+    this.state = {articles: [], partitionDialog: false};
 
     this.getArticles = this.getArticles.bind(this);
     this.componentWillMount = this.componentWillMount.bind(this);
@@ -28,17 +28,17 @@ export default class List extends React.Component {
 
     this.styles = {
       list: {
-        width:'300px',
+        width: '300px',
         paddingLeft: '10px',
         paddingRight: '10px'
       },
       articleList: {
-        padding:'0'
+        padding: '0'
       }
     }
   }
 
-  componentWillMount(){
+  componentWillMount() {
     var that = this;
     const cb = (response) => {
       that.setState({articles: response["articles"]})
@@ -56,7 +56,7 @@ export default class List extends React.Component {
     );
   }
 
-  archiveList(){
+  archiveList() {
     // send the delete request
     ArchiveListRequest.delete(
       this.props.id,
@@ -67,58 +67,64 @@ export default class List extends React.Component {
 
   }
 
-  renameList(){
+  renameList() {
 
   }
 
-  partitionList(){
-    this.setState({partitionDialog:<PartitionDialog open={true} list_id={this.props.id} close={this.partitionListClose}
-                                                    articles={this.state.articles}/>})
+  partitionList() {
+    this.setState({
+      partitionDialog: <PartitionDialog open={true} list_id={this.props.id} close={this.partitionListClose}
+                                        articles={this.state.articles}/>
+    })
   }
 
-  partitionListClose(success){
-    this.setState({partitionDialog:<PartitionDialog open={false} list_id={this.props.id} close={this.partitionListClose}
-                                                    articles={this.state.articles}/>})
-    if (success){
+  partitionListClose(success) {
+    this.setState({
+      partitionDialog: <PartitionDialog open={false} list_id={this.props.id} close={this.partitionListClose}
+                                        articles={this.state.articles}/>
+    })
+    if (success) {
       this.componentWillMount();
       this.props.reloadCallback();
     }
   }
 
-  shareToGroup(){
+  shareToGroup() {
 
   }
 
   // list menu buttons
   Menu = (props) =>
     <IconMenu {...props}
-      iconButtonElement={<IconButton name="ListActionsButton"><MoreVertIcon/></IconButton>}
-      targetOrigin={{horizontal: 'left', vertical: 'top'}}
-      anchorOrigin={{horizontal: 'left', vertical: 'top'}}
+              iconButtonElement={<IconButton name="ListActionsButton"><MoreVertIcon/></IconButton>}
+              targetOrigin={{horizontal: 'left', vertical: 'top'}}
+              anchorOrigin={{horizontal: 'left', vertical: 'top'}}
     >
       <MenuItem primaryText="Rename" onTouchTap={this.renameList}/>
       <MenuItem primaryText="Archive" onTouchTap={this.archiveList}/>
       <MenuItem primaryText="Partition" onTouchTap={this.partitionList}/>
       <MenuItem primaryText="Share To Group" onTouchTap={this.shareToGroup}/>
-    </IconMenu> ;
+    </IconMenu>;
 
   render() {
     // make a list of <ArticleCard/>
     const liItems = this.state.articles.map(
       (article) =>
-      <ArticleCard key={article['id']} id={article['id']} list_id={this.props.id}
-                   title={article['title']} group={this.props.group} groupId = {this.props.groupId}
-                   refresh={this.componentWillMount} vote={article['vote_count']}/>
+        <ArticleCard key={article['id']} id={article['id']} list_id={this.props.id}
+                     title={article['title']} group={this.props.group} groupId={this.props.groupId}
+                     refresh={this.componentWillMount} vote={article['vote_count']}/>
     );
 
-    return(
+    return (
       <li style={this.styles.list}>
         <Card>
           <CardMedia>
-            <AppBar title={this.props.name} titleStyle={{fontSize:'1.3em'}} iconElementLeft={<div/>} iconElementRight={this.Menu()}/>
+            <AppBar title={this.props.name} titleStyle={{fontSize: '1.3em'}} iconElementLeft={<div/>}
+                    iconElementRight={this.Menu()}/>
             <ul style={this.styles.articleList}>
               {liItems}
-              <CreateArticle listId={this.props.id} callback={this.componentWillMount} group={this.props.group} groupId={this.props.groupId}/>
+              <CreateArticle listId={this.props.id} callback={this.componentWillMount} group={this.props.group}
+                             groupId={this.props.groupId}/>
             </ul>
           </CardMedia>
         </Card>

@@ -1,5 +1,5 @@
 module.exports = {
-  get : function (groupId, callback) {
+  get: function (groupId, callback) {
     let cookie = require('react-cookie');
     let Axios = require('axios');
     const token = cookie.load('Access-Token');
@@ -10,7 +10,7 @@ module.exports = {
       headers: {"Access-Token": token},
     });
 
-    http.get('/group/'+groupId+'/lists')
+    http.get('/group/' + groupId + '/lists')
       .then(
         // success call back
         (respond) => {

@@ -5,8 +5,8 @@ import Delete from 'material-ui/svg-icons/action/delete'
 import {Toolbar, ToolbarGroup, ToolbarTitle} from 'material-ui/Toolbar';
 import ArchiveArticleRequest from '../../../../../../Requests/ArchiveArticleRequest'
 
-export default class TopBar extends React.Component{
-  constructor(title, list_id, article_id, close){
+export default class TopBar extends React.Component {
+  constructor(title, list_id, article_id, close) {
     super(title, list_id, article_id, close);
 
     this.remove = this.remove.bind(this);
@@ -22,11 +22,12 @@ export default class TopBar extends React.Component{
     );
   }
 
-  render(){
-    return(
+  render() {
+    return (
       <Toolbar>
         <ToolbarGroup>
-          <ToolbarTitle text={this.props.title} style={{color:'black',textOverflow:'clip ellipsis', width:'500px'}} />
+          <ToolbarTitle text={this.props.title}
+                        style={{color: 'black', textOverflow: 'clip ellipsis', width: '500px'}}/>
         </ToolbarGroup>
         <ToolbarGroup>
           <IconButton name="shareButton" tooltip="Show To Other Lists"><Share/></IconButton>

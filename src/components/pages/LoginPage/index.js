@@ -1,5 +1,5 @@
 import React from 'react'
-import { PageTemplate } from 'components'
+import {PageTemplate} from 'components'
 import GoogleLogin from 'react-google-login'
 import cookie from 'react-cookie'
 import {browserHistory} from 'react-router'
@@ -42,7 +42,6 @@ function checkLogIn() {
 }
 
 
-
 export default class LoginPage extends React.Component {
 
   render() {
@@ -59,16 +58,16 @@ export default class LoginPage extends React.Component {
       <div>
         <AppBar title="LogIn Page" iconElementLeft={<div></div>}/>
         <Card style={styles}>
-          <CardTitle title="To Use CollaborativeList " style={{paddingTop:100, paddingBottom:30}}/>
-          <CardTitle title="You Need To Be Logged In " style={{paddingTop:30, paddingBottom:60}}/>
+          <CardTitle title="To Use CollaborativeList " style={{paddingTop: 100, paddingBottom: 30}}/>
+          <CardTitle title="You Need To Be Logged In " style={{paddingTop: 30, paddingBottom: 60}}/>
 
 
-            <GoogleLogin
-              clientId={GOOGLE_CLIENT_ID}
-              onSuccess={success}
-              onFailure={error}
-              buttonText='Login with Google'
-            />
+          <GoogleLogin
+            clientId={GOOGLE_CLIENT_ID}
+            onSuccess={success}
+            onFailure={error}
+            buttonText='Login with Google'
+          />
 
         </Card>
 
