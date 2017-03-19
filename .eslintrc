@@ -21,7 +21,7 @@
     "import/resolver": "webpack"
   },
   "rules": {
-    "semi": [2, "never"],
+    "semi": [2, "always"],
     "comma-dangle": 0,
     "max-len": 0,
     "no-shadow": 0,

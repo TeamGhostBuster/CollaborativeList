@@ -24,7 +24,7 @@ export default class Group extends React.Component {
   goToLists(){
     //browserHistory.push('/group?id='+this.props.id+'&name='+this.props.name);
     console.log("groupId:"+this.props.id);
-    browserHistory.push({pathname:'/group',query:{id:this.props.id,name:this.props.name}});
+    browserHistory.push({pathname:'/group',query:{q:this.props.id,name:this.props.name}});
 
   }
 
