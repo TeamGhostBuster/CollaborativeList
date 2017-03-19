@@ -8,18 +8,23 @@ import IconMenu from 'material-ui/IconMenu';
 import MenuItem from 'material-ui/MenuItem';
 import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
 import GetArticlesRequest from '../../../Requests/GetArticlesRequest';
-import ArchiveListRequest from '../../../Requests/ArchiveListRequest'
+import ArchiveListRequest from '../../../Requests/ArchiveListRequest';
+import PartitionDialog from './ListSub/PartitionDialog'
 
 export default class List extends React.Component {
   constructor(){
     // props: {id: list id, name: list name, reloadCallback:fucntion, group: "true", groupId }
     super();
 
-    this.state = {articles:[]};
+    this.state = {articles:[], partitionDialog:false};
 
     this.getArticles = this.getArticles.bind(this);
     this.componentWillMount = this.componentWillMount.bind(this);
     this.archiveList = this.archiveList.bind(this);
+    this.renameList = this.renameList.bind(this);
+    this.partitionList = this.partitionList.bind(this);
+    this.partitionListClose = this.partitionListClose.bind(this);
+    this.shareToGroup = this.shareToGroup.bind(this);
 
     this.styles = {
       list: {
@@ -62,14 +67,39 @@ export default class List extends React.Component {
 
   }
 
+  renameList(){
+
+  }
+
+  partitionList(){
+    this.setState({partitionDialog:<PartitionDialog open={true} list_id={this.props.id} close={this.partitionListClose}
+                                                    articles={this.state.articles}/>})
+  }
+
+  partitionListClose(success){
+    this.setState({partitionDialog:<PartitionDialog open={false} list_id={this.props.id} close={this.partitionListClose}
+                                                    articles={this.state.articles}/>})
+    if (success){
+      this.componentWillMount();
+      this.props.reloadCallback();
+    }
+  }
+
+  shareToGroup(){
+
+  }
+
   // list menu buttons
   Menu = (props) =>
     <IconMenu {...props}
-      iconButtonElement={<IconButton><MoreVertIcon/></IconButton>}
+      iconButtonElement={<IconButton name="ListActionsButton"><MoreVertIcon/></IconButton>}
       targetOrigin={{horizontal: 'left', vertical: 'top'}}
       anchorOrigin={{horizontal: 'left', vertical: 'top'}}
     >
+      <MenuItem primaryText="Rename" onTouchTap={this.renameList}/>
       <MenuItem primaryText="Archive" onTouchTap={this.archiveList}/>
+      <MenuItem primaryText="Partition" onTouchTap={this.partitionList}/>
+      <MenuItem primaryText="Share To Group" onTouchTap={this.shareToGroup}/>
     </IconMenu> ;
 
   render() {
@@ -92,6 +122,7 @@ export default class List extends React.Component {
             </ul>
           </CardMedia>
         </Card>
+        {this.state.partitionDialog}
       </li>
     );
   }
