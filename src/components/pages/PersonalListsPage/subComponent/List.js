@@ -10,18 +10,20 @@ import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
 import GetArticlesRequest from '../../../Requests/GetArticlesRequest';
 import ArchiveListRequest from '../../../Requests/ArchiveListRequest';
 import PartitionDialog from './ListSub/PartitionDialog'
+import RenameDialog from './ListSub/RenameDialog'
 
 export default class List extends React.Component {
   constructor() {
     // props: {id: list id, name: list name, reloadCallback:fucntion, group: "true", groupId }
     super();
 
-    this.state = {articles: [], partitionDialog: false};
+    this.state = {articles: [], partitionDialog: false, renameDialog:false };
 
     this.getArticles = this.getArticles.bind(this);
     this.componentWillMount = this.componentWillMount.bind(this);
     this.archiveList = this.archiveList.bind(this);
     this.renameList = this.renameList.bind(this);
+    this.renameListClose = this.renameListClose.bind(this);
     this.partitionList = this.partitionList.bind(this);
     this.partitionListClose = this.partitionListClose.bind(this);
     this.shareToGroup = this.shareToGroup.bind(this);
@@ -68,7 +70,16 @@ export default class List extends React.Component {
   }
 
   renameList() {
+    this.setState({renameDialog: <RenameDialog open={true} list_id={this.props.id} close={this.renameListClose} /> })
+  }
 
+  renameListClose(success){
+    console.log("in list", success)
+    this.setState({renameDialog:false})
+    if (success){
+
+      this.props.reloadCallback();
+    }
   }
 
   partitionList() {
@@ -82,7 +93,7 @@ export default class List extends React.Component {
     this.setState({
       partitionDialog: <PartitionDialog open={false} list_id={this.props.id} close={this.partitionListClose}
                                         articles={this.state.articles}/>
-    })
+    });
     if (success) {
       this.componentWillMount();
       this.props.reloadCallback();
@@ -129,6 +140,7 @@ export default class List extends React.Component {
           </CardMedia>
         </Card>
         {this.state.partitionDialog}
+        {this.state.renameDialog}
       </li>
     );
   }
