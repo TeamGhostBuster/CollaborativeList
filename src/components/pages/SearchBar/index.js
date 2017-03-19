@@ -12,20 +12,29 @@ import {
   SearchkitProvider
 } from "searchkit";
 
-const sk = new SearchkitManager("https://elastic.vfree.org/raspberry", {basicAuth:"ZWxhc3RpYzpjaGFuZ2VtZQ=="});
-var http = Axios.create({
-  baseURL: "https://api.vfree.org",
-  responseType: "json",
-  headers: {"Access-Token": token},
-});
-//const sk = new SearchkitManager("http://demo.searchkit.co/api/movies/")
-/*searchkit.addDefaultQuery((query)=> {
-  return query.addQuery(FilteredQuery({
-    filter:BoolShould([
-      TermQuery("tags", "123")
-    ])
-  }))
-})*/
+//const host = "https://pod.vfree.org/raspberry";
+const host = "http://demo.searchkit.co/api/movies";
+const sk = new SearchkitManager(host, {basicAuth:"ZWxhc3RpYzpjaGFuZ2VtZQ=="});
+
+ //manual test
+// var http = Axios.create({
+//   baseURL: "https://elastic.vfree.org",
+//   responseType: "json",
+//   headers: {"Authorization": "Basic ZWxhc3RpYzpjaGFuZ2VtZQ=="}
+// });
+// http.get('/raspberry/_search')
+//   .then(function (response) {
+//     console.log(response)
+//   })
+
+//const sk = new SearchkitManager("http://demo.searchkit.co/api/movies")
+// searchkit.addDefaultQuery((query)=> {
+//   return query.addQuery(FilteredQuery({
+//     filter:BoolShould([
+//       TermQuery("tags", "123")
+//     ])
+//   }))
+// })
 
 export default class Searchbar extends SearchkitComponent {
   render() {
