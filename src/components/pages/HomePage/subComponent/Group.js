@@ -1,6 +1,6 @@
 import React from 'react'
 import{Card, CardText} from 'material-ui/Card'
-import{ browserHistory } from 'react-router'
+import{browserHistory} from 'react-router'
 
 export default class Group extends React.Component {
   constructor() {
@@ -8,30 +8,30 @@ export default class Group extends React.Component {
     this.goToLists = this.goToLists.bind(this);
 
     this.styles = {
-      card:{
-        width:'350px',
-        height:'200px',
-        textAlign:'center',
-        margin:'20px'
+      card: {
+        width: '350px',
+        height: '200px',
+        textAlign: 'center',
+        margin: '20px'
       },
-      cardText:{
+      cardText: {
         height: '100%',
         fontSize: '200%'
       }
     }
   }
 
-  goToLists(){
+  goToLists() {
     //browserHistory.push('/group?id='+this.props.id+'&name='+this.props.name);
-    console.log("groupId:"+this.props.id);
-    browserHistory.push({pathname:'/group',query:{q:this.props.id,name:this.props.name}});
+    console.log("groupId:" + this.props.id);
+    browserHistory.push({pathname: '/group', query: {id: this.props.id, name: this.props.name}});
 
   }
 
   render() {
-    return(
-      <div style={{display:'flex'}}>
-        <Card style={this.styles.card} onExpandChange={this.goToLists} >
+    return (
+      <div style={{display: 'flex'}}>
+        <Card style={this.styles.card} onExpandChange={this.goToLists}>
           <CardText style={this.styles.cardText} actAsExpander={true}>
             {this.props.name}
           </CardText>

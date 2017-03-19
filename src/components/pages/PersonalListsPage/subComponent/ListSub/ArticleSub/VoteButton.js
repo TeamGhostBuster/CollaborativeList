@@ -6,23 +6,23 @@ import Down from 'material-ui/svg-icons/hardware/keyboard-arrow-down'
 import IconButton from 'material-ui/IconButton'
 import VoteRequest from '../../../../../Requests/VoteRequest'
 
-export default class VoteButton extends React.Component{
-  constructor(action,id,refresh,groupId,listId){
+export default class VoteButton extends React.Component {
+  constructor(action, id, refresh, groupId, listId) {
     // props: { action: "up" or "down", id: article id, refresh: refresh the list, groupId, listId}
-    super(action,id,refresh,groupId,listId);
+    super(action, id, refresh, groupId, listId);
     this.icon = this.props.action === "up" ? <Up/> : <Down/>;
     this.name = this.props.action === "up" ? "Upvote" : "Downvote";
 
     this.vote = this.vote.bind(this);
 
-    this.styles={
+    this.styles = {
       smallIcon: {
-        padding:'0', width:'20px',height:'20px'
+        padding: '0', width: '20px', height: '20px'
       }
     };
   }
 
-  vote(){
+  vote() {
     // send out the request
     VoteRequest.post(
       this.props.action,
@@ -33,7 +33,7 @@ export default class VoteButton extends React.Component{
     );
   }
 
-  render(){
+  render() {
     return (
       <IconButton name={this.name} iconStyle={this.styles.smallIcon} onTouchTap={this.vote}>
         {this.icon}

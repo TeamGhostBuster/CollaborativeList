@@ -1,9 +1,8 @@
-
 import React from 'react';
 import { Route, IndexRoute, browserHistory } from 'react-router';
 
 import App from 'components/App';
-import { HomePage, LoginPage, PersonalListsPage, ArticlePage, GroupListsPage, SearchPage } from 'components';
+import { HomePage, LoginPage, PersonalListsPage, GroupListsPage, SearchPage } from 'components';
 
 
 const routes = (
@@ -16,6 +15,7 @@ const routes = (
     <Route path="/login" component={LoginPage} />
     <Route path="/search" component={SearchPage} />
     {/* <Route path='/home' component={HomePage} onEnter={} />*/}
+
   </Route>
 );
 

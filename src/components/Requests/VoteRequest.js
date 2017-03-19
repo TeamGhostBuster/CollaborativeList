@@ -8,22 +8,24 @@ module.exports = {
     let http = Axios.create({
       baseURL: host,
       responseType: "json",
-      headers: {"Access-Token":token},
+      headers: {"Access-Token": token},
     });
 
-    const pathPrefix = "/group/"+groupId+"/list/"+listId+"/article/"+articleId;
-    const path = action === "up"?
-      pathPrefix + "/upvote":
+    const pathPrefix = "/group/" + groupId + "/list/" + listId + "/article/" + articleId;
+    const path = action === "up" ?
+      pathPrefix + "/upvote" :
       pathPrefix + "/downvote";
 
     http.post(path)
       .then(
-        (respond) => {callback()}
+        (respond) => {
+          callback()
+        }
       )
       .catch(
         (err) => {
           console.log(err);
-          if (err.status===401){
+          if (err.status === 401) {
             console.log("invalid token");
           } else {
             console.log("invalid request of lists info");

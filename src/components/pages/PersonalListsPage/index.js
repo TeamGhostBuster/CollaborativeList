@@ -41,17 +41,16 @@ export default class ListsPage extends React.Component {
       const listObjs = response['lists'];
       this.setState({
         lists: listObjs
-                  .filter((obj) => !obj['archived'])
-                  .map((listObject) =>
-          <List key={listObject['id']} id={listObject['id']} name={listObject['name']}
-                reloadCallback={this.componentWillMount}/>)
+          .filter((obj) => !obj['archived'])
+          .map((listObject) =>
+            <List key={listObject['id']} id={listObject['id']} name={listObject['name']}
+                  reloadCallback={this.componentWillMount}/>)
       })
     };
 
     // send out the request
     GetUserListsRequest.get(cb);
   }
-
 
 
   render() {

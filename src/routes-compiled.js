@@ -16,13 +16,15 @@ var _App2 = _interopRequireDefault(_App);
 
 var _components = require('components');
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : {default: obj};
+}
 
 var routes = _react2.default.createElement(
   _reactRouter.Route,
-  { path: '/', component: _App2.default },
-  _react2.default.createElement(_reactRouter.IndexRoute, { component: _components.HomePage }),
-  _react2.default.createElement(_reactRouter.Route, { path: '/login', component: _components.LoginPage })
+  {path: '/', component: _App2.default},
+  _react2.default.createElement(_reactRouter.IndexRoute, {component: _components.HomePage}),
+  _react2.default.createElement(_reactRouter.Route, {path: '/login', component: _components.LoginPage})
 );
 
 var _default = routes;

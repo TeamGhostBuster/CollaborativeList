@@ -5,9 +5,9 @@ import Axios from 'axios'
 import cookie from 'react-cookie'
 
 export default class LowerSection extends React.Component {
-  constructor(){
+  constructor() {
     super();
-    this.state = {groups:[]};
+    this.state = {groups: []};
     this.getGroups = this.getGroups.bind(this);
     this.componentWillMount = this.componentWillMount.bind(this);
   }
@@ -17,30 +17,32 @@ export default class LowerSection extends React.Component {
     const cb = (response) => {
       console.log(response);
       const listObjs = response['groups'];
-      this.setState({groups:listObjs.map((listObject) =>
-              <Group key={listObject['id']} id={listObject['id']} name={listObject['name']} />)})
+      this.setState({
+        groups: listObjs.map((listObject) =>
+          <Group key={listObject['id']} id={listObject['id']} name={listObject['name']}/>)
+      })
     };
     this.getGroups(cb);
   }
 
-  getGroups(callback){
+  getGroups(callback) {
     //todo: remove the hardcoded part
     const host = window.location.host;
     const token = cookie.load('Access-Token');
 
-    var http= Axios.create({
+    var http = Axios.create({
       baseURL: "https://api.vfree.org",
       responseType: "json",
-      headers: {"Access-Token":token},
+      headers: {"Access-Token": token},
     });
 
     http.get('/user/groups')
-      .then((respond)=>{
-        if (respond.status === 200 ){
+      .then((respond) => {
+        if (respond.status === 200) {
           callback(respond.data)
         }
       })
-      .catch((err)=>{
+      .catch((err) => {
         console.log(err);
         console.log('error get group list')
       })
@@ -48,10 +50,10 @@ export default class LowerSection extends React.Component {
 
   render() {
     return (
-      <div style={{display:'inline-flex',justifyContent: 'space-around',flexWrap:'wrap'}}>
-          {console.log(this.state.groups)}
-          {this.state.groups}
-          <CreateGroup reloadCallback={this.componentWillMount}/>
+      <div style={{display: 'inline-flex', justifyContent: 'space-around', flexWrap: 'wrap'}}>
+        {console.log(this.state.groups)}
+        {this.state.groups}
+        <CreateGroup reloadCallback={this.componentWillMount}/>
       </div>
     );
   }
