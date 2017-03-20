@@ -5,9 +5,9 @@ import FlatButton from 'material-ui/FlatButton';
 import PutRenameRequest from '../../../../Requests/PutRenameRequest';
 
 export default class RenameDialog extends React.Component {
-  constructor(open, articles, close, list_id) {
-    // props: {open: bool, articles: list of ids, close: callback function, list_id: string}
-    super(open, articles, close, list_id);
+  constructor(open, close, list_id) {
+    // props: {open: bool: list of ids, close: callback function, list_id: string}
+    super(open, close, list_id);
 
     this.state = { name: '', requireName: 'required' };
 
@@ -58,3 +58,14 @@ export default class RenameDialog extends React.Component {
     );
   }
 }
+
+RenameDialog.propTypes = {
+  // if the dialog is open
+  open: React.PropTypes.bool.isRequired,
+
+  // callback function to close the dialog
+  close: React.PropTypes.func.isRequired,
+
+  // the id of the list to be changed
+  list_id: React.PropTypes.string.isRequired
+};

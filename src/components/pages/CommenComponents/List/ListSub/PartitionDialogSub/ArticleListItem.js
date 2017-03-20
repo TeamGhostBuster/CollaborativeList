@@ -25,3 +25,14 @@ export default class ArticleListItem extends React.Component {
     );
   }
 }
+
+ArticleListItem.propTypes = {
+  // article title
+  title: React.PropTypes.string.isRequired,
+
+  // article id
+  article_id: React.PropTypes.string.isRequired,
+
+  // callback action, if this article is selected/un-selected
+  selectedAction: React.PropTypes.func.isRequired
+};

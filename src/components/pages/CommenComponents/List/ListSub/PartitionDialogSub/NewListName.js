@@ -3,10 +3,11 @@ import Dialog from 'material-ui/Dialog';
 import TextField from 'material-ui/TextField';
 import FlatButton from 'material-ui/FlatButton';
 import PutPartitionListRequest from '../../../../../Requests/PutPartitionListRequest';
+
 export default class NewListName extends React.Component {
-  constructor(open, articles, close, list_id) {
-    // props: {open: bool, articles: list of ids, close: callback function, list_id: string}
-    super(open, articles, close, list_id);
+  constructor(open, close, list_id) {
+    // props: {open: bool, close: callback function, list_id: string}
+    super(open, close, list_id);
 
     this.state = { name: '', requireName: 'required' };
 
@@ -32,7 +33,7 @@ export default class NewListName extends React.Component {
 
   handleSubmit() {
     if (this.state.name !== '') {
-      const cb = (response) => {
+      const cb = () => {
         // close this and refresh this whole list page!
         this.handleClose(true);
       };
@@ -57,3 +58,14 @@ export default class NewListName extends React.Component {
     );
   }
 }
+
+NewListName.propTypes = {
+  // if this dialog is open
+  open: React.PropTypes.string.isRequired,
+
+  // callback to close this dialog
+  close: React.PropTypes.func.isRequired,
+
+  // list id
+  list_id: React.PropTypes.string.isRequired
+};

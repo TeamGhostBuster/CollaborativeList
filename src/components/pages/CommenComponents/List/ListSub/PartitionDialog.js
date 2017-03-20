@@ -86,3 +86,23 @@ export default class PartitionDialog extends React.Component {
     );
   }
 }
+
+PartitionDialog.propTypes = {
+  // if the dialog is open
+  open: React.PropTypes.bool.isRequired,
+
+  // list id
+  list_id: React.PropTypes.string.isRequired,
+
+  // 'true' or undefined
+  gourp: React.PropTypes.string,
+
+  // group id if this is for a group
+  group_id: React.PropTypes.string,
+
+  // callback function to close the dialog
+  close: React.PropTypes.func.isRequired,
+
+  // a list of article objects
+  articles: React.PropTypes.array.isRequired
+};

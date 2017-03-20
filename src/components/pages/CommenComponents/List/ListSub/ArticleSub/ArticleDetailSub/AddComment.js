@@ -3,8 +3,6 @@ import CommentIcon from 'material-ui/svg-icons/communication/comment';
 import FlatButton from 'material-ui/FlatButton';
 import { Card, CardMedia, CardActions } from 'material-ui/Card';
 import TextField from 'material-ui/TextField';
-import Axios from 'axios';
-import cookie from 'react-cookie';
 import Checkbox from 'material-ui/Checkbox';
 import { Toolbar, ToolbarGroup } from 'material-ui/Toolbar';
 import CreateCommentRequest from '../../../../../../Requests/CreateCommentRequest';
@@ -18,7 +16,6 @@ export default class AddComment extends React.Component {
     this.onClose = this.onClose.bind(this);
     this.onOpen = this.onOpen.bind(this);
     this.submit = this.submit.bind(this);
-    this.postComment = this.postComment.bind(this);
     this.handleCheck = this.handleCheck.bind(this);
     this.handleChange = this.handleChange.bind(this);
   }
@@ -37,10 +34,6 @@ export default class AddComment extends React.Component {
 
   handleCheck(event, checked) {
     this.setState({ public: checked });
-  }
-
-  postComment(callback) {
-
   }
 
   submit() {
@@ -94,3 +87,11 @@ export default class AddComment extends React.Component {
     );
   }
 }
+
+AddComment.propTypes = {
+  // id :article id,
+  id: React.PropTypes.string.isRequired,
+
+  // refresh: callback to refresh
+  refresh: React.PropTypes.func.isRequired
+};

@@ -1,13 +1,9 @@
 import React from 'react';
-import { PageTemplate } from 'components';
 import GoogleLogin from 'react-google-login';
 import cookie from 'react-cookie';
 import { browserHistory } from 'react-router';
 import AppBar from 'material-ui/AppBar';
-import Paper from 'material-ui/Paper';
-import { Card, CardMedia, CardTitle, CardActions, CardText } from 'material-ui/Card';
-import RaisedButton from 'material-ui/RaisedButton';
-
+import { Card, CardTitle } from 'material-ui/Card';
 
 // callback function after login
 const success = (response) => {
@@ -19,7 +15,7 @@ const success = (response) => {
 
 // callback function when fail to login
 const error = (response) => {
-  console.log('Fail to login');
+  console.log('Fail to login', response);
 };
 
 function checkLogIn() {
@@ -29,7 +25,7 @@ function checkLogIn() {
     const xhr = new XMLHttpRequest();
     xhr.open('POST', url);
     xhr.onreadystatechange = function () {
-      if (xhr.readyState == 4 && xhr.status == 200) {
+      if (xhr.readyState === 4 && xhr.status === 200) {
         const response = JSON.parse(xhr.response);
         if (response.aud !== undefined) {
           browserHistory.goBack();

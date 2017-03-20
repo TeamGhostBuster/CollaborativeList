@@ -94,3 +94,18 @@ export default class ArticleDialog extends React.Component {
     );
   }
 }
+
+ArticleDialog.Pro = {
+  // if the dialog is open
+  isOpen: React.PropTypes.bool.isRequired,
+
+  // callback function to close the dialog from parent
+  close: React.PropTypes.func.isRequired,
+
+  // article id
+  id: React.PropTypes.string.isRequired,
+
+  // list id
+  list_id: React.PropTypes.string.isRequired,
+
+};

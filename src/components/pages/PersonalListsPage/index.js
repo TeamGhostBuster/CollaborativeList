@@ -1,12 +1,10 @@
 import React from 'react';
 import { PageTemplate } from 'components';
-import { browserHistory } from 'react-router';
 import List from '../CommenComponents/List/List';
 import CreateList from '../CommenComponents/List/CreateList';
-import { AppBar, IconButton } from 'material-ui';
-import Back from 'material-ui/svg-icons/hardware/keyboard-backspace';
 import GetUserListsRequest from '../../Requests/GetUserListsRequest';
 import MyAppBar from '../CommenComponents/MyAppBar';
+
 export default class ListsPage extends React.Component {
   constructor(props) {
     super(props);

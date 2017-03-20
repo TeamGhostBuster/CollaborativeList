@@ -8,7 +8,7 @@ import FlatButton from 'material-ui/FlatButton';
 import Chip from 'material-ui/Chip';
 import CreateArticleRequest from '../../../../Requests/CreateArticleRequest';
 
-export default class CreateList extends React.Component {
+export default class ArticlePopUp extends React.Component {
   constructor(props) {
     // props { lisdTd, callback, group, groupId}
     super(props);
@@ -239,3 +239,17 @@ export default class CreateList extends React.Component {
     );
   }
 }
+
+ArticlePopUp.propTypes = {
+  // list id
+  listId: React.PropTypes.string.isRequired,
+
+  // callback function to reload the list
+  callback: React.PropTypes.func.isRequired,
+
+  // 'true' or undefined
+  group: React.PropTypes.string,
+
+  // group id if this is a group article
+  groupId: React.PropTypes.string
+};

@@ -1,8 +1,8 @@
 import React from 'react';
-import Group from './Group';
-import CreateGroup from './CreateGroup';
 import Axios from 'axios';
 import cookie from 'react-cookie';
+import Group from './Group';
+import CreateGroup from './CreateGroup';
 
 export default class LowerSection extends React.Component {
   constructor() {
@@ -13,7 +13,6 @@ export default class LowerSection extends React.Component {
   }
 
   componentWillMount() {
-    const that = this;
     const cb = (response) => {
       console.log(response);
       const listObjs = response.groups;
@@ -26,8 +25,6 @@ export default class LowerSection extends React.Component {
   }
 
   getGroups(callback) {
-    // todo: remove the hardcoded part
-    const host = window.location.host;
     const token = cookie.load('Access-Token');
 
     const http = Axios.create({

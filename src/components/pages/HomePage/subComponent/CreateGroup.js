@@ -67,10 +67,7 @@ export default class CreateGroup extends React.Component {
   }
 
   submitToServer() {
-    // todo: remove the hardcoded part
-    const host = window.location.host;
     const token = cookie.load('Access-Token');
-    const listId = this.props.listId;
 
     const http = Axios.create({
       baseURL: 'https://api.vfree.org',
@@ -134,3 +131,9 @@ export default class CreateGroup extends React.Component {
     );
   }
 }
+
+CreateGroup.propTypes = {
+  // callback function to reload the parent page
+  reloadCallback: React.PropTypes.func.isRequired
+
+};

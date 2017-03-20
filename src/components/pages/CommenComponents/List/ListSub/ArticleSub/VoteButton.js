@@ -42,3 +42,19 @@ export default class VoteButton extends React.Component {
   }
 }
 
+VoteButton.propTypes = {
+  // 'up' or 'down'
+  action: React.PropTypes.string.isRequired,
+
+  // id of the article
+  id: React.PropTypes.string.isRequired,
+
+  // callback function to refresh the parent component
+  refresh: React.PropTypes.func.isRequired,
+
+  // group id of the article
+  groupId: React.PropTypes.string.isRequired,
+
+  // list if of the article
+  listId: React.PropTypes.string.isRequired
+};

@@ -1,14 +1,14 @@
 import React from 'react';
+import { Toolbar, ToolbarGroup } from 'material-ui/Toolbar';
 import { Card, CardHeader, CardText } from 'material-ui/Card';
 import Chip from 'material-ui/Chip';
 import RaisedButton from 'material-ui/RaisedButton';
 import ArticleDialog from './ArticleSub/ArticleDialog';
 import VoteButton from './ArticleSub/VoteButton';
-import { Toolbar, ToolbarGroup } from 'material-ui/Toolbar';
 
 export default class ArticleCard extends React.Component {
   constructor(props) {
-    // props: { id: string, title: string, group: bool, groupId, list_id, refresh: function}
+    // props: { id: string, title: string, group: bool, groupId, list_id, refresh: function, vote}
     super(props);
     this.state = { open: false };
 
@@ -67,3 +67,27 @@ export default class ArticleCard extends React.Component {
     );
   }
 }
+
+ArticleCard.propTypes = {
+  // article id
+  id: React.PropTypes.string.isRequired,
+
+  // title of the article
+  title: React.PropTypes.string.isRequired,
+
+  // 'true' or undefined, representing if this is a group article
+  group: React.PropTypes.string,
+
+  // if group === 'true', need provide groupId
+  groupId: React.PropTypes.string,
+
+  // a vote count string if this is group article
+  vote: React.PropTypes.string,
+
+  // need the list id
+  list_id: React.PropTypes.string.isRequired,
+
+  // callback function to refresh parent
+  refresh: React.PropTypes.func.isRequired,
+
+};

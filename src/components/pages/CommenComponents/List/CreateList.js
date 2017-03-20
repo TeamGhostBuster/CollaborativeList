@@ -2,7 +2,6 @@ import React from 'react';
 import Dialog from 'material-ui/Dialog';
 import TextField from 'material-ui/TextField';
 import ContentAdd from 'material-ui/svg-icons/content/add';
-import deepOrangeA400 from 'material-ui/styles/colors';
 import FlatButton from 'material-ui/FlatButton';
 import FloatingActionButton from 'material-ui/FloatingActionButton';
 import CreateListRequest from '../../../Requests/CreateListRequest';
@@ -99,3 +98,14 @@ export default class CreateList extends React.Component {
     );
   }
 }
+
+CreateList.propTypes = {
+  // callback to reload the page
+  reloadCallback: React.PropTypes.func.isRequired,
+
+  // 'true' or undefined, to identity if this is for group
+  group: React.PropTypes.string,
+
+  // group id if group==='true
+  groupId: React.PropTypes.string
+};

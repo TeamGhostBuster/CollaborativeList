@@ -39,3 +39,17 @@ export default class TopBar extends React.Component {
     );
   }
 }
+
+TopBar.propTypes = {
+  // title of the article
+  title: React.PropTypes.string.isRequired,
+
+  // list id
+  list_id: React.PropTypes.string.isRequired,
+
+  // article id
+  article_id: React.PropTypes.string.isRequired,
+
+  // callback function to close the article
+  close: React.PropTypes.string.isRequired
+};

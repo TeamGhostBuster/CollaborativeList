@@ -21,7 +21,7 @@ module.exports = {
       )
       .catch(
         (err) => {
-          console.log(err);
+          console.log('Error: archive article request:', err);
           if (err.status === 401) {
             console.log('invalid token');
           } else {

@@ -15,3 +15,14 @@ export default class Comment extends React.Component {
     );
   }
 }
+
+Comment.propTypes = {
+  // author email
+  author: React.PropTypes.string.isRequired,
+
+  // content of the comment
+  content: React.PropTypes.string.isRequired,
+
+  // time of the comment
+  time: React.PropTypes.string.isRequired,
+};

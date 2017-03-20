@@ -2,10 +2,6 @@ import React from 'react';
 import { Card, CardActions, CardHeader, CardText } from 'material-ui/Card';
 
 export default class DetailView extends React.Component {
-  constructor(title, description, tags, url) {
-    super(title, description, tags, url);
-  }
-
 
   render() {
     return (
@@ -24,3 +20,17 @@ export default class DetailView extends React.Component {
     );
   }
 }
+
+DetailView.propTypes = {
+  // title of the article
+  title: React.PropTypes.string.isRequired,
+
+  // description of the article
+  description: React.PropTypes.string.isRequired,
+
+  // tags of the article
+  tags: React.PropTypes.element,
+
+  // url of the article
+  url: React.PropTypes.element
+};

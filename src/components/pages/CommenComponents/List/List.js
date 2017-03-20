@@ -1,16 +1,17 @@
 import React from 'react';
-import ArticleCard from './ListSub/ArticleCard';
 import { Card, CardMedia } from 'material-ui/Card';
 import AppBar from 'material-ui/AppBar';
-import CreateArticle from './ListSub/CreateArticle';
 import IconButton from 'material-ui/IconButton';
 import IconMenu from 'material-ui/IconMenu';
 import MenuItem from 'material-ui/MenuItem';
 import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
+import CreateArticle from './ListSub/CreateArticle';
+import ArticleCard from './ListSub/ArticleCard';
 import GetArticlesRequest from '../../../Requests/GetArticlesRequest';
 import ArchiveListRequest from '../../../Requests/ArchiveListRequest';
 import PartitionDialog from './ListSub/PartitionDialog';
 import RenameDialog from './ListSub/RenameDialog';
+
 
 export default class List extends React.Component {
   constructor() {
@@ -184,3 +185,20 @@ export default class List extends React.Component {
     );
   }
 }
+
+List.propTypes = {
+  // list id
+  id: React.PropTypes.string.isRequired,
+
+  // list name
+  name: React.PropTypes.string.isRequired,
+
+  // callback funtion to refresh the parent
+  reloadCallback: React.PropTypes.func.isRequired,
+
+  // string with value "true" or undefined to tell if this list is a group list
+  group: React.PropTypes.string,
+
+  // string of group id, if group==="true"
+  groupId: React.PropTypes.string
+};

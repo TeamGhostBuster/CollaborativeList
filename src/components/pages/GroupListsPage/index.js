@@ -68,3 +68,8 @@ export default class GroupListsPage extends React.Component {
   }
 }
 
+GroupListsPage.propTypes = {
+  // passed by react router
+  location: React.PropTypes.object,
+
+};

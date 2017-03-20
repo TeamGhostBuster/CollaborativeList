@@ -18,7 +18,7 @@ module.exports = {
     http.delete(path, body)
       .then(
         (respond) => {
-          callback();
+          callback(respond.data);
         }
       );
   }

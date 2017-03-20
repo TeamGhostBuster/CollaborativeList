@@ -39,3 +39,13 @@ export default class Group extends React.Component {
     );
   }
 }
+
+
+Group.propTypes = {
+  // group id
+  id: React.PropTypes.string.isRequired,
+
+  // group name
+  name: React.PropTypes.string.isRequired
+
+};
