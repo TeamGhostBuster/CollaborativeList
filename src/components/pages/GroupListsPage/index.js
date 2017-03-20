@@ -1,7 +1,7 @@
 import React from 'react'
 import {PageTemplate} from 'components'
-import List from '../PersonalListsPage/subComponent/List'
-import CreateList from '../PersonalListsPage/subComponent/CreateList'
+import List from '../CommenComponents/List/List'
+import CreateList from '../CommenComponents/List/CreateList'
 import MyAppBar from '../CommenComponents/MyAppBar'
 import GetGroupListsRequest from '../../Requests/GetGroupListsRequest'
 

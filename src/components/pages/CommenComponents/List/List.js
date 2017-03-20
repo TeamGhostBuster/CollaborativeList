@@ -17,7 +17,7 @@ export default class List extends React.Component {
     // props: {id: list id, name: list name, reloadCallback:fucntion, group: "true", groupId }
     super();
 
-    this.state = {articles: [], partitionDialog: false, renameDialog:false };
+    this.state = {articles: [], partitionDialog: false, renameDialog:false, mergeDialog:false, shareDialog:false };
 
     this.getArticles = this.getArticles.bind(this);
     this.componentWillMount = this.componentWillMount.bind(this);
@@ -26,6 +26,8 @@ export default class List extends React.Component {
     this.renameListClose = this.renameListClose.bind(this);
     this.partitionList = this.partitionList.bind(this);
     this.partitionListClose = this.partitionListClose.bind(this);
+    this.mergeList = this.mergeList.bind(this);
+    this.mergeListClose = this.mergeListClose.bind(this);
     this.shareToGroup = this.shareToGroup.bind(this);
 
     this.styles = {
@@ -58,6 +60,10 @@ export default class List extends React.Component {
     );
   }
 
+
+  /************************************************
+   *      archive list functions
+   ************************************************/
   archiveList() {
     // send the delete request
     ArchiveListRequest.delete(
@@ -69,19 +75,27 @@ export default class List extends React.Component {
 
   }
 
+  /************************************************
+   *      rename list functions
+   ************************************************/
   renameList() {
     this.setState({renameDialog: <RenameDialog open={true} list_id={this.props.id} close={this.renameListClose} /> })
   }
 
   renameListClose(success){
-    console.log("in list", success)
-    this.setState({renameDialog:false})
-    if (success){
+    // close the dialog
+    this.setState({renameDialog:false});
 
+    // if success refresh the whole lists page
+    if (success){
       this.props.reloadCallback();
     }
   }
 
+
+  /************************************************
+   *      partition list functions
+   ************************************************/
   partitionList() {
     this.setState({
       partitionDialog: <PartitionDialog open={true} list_id={this.props.id} close={this.partitionListClose}
@@ -90,16 +104,32 @@ export default class List extends React.Component {
   }
 
   partitionListClose(success) {
-    this.setState({
-      partitionDialog: <PartitionDialog open={false} list_id={this.props.id} close={this.partitionListClose}
-                                        articles={this.state.articles}/>
-    });
+    // close the dialog
+    this.setState({partitionDialog: false});
+
+    // if success refresh the whole lists page
     if (success) {
       this.componentWillMount();
       this.props.reloadCallback();
     }
   }
 
+
+  /************************************************
+   *      merge list functions
+   ************************************************/
+  mergeList(){
+
+  }
+
+  mergeListClose(){
+
+  }
+
+
+  /************************************************
+   *      share list functions
+   ************************************************/
   shareToGroup() {
 
   }
@@ -114,6 +144,7 @@ export default class List extends React.Component {
       <MenuItem primaryText="Rename" onTouchTap={this.renameList}/>
       <MenuItem primaryText="Archive" onTouchTap={this.archiveList}/>
       <MenuItem primaryText="Partition" onTouchTap={this.partitionList}/>
+      <MenuItem primaryText="Merge With" onTouchTap={this.mergeList}/>
       <MenuItem primaryText="Share To Group" onTouchTap={this.shareToGroup}/>
     </IconMenu>;
 
