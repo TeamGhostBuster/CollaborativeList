@@ -95,7 +95,7 @@ export default class ArticleDialog extends React.Component {
   }
 }
 
-ArticleDialog.Pro = {
+ArticleDialog.propTypes = {
   // if the dialog is open
   isOpen: React.PropTypes.bool.isRequired,
 
