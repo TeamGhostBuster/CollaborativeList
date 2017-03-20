@@ -9,9 +9,15 @@ class NavDrawerItem extends React.Component {
   }
 
   redirectToListPage() {
+    var path = '/group';
+    if(this.props.fromGroup){
+      path = this.props.location.pathname === '/group' ? '/group2' : '/group'
+
+    }
+    console.log(this.props.index, path, this.props.location);
     this.props.onDrawerClose();
     browserHistory.push({
-      pathname: '/group',
+      pathname: path,
       query: {
         id: this.props.id,
         name: this.props.name

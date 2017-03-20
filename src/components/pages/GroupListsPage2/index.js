@@ -10,7 +10,7 @@ import { Divider, Drawer } from 'material-ui';
 import NavDrawerPersonalItem from '../CommenComponents/NavDrawerPersonalItem';
 import NavDrawerCreateGroupItem from '../CommenComponents/NavDrawerCreateGroupItem';
 
-export default class GroupListsPage extends React.Component {
+export default class GroupListsPage2 extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -119,7 +119,7 @@ export default class GroupListsPage extends React.Component {
   }
 }
 
-GroupListsPage.propTypes = {
+GroupListsPage2.propTypes = {
   // passed by react router
   location: React.PropTypes.object,
 };
