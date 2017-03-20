@@ -99,6 +99,7 @@ export default class GroupListsPage extends React.Component {
           <Divider />
           <NavDrawerPersonalItem />
         </Drawer>
+        {/* TODO Create group buttom*/}
 
         <div style={this.styles.root}>
           <ul style={this.styles.List}>
