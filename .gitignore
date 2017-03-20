@@ -64,3 +64,6 @@ typings/
 
 # dotenv environment variables file
 .env
+
+# Aaron's file
+server.vbs
