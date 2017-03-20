@@ -4,14 +4,24 @@ import List from '../CommenComponents/List/List';
 import CreateList from '../CommenComponents/List/CreateList';
 import GetUserListsRequest from '../../Requests/GetUserListsRequest';
 import MyAppBar from '../CommenComponents/MyAppBar';
+import GetGroupsRequest from '../../Requests/GetGroupsRequest';
+import NavDrawerItem from "../CommenComponents/NavDrawerItem";
+import { Divider, Drawer } from 'material-ui';
+import NavDrawerPersonalItem from "../CommenComponents/NavDrawerPersonalItem";
 
 export default class ListsPage extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { lists: [<div key="something" />] };
+    this.state = {
+      lists: [<div key="something" />],
+      open: false,
+      groups: []
+    };
 
     // bind the functions here
     this.componentWillMount = this.componentWillMount.bind(this);
+    this.handleClose = this.handleClose.bind(this);
+    this.handleToggle = this.handleToggle.bind(this);
 
     // css styles
     this.styles = {
@@ -34,7 +44,7 @@ export default class ListsPage extends React.Component {
     // thi is part of the constructor, but it can be used as a callback function for a child node.
 
     // call back function for getLists request function
-    const cb = (response) => {
+    const getPersonalListCallback = (response) => {
       console.log('list page index', response);
       const listObjs = response.lists;
       this.setState({
@@ -48,15 +58,48 @@ export default class ListsPage extends React.Component {
       });
     };
 
+    // callback method for getGroups method
+    const navDrawerCallback = (response) => {
+      const listObjs = response.groups;
+      this.setState({
+        groups: listObjs.map((listObject) =>
+          <NavDrawerItem
+            key={listObject.id}
+            id={listObject.id}
+            name={listObject.name}
+            onDrawerClose={this.handleClose}
+          />)
+      });
+    };
+
     // send out the request
-    GetUserListsRequest.get(cb);
+    GetUserListsRequest.get(getPersonalListCallback);
+    GetGroupsRequest.get(navDrawerCallback);
   }
 
+  // Handle the click event of Menu Button at AppBar
+  handleToggle = () => this.setState({ open: !this.state.open });
+  handleClose = () => this.setState({ open: false });
 
   render() {
     return (
       <PageTemplate>
-        <MyAppBar title="Personal List" />
+        <MyAppBar
+          title="Personal List"
+          openDrawer={this.handleToggle}
+        />
+
+        <Drawer
+          docked={false}
+          width={200}
+          open={this.state.open}
+          onRequestChange={(open) => this.setState({ open })}
+        >
+          {this.state.groups}
+          <Divider />
+          <NavDrawerPersonalItem />
+        </Drawer>
+
         <div style={this.styles.root}>
           <ul style={this.styles.List}>
             {this.state.lists}
