@@ -1,12 +1,12 @@
-import React from 'react'
-import RaisedButton from 'material-ui/RaisedButton'
-import Dialog from 'material-ui/Dialog'
-import TextField from 'material-ui/TextField'
-import ContentAdd from 'material-ui/svg-icons/content/add'
+import React from 'react';
+import RaisedButton from 'material-ui/RaisedButton';
+import Dialog from 'material-ui/Dialog';
+import TextField from 'material-ui/TextField';
+import ContentAdd from 'material-ui/svg-icons/content/add';
 import deepOrangeA400 from 'material-ui/styles/colors';
-import FlatButton from 'material-ui/FlatButton'
-import Chip from 'material-ui/Chip'
-import CreateArticleRequest from '../../../../Requests/CreateArticleRequest'
+import FlatButton from 'material-ui/FlatButton';
+import Chip from 'material-ui/Chip';
+import CreateArticleRequest from '../../../../Requests/CreateArticleRequest';
 
 export default class CreateList extends React.Component {
   constructor(props) {
@@ -21,8 +21,8 @@ export default class CreateList extends React.Component {
       tag: '',
       tags: [],
       tagsData: [],
-      requireTitle: "required",
-      requireDescription: "required"
+      requireTitle: 'required',
+      requireDescription: 'required'
     };
 
     this.styles = {
@@ -35,7 +35,7 @@ export default class CreateList extends React.Component {
       },
     };
 
-    //binding
+    // binding
     this.titleChange = this.titleChange.bind(this);
     this.descriptionChange = this.descriptionChange.bind(this);
     this.urlChange = this.urlChange.bind(this);
@@ -54,46 +54,46 @@ export default class CreateList extends React.Component {
     this.rendeTag = this.rendeTag.bind(this);
   }
 
-  /*=====================handling text field==================================*/
+  /*= ====================handling text field==================================*/
   titleChange(event) {
-    this.setState({title: event.target.value});
-    if (event.target.value !== "") {
-      this.setState({requireTitle: ""});
+    this.setState({ title: event.target.value });
+    if (event.target.value !== '') {
+      this.setState({ requireTitle: '' });
     } else {
-      this.setState({requireTitle: "required"});
+      this.setState({ requireTitle: 'required' });
     }
   }
 
   descriptionChange(event) {
-    this.setState({description: event.target.value});
-    if (event.target.value !== "") {
-      this.setState({requireDescription: ""});
+    this.setState({ description: event.target.value });
+    if (event.target.value !== '') {
+      this.setState({ requireDescription: '' });
     } else {
-      this.setState({requireDescription: "required"});
+      this.setState({ requireDescription: 'required' });
     }
   }
 
   urlChange(event) {
-    this.setState({url: event.target.value});
+    this.setState({ url: event.target.value });
   }
 
   tagChange(event) {
-    this.setState({tag: event.target.value});
+    this.setState({ tag: event.target.value });
   }
 
-  /*======================= handle the form ================================*/
+  /*= ====================== handle the form ================================*/
   handleOpen() {
-    this.setState({open: true});
+    this.setState({ open: true });
   }
 
   handleClose() {
-    this.setState({title: ''});
-    this.setState({description: ''});
-    this.setState({url: ''});
-    this.setState({tags: []});
-    this.setState({requireTitle: "required"});
-    this.setState({requireDescription: "required"});
-    this.setState({open: false});
+    this.setState({ title: '' });
+    this.setState({ description: '' });
+    this.setState({ url: '' });
+    this.setState({ tags: [] });
+    this.setState({ requireTitle: 'required' });
+    this.setState({ requireDescription: 'required' });
+    this.setState({ open: false });
   }
 
   submitToServer(callback) {
@@ -110,33 +110,32 @@ export default class CreateList extends React.Component {
       this.props.groupId,
       data, callback
     );
-
   }
 
   handleSubmit() {
     if (this.state.title !== '' && this.state.description !== '') {
       const cb = () => {
         this.props.callback();
-        this.setState({title: ''});
-        this.setState({description: ''});
-        this.setState({url: ''});
-        this.setState({tags: []});
-        this.setState({requireTitle: "required"});
-        this.setState({requireDescription: "required"});
-        this.setState({open: false});
+        this.setState({ title: '' });
+        this.setState({ description: '' });
+        this.setState({ url: '' });
+        this.setState({ tags: [] });
+        this.setState({ requireTitle: 'required' });
+        this.setState({ requireDescription: 'required' });
+        this.setState({ open: false });
       };
-      this.submitToServer(cb)
+      this.submitToServer(cb);
     }
   }
 
-  /*======================== handle the tags ===============================*/
+  /*= ======================= handle the tags ===============================*/
   TagOpen() {
-    this.setState({addTag: true});
+    this.setState({ addTag: true });
   }
 
   TagClose() {
-    this.setState({tag: ''});
-    this.setState({addTag: false});
+    this.setState({ tag: '' });
+    this.setState({ addTag: false });
   }
 
   TagFinish() {
@@ -144,11 +143,11 @@ export default class CreateList extends React.Component {
       this.newTags = this.state.tags;
       this.newTagsData = this.state.tagsData;
       this.newTags[this.state.tags.length] = this.state.tag;
-      this.newTagsData[this.state.tags.length] = {key: this.state.tags.length, label: this.state.tag};
-      this.setState({tags: this.newTags});
-      this.setState({tagsData: this.newTagsData});
-      this.setState({tag: ''});
-      this.setState({addTag: false});
+      this.newTagsData[this.state.tags.length] = { key: this.state.tags.length, label: this.state.tag };
+      this.setState({ tags: this.newTags });
+      this.setState({ tagsData: this.newTagsData });
+      this.setState({ tag: '' });
+      this.setState({ addTag: false });
     }
   }
 
@@ -158,9 +157,9 @@ export default class CreateList extends React.Component {
     const chipToDelete = this.tagsData.map((chip) => chip.key).indexOf(key);
     this.tagsData.splice(chipToDelete, 1);
     this.tags.splice(chipToDelete, 1);
-    this.setState({tagsData: this.tagsData});
-    this.setState({tags: this.tags});
-  };
+    this.setState({ tagsData: this.tagsData });
+    this.setState({ tags: this.tags });
+  }
 
   rendeTag(data) {
     return (
@@ -174,54 +173,66 @@ export default class CreateList extends React.Component {
     );
   }
 
-  /*=======================================================*/
+  /*= ======================================================*/
 
   render() {
     const formActions = [
-      <FlatButton label='Cancel' primary={true} onTouchTap={this.handleClose}/>,
-      <FlatButton label='Submit' primary={true} onTouchTap={this.handleSubmit}/>
+      <FlatButton label="Cancel" primary onTouchTap={this.handleClose} />,
+      <FlatButton label="Submit" primary onTouchTap={this.handleSubmit} />
     ];
 
     const tagActions = [
-      <FlatButton label='Cancel' primary={true} onTouchTap={this.TagClose}/>,
-      <FlatButton label='Finish' primary={true} onTouchTap={this.TagFinish}/>
+      <FlatButton label="Cancel" primary onTouchTap={this.TagClose} />,
+      <FlatButton label="Finish" primary onTouchTap={this.TagFinish} />
     ];
 
 
     // this one is not factored out because there are too many dependencies
     const form = [
       <div key="form">
-        <TextField fullWidth={true} multiLine={true} hintText="Required" hintStyle={{color: deepOrangeA400}}
-                   floatingLabelText="Title" errorText={this.state.requireTitle} onChange={this.titleChange}/>
-        <br/>
-        <TextField fullWidth={true} multiLine={true} hintText="Required" hintStyle={{color: deepOrangeA400}}
-                   floatingLabelText="Description" errorText={this.state.requireDescription}
-                   onChange={this.descriptionChange}/>
-        <br/>
-        <TextField fullWidth={true} multiLine={true} hintText="Optional" floatingLabelText="URL"
-                   onChange={this.urlChange}/>
-        <br/><br/>
+        <TextField
+          fullWidth multiLine hintText="Required" hintStyle={{ color: deepOrangeA400 }}
+          floatingLabelText="Title" errorText={this.state.requireTitle} onChange={this.titleChange}
+        />
+        <br />
+        <TextField
+          fullWidth multiLine hintText="Required" hintStyle={{ color: deepOrangeA400 }}
+          floatingLabelText="Description" errorText={this.state.requireDescription}
+          onChange={this.descriptionChange}
+        />
+        <br />
+        <TextField
+          fullWidth multiLine hintText="Optional" floatingLabelText="URL"
+          onChange={this.urlChange}
+        />
+        <br /><br />
 
         <div style={this.styles.wrapper}>
           {this.state.tagsData.map(this.rendeTag, this)}
         </div>
 
-        <Dialog open={this.state.addTag} actions={tagActions} modal={true} contentStyle={{width: '50%'}}
-                title="Add Tag">
-          <TextField hintText="Optional" floatingLabelText="Enter Tag Here" onChange={this.tagChange}/>
+        <Dialog
+          open={this.state.addTag} actions={tagActions} modal contentStyle={{ width: '50%' }}
+          title="Add Tag"
+        >
+          <TextField hintText="Optional" floatingLabelText="Enter Tag Here" onChange={this.tagChange} />
         </Dialog>
 
-        <RaisedButton label="Add Tag" icon={<ContentAdd/>} secondary={true} onTouchTap={this.TagOpen}/>
+        <RaisedButton label="Add Tag" icon={<ContentAdd />} secondary onTouchTap={this.TagOpen} />
       </div>
     ];
 
     /*-----------------------------------------------*/
     return (
       <div>
-        <RaisedButton label="Add Article" fullWidth={true} primary={true} icon={<ContentAdd/>}
-                      onTouchTap={this.handleOpen}/>
-        <Dialog open={this.state.open} actions={formActions} modal={true} title="Create Article"
-                autoScrollBodyContent={true}>
+        <RaisedButton
+          label="Add Article" fullWidth primary icon={<ContentAdd />}
+          onTouchTap={this.handleOpen}
+        />
+        <Dialog
+          open={this.state.open} actions={formActions} modal title="Create Article"
+          autoScrollBodyContent
+        >
           {form}
         </Dialog>
       </div>

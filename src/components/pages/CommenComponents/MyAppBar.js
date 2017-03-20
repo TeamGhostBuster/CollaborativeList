@@ -1,7 +1,7 @@
 import React from 'react';
-import {AppBar, IconButton} from 'material-ui'
-import {browserHistory} from 'react-router'
-import Back from 'material-ui/svg-icons/hardware/keyboard-backspace'
+import { AppBar, IconButton } from 'material-ui';
+import { browserHistory } from 'react-router';
+import Back from 'material-ui/svg-icons/hardware/keyboard-backspace';
 
 export default class MyAppBar extends React.Component {
 
@@ -13,11 +13,12 @@ export default class MyAppBar extends React.Component {
       }
     };
     return (
-      <AppBar style={this.styles.bar} title={this.props.title}
-              iconElementLeft={
-                <IconButton name="backButton" onTouchTap={browserHistory.goBack}>
-                  <Back color={'#ffffff'}/>
-                </IconButton>
+      <AppBar
+        style={this.styles.bar} title={this.props.title}
+        iconElementLeft={
+          <IconButton name="backButton" onTouchTap={browserHistory.goBack}>
+            <Back color={'#ffffff'} />
+          </IconButton>
               }
       />
     );
