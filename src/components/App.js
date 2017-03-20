@@ -1,7 +1,7 @@
-import React, {PropTypes} from 'react'
-import {injectGlobal} from 'styled-components'
+import React, {PropTypes} from 'react';
+import {injectGlobal} from 'styled-components';
 import injectTapEventPlugin from 'react-tap-event-plugin';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 
 // Needed for onTouchTap
@@ -12,8 +12,8 @@ injectGlobal`
   body {
     margin: 0;
   }
-`
-import getMuiTheme from 'material-ui/styles/getMuiTheme'
+`;
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
 const muiTheme = getMuiTheme();
 
 const App = ({children}) => {
@@ -21,14 +21,14 @@ const App = ({children}) => {
     <MuiThemeProvider muiTheme={muiTheme}>
       {children}
     </MuiThemeProvider>
-  )
-}
+  );
+};
 
 App.propTypes = {
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node
   ])
-}
+};
 
-export default App
+export default App;

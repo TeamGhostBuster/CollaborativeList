@@ -1,8 +1,8 @@
-import React from 'react'
-import {browserHistory} from 'react-router'
-import {Card, CardText} from 'material-ui/Card'
+import React from 'react';
+import { browserHistory } from 'react-router';
+import { Card, CardText } from 'material-ui/Card';
 
-//import Button from 'react-toolbox/lib/button'
+// import Button from 'react-toolbox/lib/button'
 
 export default class UpperSection extends React.Component {
   constructor() {
@@ -24,21 +24,20 @@ export default class UpperSection extends React.Component {
         height: '100%',
         fontSize: '200%'
       }
-    }
+    };
   }
 
 
   goToLists() {
-    browserHistory.push('/personal')
+    browserHistory.push('/personal');
   }
 
   render() {
-
     return (
       <div style={this.styles.root}>
         <ul>
-          <Card style={this.styles.List} expandable={true} onExpandChange={this.goToLists}>
-            <CardText style={this.styles.cardText} actAsExpander={true}>
+          <Card style={this.styles.List} expandable onExpandChange={this.goToLists}>
+            <CardText style={this.styles.cardText} actAsExpander>
               Personal Lists
             </CardText>
           </Card>

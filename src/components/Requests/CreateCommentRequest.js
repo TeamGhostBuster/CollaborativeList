@@ -1,18 +1,18 @@
 module.exports = {
-  post: function (articleId, dataObject, callback) {
-    let Axios = require('axios');
-    let cookie = require('react-cookie');
+  post(articleId, dataObject, callback) {
+    const Axios = require('axios');
+    const cookie = require('react-cookie');
 
-    const host = "https://api.vfree.org";
+    const host = 'https://api.vfree.org';
     const token = cookie.load('Access-Token');
-    const path = '/article/' + articleId + '/comment';
+    const path = `/article/${articleId}/comment`;
 
-    let http = Axios.create({
+    const http = Axios.create({
       baseURL: host,
-      responseType: "json",
+      responseType: 'json',
       headers: {
-        "Access-Token": token,
-        "Content-Type": "application/json",
+        'Access-Token': token,
+        'Content-Type': 'application/json',
       }
     });
 
@@ -23,11 +23,11 @@ module.exports = {
       .catch((err) => {
         console.log(err);
         if (err.status === 401) {
-          console.log("invalid token");
+          console.log('invalid token');
         } else {
-          console.log("invalid request of lists info1111");
+          console.log('invalid request of lists info1111');
         }
-      })
+      });
   }
 
 };

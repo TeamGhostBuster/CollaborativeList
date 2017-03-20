@@ -1,16 +1,14 @@
-import React from 'react'
-import {PageTemplate} from 'components'
-import {browserHistory} from 'react-router'
-import List from './subComponent/List'
-import CreateList from './subComponent/CreateList'
-import {AppBar, IconButton} from 'material-ui'
-import Back from 'material-ui/svg-icons/hardware/keyboard-backspace'
-import GetUserListsRequest from '../../Requests/GetUserListsRequest'
-import MyAppBar from '../CommenComponents/MyAppBar'
+import React from 'react';
+import { PageTemplate } from 'components';
+import List from '../CommenComponents/List/List';
+import CreateList from '../CommenComponents/List/CreateList';
+import GetUserListsRequest from '../../Requests/GetUserListsRequest';
+import MyAppBar from '../CommenComponents/MyAppBar';
+
 export default class ListsPage extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {lists: [<div key="something"></div>]};
+    this.state = { lists: [<div key="something" />] };
 
     // bind the functions here
     this.componentWillMount = this.componentWillMount.bind(this);
@@ -37,15 +35,17 @@ export default class ListsPage extends React.Component {
 
     // call back function for getLists request function
     const cb = (response) => {
-      console.log(response);
-      const listObjs = response['lists'];
+      console.log('list page index', response);
+      const listObjs = response.lists;
       this.setState({
         lists: listObjs
-          .filter((obj) => !obj['archived'])
+          .filter((obj) => !obj.archived)
           .map((listObject) =>
-            <List key={listObject['id']} id={listObject['id']} name={listObject['name']}
-                  reloadCallback={this.componentWillMount}/>)
-      })
+            <List
+              key={listObject.id} id={listObject.id} name={listObject.name}
+              reloadCallback={this.componentWillMount}
+            />)
+      });
     };
 
     // send out the request
@@ -56,11 +56,11 @@ export default class ListsPage extends React.Component {
   render() {
     return (
       <PageTemplate>
-        <MyAppBar title="Personal List"/>
+        <MyAppBar title="Personal List" />
         <div style={this.styles.root}>
           <ul style={this.styles.List}>
             {this.state.lists}
-            <CreateList reloadCallback={this.componentWillMount}/>
+            <CreateList reloadCallback={this.componentWillMount} />
           </ul>
         </div>
       </PageTemplate>
