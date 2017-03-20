@@ -107,7 +107,6 @@ export default class GroupListsPage2 extends React.Component {
           <NavDrawerCreateGroupItem reloadCallback={this.componentWillMount}/>
         </Drawer>
 
-
         <div style={this.styles.root}>
           <ul style={this.styles.List}>
             {this.state.lists}
