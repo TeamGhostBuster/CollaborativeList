@@ -33,7 +33,7 @@ export default class RenameDialog extends React.Component {
 
   handleSubmit() {
     if (this.state.name !== '') {
-      const cb = (response) => {
+      const cb = () => {
         // close this and refresh this whole list page!
         this.handleClose(true);
       };

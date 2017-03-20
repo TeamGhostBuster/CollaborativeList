@@ -51,5 +51,5 @@ TopBar.propTypes = {
   article_id: React.PropTypes.string.isRequired,
 
   // callback function to close the article
-  close: React.PropTypes.string.isRequired
+  close: React.PropTypes.func.isRequired
 };

@@ -11,7 +11,7 @@ import GetArticlesRequest from '../../../Requests/GetArticlesRequest';
 import ArchiveListRequest from '../../../Requests/ArchiveListRequest';
 import PartitionDialog from './ListSub/PartitionDialog';
 import RenameDialog from './ListSub/RenameDialog';
-
+import MergeListDialog from './ListSub/MergeListDialog'
 
 export default class List extends React.Component {
   constructor() {
@@ -121,11 +121,18 @@ export default class List extends React.Component {
    *      merge list functions
    ************************************************/
   mergeList() {
-
+    this.setState({mergeDialog: <MergeListDialog open={true} close={this.mergeListClose} list_id={this.props.id}/>})
   }
 
-  mergeListClose() {
+  mergeListClose(success) {
+    // close the dialog
+    this.setState({ mergeDialog: false});
 
+    // if success refresh the whole lists page
+    if (success){
+      this.componentWillMount();
+      this.props.reloadCallback();
+    }
   }
 
 
@@ -181,6 +188,8 @@ export default class List extends React.Component {
         </Card>
         {this.state.partitionDialog}
         {this.state.renameDialog}
+        {this.state.mergeDialog}
+        {this.state.shareDialog}
       </li>
     );
   }
