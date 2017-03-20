@@ -8,6 +8,7 @@ import GetGroupsRequest from '../../Requests/GetGroupsRequest';
 import NavDrawerItem from '../CommenComponents/NavDrawerItem';
 import { Divider, Drawer } from 'material-ui';
 import NavDrawerPersonalItem from '../CommenComponents/NavDrawerPersonalItem';
+import NavDrawerCreateGroupItem from '../CommenComponents/NavDrawerCreateGroupItem';
 
 export default class GroupListsPage extends React.Component {
   constructor() {
@@ -90,16 +91,20 @@ export default class GroupListsPage extends React.Component {
         />
 
         <Drawer
+          className="Drawer"
           docked={false}
           width={200}
           open={this.state.open}
           onRequestChange={(open) => this.setState({ open })}
         >
-          {this.state.groups}
           <Divider />
           <NavDrawerPersonalItem />
+          <Divider />
+          {this.state.groups}
+          <Divider />
+          <NavDrawerCreateGroupItem reloadCallback={this.componentWillMount}/>
         </Drawer>
-        {/* TODO Create group buttom*/}
+
 
         <div style={this.styles.root}>
           <ul style={this.styles.List}>

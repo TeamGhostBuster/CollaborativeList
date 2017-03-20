@@ -91,18 +91,18 @@ export default class ListsPage extends React.Component {
         />
 
         <Drawer
+          className="Drawer"
           docked={false}
           width={200}
           open={this.state.open}
           onRequestChange={(open) => this.setState({ open })}
         >
-          {this.state.groups}
           <Divider />
           <NavDrawerPersonalItem />
           <Divider />
-          {/* TODO */}
-          {/* Create ggroup */}
-          <NavDrawerCreateGroupItem />
+          {this.state.groups}
+          <Divider />
+          <NavDrawerCreateGroupItem reloadCallback={this.componentWillMount}/>
         </Drawer>
 
         <div style={this.styles.root}>

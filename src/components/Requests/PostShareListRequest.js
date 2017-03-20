@@ -12,7 +12,7 @@ module.exports = {
       headers: { 'Access-Token': token },
     });
 
-    const path = '/share/lists';
+    const path = '/share/list';
     http.post(path, { list_id: listId, group_id:groupIdList})
       .then((respond) => {
         callback(respond.data);
