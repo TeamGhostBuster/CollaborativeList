@@ -39,6 +39,7 @@ class RetrieveArchivedListDialog extends React.Component {
         title="Retrieve Archived List"
         open={this.props.open}
         actions={this.actions}
+        onRequestClose={this.props.close}
       />
     );
   }
