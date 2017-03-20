@@ -2,7 +2,7 @@ import React from 'react';
 import MenuItem from 'material-ui/MenuItem';
 import { browserHistory } from 'react-router';
 
-class NavDrawerItem extends React.Component {
+class NavDrawerPersonalItem extends React.Component {
   constructor(props) {
     super(props);
     this.redirectToPersonalPage = this.redirectToPersonalPage.bind(this);
@@ -21,4 +21,4 @@ class NavDrawerItem extends React.Component {
   }
 }
 
-export default NavDrawerItem;
+export default NavDrawerPersonalItem;

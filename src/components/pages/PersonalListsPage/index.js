@@ -8,7 +8,7 @@ import GetGroupsRequest from '../../Requests/GetGroupsRequest';
 import NavDrawerItem from "../CommenComponents/NavDrawerItem";
 import { Divider, Drawer } from 'material-ui';
 import NavDrawerPersonalItem from '../CommenComponents/NavDrawerPersonalItem';
-import NavDrawerCreateGroupItem from '../CommenComponents/NavDrawerCreateGroupItem'
+import NavDrawerCreateGroupItem from '../CommenComponents/NavDrawerCreateGroupItem';
 
 export default class ListsPage extends React.Component {
   constructor(props) {
