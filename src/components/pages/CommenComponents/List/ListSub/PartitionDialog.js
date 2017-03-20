@@ -57,7 +57,7 @@ export default class PartitionDialog extends React.Component {
     if (this.articlesSelected != false) {
       this.setState({
         NameDialog: <NewListName
-          open articles={this.articlesSelected} close={this.closeNameDialog}
+          open={true} articles={this.articlesSelected} close={this.closeNameDialog}
           list_id={this.props.list_id}
         />
       });
@@ -77,6 +77,7 @@ export default class PartitionDialog extends React.Component {
       <Dialog
         open={this.props.open} title="Choose The Articles To Be Partitioned"
         actions={this.dialogActions}
+        autoScrollBodyContent={true}
       >
         <List>
           {this.state.listItems}

@@ -37,7 +37,7 @@ export default class MergeListDialog extends React.Component {
     ];
 
     return (
-      <Dialog open={this.props.open} title="Merge Into" actions={actions} autoScrollBodyContent>
+      <Dialog open={this.props.open} title="Merge Into" actions={actions} autoScrollBodyContent={true}>
         <ListOfPersonalLists handleSelect={this.handleChange}/>
       </Dialog>
     );
