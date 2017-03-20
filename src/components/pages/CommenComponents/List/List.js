@@ -11,7 +11,8 @@ import GetArticlesRequest from '../../../Requests/GetArticlesRequest';
 import ArchiveListRequest from '../../../Requests/ArchiveListRequest';
 import PartitionDialog from './ListSub/PartitionDialog';
 import RenameDialog from './ListSub/RenameDialog';
-
+import MergeListDialog from './ListSub/MergeListDialog';
+import ShareListDialog from './ListSub/ShareListDialog';
 
 export default class List extends React.Component {
   constructor() {
@@ -30,6 +31,7 @@ export default class List extends React.Component {
     this.mergeList = this.mergeList.bind(this);
     this.mergeListClose = this.mergeListClose.bind(this);
     this.shareToGroup = this.shareToGroup.bind(this);
+    this.shareToGroupClose = this.shareToGroupClose.bind(this);
 
     this.styles = {
       list: {
@@ -121,11 +123,18 @@ export default class List extends React.Component {
    *      merge list functions
    ************************************************/
   mergeList() {
-
+    this.setState({mergeDialog: <MergeListDialog open={true} close={this.mergeListClose} list_id={this.props.id}/>})
   }
 
-  mergeListClose() {
+  mergeListClose(success) {
+    // close the dialog
+    this.setState({ mergeDialog: false});
 
+    // if success refresh the whole lists page
+    if (success){
+      this.componentWillMount();
+      this.props.reloadCallback();
+    }
   }
 
 
@@ -133,7 +142,11 @@ export default class List extends React.Component {
    *      share list functions
    ************************************************/
   shareToGroup() {
+    this.setState({shareDialog: <ShareListDialog open={true} list_id={this.props.id} close={this.shareToGroupClose}/>})
+  }
 
+  shareToGroupClose(){
+    this.setState({shareDialog: false})
   }
 
   // list menu buttons
@@ -181,6 +194,8 @@ export default class List extends React.Component {
         </Card>
         {this.state.partitionDialog}
         {this.state.renameDialog}
+        {this.state.mergeDialog}
+        {this.state.shareDialog}
       </li>
     );
   }

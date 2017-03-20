@@ -33,7 +33,7 @@ export default class RenameDialog extends React.Component {
 
   handleSubmit() {
     if (this.state.name !== '') {
-      const cb = (response) => {
+      const cb = () => {
         // close this and refresh this whole list page!
         this.handleClose(true);
       };
@@ -48,7 +48,7 @@ export default class RenameDialog extends React.Component {
     ];
 
     return (
-      <Dialog open={this.props.open} title="Rename List" actions={actions} autoScrollBodyContent>
+      <Dialog open={this.props.open} title="Rename List" actions={actions} autoScrollBodyContent={true}>
         <TextField
           hintText="Required" fullWidth
           hintStyle={{ color: '#FF3D00' }} floatingLabelText="New List Name"
