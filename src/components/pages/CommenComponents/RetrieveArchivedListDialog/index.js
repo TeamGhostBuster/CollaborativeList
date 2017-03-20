@@ -1,10 +1,26 @@
 import React from 'react';
-import { Dialog, FlatButton } from 'material-ui';
+import { Dialog, FlatButton, List } from 'material-ui';
+import ArchivedListItem from '../../../atoms/ArchivedListItem';
+import GetUserListsRequest from '../../../Requests/GetUserListsRequest';
+import GetGroupListsRequest from '../../../Requests/GetGroupListsRequest';
+import RetrieveListRequest from '../../../Requests/RetrieveListRequest';
 
 class RetrieveArchivedListDialog extends React.Component {
-  constructor(open, close) {
-    super(open);
+  constructor(props) {
+    super(props);
 
+    this.state = {
+      listItems: [],
+    };
+
+    this.seletedList = [];
+
+    this.handleSelect = this.handleSelect.bind(this);
+    this.handleClose = this.handleClose.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.componentWillMount = this.componentWillMount.bind(this);
+
+    // Dialog buttoms actions
     this.actions = [
       <FlatButton
         label="Cancel"
@@ -12,25 +28,60 @@ class RetrieveArchivedListDialog extends React.Component {
         onTouchTap={this.handleClose}
       />,
       <FlatButton
-        label="Submit"
+        label="Retrieve"
         primary
         keyboardFocused
         onTouchTap={this.handleSubmit}
       />,
     ];
+  }
 
-    this.handleClose = this.handleClose.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+  componentWillMount() {
+    const getArchivedListCallback = (response) => {
+      const listObjs = response.lists;
+      this.setState({
+        listItems: listObjs
+          .filter((obj) => obj.archived)
+          .map((listObject) => <ArchivedListItem
+            name={listObject.name}
+            list_id={listObject.id}
+            selectedAction={this.handleSelect}
+          />)
+      });
+    };
+
+    if (this.props.pageType === 'personal') {
+      GetUserListsRequest.get(getArchivedListCallback);
+    } else {
+      GetGroupListsRequest.get(getArchivedListCallback);
+    }
+  }
+
+  handleSelect(selected, id) {
+    if (selected) {
+      this.seletedList.push(id);
+    } else {
+      const index = this.seletedList.indexOf(id);
+      this.seletedList.splice(index, 1);
+    }
   }
 
   handleClose(success) {
-    this.props.close(success);
+    this.props.close();
+    if (success) {
+      this.props.reloadCallback();
+    }
   }
 
   handleSubmit() {
-    // TODO
-    console.log('submit');
-    this.handleClose(true);
+    console.log(this.seletedList);
+    if (this.props.pageType === 'group') {
+      RetrieveListRequest.put(this.seletedList, true, this.props.groupId, this.handleClose());
+    } else {
+      RetrieveListRequest.put(this.seletedList, false, null, this.handleClose());
+    }
+    // this.handleClose();
+    this.props.reloadCallback();
   }
 
   render() {
@@ -40,9 +91,23 @@ class RetrieveArchivedListDialog extends React.Component {
         open={this.props.open}
         actions={this.actions}
         onRequestClose={this.props.close}
-      />
+        autoScrollBodyContent
+      >
+        <List>
+          {this.state.listItems}
+        </List>
+      </Dialog>
     );
   }
 }
+
+RetrieveArchivedListDialog.propTypes = {
+  // The callback method from the parent component
+  close: React.PropTypes.func.isRequired,
+  open: React.PropTypes.func.isRequired,
+  pageType: React.PropTypes.string.isRequired,
+  groupId: React.PropTypes.string,
+  reloadCallback: React.PropTypes.func.isRequired
+};
 
 export default RetrieveArchivedListDialog;

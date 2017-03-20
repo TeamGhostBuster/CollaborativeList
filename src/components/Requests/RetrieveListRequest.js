@@ -1,5 +1,5 @@
 module.exports = {
-  put(listId, group, groupId, callback) {
+  put(listIds, group, groupId, callback) {
     const Axios = require('axios');
     const cookie = require('react-cookie');
     const token = cookie.load('Access-Token');
@@ -11,14 +11,14 @@ module.exports = {
       headers: { 'Access-Token': token }
     });
 
-    const path = group === 'true' ? `/group/list/${listId}/retrieve` : `/user/list/${listId}/retrieve`;
+    const path = group === 'true' ? `/group/${groupId}/lists/retrieve` : '/user/lists/retrieve';
 
-    const body = group === 'true' ? { data: { group_id: groupId } } : {};
-
+    const body = { lists: listIds  };
+    console.log(body);
     http.put(path, body)
       .then(
         (respond) => {
-          callback(respond.data);
+          callback(true);
         }
       );
   }

@@ -88,6 +88,8 @@ export default class ListsPage extends React.Component {
         <MyAppBar
           title="Personal List"
           openDrawer={this.handleToggle}
+          pageType="personal"
+          reloadCallback={this.componentWillMount}
         />
 
         <Drawer

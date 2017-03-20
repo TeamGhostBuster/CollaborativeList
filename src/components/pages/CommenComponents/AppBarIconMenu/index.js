@@ -3,24 +3,29 @@ import { IconMenu, MenuItem, IconButton } from 'material-ui';
 import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
 import RetrieveArchivedListDialog from '../RetrieveArchivedListDialog/index';
 
-
 class AppBarIconMenu extends React.Component {
   constructor(props) {
     super(props);
+
     this.state = {
       retrieveListDialog: false,
       open: false
     };
 
+    // Bind function
     this.retrieveArchivedListDialogOpen = this.retrieveArchivedListDialogOpen.bind(this);
     this.retrieveArchivedListDialogClose = this.retrieveArchivedListDialogClose.bind(this);
   }
 
+  // Dialog event handling
   retrieveArchivedListDialogOpen() {
     this.setState({
       retrieveListDialog: <RetrieveArchivedListDialog
         open
         close={this.retrieveArchivedListDialogClose}
+        pageType={this.props.pageType}
+        groupId={this.props.groupId}
+        reloadCallback={this.props.reloadCallback}
       />
     });
   }
@@ -35,17 +40,24 @@ class AppBarIconMenu extends React.Component {
 
   render() {
     return (
-      <IconMenu
-        iconButtonElement={<IconButton><MoreVertIcon /></IconButton>}
-        anchorOrigin={{ horizontal: 'right', vertical: 'top' }}
-        targetOrigin={{ horizontal: 'right', vertical: 'top' }}
-      >
-        <MenuItem onClick={this.retrieveArchivedListDialogOpen}>Trash</MenuItem>
-        <MenuItem>Whatever</MenuItem>
+      <div>
+        <IconMenu
+          iconButtonElement={<IconButton><MoreVertIcon /></IconButton>}
+          anchorOrigin={{ horizontal: 'right', vertical: 'top' }}
+          targetOrigin={{ horizontal: 'right', vertical: 'top' }}
+        >
+          <MenuItem onTouchTap={this.retrieveArchivedListDialogOpen}>Trash</MenuItem>
+        </IconMenu>
         {this.state.retrieveListDialog}
-      </IconMenu>
+      </div>
     );
   }
 }
+
+AppBarIconMenu.propTypes = {
+  pageType: React.PropTypes.string.isRequired,
+  groupId: React.PropTypes.string,
+  reloadCallback: React.PropTypes.func.isRequired
+};
 
 export default AppBarIconMenu;
