@@ -4588,6 +4588,10 @@ marked@^0.3.6:
   version "0.3.6"
   resolved "https://registry.yarnpkg.com/marked/-/marked-0.3.6.tgz#b2c6c618fccece4ef86c4fc6cb8a7cbf5aeda8d7"
 
+material-ui-chip-input@^0.13.1:
+  version "0.13.1"
+  resolved "https://registry.yarnpkg.com/material-ui-chip-input/-/material-ui-chip-input-0.13.1.tgz#6998d29632799c30d90c8b5f250a242d0f223f43"
+
 material-ui@^0.17.0:
   version "0.17.0"
   resolved "https://registry.yarnpkg.com/material-ui/-/material-ui-0.17.0.tgz#fd0e2e16f55184f66bc770225a053444e4ae7d33"
