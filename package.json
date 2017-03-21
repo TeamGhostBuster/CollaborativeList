@@ -1,6 +1,6 @@
 {
   "name": "arc",
-  "version": "0.1.0",
+  "version": "1.0.1",
   "private": true,
   "scripts": {
     "start": "node server",
@@ -78,7 +78,7 @@
     "react-router-scroll": "^0.4.1",
     "react-tap-event-plugin": "^2.0.1",
     "react-toolbox": "^2.0.0-beta.6",
-    "searchkit": "^0.10.1",
+    "searchkit": "1.0.0-7",
     "styled-components": "^1.2.1",
     "styled-theme": "^0.3.0",
     "styled-tools": "^0.1.2"
