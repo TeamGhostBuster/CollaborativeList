@@ -92,6 +92,7 @@ export default class GroupListsPage2 extends React.Component {
           openDrawer={this.handleToggle}
           pageType="group"
           groupId={this.props.location.query.id}
+          reloadCallback={this.componentWillMount}
         />
 
         <Drawer

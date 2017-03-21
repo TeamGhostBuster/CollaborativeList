@@ -13,6 +13,7 @@ class RetrieveArchivedListDialog extends React.Component {
       listItems: [],
     };
 
+    // Selected list item
     this.seletedList = [];
 
     this.handleSelect = this.handleSelect.bind(this);
@@ -53,10 +54,11 @@ class RetrieveArchivedListDialog extends React.Component {
     if (this.props.pageType === 'personal') {
       GetUserListsRequest.get(getArchivedListCallback);
     } else {
-      GetGroupListsRequest.get(getArchivedListCallback);
+      GetGroupListsRequest.get(this.props.groupId, getArchivedListCallback);
     }
   }
 
+  // Handle selectoin event
   handleSelect(selected, id) {
     if (selected) {
       this.seletedList.push(id);
@@ -66,6 +68,7 @@ class RetrieveArchivedListDialog extends React.Component {
     }
   }
 
+  // Close dialog event
   handleClose(success) {
     this.props.close();
     if (success) {
@@ -73,15 +76,14 @@ class RetrieveArchivedListDialog extends React.Component {
     }
   }
 
+  // Send our retrieve method
   handleSubmit() {
     console.log(this.seletedList);
     if (this.props.pageType === 'group') {
-      RetrieveListRequest.put(this.seletedList, true, this.props.groupId, this.handleClose());
+      RetrieveListRequest.put(this.seletedList, true, this.props.groupId, this.handleClose);
     } else {
-      RetrieveListRequest.put(this.seletedList, false, null, this.handleClose());
+      RetrieveListRequest.put(this.seletedList, false, null, this.handleClose);
     }
-    // this.handleClose();
-    this.props.reloadCallback();
   }
 
   render() {

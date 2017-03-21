@@ -1,7 +1,7 @@
 import React from 'react';
 import { IconMenu, MenuItem, IconButton } from 'material-ui';
 import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
-import RetrieveArchivedListDialog from '../RetrieveArchivedListDialog/index';
+import RetrieveArchivedListDialog from '../RetrieveArchivedListDialog';
 
 class AppBarIconMenu extends React.Component {
   constructor(props) {
