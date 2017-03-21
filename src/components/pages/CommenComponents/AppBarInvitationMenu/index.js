@@ -16,6 +16,7 @@ class AppBarInvitationMenu extends React.Component {
     this.componentWillMount = this.componentWillMount.bind(this);
   }
 
+  // Callback method for get invitation request
   componentWillMount() {
     const getInvitationCallback = (response) => {
       const invitationObjs = response.invitation;
@@ -34,6 +35,7 @@ class AppBarInvitationMenu extends React.Component {
     GetPendingInvitationRequest.get(getInvitationCallback);
   }
 
+  // Hanlde Popover's tap event
   handleTouchTap = (event) => {
     // This prevents ghost click.
     event.preventDefault();
@@ -44,6 +46,7 @@ class AppBarInvitationMenu extends React.Component {
     });
   };
 
+  // Handloe popover close event
   handleRequestClose = () => {
     this.setState({
       open: false,

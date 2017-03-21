@@ -1,7 +1,7 @@
 import React from 'react';
-import { Dialog, FlatButton, List } from 'material-ui';
+import { Dialog, FlatButton } from 'material-ui';
 import ChipInput from 'material-ui-chip-input';
-import InviteUsersRequest from '../../Requests/InviteUsersRequest'
+import InviteUsersRequest from '../../Requests/InviteUsersRequest';
 
 class InviteMemberDialog extends React.Component {
   constructor(props) {
@@ -31,16 +31,17 @@ class InviteMemberDialog extends React.Component {
     ];
   }
 
+  // Handle invitatiion request
   handleSubmit() {
-    console.log('shit');
-    console.log(this.state.members);
     InviteUsersRequest.post(this.props.groupId, this.state.members, this.handleClose());
   }
 
+  // Handle close dialog event
   handleClose() {
     this.props.close();
   }
 
+  // Handle textfield of chips changes
   handleChange(members) {
     this.setState({
       members

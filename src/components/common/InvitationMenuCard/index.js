@@ -4,10 +4,12 @@ import AcceptInvitationRequest from '../../Requests/AcceptInvitationRequest';
 import DenyInvitationRequest from '../../Requests/DenyInvitationRequest';
 
 class InvitationMenuCard extends React.Component {
+  // Handle deny invitation request
   handleDeny = () => {
     DenyInvitationRequest.put(this.props.id, this.props.close);
   };
 
+  // Handle accept invitation request
   handleAccept = () => {
     AcceptInvitationRequest.put(this.props.id, this.props.close);
   };
