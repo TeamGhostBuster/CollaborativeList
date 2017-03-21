@@ -1,6 +1,7 @@
 import React from 'react';
 import { AppBar, IconButton } from 'material-ui';
 import MenuBtn from 'material-ui/svg-icons/navigation/menu';
+import AppBarIconMenu from '../CommenComponents/AppBarIconMenu';
 
 class MyAppBar extends React.Component {
   constructor(props) {
@@ -21,9 +22,22 @@ class MyAppBar extends React.Component {
             <MenuBtn color={'#ffffff'} />
           </IconButton>
         }
+        iconElementRight={<AppBarIconMenu
+          pageType={this.props.pageType}
+          groupId={this.props.groupId}
+          reloadCallback={this.props.reloadCallback}
+        />}
       />
     );
   }
 }
+
+MyAppBar.propTypes = {
+  title: React.PropTypes.string.isRequired,
+  pageType: React.PropTypes.string.isRequired,
+  groupId: React.PropTypes.string,
+  reloadCallback: React.PropTypes.func.isRequired
+};
+
 
 export default MyAppBar;

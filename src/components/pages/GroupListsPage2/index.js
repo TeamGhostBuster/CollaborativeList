@@ -90,6 +90,9 @@ export default class GroupListsPage2 extends React.Component {
         <MyAppBar
           title={this.props.location.query.name}
           openDrawer={this.handleToggle}
+          pageType="group"
+          groupId={this.props.location.query.id}
+          reloadCallback={this.componentWillMount}
         />
 
         <Drawer
@@ -104,9 +107,8 @@ export default class GroupListsPage2 extends React.Component {
           <Divider />
           {this.state.groups}
           <Divider />
-          <NavDrawerCreateGroupItem reloadCallback={this.componentWillMount}/>
+          <NavDrawerCreateGroupItem reloadCallback={this.componentWillMount} />
         </Drawer>
-
 
         <div style={this.styles.root}>
           <ul style={this.styles.List}>
