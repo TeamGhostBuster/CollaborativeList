@@ -1,7 +1,9 @@
 import React from 'react';
-import { AppBar, IconButton } from 'material-ui';
+import { AppBar, IconButton, Toolbar, ToolbarGroup } from 'material-ui';
 import MenuBtn from 'material-ui/svg-icons/navigation/menu';
 import AppBarIconMenu from '../CommenComponents/AppBarIconMenu';
+import AppBarInvitationMenu from './AppBarInvitationMenu';
+import { cyan500 } from 'material-ui/styles/colors';
 
 class MyAppBar extends React.Component {
   constructor(props) {
@@ -9,7 +11,29 @@ class MyAppBar extends React.Component {
     this.styles = {
       bar: {
         width: '100%'
+      },
+      toolbar: {
+        background: cyan500,
+        paddingBottom: '5px',
+      },
+      toolbargroup: {
+        paddingLeft: '20px'
       } };
+
+    this.rightButtons = (
+      <Toolbar style={this.styles.toolbar}>
+        <ToolbarGroup>
+          <AppBarInvitationMenu
+            reloadCallback={this.props.reloadCallback}
+          />
+          <AppBarIconMenu
+            pageType={this.props.pageType}
+            groupId={this.props.groupId}
+            reloadCallback={this.props.reloadCallback}
+          />
+        </ToolbarGroup>
+      </Toolbar>
+    );
   }
 
   render() {
@@ -22,11 +46,7 @@ class MyAppBar extends React.Component {
             <MenuBtn color={'#ffffff'} />
           </IconButton>
         }
-        iconElementRight={<AppBarIconMenu
-          pageType={this.props.pageType}
-          groupId={this.props.groupId}
-          reloadCallback={this.props.reloadCallback}
-        />}
+        iconElementRight={this.rightButtons}
       />
     );
   }
@@ -36,7 +56,8 @@ MyAppBar.propTypes = {
   title: React.PropTypes.string.isRequired,
   pageType: React.PropTypes.string.isRequired,
   groupId: React.PropTypes.string,
-  reloadCallback: React.PropTypes.func.isRequired
+  reloadCallback: React.PropTypes.func.isRequired,
+  openDrawer: React.PropTypes.func
 };
 
 
