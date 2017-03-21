@@ -1,6 +1,7 @@
 import React from 'react';
 import { AppBar, IconButton } from 'material-ui';
 import MenuBtn from 'material-ui/svg-icons/navigation/menu';
+import SearchBar from '../SearchPage/subComponent/SearchBar';
 
 class MyAppBar extends React.Component {
   constructor(props) {
@@ -20,6 +21,9 @@ class MyAppBar extends React.Component {
           <IconButton onTouchTap={this.props.openDrawer}>
             <MenuBtn color={'#ffffff'} />
           </IconButton>
+        }
+        iconElementRight={
+          <SearchBar/>
         }
       />
     );
