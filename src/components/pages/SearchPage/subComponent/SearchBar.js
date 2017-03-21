@@ -6,7 +6,7 @@ export default class Searchbar extends React.Component {
 
   render() {
     return (
-      <FlatButton icon={<Search />} href="/search" />
+      <FlatButton icon="Search" href="/search" />
     );
   }
 }

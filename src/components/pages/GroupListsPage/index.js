@@ -90,6 +90,9 @@ export default class GroupListsPage extends React.Component {
         <MyAppBar
           title={this.props.location.query.name}
           openDrawer={this.handleToggle}
+          pageType="group"
+          groupId={this.props.location.query.id}
+          reloadCallback={this.componentWillMount}
         />
 
         <Drawer

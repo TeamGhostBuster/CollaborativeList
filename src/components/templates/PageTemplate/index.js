@@ -17,8 +17,6 @@ function requireLogIn() {
         if (response.error === 'invalid_token') {
           console.log('invalid token');
           browserHistory.push('/login');
-        } else {
-          console.log(xhr.responseText);
         }
       } else if (xhr.readyState == 4) {
         console.log('invalide http request');
