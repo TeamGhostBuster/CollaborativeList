@@ -1,6 +1,6 @@
 import React from 'react';
 import { Dialog, FlatButton, List } from 'material-ui';
-import ArchivedListItem from '../../../atoms/ArchivedListItem';
+import ArchivedListItem from '../../../common/ArchivedListItem';
 import GetUserListsRequest from '../../../Requests/GetUserListsRequest';
 import GetGroupListsRequest from '../../../Requests/GetGroupListsRequest';
 import RetrieveListRequest from '../../../Requests/RetrieveListRequest';
@@ -78,7 +78,6 @@ class RetrieveArchivedListDialog extends React.Component {
 
   // Send our retrieve method
   handleSubmit() {
-    console.log(this.seletedList);
     if (this.props.pageType === 'group') {
       RetrieveListRequest.put(this.seletedList, true, this.props.groupId, this.handleClose);
     } else {

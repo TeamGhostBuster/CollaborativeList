@@ -46,7 +46,6 @@ export default class ListsPage extends React.Component {
 
     // call back function for getLists request function
     const getPersonalListCallback = (response) => {
-      console.log('list page index', response);
       const listObjs = response.lists;
       this.setState({
         lists: listObjs
