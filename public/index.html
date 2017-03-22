@@ -12,6 +12,19 @@
   <link rel="icon" href="icon.png" />
   <link rel="stylesheet" href="index.css">
 
+  <link rel="manifest" href="/manifest.json">
+  <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async></script>
+  <script>
+      var OneSignal = window.OneSignal || [];
+      OneSignal.push(["init", {
+          appId: "0f44bda8-4f00-43c3-a035-344371882153",
+          autoRegister: false,
+          notifyButton: {
+              enable: true /* Set to false to hide */
+          }
+      }]);
+  </script>
+
 </head>
 <body>
 

@@ -1,0 +1,16 @@
+version: '2'
+services:
+    raspberry:
+        image: raspberry:latest
+        container_name: raspberry-dev
+        ports:
+            - 6000:80
+        networks:
+            - esnet
+        environment:
+            - GOOGLE_CLIENT_ID=224926533228-4jcfs0862eib0vo9j81b9d6h8agqh30f.apps.googleusercontent.com
+            - API_URL=https://api.vfree.org
+
+networks:
+    esnet:
+        driver: bridge
