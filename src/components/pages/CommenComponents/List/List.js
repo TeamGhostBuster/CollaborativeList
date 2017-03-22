@@ -15,9 +15,9 @@ import MergeListDialog from './ListSub/MergeListDialog';
 import ShareListDialog from './ListSub/ShareListDialog';
 
 export default class List extends React.Component {
-  constructor() {
+  constructor(props) {
     // props: {id: list id, name: list name, reloadCallback:fucntion, group: "true", groupId }
-    super();
+    super(props);
 
     this.state = { articles: [], partitionDialog: false, renameDialog: false, mergeDialog: false, shareDialog: false };
 
@@ -51,6 +51,7 @@ export default class List extends React.Component {
       that.setState({ articles: response.articles });
     };
     that.getArticles(cb);
+    this.props.reloadCallback();
   }
 
   getArticles(callback) {
@@ -171,7 +172,7 @@ export default class List extends React.Component {
         <ArticleCard
           key={article.id} id={article.id} list_id={this.props.id}
           title={article.title} group={this.props.group} groupId={this.props.groupId}
-          refresh={this.componentWillMount} vote={article.vote_count}
+          refresh={this.componentWillMount} vote={article.vote_count} refreshPage={this.props.reloadCallback}
         />
     );
 

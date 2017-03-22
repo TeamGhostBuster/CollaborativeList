@@ -61,7 +61,8 @@ export default class ArticleCard extends React.Component {
         </Card>
         <ArticleDialog
           isOpen={this.state.open} close={this.closeDialog} list_id={this.props.list_id}
-          id={this.props.id}
+          id={this.props.id} group={this.props.group} groupId={this.props.groupId}
+          refreshPage={this.props.refreshPage}
         />
       </li>
     );
@@ -90,4 +91,5 @@ ArticleCard.propTypes = {
   // callback function to refresh parent
   refresh: React.PropTypes.func.isRequired,
 
+  refreshPage: React.PropTypes.func.isRequired
 };
