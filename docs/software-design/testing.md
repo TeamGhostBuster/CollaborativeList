@@ -122,7 +122,12 @@ Reference     | [US 4.3](https://teamghostbuster.github.io/CollaborativeList/req
 For the frontend, we will run a local instance of the software and bypass the google login by providing it with a mock server. The automation test is using Selenium with firefox, written in python.We will test the application by checking if it is sending the right HTTP requests and displaying the right output based on the HTTP response from backend.
 
 ### Usage
-to run all the tests, use:
+Before run the tests, make sure you have python3 with selenium and [geckodriver](https://github.com/mozilla/geckodriver/releases) for firefox driver. Make sure the driver is in your PATH, e.g. place it in /usr/bin or /usr/local/bin.
+
+to install selenium:
+```pip install selenium```
+
+to run all the tests, go to the root directory and use:
 ```python ./test/test.py <username> <password>```
 
 ### Test Case 1
