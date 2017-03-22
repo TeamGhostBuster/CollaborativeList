@@ -24,7 +24,7 @@ class NavDrawerCreateGroupItem extends React.Component {
   render() {
     return (
       <MenuItem onTouchTap={this.openDialog} innerDivStyle={{padding:'0'}}>
-        <RaisedButton label="Create Group" icon={<ContentAdd/>} fullWidth={true} primary={true}/>
+        <RaisedButton label="Create Group" className="createGroup" icon={<ContentAdd/>} fullWidth={true} primary={true}/>
         {this.state.dialog}
       </MenuItem>
     );

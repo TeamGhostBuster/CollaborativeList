@@ -42,7 +42,7 @@ class MyAppBar extends React.Component {
         style={this.styles.bar}
         title={this.props.title}
         iconElementLeft={
-          <IconButton onTouchTap={this.props.openDrawer}>
+          <IconButton name="drawerButton" onTouchTap={this.props.openDrawer}>
             <MenuBtn color={'#ffffff'} />
           </IconButton>
         }
