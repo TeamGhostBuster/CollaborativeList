@@ -86,7 +86,7 @@ export default class GroupListsPage extends React.Component {
 
   render() {
     return (
-      <PageTemplate test={this.props.test}>
+      <PageTemplate>
         <MyAppBar
           title={this.props.location.query.name}
           openDrawer={this.handleToggle}
@@ -106,6 +106,7 @@ export default class GroupListsPage extends React.Component {
           <NavDrawerPersonalItem />
           <Divider />
           {this.state.groups}
+
           <Divider />
           <NavDrawerCreateGroupItem reloadCallback={this.componentWillMount}/>
         </Drawer>

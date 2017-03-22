@@ -78,17 +78,18 @@ export default class CreateList extends React.Component {
   render() {
     // actions on the bottom of the dialog
     const actions = [
-      <FlatButton label="Cancel" primary onTouchTap={this.handleClose} />,
-      <FlatButton label="Submit" primary onTouchTap={this.handleSubmit} />
+      <FlatButton label="Cancel" className="Cancel" primary onTouchTap={this.handleClose} />,
+      <FlatButton label="Submit" className="Submit" primary onTouchTap={this.handleSubmit} />
     ];
 
     return (
       <li style={{ listStyle: 'none' }}>
-        <FloatingActionButton style={this.styles.float} onTouchTap={this.handleOpen}>
+        <FloatingActionButton className="createListButton" style={this.styles.float} onTouchTap={this.handleOpen}>
           <ContentAdd />
         </FloatingActionButton>
         <Dialog open={this.state.open} title="Create List" actions={actions} autoScrollBodyContent>
           <TextField
+            id="ListNameInput"
             hintText="Required" fullWidth
             hintStyle={{ color: '#FF3D00' }} floatingLabelText="List Name"
             errorText={this.state.requireName} onChange={this.handleChange}
