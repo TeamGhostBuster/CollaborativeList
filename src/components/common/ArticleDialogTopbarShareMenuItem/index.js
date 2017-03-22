@@ -7,12 +7,17 @@ class ArticleDialogTopbarShareMenuItem extends React.Component {
     super(props);
 
     this.handleClick = this.handleClick.bind(this);
+    this.handleClose = this.handleClose.bind(this);
   }
 
-  handleClick = () => {
+  handleClose() {
+    this.props.refreshPage();
+  }
+
+  handleClick() {
     CopyArticleRequest.post(this.props.baseListId, this.props.targetListId,
-    this.props.articleId, this.props.groupId, this.props.group, this.props.close);
-  };
+    this.props.articleId, this.props.groupId, this.props.group, this.props.refreshPage);
+  }
 
   render() {
     return (

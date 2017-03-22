@@ -32,6 +32,7 @@ export default class List extends React.Component {
     this.mergeListClose = this.mergeListClose.bind(this);
     this.shareToGroup = this.shareToGroup.bind(this);
     this.shareToGroupClose = this.shareToGroupClose.bind(this);
+    this.updatePage = this.updatePage.bind(this);
 
     this.styles = {
       list: {
@@ -51,7 +52,6 @@ export default class List extends React.Component {
       that.setState({ articles: response.articles });
     };
     that.getArticles(cb);
-    this.props.reloadCallback();
   }
 
   getArticles(callback) {
@@ -62,6 +62,12 @@ export default class List extends React.Component {
       this.props.groupId,
       callback
     );
+  }
+
+  updatePage() {
+    console.log('lsdkafjdsaklfsfuckfuckfuck');
+    this.componentWillMount();
+    this.props.reloadCallback();
   }
 
 
@@ -124,15 +130,15 @@ export default class List extends React.Component {
    *      merge list functions
    ************************************************/
   mergeList() {
-    this.setState({mergeDialog: <MergeListDialog open={true} close={this.mergeListClose} list_id={this.props.id}/>})
+    this.setState({ mergeDialog: <MergeListDialog open close={this.mergeListClose} list_id={this.props.id} /> });
   }
 
   mergeListClose(success) {
     // close the dialog
-    this.setState({ mergeDialog: false});
+    this.setState({ mergeDialog: false });
 
     // if success refresh the whole lists page
-    if (success){
+    if (success) {
       this.componentWillMount();
       this.props.reloadCallback();
     }
@@ -143,11 +149,11 @@ export default class List extends React.Component {
    *      share list functions
    ************************************************/
   shareToGroup() {
-    this.setState({shareDialog: <ShareListDialog open={true} list_id={this.props.id} close={this.shareToGroupClose}/>})
+    this.setState({ shareDialog: <ShareListDialog open list_id={this.props.id} close={this.shareToGroupClose} /> });
   }
 
-  shareToGroupClose(){
-    this.setState({shareDialog: false})
+  shareToGroupClose() {
+    this.setState({ shareDialog: false });
   }
 
   // list menu buttons
@@ -172,7 +178,7 @@ export default class List extends React.Component {
         <ArticleCard
           key={article.id} id={article.id} list_id={this.props.id}
           title={article.title} group={this.props.group} groupId={this.props.groupId}
-          refresh={this.componentWillMount} vote={article.vote_count} refreshPage={this.props.reloadCallback}
+          refresh={this.componentWillMount} vote={article.vote_count} refreshPage={this.updatePage}
         />
     );
 

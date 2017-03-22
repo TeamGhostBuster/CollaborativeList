@@ -11,9 +11,9 @@ import TopBar from './ArticleDetailSub/TopBar';
 import DetailView from './ArticleDetailSub/DetailView';
 
 export default class ArticleDialog extends React.Component {
-  constructor(isOpen, close, id, list_id) {
+  constructor(props) {
     // props: {isOpen :bool, close: function, id: string, list_id: string}
-    super(isOpen, close, id, list_id);
+    super(props);
     this.state = { title: '', description: '', url: undefined, tags: undefined, comments: undefined, detail: undefined };
 
     this.getArticleInfo = this.getArticleInfo.bind(this);
