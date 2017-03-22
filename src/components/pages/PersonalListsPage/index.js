@@ -84,7 +84,7 @@ export default class ListsPage extends React.Component {
 
   render() {
     return (
-      <PageTemplate>
+      <PageTemplate test={this.props.test}>
         <MyAppBar
           title="Personal List"
           openDrawer={this.handleToggle}

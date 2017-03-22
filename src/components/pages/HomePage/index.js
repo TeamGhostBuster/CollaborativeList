@@ -9,7 +9,7 @@ export default class HomePage extends React.Component {
 
   render() {
     return (
-      <PageTemplate>
+      <PageTemplate test={this.props.test}>
         <AppBar title="HomePage" iconElementLeft={<div />} />
         <UpperSection />
         <Divider />

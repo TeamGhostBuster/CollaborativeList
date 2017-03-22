@@ -86,7 +86,7 @@ export default class GroupListsPage2 extends React.Component {
 
   render() {
     return (
-      <PageTemplate>
+      <PageTemplate test={this.props.test}>
         <MyAppBar
           title={this.props.location.query.name}
           openDrawer={this.handleToggle}
