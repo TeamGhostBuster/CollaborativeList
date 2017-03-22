@@ -141,18 +141,18 @@ Reference     | [US 1](https://teamghostbuster.github.io/CollaborativeList/requi
 Item          | Detail
 :-----------: | :----------------
 Name          | `test_create_personal_reading_list`
-Purpose       | Verify that click on create list button will open a dialog
--             | Verify that click on cancel button will close the dialog
--             | Verify that click on submit without required field won't close the dialog
--             | Verify that click on submit with required field will close the dialog and a new list with correct name will show up
+Purpose1      | Verify that click on create list button will open a dialog
+Purpose2      | Verify that click on cancel button will close the dialog
+Purpose3      | Verify that click on submit without required field won't close the dialog
+Purpose4      | Verify that click on submit with required field will close the dialog and a new list with correct name will show up
 Reference     |[US 2.1](https://teamghostbuster.github.io/CollaborativeList/requirement-document/user-stories/#2-Create)
 
 ### Test Case 3
 Item          | Detail
 :-----------: | :----------------
 Name          | `test_create_group`
-Purpose       | Verify that click on create group button will open a dialog
--             | Verify that click on cancel button will close the dialog
--             | Verify that click on submit without required field won't close the dialog
--             | Verify that click on submit with required field will close the dialog and a new group with correct name will show up
+Purpose1      | Verify that click on create group button will open a dialog
+Purpose2      | Verify that click on cancel button will close the dialog
+Purpose3      | Verify that click on submit without required field won't close the dialog
+Purpose4      | Verify that click on submit with required field will close the dialog and a new group with correct name will show up
 Reference     |[US 2.2](https://teamghostbuster.github.io/CollaborativeList/requirement-document/user-stories/#2-Create)
