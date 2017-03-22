@@ -116,6 +116,49 @@ Name          | `test_user_cannot_vote_twice`
 Purpose       | Verify that user can vote twice
 Reference     | [US 4.3](https://teamghostbuster.github.io/CollaborativeList/requirement-document/user-stories/#4-share)
 
+### Test Case 14
+Item          | Detail
+:-----------: | :----------------
+Name          | `test_rename_list`
+Purpose       | Verify that user can rename list
+Reference     | [US 3.3](https://teamghostbuster.github.io/CollaborativeList/requirement-document/user-stories/#3-edit)
+
+### Test Case 15
+Item          | Detail
+:-----------: | :----------------
+Name          | `test_partition_list`
+Purpose       | Verify that user can partition list
+Reference     | [US 3.5](https://teamghostbuster.github.io/CollaborativeList/requirement-document/user-stories/#3-edit)
+
+### Test Case 16
+Item          | Detail
+:-----------: | :----------------
+Name          | `test_merge_list`
+Purpose       | Verify that user can merge list
+Reference     | [US 3.4](https://teamghostbuster.github.io/CollaborativeList/requirement-document/user-stories/#3-edit)
+
+### Test Case 17
+Item          | Detail
+:-----------: | :----------------
+Name          | `test_copy_move_list`
+Purpose       | Verify that user can copy/move articles to another list
+Reference     | [US 3.6 US 3.7](https://teamghostbuster.github.io/CollaborativeList/requirement-document/user-stories/#3-edit)
+
+### Test Case 18
+Item          | Detail
+:-----------: | :----------------
+Name          | `test_share_list`
+Purpose       | Verify that user can share list to group
+Reference     | [US 4.2](https://teamghostbuster.github.io/CollaborativeList/requirement-document/user-stories/#4-share)
+
+### Test Case 19
+Item          | Detail
+:-----------: | :----------------
+Name          | `test_invite_member`
+Purpose       | Verify that user can send invitation to group.
+Reference     | [US 5.1](https://teamghostbuster.github.io/CollaborativeList/requirement-document/user-stories/#5-moderator)
+
+
 ## Test Cases (Frontend)
 
 ### Strategy
@@ -213,7 +256,7 @@ Name          | `test_create_group_reading_list`
 Purpose       | Verify that click on create list button will open a dialog
               | Verify that click on cancel button will close the dialog
               | Verify that click on submit without required field won't close the dialog
-              | Verify that click on submit with required field will close the dialog and a new list with correct name will show up 
+              | Verify that click on submit with required field will close the dialog and a new list with correct name will show up
 Reference     |[US 2.4](https://teamghostbuster.github.io/CollaborativeList/requirement-document/user-stories/#2-Create)
 
 
@@ -272,7 +315,13 @@ Purpose       | Verify that the vote count goes down after downvote
               | Verify that you can upvote after a downvote
 Reference     |[US 4.3](https://teamghostbuster.github.io/CollaborativeList/requirement-document/user-stories/#4-Share)
 
+### Test Case 18
+Item          | Detail
+:-----------: | :----------------
+Name          | `test_retrieve_user_archived_list`
+Purpose       | Verify that the archived list is back
+Reference     |[US 3.10](https://teamghostbuster.github.io/CollaborativeList/requirement-document/user-stories/#3-edit)
+
 
 ## Note
  - More tests will be added upon next release.
-
