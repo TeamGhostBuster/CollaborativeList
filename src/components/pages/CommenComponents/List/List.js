@@ -15,9 +15,9 @@ import MergeListDialog from './ListSub/MergeListDialog';
 import ShareListDialog from './ListSub/ShareListDialog';
 
 export default class List extends React.Component {
-  constructor() {
+  constructor(props) {
     // props: {id: list id, name: list name, reloadCallback:fucntion, group: "true", groupId }
-    super();
+    super(props);
 
     this.state = { articles: [], partitionDialog: false, renameDialog: false, mergeDialog: false, shareDialog: false };
 
@@ -32,6 +32,7 @@ export default class List extends React.Component {
     this.mergeListClose = this.mergeListClose.bind(this);
     this.shareToGroup = this.shareToGroup.bind(this);
     this.shareToGroupClose = this.shareToGroupClose.bind(this);
+    this.updatePage = this.updatePage.bind(this);
 
     this.styles = {
       list: {
@@ -61,6 +62,11 @@ export default class List extends React.Component {
       this.props.groupId,
       callback
     );
+  }
+
+  updatePage() {
+    this.componentWillMount();
+    this.props.reloadCallback(true);
   }
 
 
@@ -123,15 +129,15 @@ export default class List extends React.Component {
    *      merge list functions
    ************************************************/
   mergeList() {
-    this.setState({mergeDialog: <MergeListDialog open={true} close={this.mergeListClose} list_id={this.props.id}/>})
+    this.setState({ mergeDialog: <MergeListDialog open close={this.mergeListClose} list_id={this.props.id} /> });
   }
 
   mergeListClose(success) {
     // close the dialog
-    this.setState({ mergeDialog: false});
+    this.setState({ mergeDialog: false });
 
     // if success refresh the whole lists page
-    if (success){
+    if (success) {
       this.componentWillMount();
       this.props.reloadCallback();
     }
@@ -142,11 +148,11 @@ export default class List extends React.Component {
    *      share list functions
    ************************************************/
   shareToGroup() {
-    this.setState({shareDialog: <ShareListDialog open={true} list_id={this.props.id} close={this.shareToGroupClose}/>})
+    this.setState({ shareDialog: <ShareListDialog open list_id={this.props.id} close={this.shareToGroupClose} /> });
   }
 
-  shareToGroupClose(){
-    this.setState({shareDialog: false})
+  shareToGroupClose() {
+    this.setState({ shareDialog: false });
   }
 
   // list menu buttons
@@ -157,11 +163,11 @@ export default class List extends React.Component {
       targetOrigin={{ horizontal: 'left', vertical: 'top' }}
       anchorOrigin={{ horizontal: 'left', vertical: 'top' }}
     >
-      <MenuItem primaryText="Rename" onTouchTap={this.renameList} />
-      <MenuItem primaryText="Archive" onTouchTap={this.archiveList} />
-      <MenuItem primaryText="Partition" onTouchTap={this.partitionList} />
-      <MenuItem primaryText="Merge With" onTouchTap={this.mergeList} />
-      <MenuItem primaryText="Share To Group" onTouchTap={this.shareToGroup} />
+      <MenuItem primaryText="Rename" className="Rename" onTouchTap={this.renameList} />
+      <MenuItem primaryText="Archive" className="Archive" onTouchTap={this.archiveList} />
+      <MenuItem primaryText="Partition" className="Partition" onTouchTap={this.partitionList} />
+      <MenuItem primaryText="Merge With" className="MergeWith" onTouchTap={this.mergeList} />
+      <MenuItem primaryText="Share To Group" className="ShareToGroup" onTouchTap={this.shareToGroup} />
     </IconMenu>;
 
   render() {
@@ -171,7 +177,7 @@ export default class List extends React.Component {
         <ArticleCard
           key={article.id} id={article.id} list_id={this.props.id}
           title={article.title} group={this.props.group} groupId={this.props.groupId}
-          refresh={this.componentWillMount} vote={article.vote_count}
+          refresh={this.componentWillMount} vote={article.vote_count} refreshPage={this.updatePage}
         />
     );
 

@@ -177,13 +177,13 @@ export default class ArticlePopUp extends React.Component {
 
   render() {
     const formActions = [
-      <FlatButton label="Cancel" primary onTouchTap={this.handleClose} />,
-      <FlatButton label="Submit" primary onTouchTap={this.handleSubmit} />
+      <FlatButton label="Cancel" className="Cancel" primary onTouchTap={this.handleClose} />,
+      <FlatButton label="Submit" className="Submit" primary onTouchTap={this.handleSubmit} />
     ];
 
     const tagActions = [
-      <FlatButton label="Cancel" primary onTouchTap={this.TagClose} />,
-      <FlatButton label="Finish" primary onTouchTap={this.TagFinish} />
+      <FlatButton label="Cancel" className="Cancel" primary onTouchTap={this.TagClose} />,
+      <FlatButton label="Finish" className="Finish" primary onTouchTap={this.TagFinish} />
     ];
 
 
@@ -191,19 +191,19 @@ export default class ArticlePopUp extends React.Component {
     const form = [
       <div key="form">
         <TextField
-          fullWidth multiLine hintText="Required" hintStyle={{ color: deepOrangeA400 }}
+          fullWidth multiLine hintText="Required" hintStyle={{ color: deepOrangeA400 }} id="ArticleTitleInput"
           floatingLabelText="Title" errorText={this.state.requireTitle} onChange={this.titleChange}
         />
         <br />
         <TextField
           fullWidth multiLine hintText="Required" hintStyle={{ color: deepOrangeA400 }}
           floatingLabelText="Description" errorText={this.state.requireDescription}
-          onChange={this.descriptionChange}
+          onChange={this.descriptionChange} id="ArticleDescriptionInput"
         />
         <br />
         <TextField
           fullWidth multiLine hintText="Optional" floatingLabelText="URL"
-          onChange={this.urlChange}
+          onChange={this.urlChange} id="ArticleURLInput"
         />
         <br /><br />
 
@@ -215,10 +215,11 @@ export default class ArticlePopUp extends React.Component {
           open={this.state.addTag} actions={tagActions} modal contentStyle={{ width: '50%' }}
           title="Add Tag"
         >
-          <TextField hintText="Optional" floatingLabelText="Enter Tag Here" onChange={this.tagChange} />
+          <TextField hintText="Optional" floatingLabelText="Enter Tag Here" onChange={this.tagChange}
+                     multiLine={true} id="ArticleTagInput" />
         </Dialog>
 
-        <RaisedButton label="Add Tag" icon={<ContentAdd />} secondary onTouchTap={this.TagOpen} />
+        <RaisedButton label="Add Tag" className="AddTagButton" icon={<ContentAdd />} secondary onTouchTap={this.TagOpen} />
       </div>
     ];
 
@@ -226,7 +227,7 @@ export default class ArticlePopUp extends React.Component {
     return (
       <div>
         <RaisedButton
-          label="Add Article" fullWidth primary icon={<ContentAdd />}
+          label="Add Article" className="AddArticle" fullWidth primary icon={<ContentAdd />}
           onTouchTap={this.handleOpen}
         />
         <Dialog

@@ -41,9 +41,11 @@ export default class ListsPage extends React.Component {
     };
   }
 
-  componentWillMount() {
+  componentWillMount(childCall) {
     // thi is part of the constructor, but it can be used as a callback function for a child node.
-
+    if (childCall){
+      this.setState({lists: false})
+    }
     // call back function for getLists request function
     const getPersonalListCallback = (response) => {
       const listObjs = response.lists;
@@ -83,7 +85,7 @@ export default class ListsPage extends React.Component {
 
   render() {
     return (
-      <PageTemplate test={this.props.test}>
+      <PageTemplate>
         <MyAppBar
           title="Personal List"
           openDrawer={this.handleToggle}

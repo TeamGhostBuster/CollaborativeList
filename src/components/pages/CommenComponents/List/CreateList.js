@@ -90,7 +90,7 @@ export default class CreateList extends React.Component {
         <Dialog open={this.state.open} title="Create List" actions={actions} autoScrollBodyContent>
           <TextField
             id="ListNameInput"
-            hintText="Required" fullWidth
+            hintText="Required" fullWidth={true} multiLine={true}
             hintStyle={{ color: '#FF3D00' }} floatingLabelText="List Name"
             errorText={this.state.requireName} onChange={this.handleChange}
           />

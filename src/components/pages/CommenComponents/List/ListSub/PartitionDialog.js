@@ -19,8 +19,8 @@ export default class PartitionDialog extends React.Component {
     this.closeNameDialog = this.closeNameDialog.bind(this);
 
     this.dialogActions = [
-      <FlatButton label="Cancel" onTouchTap={this.handleClose} />,
-      <FlatButton label="Submit" onTouchTap={this.handleSubmit} />
+      <FlatButton label="Cancel" className="Cancel" onTouchTap={this.handleClose} />,
+      <FlatButton label="Submit" className="Submit" onTouchTap={this.handleSubmit} />
     ];
   }
 

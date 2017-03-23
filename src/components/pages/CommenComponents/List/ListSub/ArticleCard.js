@@ -14,6 +14,7 @@ export default class ArticleCard extends React.Component {
 
     this.closeDialog = this.closeDialog.bind(this);
     this.openDialog = this.openDialog.bind(this);
+    this.closeShit = this.closeShit.bind(this);
   }
 
   closeDialog() {
@@ -25,29 +26,34 @@ export default class ArticleCard extends React.Component {
     this.setState({ open: true });
   }
 
+  closeShit() {
+    this.setState({ open: false });
+    this.props.refreshPage();
+  }
+
   render() {
     // not factored out because of dependencies
     const cardActions = () =>
       this.props.group !== 'true' ?
         <Toolbar style={{ backgroundColor: 'white' }}>
           <ToolbarGroup firstChild>
-            <RaisedButton buttonStyle={{ height: '100%' }} label="Details" onTouchTap={this.openDialog} />
+            <RaisedButton className="DetailButton" buttonStyle={{ height: '100%' }} label="Details" onTouchTap={this.openDialog} />
           </ToolbarGroup>
         </Toolbar>
         :
         <Toolbar style={{ backgroundColor: 'white' }}>
           <ToolbarGroup firstChild>
-            <RaisedButton buttonStyle={{ height: '100%' }} label="Details" onTouchTap={this.openDialog} />
+            <RaisedButton className="DetailButton" buttonStyle={{ height: '100%' }} label="Details" onTouchTap={this.openDialog} />
           </ToolbarGroup>
           <ToolbarGroup>
             <VoteButton
               id={this.props.id} action="up" refresh={this.props.refresh} groupId={this.props.groupId}
-              listId={this.props.list_id}
+              listId={this.props.list_id} className="UpvoteButton"
             />
-            <Chip backgroundColor={'#ffffff'}>{this.props.vote}</Chip>
+            <Chip className="VoteCount" backgroundColor={'#ffffff'}>{this.props.vote}</Chip>
             <VoteButton
               id={this.props.id} action="down" refresh={this.props.refresh} groupId={this.props.groupId}
-              listId={this.props.list_id}
+              listId={this.props.list_id} className="DownvoteButton"
             />
           </ToolbarGroup>
         </Toolbar>;
@@ -61,7 +67,8 @@ export default class ArticleCard extends React.Component {
         </Card>
         <ArticleDialog
           isOpen={this.state.open} close={this.closeDialog} list_id={this.props.list_id}
-          id={this.props.id}
+          id={this.props.id} group={this.props.group} groupId={this.props.groupId}
+          refreshPage={this.closeShit}
         />
       </li>
     );
@@ -82,7 +89,7 @@ ArticleCard.propTypes = {
   groupId: React.PropTypes.string,
 
   // a vote count string if this is group article
-  vote: React.PropTypes.string,
+  vote: React.PropTypes.number,
 
   // need the list id
   list_id: React.PropTypes.string.isRequired,
@@ -90,4 +97,5 @@ ArticleCard.propTypes = {
   // callback function to refresh parent
   refresh: React.PropTypes.func.isRequired,
 
+  refreshPage: React.PropTypes.func.isRequired
 };
