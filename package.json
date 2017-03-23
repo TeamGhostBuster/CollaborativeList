@@ -62,6 +62,7 @@
   "dependencies": {
     "axios": "^0.15.3",
     "babel-cli": "^6.22.2",
+    "chai": "^3.5.0",
     "history": "3.0.0",
     "lodash": "^4.17.4",
     "material-ui": "^0.17.0",
@@ -78,8 +79,9 @@
     "react-router": "^3.0.0",
     "react-router-scroll": "^0.4.1",
     "react-tap-event-plugin": "^2.0.1",
-    "react-toolbox": "^2.0.0-beta.6",
+    "react-test-renderer": "^15.4.2",
     "searchkit": "^0.10.1",
+    "sinon": "^2.1.0",
     "styled-components": "^1.2.1",
     "styled-theme": "^0.3.0",
     "styled-tools": "^0.1.2"

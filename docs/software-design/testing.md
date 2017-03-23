@@ -159,7 +159,7 @@ Purpose       | Verify that user can send invitation to group.
 Reference     | [US 5.1](https://teamghostbuster.github.io/CollaborativeList/requirement-document/user-stories/#5-moderator)
 
 
-## Test Cases (Frontend)
+## Test Cases (Selenium)
 
 ### Strategy
 For the frontend, we will run a local instance of the software and bypass the google login by providing it with a mock server. The automation test is using Selenium with firefox, written in python.We will test the application by checking if it is sending the right HTTP requests and displaying the right output based on the HTTP response from backend.
@@ -313,4 +313,17 @@ Purpose       | Verify that the archived list is back
 Reference     |[US 3.10](https://teamghostbuster.github.io/CollaborativeList/requirement-document/user-stories/#3-edit)
 
 
+## Test Cases (Jest/enzyme/chai)
+
+## Strategy
+We are building a SPA in 2017, with the perfect tool created by some great companies, like Facebook, Airbnb, etc. We would be able test each React component seperately instead of using Selenium for acceptance testing without knowing what exactly go wrong. We are using `enzyme` to render the component, `jest` as unit test framework, and `sinon` to mockout the network call. We are able to determine if the component is rendered properly with the fake data we feed in there, and find out if the component will behave properly after certain event is trigger. However, with the limited amount of time, I am only able to complete a part of test cases with this approach.
+The reason I personally pick this testing approach is:
+
+* It's hard to write comprehensive test cases for React app with Selenium.
+* Helping us break down test cases into each single react component, more throughout than the Selenium.
+* Has been proved to be the best practise for React unit testing by developers from the community, industry, etc.
+* Less pain.
+
+## Note
+ - More tests will be added upon next release.
 
