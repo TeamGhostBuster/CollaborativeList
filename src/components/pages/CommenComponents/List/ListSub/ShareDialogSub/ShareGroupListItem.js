@@ -16,7 +16,7 @@ export default class ShareGroupListItem extends React.Component {
   render() {
     const CheckBox = <Checkbox onCheck={this.handleCheck} />;
     return (
-      <ListItem primaryText={this.props.name} leftCheckbox={CheckBox} />
+      <ListItem primaryText={this.props.name} leftCheckbox={CheckBox} className="ListItem" />
 
     );
   }

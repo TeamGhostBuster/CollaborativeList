@@ -33,7 +33,7 @@ export default class ListOfPersonalLists extends React.Component{
 
   render(){
     return(
-      <SelectableList value={this.state.targetId} onChange={this.handleSelect}>
+      <SelectableList className="ListItem" value={this.state.targetId} onChange={this.handleSelect}>
         {this.state.lists}
       </SelectableList>
     );
