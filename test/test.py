@@ -7,6 +7,8 @@ from test_create_group import test_create_group
 from test_create_article_for_person_list import test_create_article_for_person_list
 from test_archive_personal_reading_list import test_archive_personal_reading_list
 from test_view_article_from_person_list import test_view_article_from_person_list
+from test_comment_on_article_from_personal_list import test_comment_on_article_from_personal_list
+
 # constants
 assert len(sys.argv) == 3, "usage: python <testFile> <email> <password>"
 username = sys.argv[1]
@@ -50,3 +52,8 @@ testArticleTag = "Test Tag"
 # test case 6
 test_view_article_from_person_list(driver, wait, testArticleName, testArticleDescription, testArticleURL, testArticleTag)
 print("passed test case 6!")
+
+# test case 7
+testComment = "this is a comment"
+test_comment_on_article_from_personal_list(driver, wait, testComment)
+print("passed test case 7!")
