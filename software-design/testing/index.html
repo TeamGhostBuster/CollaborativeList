@@ -540,8 +540,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#test-cases-frontend" title="Test Cases (Frontend)" class="md-nav__link">
-    Test Cases (Frontend)
+  <a href="#test-cases-selenium" title="Test Cases (Selenium)" class="md-nav__link">
+    Test Cases (Selenium)
   </a>
   
     <nav class="md-nav">
@@ -689,6 +689,20 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#test-cases-jestenzymechai" title="Test Cases (Jest/enzyme/chai)" class="md-nav__link">
+    Test Cases (Jest/enzyme/chai)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#strategy_2" title="Strategy ()" class="md-nav__link">
+    Strategy ()
+  </a>
   
 </li>
       
@@ -925,8 +939,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#test-cases-frontend" title="Test Cases (Frontend)" class="md-nav__link">
-    Test Cases (Frontend)
+  <a href="#test-cases-selenium" title="Test Cases (Selenium)" class="md-nav__link">
+    Test Cases (Selenium)
   </a>
   
     <nav class="md-nav">
@@ -1074,6 +1088,20 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#test-cases-jestenzymechai" title="Test Cases (Jest/enzyme/chai)" class="md-nav__link">
+    Test Cases (Jest/enzyme/chai)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#strategy_2" title="Strategy ()" class="md-nav__link">
+    Strategy ()
+  </a>
   
 </li>
       
@@ -1558,7 +1586,7 @@ test/test_list.py ....
 </tr>
 </tbody>
 </table>
-<h2 id="test-cases-frontend">Test Cases (Frontend)<a class="headerlink" href="#test-cases-frontend" title="Permanent link">&para;</a></h2>
+<h2 id="test-cases-selenium">Test Cases (Selenium)<a class="headerlink" href="#test-cases-selenium" title="Permanent link">&para;</a></h2>
 <h3 id="strategy_1">Strategy<a class="headerlink" href="#strategy_1" title="Permanent link">&para;</a></h3>
 <p>For the frontend, we will run a local instance of the software and bypass the google login by providing it with a mock server. The automation test is using Selenium with firefox, written in python.We will test the application by checking if it is sending the right HTTP requests and displaying the right output based on the HTTP response from backend.</p>
 <h3 id="usage_1">Usage<a class="headerlink" href="#usage_1" title="Permanent link">&para;</a></h3>
@@ -2085,6 +2113,14 @@ test/test_list.py ....
 </tr>
 </tbody>
 </table>
+<h2 id="test-cases-jestenzymechai">Test Cases (Jest/enzyme/chai)<a class="headerlink" href="#test-cases-jestenzymechai" title="Permanent link">&para;</a></h2>
+<h2 id="strategy_2">Strategy ()<a class="headerlink" href="#strategy_2" title="Permanent link">&para;</a></h2>
+<p>We are building a SPA in 2017, with the perfect tool created by some great companies, like Facebook, Airbnb, etc. We would be able test each React component seperately instead of using Selenium for acceptance testing without knowing what exactly go wrong. We are using <code class="codehilite">enzyme</code> to render the component, <code class="codehilite">jest</code> as unit test framework, and <code class="codehilite">sinon</code> to mockout the network call. We are able to determine if the component is rendered properly with the fake data we feed in there, and find out if the component will behave properly after certain event is trigger. However, with the limited amount of time, I am only able to complete a part of test cases with this approach.
+The reason I personally pick this testing approach is:
+* It's hard to write comprehensive test cases for React app with Selenium.
+* Helping us break down test cases into each single react component, more throughout than the Selenium.
+* Has been proved to be the best practise for React unit testing by developers from the community, industry, etc.
+* Less pain.</p>
 <h2 id="note">Note<a class="headerlink" href="#note" title="Permanent link">&para;</a></h2>
 <ul>
 <li>More tests will be added upon next release.</li>
