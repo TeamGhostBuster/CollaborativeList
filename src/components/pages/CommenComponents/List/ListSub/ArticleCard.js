@@ -14,6 +14,7 @@ export default class ArticleCard extends React.Component {
 
     this.closeDialog = this.closeDialog.bind(this);
     this.openDialog = this.openDialog.bind(this);
+    this.closeShit = this.closeShit.bind(this);
   }
 
   closeDialog() {
@@ -23,6 +24,11 @@ export default class ArticleCard extends React.Component {
 
   openDialog() {
     this.setState({ open: true });
+  }
+
+  closeShit() {
+    this.setState({ open: false });
+    this.props.refreshPage();
   }
 
   render() {
@@ -61,7 +67,8 @@ export default class ArticleCard extends React.Component {
         </Card>
         <ArticleDialog
           isOpen={this.state.open} close={this.closeDialog} list_id={this.props.list_id}
-          id={this.props.id}
+          id={this.props.id} group={this.props.group} groupId={this.props.groupId}
+          refreshPage={this.closeShit}
         />
       </li>
     );
@@ -82,7 +89,7 @@ ArticleCard.propTypes = {
   groupId: React.PropTypes.string,
 
   // a vote count string if this is group article
-  vote: React.PropTypes.string,
+  vote: React.PropTypes.number,
 
   // need the list id
   list_id: React.PropTypes.string.isRequired,
@@ -90,4 +97,5 @@ ArticleCard.propTypes = {
   // callback function to refresh parent
   refresh: React.PropTypes.func.isRequired,
 
+  refreshPage: React.PropTypes.func.isRequired
 };
