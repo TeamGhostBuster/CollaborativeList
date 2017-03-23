@@ -27,6 +27,7 @@ export default class TopBar extends React.Component {
         listItems: listObjs
           .filter((obj) => !obj.archived)
           .map((listObject) => <ArticleDialogTopbarShareMenuItem
+            key={listObject.id}
             name={listObject.name}
             articleId={this.props.article_id}
             baseListId={this.props.list_id}

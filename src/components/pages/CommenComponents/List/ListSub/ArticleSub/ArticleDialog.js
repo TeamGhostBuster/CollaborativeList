@@ -30,6 +30,7 @@ export default class ArticleDialog extends React.Component {
     };
   }
 
+
   componentWillMount() {
     this.getArticleInfo();
   }

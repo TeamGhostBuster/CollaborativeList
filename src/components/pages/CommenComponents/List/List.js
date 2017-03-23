@@ -47,6 +47,7 @@ export default class List extends React.Component {
   }
 
   componentWillMount() {
+    console.log("list index");
     const that = this;
     const cb = (response) => {
       that.setState({ articles: response.articles });
@@ -67,7 +68,7 @@ export default class List extends React.Component {
   updatePage() {
     console.log('lsdkafjdsaklfsfuckfuckfuck');
     this.componentWillMount();
-    this.props.reloadCallback();
+    this.props.reloadCallback(true);
   }
 
 
