@@ -43,14 +43,14 @@ export default class NewListName extends React.Component {
 
   render() {
     const actions = [
-      <FlatButton label="Cancel" primary onTouchTap={this.handleClose} />,
-      <FlatButton label="Submit" primary onTouchTap={this.handleSubmit} />
+      <FlatButton label="Cancel" className="Cancel" primary onTouchTap={this.handleClose} />,
+      <FlatButton label="Submit" className="Submit" primary onTouchTap={this.handleSubmit} />
     ];
 
     return (
       <Dialog open={this.props.open} title="Partiton List" actions={actions} autoScrollBodyContent>
         <TextField
-          hintText="Required" fullWidth
+          hintText="Required" fullWidth multiLine={true} id="NewListNameInput"
           hintStyle={{ color: '#FF3D00' }} floatingLabelText="New List Name"
           errorText={this.state.requireName} onChange={this.handleChange}
         />

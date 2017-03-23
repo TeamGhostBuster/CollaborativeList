@@ -157,11 +157,11 @@ export default class List extends React.Component {
       targetOrigin={{ horizontal: 'left', vertical: 'top' }}
       anchorOrigin={{ horizontal: 'left', vertical: 'top' }}
     >
-      <MenuItem primaryText="Rename" onTouchTap={this.renameList} />
-      <MenuItem primaryText="Archive" onTouchTap={this.archiveList} />
-      <MenuItem primaryText="Partition" onTouchTap={this.partitionList} />
-      <MenuItem primaryText="Merge With" onTouchTap={this.mergeList} />
-      <MenuItem primaryText="Share To Group" onTouchTap={this.shareToGroup} />
+      <MenuItem primaryText="Rename" className="Rename" onTouchTap={this.renameList} />
+      <MenuItem primaryText="Archive" className="Archive" onTouchTap={this.archiveList} />
+      <MenuItem primaryText="Partition" className="Partition" onTouchTap={this.partitionList} />
+      <MenuItem primaryText="Merge With" className="MergeWith" onTouchTap={this.mergeList} />
+      <MenuItem primaryText="Share To Group" className="ShareToGroup" onTouchTap={this.shareToGroup} />
     </IconMenu>;
 
   render() {

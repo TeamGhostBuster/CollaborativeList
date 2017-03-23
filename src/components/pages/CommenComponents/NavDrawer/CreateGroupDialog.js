@@ -78,14 +78,14 @@ export default class CreateGroupDialog extends React.Component {
 
   render() {
     const actions = [
-      <FlatButton label="Cancel" primary onTouchTap={this.handleClose} />,
-      <FlatButton label="Submit" primary onTouchTap={this.handleSubmit} />
+      <FlatButton label="Cancel" className="Cancel" primary onTouchTap={this.handleClose} />,
+      <FlatButton label="Submit" className="Submit" primary onTouchTap={this.handleSubmit} />
     ];
     return (
         <Dialog open={this.props.open} title="Create A Group" actions={actions} autoScrollBodyContent>
           <TextField
             fullWidth multiLine hintText="Required" hintStyle={{ color: deepOrangeA400 }}
-            floatingLabelText="Group Name" errorText={this.state.requireName} onChange={this.nameChange}
+            floatingLabelText="Group Name" id="GroupNameInput" errorText={this.state.requireName} onChange={this.nameChange}
           /><br />
 
           <TextField

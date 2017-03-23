@@ -62,7 +62,7 @@ export default class AddComment extends React.Component {
         <CardMedia expandable>
           <TextField
             hintText="Enter Comment Here" onChange={this.handleChange}
-            fullWidth multiLine underlineShow
+            fullWidth multiLine underlineShow id="CommentInput"
             hintStyle={{ paddingLeft: '20px' }} textareaStyle={{ padding: '0px 20px 0px 20px' }}
           />
           <Toolbar style={{ backgroundColor: 'white' }}>
@@ -72,15 +72,15 @@ export default class AddComment extends React.Component {
                 style={{ margin: '20px', width: 'auto' }} checked={this.state.public} label="public"
                 onCheck={this.handleCheck}
               />
-              <FlatButton style={{ margin: '0' }} label="Cancel" labelStyle={{ color: 'grey' }} onTouchTap={this.onClose} />
-              <FlatButton style={{ margin: '0' }} label="Submit" labelStyle={{ color: 'grey' }} onTouchTap={this.submit} />
+              <FlatButton style={{ margin: '0' }} label="Cancel" className="CommentCancel" labelStyle={{ color: 'grey' }} onTouchTap={this.onClose} />
+              <FlatButton style={{ margin: '0' }} label="Submit" className="CommentSubmit" labelStyle={{ color: 'grey' }} onTouchTap={this.submit} />
             </ToolbarGroup>
           </Toolbar>
         </CardMedia>
         <CardActions>
           <FlatButton
             label="Add Comment" labelStyle={{ color: 'grey' }} icon={<CommentIcon color={'grey'} />}
-            style={{ width: '100%', textAlign: 'center' }} onTouchTap={this.onOpen}
+            style={{ width: '100%', textAlign: 'center' }} onTouchTap={this.onOpen} className="AddCommentButton"
           />
         </CardActions>
       </Card>
