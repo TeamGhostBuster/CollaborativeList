@@ -188,6 +188,28 @@ Purpose       | Verify that the comment with right conetent shows up after click
 Purpose       | Verify that the comment does not show up after click on cancel
 Reference     |[US 3.2](https://teamghostbuster.github.io/CollaborativeList/requirement-document/user-stories/#3-Edit)
 
+### Test Case 
+Item          | Detail
+:-----------: | :----------------
+Name          | `test_rename_list`
+Purpose       | Verify that the article name changed after submit
+Reference     |[US 3.3](https://teamghostbuster.github.io/CollaborativeList/requirement-document/user-stories/#3-Edit)
+
+### Test Case 
+Item          | Detail
+:-----------: | :----------------
+Name          | `test_partition_list`
+Purpose       | Verify that the there's a new list after partition
+Reference     |[US 3.5](https://teamghostbuster.github.io/CollaborativeList/requirement-document/user-stories/#3-Edit)
+
+### Test Case 
+Item          | Detail
+:-----------: | :----------------
+Name          | `test_merge_list`
+Purpose       | Verify that the there's a new list after partition
+Reference     |[US 3.5](https://teamghostbuster.github.io/CollaborativeList/requirement-document/user-stories/#3-Edit)
+
+
 ### Test Case 10
 Item          | Detail
 :-----------: | :----------------

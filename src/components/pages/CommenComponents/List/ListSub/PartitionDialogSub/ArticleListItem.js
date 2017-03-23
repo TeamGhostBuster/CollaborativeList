@@ -20,7 +20,7 @@ export default class ArticleListItem extends React.Component {
   render() {
     const CheckBox = <Checkbox onCheck={this.handleCheck} />;
     return (
-      <ListItem primaryText={this.props.title} leftCheckbox={CheckBox} />
+      <ListItem primaryText={this.props.title} leftCheckbox={CheckBox} className="ListItem" />
 
     );
   }
