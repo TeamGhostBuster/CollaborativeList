@@ -19,7 +19,7 @@ from test_vote_on_article_from_group_list import test_vote_on_article_from_group
 assert len(sys.argv) == 3, "usage: python <testFile> <email> <password>"
 username = sys.argv[1]
 password = sys.argv[2]
-url = "http://local.vfree.org:5000"
+url = "http://demo.vfree.org"
 
 # Start the driver
 driver = webdriver.Firefox()
