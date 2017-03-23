@@ -1,10 +1,10 @@
-const path = require('path')
-const webpack = require('webpack')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
+const path = require('path');
+const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-const ip = process.env.IP || '0.0.0.0'
-const port = process.env.PORT || 3000
-const DEBUG = process.env.NODE_ENV !== 'production'
+const ip = process.env.IP || '0.0.0.0';
+const port = process.env.PORT || 3000;
+const DEBUG = process.env.NODE_ENV !== 'production';
 
 const config = {
   devtool: DEBUG ? 'eval' : false,
@@ -39,24 +39,29 @@ const config = {
       { test: /\.eot$/, loader: 'file?prefix=fonts/' },
       { test: /\.json$/, loader: 'json' }
     ]
+  },
+  externals: {
+    'react/addons': true,
+    'react/lib/ExecutionEnvironment': true,
+    'react/lib/ReactContext': true
   }
-}
+};
 
 if (DEBUG) {
   config.entry.unshift(
     `webpack-dev-server/client?http://${ip}:${port}/`,
     'webpack/hot/only-dev-server',
     'react-hot-loader/patch'
-  )
+  );
 
   config.plugins = config.plugins.concat([
     new webpack.HotModuleReplacementPlugin()
-  ])
+  ]);
 } else {
   config.plugins = config.plugins.concat([
     new webpack.optimize.DedupePlugin(),
     new webpack.optimize.UglifyJsPlugin({ compress: { warnings: false } })
-  ])
+  ]);
 }
 
-module.exports = config
+module.exports = config;
