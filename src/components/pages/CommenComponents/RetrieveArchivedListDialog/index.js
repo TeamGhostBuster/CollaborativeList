@@ -43,12 +43,8 @@ class RetrieveArchivedListDialog extends React.Component {
       this.setState({
         listItems: listObjs
           .filter((obj) => obj.archived)
-          .map((listObject) => <ArchivedListItem
-            name={listObject.name}
-            list_id={listObject.id}
-            selectedAction={this.handleSelect}
-          />)
       });
+      console.log(this.state.listItems);
     };
 
     if (this.props.pageType === 'personal') {
@@ -95,7 +91,11 @@ class RetrieveArchivedListDialog extends React.Component {
         autoScrollBodyContent
       >
         <List>
-          {this.state.listItems}
+          {this.state.listItems.map((listObject) => <ArchivedListItem
+            name={listObject.name}
+            list_id={listObject.id}
+            selectedAction={this.handleSelect}
+          />)}
         </List>
       </Dialog>
     );
@@ -105,7 +105,7 @@ class RetrieveArchivedListDialog extends React.Component {
 RetrieveArchivedListDialog.propTypes = {
   // The callback method from the parent component
   close: React.PropTypes.func.isRequired,
-  open: React.PropTypes.func.isRequired,
+  open: React.PropTypes.bool.isRequired,
   pageType: React.PropTypes.string.isRequired,
   groupId: React.PropTypes.string,
   reloadCallback: React.PropTypes.func.isRequired
