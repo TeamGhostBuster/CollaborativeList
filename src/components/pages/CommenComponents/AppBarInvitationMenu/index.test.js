@@ -11,8 +11,10 @@ describe('<ArchivedListItem />', () => {
   it('Render AppBarInvitationmenu', () => {
     const mockCallback = stub();
     const mockCloseCallback = stub();
+
     injectTapEventPlugin();
     spy(AppBarInvitationMenu.prototype, 'componentWillMount');
+
     const wrapper = TestUtils.shallowWithContext(
       <AppBarInvitationMenu reloadCallback={mockCallback}>
         <InvitationMenuCard close={mockCloseCallback} />
@@ -29,9 +31,9 @@ describe('<ArchivedListItem />', () => {
     wrapper.setState({ invitationCards: PendingInviation.invitation });
 
     // Expect the invitation card is rendered
+    expect(wrapper.find('FlatButton').first().exists()).to.be.true;
     expect(wrapper.find('InvitationMenuCard').exists()).to.be.true;
     const groupNames = wrapper.find('InvitationMenuCard').map(node => node.props().groupId);
-
     // Expect the data is being filled in properly
     expect(groupNames).to.be.eql(PendingInviation.invitation.map((each) => each.group.id));
   });
