@@ -29,7 +29,8 @@ function requireLogIn() {
 
 // it's just a base container that requires login before rendering
 const PageTemplate = (props) => {
-  requireLogIn();
+    requireLogIn();
+
   return (
     <div {...props} />
   );

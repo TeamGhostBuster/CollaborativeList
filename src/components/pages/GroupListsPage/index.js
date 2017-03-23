@@ -108,6 +108,7 @@ export default class GroupListsPage extends React.Component {
           <NavDrawerPersonalItem />
           <Divider />
           {this.state.groups}
+
           <Divider />
           <NavDrawerCreateGroupItem reloadCallback={this.componentWillMount}/>
         </Drawer>

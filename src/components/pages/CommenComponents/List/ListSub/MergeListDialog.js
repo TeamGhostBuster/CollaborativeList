@@ -32,8 +32,8 @@ export default class MergeListDialog extends React.Component {
 
   render() {
     const actions = [
-      <FlatButton label="Cancel" primary onTouchTap={this.handleClose} />,
-      <FlatButton label="Submit" primary onTouchTap={this.handleSubmit} />
+      <FlatButton label="Cancel" className="Cancel" primary onTouchTap={this.handleClose} />,
+      <FlatButton label="Submit" className="Submit" primary onTouchTap={this.handleSubmit} />
     ];
 
     return (
