@@ -1,6 +1,6 @@
 import React from 'react';
 import injectTapEventPlugin from 'react-tap-event-plugin';
-import sinon from 'sinon';
+import {spy, stub} from 'sinon';
 import { expect } from 'chai';
 import RetrieveArchivedListDialog from './index';
 import { ArchivedListItem } from 'components';
@@ -11,14 +11,16 @@ describe('<RetrieveArchivedListDialog />', () => {
   it('Render RetrieveArchivedListDialog', () => {
     injectTapEventPlugin();
     // mock out the componentWillMount
-    sinon.spy(RetrieveArchivedListDialog.prototype, 'componentWillMount');
+    spy(RetrieveArchivedListDialog.prototype, 'componentWillMount');
+    const mockReloadCallback = stub();
+    const mockCloseCallback = stub();
     // render component
     const wrapper = TestUtils.shallowWithContext(
       <RetrieveArchivedListDialog
-        close={console.log}
+        close={mockCloseCallback}
         open
         pageType="personal"
-        reloadCallback={console.log}
+        reloadCallback={mockReloadCallback}
       >
         <ArchivedListItem />
       </RetrieveArchivedListDialog>
