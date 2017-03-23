@@ -49,7 +49,6 @@ export default class ListsPage extends React.Component {
     // call back function for getLists request function
     const getPersonalListCallback = (response) => {
       const listObjs = response.lists;
-      console.log("list page")
       this.setState({
         lists: listObjs
           .filter((obj) => !obj.archived)
@@ -86,7 +85,7 @@ export default class ListsPage extends React.Component {
 
   render() {
     return (
-      <PageTemplate test={this.props.test}>
+      <PageTemplate>
         <MyAppBar
           title="Personal List"
           openDrawer={this.handleToggle}

@@ -14,7 +14,7 @@ class NavDrawerItem extends React.Component {
       path = this.props.location.pathname === '/group' ? '/group2' : '/group'
 
     }
-    console.log(this.props.index, path, this.props.location);
+
     this.props.onDrawerClose();
     browserHistory.push({
       pathname: path,

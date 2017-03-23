@@ -89,7 +89,7 @@ ArticleCard.propTypes = {
   groupId: React.PropTypes.string,
 
   // a vote count string if this is group article
-  vote: React.PropTypes.string,
+  vote: React.PropTypes.number,
 
   // need the list id
   list_id: React.PropTypes.string.isRequired,
