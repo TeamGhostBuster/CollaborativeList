@@ -51,32 +51,6 @@ class MyAppBar extends React.Component {
   }
 
   render() {
-      //
-      // <AppBar
-      //   style={this.styles.bar}
-      //   iconElementLeft={
-      //     <Toolbar style={this.styles.righttoolbar}>
-      //
-      //       <ToolbarGroup firstChild>
-      //         <IconButton name="drawerButton" onTouchTap={this.props.openDrawer}>
-      //           <MenuBtn color={'#ffffff'} />
-      //         </IconButton>
-      //         <ToolbarTitle text={this.props.title} style={this.styles.title} />
-      //       </ToolbarGroup>
-      //
-      //       <ToolbarGroup>
-      //         <AppBarSearchBox
-      //           pageType={this.props.pageType}
-      //           groupId={this.props.groupId}
-      //           reloadCallback={this.props.reloadCallback}
-      //           lists={this.props.lists}
-      //         />
-      //       </ToolbarGroup>
-      //
-      //     </Toolbar>
-      //   }
-      //   iconElementRight={this.rightButtons}
-      // />
     return (
       <Toolbar style={this.styles.bar}>
         <ToolbarGroup>
@@ -86,7 +60,6 @@ class MyAppBar extends React.Component {
           <ToolbarTitle text={this.props.title} style={this.styles.title} />
         </ToolbarGroup>
         <ToolbarGroup>
-
           <AppBarSearchBox
             pageType={this.props.pageType}
             groupId={this.props.groupId}
