@@ -15,6 +15,7 @@ export default class GroupListsPage extends React.Component {
     super();
     this.state = {
       lists: [<div key="something" />],
+      listArray:undefined,
       open: false,
       groups: []
     };
@@ -50,7 +51,7 @@ export default class GroupListsPage extends React.Component {
     const getGroupListCallback = (response) => {
       console.log(response);
       const listObjs = response.lists;
-      this.setState({
+      this.setState({listArray:listObjs,
         lists: listObjs
           .filter((obj) => !obj.archived)
           .map((listObject) =>
@@ -95,6 +96,7 @@ export default class GroupListsPage extends React.Component {
           pageType="group"
           groupId={this.props.location.query.id}
           reloadCallback={this.componentWillMount}
+          lists={this.state.listArray}
         />
 
         <Drawer

@@ -68,6 +68,7 @@ class MyAppBar extends React.Component {
                 pageType={this.props.pageType}
                 groupId={this.props.groupId}
                 reloadCallback={this.props.reloadCallback}
+                lists={this.props.lists}
               />
             </ToolbarGroup>
 
@@ -84,7 +85,8 @@ MyAppBar.propTypes = {
   pageType: React.PropTypes.string.isRequired,
   groupId: React.PropTypes.string,
   reloadCallback: React.PropTypes.func.isRequired,
-  openDrawer: React.PropTypes.func
+  openDrawer: React.PropTypes.func,
+  lists: React.PropTypes.array.isRequired
 };
 
 

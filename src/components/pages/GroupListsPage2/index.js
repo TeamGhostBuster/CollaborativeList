@@ -15,6 +15,7 @@ export default class GroupListsPage2 extends React.Component {
     super();
     this.state = {
       lists: [<div key="something" />],
+      listArray: undefined,
       open: false,
       groups: []
     };
@@ -64,7 +65,7 @@ export default class GroupListsPage2 extends React.Component {
     // callback method for getGroups method
     const navDrawerCallback = (response) => {
       const listObjs = response.groups;
-      this.setState({
+      this.setState({ listArray:listObjs,
         groups: listObjs.map((listObject) =>
           <NavDrawerItem
             key={listObject.id}
@@ -95,6 +96,7 @@ export default class GroupListsPage2 extends React.Component {
           pageType="group"
           groupId={this.props.location.query.id}
           reloadCallback={this.componentWillMount}
+          lists={this.state.listArray}
         />
 
         <Drawer

@@ -2,6 +2,7 @@ import React from 'react';
 import { AutoComplete, Paper, MenuItem } from 'material-ui';
 import { Client } from 'elasticsearch';
 import { SearchItem } from 'components';
+import SearchResultDialog from './SearchResultDialog'
 
 class AppBarSearchBox extends React.Component {
   constructor(props) {
@@ -9,7 +10,8 @@ class AppBarSearchBox extends React.Component {
 
     this.state = {
       dataSource: [],
-      inputValue: ''
+      inputValue: '',
+      dialog: false
     };
 
     this.styles = {
@@ -27,6 +29,7 @@ class AppBarSearchBox extends React.Component {
     this.performSearch = this.performSearch.bind(this);
     this.makeMap = this.makeMap.bind(this);
     this.handleAdd = this.handleAdd.bind(this);
+    this.dialogClose = this.dialogClose.bind(this);
   }
 
   makeMap = (item) => {
@@ -63,8 +66,18 @@ class AppBarSearchBox extends React.Component {
     }
   }
 
+  dialogClose(){
+    this.setState({dialog:false});
+  }
+
   handleAdd = (shit, index) => {
-    // TODO
+    if (index !== -1){
+      console.log("app bar search box:" ,this.props.lists,this.state.dataSource,index);
+      const articleId = this.state.dataSource[index].value.props.articleId;
+
+      this.setState({dialog: <SearchResultDialog pageType={this.props.pageType} groupId={this.props.groupId}
+                                                 isOpen={true} close={this.dialogClose} id={articleId} lists={this.props.lists} reloadCallback={this.props.reloadCallback} />})
+    }
   };
 
   handleUpdateInput = (value) => {
@@ -87,6 +100,7 @@ class AppBarSearchBox extends React.Component {
           onNewRequest={(shit, index) => this.handleAdd(shit, index)}
           fullWidth
         />
+        {this.state.dialog}
       </Paper>
     );
   }
@@ -95,7 +109,8 @@ class AppBarSearchBox extends React.Component {
 AppBarSearchBox.propTypes = {
   pageType: React.PropTypes.string.isRequired,
   groupId: React.PropTypes.string,
-  reloadCallback: React.PropTypes.func.isRequired
+  reloadCallback: React.PropTypes.func.isRequired,
+  lists: React.PropTypes.array.isRequired
 };
 
 export default AppBarSearchBox;
