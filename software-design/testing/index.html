@@ -653,6 +653,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#test-case-13_2" title="Test Case 13" class="md-nav__link">
+    Test Case 13
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#test-case-14_1" title="Test Case 14" class="md-nav__link">
     Test Case 14
   </a>
@@ -662,27 +669,6 @@
           <li class="md-nav__item">
   <a href="#test-case-15_1" title="Test Case 15" class="md-nav__link">
     Test Case 15
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#test-case-16_1" title="Test Case 16" class="md-nav__link">
-    Test Case 16
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#test-case-17_1" title="Test Case 17" class="md-nav__link">
-    Test Case 17
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#test-case-18_1" title="Test Case 18" class="md-nav__link">
-    Test Case 18
   </a>
   
 </li>
@@ -697,12 +683,32 @@
     Test Cases (Jest/enzyme/chai)
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#strategy_2" title="Strategy" class="md-nav__link">
     Strategy
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usage_2" title="Usage" class="md-nav__link">
+    Usage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sample-output" title="Sample Output" class="md-nav__link">
+    Sample Output
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1052,6 +1058,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#test-case-13_2" title="Test Case 13" class="md-nav__link">
+    Test Case 13
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#test-case-14_1" title="Test Case 14" class="md-nav__link">
     Test Case 14
   </a>
@@ -1061,27 +1074,6 @@
           <li class="md-nav__item">
   <a href="#test-case-15_1" title="Test Case 15" class="md-nav__link">
     Test Case 15
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#test-case-16_1" title="Test Case 16" class="md-nav__link">
-    Test Case 16
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#test-case-17_1" title="Test Case 17" class="md-nav__link">
-    Test Case 17
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#test-case-18_1" title="Test Case 18" class="md-nav__link">
-    Test Case 18
   </a>
   
 </li>
@@ -1096,12 +1088,32 @@
     Test Cases (Jest/enzyme/chai)
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#strategy_2" title="Strategy" class="md-nav__link">
     Strategy
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usage_2" title="Usage" class="md-nav__link">
+    Usage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sample-output" title="Sample Output" class="md-nav__link">
+    Sample Output
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1590,7 +1602,12 @@ test/test_list.py ....
 <h3 id="strategy_1">Strategy<a class="headerlink" href="#strategy_1" title="Permanent link">&para;</a></h3>
 <p>For the frontend, we will run a local instance of the software and bypass the google login by providing it with a mock server. The automation test is using Selenium with firefox, written in python.We will test the application by checking if it is sending the right HTTP requests and displaying the right output based on the HTTP response from backend.</p>
 <h3 id="usage_1">Usage<a class="headerlink" href="#usage_1" title="Permanent link">&para;</a></h3>
-<p>The frontend automation test is going to be implemented in sprint 4.</p>
+<p>Before run the tests, make sure you have python3 with selenium and <a href="https://github.com/mozilla/geckodriver/releases">geckodriver</a> for firefox driver. Make sure the driver is in your PATH, e.g. place it in /usr/bin or /usr/local/bin.
+Make sure that you have already logged in to the website at least once. Make sure there's no lists in the account.</p>
+<p>to install selenium:
+<code class="codehilite">pip install selenium</code></p>
+<p>to run all the tests, go to the root directory and use:
+<code class="codehilite">python ./test/test.py &lt;username&gt; &lt;password&gt;</code></p>
 <h3 id="test-case-1_1">Test Case 1<a class="headerlink" href="#test-case-1_1" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
@@ -1602,7 +1619,7 @@ test/test_list.py ....
 <tbody>
 <tr>
 <td align="center">Name</td>
-<td align="left"><code class="codehilite">test_authenticationt</code></td>
+<td align="left"><code class="codehilite">test_authentication</code></td>
 </tr>
 <tr>
 <td align="center">Purpose</td>
@@ -1625,11 +1642,27 @@ test/test_list.py ....
 <tbody>
 <tr>
 <td align="center">Name</td>
-<td align="left"><code class="codehilite">test_redirection_to_personal_lists</code></td>
+<td align="left"><code class="codehilite">test_create_personal_reading_list</code></td>
 </tr>
 <tr>
 <td align="center">Purpose</td>
-<td align="left">Verify that click on the personal_list will direct user to the right url</td>
+<td align="left">Verify that click on create list button will open a dialog</td>
+</tr>
+<tr>
+<td align="center">Purpose</td>
+<td align="left">Verify that click on cancel button will close the dialog</td>
+</tr>
+<tr>
+<td align="center">Purpose</td>
+<td align="left">Verify that click on submit without required field won't close the dialog</td>
+</tr>
+<tr>
+<td align="center">Purpose</td>
+<td align="left">Verify that click on submit with required field will close the dialog and a new list with correct name will show up</td>
+</tr>
+<tr>
+<td align="center">Reference</td>
+<td align="left"><a href="https://teamghostbuster.github.io/CollaborativeList/requirement-document/user-stories/#2-Create">US 2.1</a></td>
 </tr>
 </tbody>
 </table>
@@ -1651,15 +1684,15 @@ test/test_list.py ....
 <td align="left">Verify that click on create group button will open a dialog</td>
 </tr>
 <tr>
-<td align="center"></td>
+<td align="center">Purpose</td>
 <td align="left">Verify that click on cancel button will close the dialog</td>
 </tr>
 <tr>
-<td align="center"></td>
+<td align="center">Purpose</td>
 <td align="left">Verify that click on submit without required field won't close the dialog</td>
 </tr>
 <tr>
-<td align="center"></td>
+<td align="center">Purpose</td>
 <td align="left">Verify that click on submit with required field will close the dialog and a new group with correct name will show up</td>
 </tr>
 <tr>
@@ -1679,60 +1712,6 @@ test/test_list.py ....
 <tbody>
 <tr>
 <td align="center">Name</td>
-<td align="left"><code class="codehilite">test_redirection_to_group_lists</code></td>
-</tr>
-<tr>
-<td align="center">Purpose</td>
-<td align="left">Verify that click on a group list will direct user to the right url</td>
-</tr>
-</tbody>
-</table>
-<h3 id="test-case-5_1">Test Case 5<a class="headerlink" href="#test-case-5_1" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th align="center">Item</th>
-<th align="left">Detail</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="center">Name</td>
-<td align="left"><code class="codehilite">test_create_personal_reading_list</code></td>
-</tr>
-<tr>
-<td align="center">Purpose</td>
-<td align="left">Verify that click on create list button will open a dialog</td>
-</tr>
-<tr>
-<td align="center"></td>
-<td align="left">Verify that click on cancel button will close the dialog</td>
-</tr>
-<tr>
-<td align="center"></td>
-<td align="left">Verify that click on submit without required field won't close the dialog</td>
-</tr>
-<tr>
-<td align="center"></td>
-<td align="left">Verify that click on submit with required field will close the dialog and a new list with correct name will show up</td>
-</tr>
-<tr>
-<td align="center">Reference</td>
-<td align="left"><a href="https://teamghostbuster.github.io/CollaborativeList/requirement-document/user-stories/#2-Create">US 2.1</a></td>
-</tr>
-</tbody>
-</table>
-<h3 id="test-case-6_1">Test Case 6<a class="headerlink" href="#test-case-6_1" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th align="center">Item</th>
-<th align="left">Detail</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="center">Name</td>
 <td align="left"><code class="codehilite">test_archive_personal_reading_list</code></td>
 </tr>
 <tr>
@@ -1740,7 +1719,7 @@ test/test_list.py ....
 <td align="left">Verify that archive an empty personal reading list, it will disapear from the page</td>
 </tr>
 <tr>
-<td align="center"></td>
+<td align="center">Purpose</td>
 <td align="left">Verify that archive an non-empty personal reading list, it will disapear from the page</td>
 </tr>
 <tr>
@@ -1749,7 +1728,7 @@ test/test_list.py ....
 </tr>
 </tbody>
 </table>
-<h3 id="test-case-7_1">Test Case 7<a class="headerlink" href="#test-case-7_1" title="Permanent link">&para;</a></h3>
+<h3 id="test-case-5_1">Test Case 5<a class="headerlink" href="#test-case-5_1" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
@@ -1767,24 +1746,28 @@ test/test_list.py ....
 <td align="left">Verify that click on add article button will open a dialog</td>
 </tr>
 <tr>
-<td align="center"></td>
+<td align="center">Purpose</td>
 <td align="left">Verify that click on cancel button will close the dialog</td>
 </tr>
 <tr>
-<td align="center"></td>
+<td align="center">Purpose</td>
 <td align="left">Verify that click on submit without required field won't close the dialog</td>
 </tr>
 <tr>
-<td align="center"></td>
+<td align="center">Purpose</td>
 <td align="left">Verify that click on submit with required field will close the dialog and a new article with correct name will show up</td>
 </tr>
 <tr>
+<td align="center">Purpose</td>
+<td align="left">Verify that you can add tag</td>
+</tr>
+<tr>
 <td align="center">Reference</td>
-<td align="left"><a href="https://teamghostbuster.github.io/CollaborativeList/requirement-document/user-stories/#2-Create">US 2.5</a></td>
+<td align="left"><a href="https://teamghostbuster.github.io/CollaborativeList/requirement-document/user-stories/#2-Create">US 2.5</a> <a href="https://teamghostbuster.github.io/CollaborativeList/requirement-document/user-stories/#2-Create">US 2.3</a></td>
 </tr>
 </tbody>
 </table>
-<h3 id="test-case-8_1">Test Case 8<a class="headerlink" href="#test-case-8_1" title="Permanent link">&para;</a></h3>
+<h3 id="test-case-6_1">Test Case 6<a class="headerlink" href="#test-case-6_1" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
@@ -1802,7 +1785,7 @@ test/test_list.py ....
 <td align="left">Verify that click on details button, a dialog with correct name, descriptipn, tag and url will pop up</td>
 </tr>
 <tr>
-<td align="center"></td>
+<td align="center">Purpose</td>
 <td align="left">Verify that click on cancel button will close the dialog</td>
 </tr>
 <tr>
@@ -1811,7 +1794,7 @@ test/test_list.py ....
 </tr>
 </tbody>
 </table>
-<h3 id="test-case-9_1">Test Case 9<a class="headerlink" href="#test-case-9_1" title="Permanent link">&para;</a></h3>
+<h3 id="test-case-7_1">Test Case 7<a class="headerlink" href="#test-case-7_1" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
@@ -1829,12 +1812,58 @@ test/test_list.py ....
 <td align="left">Verify that the comment with right conetent shows up after click on submit</td>
 </tr>
 <tr>
-<td align="center"></td>
+<td align="center">Purpose</td>
 <td align="left">Verify that the comment does not show up after click on cancel</td>
 </tr>
 <tr>
 <td align="center">Reference</td>
 <td align="left"><a href="https://teamghostbuster.github.io/CollaborativeList/requirement-document/user-stories/#3-Edit">US 3.2</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="test-case-8_1">Test Case 8<a class="headerlink" href="#test-case-8_1" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th align="center">Item</th>
+<th align="left">Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">Name</td>
+<td align="left"><code class="codehilite">test_rename_list</code></td>
+</tr>
+<tr>
+<td align="center">Purpose</td>
+<td align="left">Verify that the article name changed after submit</td>
+</tr>
+<tr>
+<td align="center">Reference</td>
+<td align="left"><a href="https://teamghostbuster.github.io/CollaborativeList/requirement-document/user-stories/#3-Edit">US 3.3</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="test-case-9_1">Test Case 9<a class="headerlink" href="#test-case-9_1" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th align="center">Item</th>
+<th align="left">Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">Name</td>
+<td align="left"><code class="codehilite">test_partition_list</code></td>
+</tr>
+<tr>
+<td align="center">Purpose</td>
+<td align="left">Verify that the there's a new list after partition</td>
+</tr>
+<tr>
+<td align="center">Reference</td>
+<td align="left"><a href="https://teamghostbuster.github.io/CollaborativeList/requirement-document/user-stories/#3-Edit">US 3.5</a></td>
 </tr>
 </tbody>
 </table>
@@ -1849,23 +1878,42 @@ test/test_list.py ....
 <tbody>
 <tr>
 <td align="center">Name</td>
-<td align="left"><code class="codehilite">test_delete_article_for_person_list</code></td>
+<td align="left"><code class="codehilite">test_merge_list</code></td>
 </tr>
 <tr>
 <td align="center">Purpose</td>
-<td align="left">Verify that click on remove button will close the details dialog</td>
-</tr>
-<tr>
-<td align="center"></td>
-<td align="left">Verify that the article is not shown in the list</td>
+<td align="left">Verify that the list being merged is gone</td>
 </tr>
 <tr>
 <td align="center">Reference</td>
-<td align="left"><a href="https://teamghostbuster.github.io/CollaborativeList/requirement-document/user-stories/#3-Edit">US 3.8</a></td>
+<td align="left"><a href="https://teamghostbuster.github.io/CollaborativeList/requirement-document/user-stories/#3-Edit">US 3.4</a></td>
 </tr>
 </tbody>
 </table>
 <h3 id="test-case-11_1">Test Case 11<a class="headerlink" href="#test-case-11_1" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th align="center">Item</th>
+<th align="left">Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">Name</td>
+<td align="left"><code class="codehilite">test_share_list</code></td>
+</tr>
+<tr>
+<td align="center">Purpose</td>
+<td align="left">Verify that the there's a new list after partition</td>
+</tr>
+<tr>
+<td align="center">Reference</td>
+<td align="left"><a href="https://teamghostbuster.github.io/CollaborativeList/requirement-document/user-stories/#4-Share">US 4.2</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="test-case-12_1">Test Case 12<a class="headerlink" href="#test-case-12_1" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
@@ -1883,47 +1931,20 @@ test/test_list.py ....
 <td align="left">Verify that click on create list button will open a dialog</td>
 </tr>
 <tr>
-<td align="center"></td>
+<td align="center">Purpose</td>
 <td align="left">Verify that click on cancel button will close the dialog</td>
 </tr>
 <tr>
-<td align="center"></td>
+<td align="center">Purpose</td>
 <td align="left">Verify that click on submit without required field won't close the dialog</td>
 </tr>
 <tr>
-<td align="center"></td>
+<td align="center">Purpose</td>
 <td align="left">Verify that click on submit with required field will close the dialog and a new list with correct name will show up</td>
 </tr>
 <tr>
 <td align="center">Reference</td>
 <td align="left"><a href="https://teamghostbuster.github.io/CollaborativeList/requirement-document/user-stories/#2-Create">US 2.4</a></td>
-</tr>
-</tbody>
-</table>
-<h3 id="test-case-12_1">Test Case 12<a class="headerlink" href="#test-case-12_1" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th align="center">Item</th>
-<th align="left">Detail</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="center">Name</td>
-<td align="left"><code class="codehilite">test_archive_group_reading_list</code></td>
-</tr>
-<tr>
-<td align="center">Purpose</td>
-<td align="left">Verify that archive an empty group reading list, it will disapear from the page</td>
-</tr>
-<tr>
-<td align="center"></td>
-<td align="left">Verify that archive an non-empty group reading list, it will disapear from the page</td>
-</tr>
-<tr>
-<td align="center">Reference</td>
-<td align="left"><a href="https://teamghostbuster.github.io/CollaborativeList/requirement-document/user-stories/#3-Edit">US 3.9</a></td>
 </tr>
 </tbody>
 </table>
@@ -1945,20 +1966,47 @@ test/test_list.py ....
 <td align="left">Verify that click on add article button will open a dialog</td>
 </tr>
 <tr>
-<td align="center"></td>
+<td align="center">Purpose</td>
 <td align="left">Verify that click on cancel button will close the dialog</td>
 </tr>
 <tr>
-<td align="center"></td>
+<td align="center">Purpose</td>
 <td align="left">Verify that click on submit without required field won't close the dialog</td>
 </tr>
 <tr>
-<td align="center"></td>
+<td align="center">Purpose</td>
 <td align="left">Verify that click on submit with required field will close the dialog and a new article with correct name and 0 vote count will show up</td>
 </tr>
 <tr>
 <td align="center">Reference</td>
-<td align="left"><a href="https://teamghostbuster.github.io/CollaborativeList/requirement-document/user-stories/#2-Create">US 2.5</a></td>
+<td align="left"><a href="https://teamghostbuster.github.io/CollaborativeList/requirement-document/user-stories/#2-Create">US 2.6</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="test-case-13_2">Test Case 13<a class="headerlink" href="#test-case-13_2" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th align="center">Item</th>
+<th align="left">Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">Name</td>
+<td align="left"><code class="codehilite">test_delete_article</code></td>
+</tr>
+<tr>
+<td align="center">Purpose</td>
+<td align="left">Verify that click on remove button will close the details dialog</td>
+</tr>
+<tr>
+<td align="center">Purpose</td>
+<td align="left">Verify that the article is not shown in the list</td>
+</tr>
+<tr>
+<td align="center">Reference</td>
+<td align="left"><a href="https://teamghostbuster.github.io/CollaborativeList/requirement-document/user-stories/#3-Edit">US 3.8</a></td>
 </tr>
 </tbody>
 </table>
@@ -1973,116 +2021,11 @@ test/test_list.py ....
 <tbody>
 <tr>
 <td align="center">Name</td>
-<td align="left"><code class="codehilite">test_view_article_from_group_list</code></td>
-</tr>
-<tr>
-<td align="center">Purpose</td>
-<td align="left">Verify that click on details button, a dialog with correct name, descriptipn, tag and url will pop up</td>
-</tr>
-<tr>
-<td align="center"></td>
-<td align="left">Verify that click on cancel button will close the dialog</td>
-</tr>
-<tr>
-<td align="center">Reference</td>
-<td align="left"><a href="https://teamghostbuster.github.io/CollaborativeList/requirement-document/user-stories/#2-Create">US 2.3</a></td>
-</tr>
-</tbody>
-</table>
-<h3 id="test-case-15_1">Test Case 15<a class="headerlink" href="#test-case-15_1" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th align="center">Item</th>
-<th align="left">Detail</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="center">Name</td>
-<td align="left"><code class="codehilite">test_comment_on_article_from_group_list</code></td>
-</tr>
-<tr>
-<td align="center">Purpose</td>
-<td align="left">Verify that the comment with right conetent shows up after click on submit</td>
-</tr>
-<tr>
-<td align="center"></td>
-<td align="left">Verify that the comment does not show up after click on cancel</td>
-</tr>
-<tr>
-<td align="center">Reference</td>
-<td align="left"><a href="https://teamghostbuster.github.io/CollaborativeList/requirement-document/user-stories/#3-Edit">US 3.2</a></td>
-</tr>
-</tbody>
-</table>
-<h3 id="test-case-16_1">Test Case 16<a class="headerlink" href="#test-case-16_1" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th align="center">Item</th>
-<th align="left">Detail</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="center">Name</td>
-<td align="left"><code class="codehilite">test_delete_article_for_group_list</code></td>
-</tr>
-<tr>
-<td align="center">Purpose</td>
-<td align="left">Verify that click on remove button will close the details dialog</td>
-</tr>
-<tr>
-<td align="center"></td>
-<td align="left">Verify that the article is not shown in the list</td>
-</tr>
-<tr>
-<td align="center">Reference</td>
-<td align="left"><a href="https://teamghostbuster.github.io/CollaborativeList/requirement-document/user-stories/#3-Edit">US 3.8</a></td>
-</tr>
-</tbody>
-</table>
-<h3 id="test-case-17_1">Test Case 17<a class="headerlink" href="#test-case-17_1" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th align="center">Item</th>
-<th align="left">Detail</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="center">Name</td>
 <td align="left"><code class="codehilite">test_vote_on_article_from_group_list</code></td>
 </tr>
 <tr>
 <td align="center">Purpose</td>
-<td align="left">Verify that the vote count goes up after upvote</td>
-</tr>
-<tr>
-<td align="center"></td>
-<td align="left">Verify that the vote count won't go up after upvote for a second time</td>
-</tr>
-<tr>
-<td align="center">Purpose</td>
-<td align="left">Verify that the vote count goes down after downvote</td>
-</tr>
-<tr>
-<td align="center"></td>
-<td align="left">Verify that the vote count won't go down after downvote for a second time</td>
-</tr>
-<tr>
-<td align="center"></td>
-<td align="left">Verify that the vote count won't go down if the count is already 0</td>
-</tr>
-<tr>
-<td align="center"></td>
-<td align="left">Verify that you can downvote after a upvote</td>
-</tr>
-<tr>
-<td align="center"></td>
-<td align="left">Verify that you can upvote after a downvote</td>
+<td align="left">Verify that you can you can only give an article (+1, 0, -1) votes</td>
 </tr>
 <tr>
 <td align="center">Reference</td>
@@ -2090,7 +2033,7 @@ test/test_list.py ....
 </tr>
 </tbody>
 </table>
-<h3 id="test-case-18_1">Test Case 18<a class="headerlink" href="#test-case-18_1" title="Permanent link">&para;</a></h3>
+<h3 id="test-case-15_1">Test Case 15<a class="headerlink" href="#test-case-15_1" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
@@ -2114,7 +2057,7 @@ test/test_list.py ....
 </tbody>
 </table>
 <h2 id="test-cases-jestenzymechai">Test Cases (Jest/enzyme/chai)<a class="headerlink" href="#test-cases-jestenzymechai" title="Permanent link">&para;</a></h2>
-<h2 id="strategy_2">Strategy<a class="headerlink" href="#strategy_2" title="Permanent link">&para;</a></h2>
+<h3 id="strategy_2">Strategy<a class="headerlink" href="#strategy_2" title="Permanent link">&para;</a></h3>
 <p>We are building a SPA in 2017, with the perfect tool created by some great companies, like Facebook, Airbnb, etc. We would be able test each React component seperately instead of using Selenium for acceptance testing without knowing what exactly go wrong. We are using <code class="codehilite">enzyme</code> to render the component, <code class="codehilite">jest</code> as unit test framework, and <code class="codehilite">sinon</code> to mockout the network call. We are able to determine if the component is rendered properly with the fake data we feed in there, and find out if the component will behave properly after certain event is trigger. However, with the limited amount of time, I am only able to complete a part of test cases with this approach.
 The reason I personally pick this testing approach is:</p>
 <ul>
@@ -2123,6 +2066,22 @@ The reason I personally pick this testing approach is:</p>
 <li>Has been proved to be the best practise for React unit testing by developers from the community, industry, etc.</li>
 <li>Less pain.</li>
 </ul>
+<h3 id="usage_2">Usage<a class="headerlink" href="#usage_2" title="Permanent link">&para;</a></h3>
+<p>Assume you have <code class="codehilite">yarn</code> install already.</p>
+<p><code class="codehilite">yarn run test</code></p>
+<h3 id="sample-output">Sample Output<a class="headerlink" href="#sample-output" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span>PASS  src/components/pages/CommenComponents/AppBarInvitationMenu/index.test.js
+PASS  src/components/common/ArchivedListItem/index.test.js
+PASS  src/components/pages/CommenComponents/RetrieveArchivedListDialog/index.test.js
+PASS  src/components/pages/HomePage/index.test.js
+
+Test Suites: 4 passed, 4 total
+Tests:       4 passed, 4 total
+Snapshots:   0 total
+Time:        3.841s
+</pre></div>
+
+
 <h2 id="note">Note<a class="headerlink" href="#note" title="Permanent link">&para;</a></h2>
 <ul>
 <li>More tests will be added upon next release.</li>
