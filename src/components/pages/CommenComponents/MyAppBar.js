@@ -35,8 +35,8 @@ class MyAppBar extends React.Component {
     };
 
     this.rightButtons = (
-      <Toolbar style={this.styles.righttoolbar}>
-        <ToolbarGroup>
+      // <Toolbar style={this.styles.righttoolbar}>
+        <ToolbarGroup lastChild>
           <AppBarInvitationMenu
             reloadCallback={this.props.reloadCallback}
           />
@@ -46,14 +46,14 @@ class MyAppBar extends React.Component {
             reloadCallback={this.props.reloadCallback}
           />
         </ToolbarGroup>
-      </Toolbar>
+      // </Toolbar>
     );
   }
 
   render() {
     return (
       <Toolbar style={this.styles.bar}>
-        <ToolbarGroup>
+        <ToolbarGroup firstChild>
           <IconButton name="drawerButton" onTouchTap={this.props.openDrawer}>
             <MenuBtn color={'#ffffff'} />
           </IconButton>

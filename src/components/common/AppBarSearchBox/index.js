@@ -18,7 +18,7 @@ class AppBarSearchBox extends React.Component {
 
     this.styles = {
       height: 40,
-      width: 400,
+      width: 600,
       margin: 8,
       display: 'inline-block'
     };
@@ -104,8 +104,8 @@ class AppBarSearchBox extends React.Component {
           onUpdateInput={(val) => this.handleUpdateInput(val)}
           onNewRequest={(shit, index) => {this.handleAdd(shit, index)}}
           listStyle={{color:'white'}}
-          style={{width:"75%",bottom:'10px'}}
-
+          style={{width:"80%",bottom:'10px'}}
+          fullWidth
         />
         {this.state.dialog}
           {this.state.inputValue === ''? undefined : <IconButton style={{bottom:'2px'}} iconStyle={{color:'#9E9E9E'}}
