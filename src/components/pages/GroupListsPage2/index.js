@@ -51,7 +51,7 @@ export default class GroupListsPage2 extends React.Component {
     const getGroupListCallback = (response) => {
       console.log(response);
       const listObjs = response.lists;
-      this.setState({
+      this.setState({listArray:listObjs,
         lists: listObjs
           .filter((obj) => !obj.archived)
           .map((listObject) =>
@@ -65,7 +65,7 @@ export default class GroupListsPage2 extends React.Component {
     // callback method for getGroups method
     const navDrawerCallback = (response) => {
       const listObjs = response.groups;
-      this.setState({ listArray:listObjs,
+      this.setState({
         groups: listObjs.map((listObject) =>
           <NavDrawerItem
             key={listObject.id}

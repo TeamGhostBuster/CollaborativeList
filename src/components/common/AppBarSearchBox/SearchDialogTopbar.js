@@ -12,11 +12,13 @@ export default class SearchDialogTopbar extends React.Component {
 
     this.state = {
       open: false,
-      listItems: this.props.lists? this.props.lists
+      listItems: this.props.lists?
+        this.props.lists
           .filter((list)=>!list.archived)
-          .map((list)=> <SearchDialogListMenuItem key={list.id} pageType={this.props.pageType} refreshPage={this.props.refreshPage}
+          .map((list)=> <SearchDialogListMenuItem key={list.id} pageType={this.props.pageType} refreshPage={this.props.refreshPage} groupId={this.props.groupId}
                                                   close={this.props.close} article_id={this.props.article_id} list_id={list.id} listName={list.name}/>)
-        :[]
+        :
+        []
     };
 
   }
@@ -34,9 +36,9 @@ export default class SearchDialogTopbar extends React.Component {
           />
         </ToolbarGroup>
         <ToolbarGroup>
-          <IconMenu iconButtonElement={<IconButton name="AddButton" tooltip="Add To your List"><AddIcon /></IconButton>}>
+          <IconMenu iconButtonElement={<IconButton name="AddButton" tooltip="Add To your List"><AddIcon /></IconButton>} >
             {this.state.listItems}
-          </IconMenu>>
+          </IconMenu>
         </ToolbarGroup>
       </Toolbar>
     );

@@ -5,14 +5,14 @@ const token = cookie.load('Access-Token');
 const host = 'https://api.vfree.org';
 
 module.exports = {
-  group_add(listId, articleId, callback) {
+  group_add(listId, articleId, groupId, callback) {
     const http = Axios.create({
       baseURL: host,
       responseType: 'json',
       headers: { 'Access-Token': token },
     });
 
-    const path = `/group/list/${listId}/articles`;
+    const path = `/group/${groupId}/list/${listId}/articles`;
     http.post(path, {article_id:articleId})
       .then((respond) => {
         if (callback) {

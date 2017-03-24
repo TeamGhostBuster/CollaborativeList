@@ -8,6 +8,8 @@ class AppBarSearchBox extends React.Component {
   constructor(props) {
     super(props);
 
+    this.selected=false;
+
     this.state = {
       dataSource: [],
       inputValue: '',
@@ -67,13 +69,15 @@ class AppBarSearchBox extends React.Component {
   }
 
   dialogClose(){
+    this.selected=false;
     this.setState({dialog:false});
   }
 
   handleAdd = (shit, index) => {
     if (index !== -1){
+
       console.log("app bar search box:" ,this.props.lists,this.state.dataSource,index);
-      const articleId = this.state.dataSource[index].value.props.articleId;
+      const articleId = this.state.dataSource.length===1? this.state.dataSource[0].value.props.articleId : this.state.dataSource[index].value.props.articleId;
 
       this.setState({dialog: <SearchResultDialog pageType={this.props.pageType} groupId={this.props.groupId}
                                                  isOpen={true} close={this.dialogClose} id={articleId} lists={this.props.lists} reloadCallback={this.props.reloadCallback} />})
@@ -81,12 +85,14 @@ class AppBarSearchBox extends React.Component {
   };
 
   handleUpdateInput = (value) => {
-    const self = this;
-    this.setState({
-      inputValue: value
-    }, () => {
-      self.performSearch();
-    });
+    if (!this.selected){
+      const self = this;
+      this.setState({
+        inputValue: value
+      }, () => {
+        self.performSearch();
+      });
+    }
   };
 
   render() {
@@ -96,8 +102,9 @@ class AppBarSearchBox extends React.Component {
           hintText="Search"
           dataSource={this.state.dataSource}
           filter={AutoComplete.noFilter}
+          searchText={this.state.inputValue}
           onUpdateInput={(val) => this.handleUpdateInput(val)}
-          onNewRequest={(shit, index) => this.handleAdd(shit, index)}
+          onNewRequest={(shit, index) => {this.selected=true; this.handleAdd(shit, index)}}
           fullWidth
         />
         {this.state.dialog}
