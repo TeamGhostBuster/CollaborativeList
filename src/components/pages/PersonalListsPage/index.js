@@ -15,6 +15,7 @@ export default class ListsPage extends React.Component {
     super(props);
     this.state = {
       lists: [<div key="something" />],
+      listArray: undefined,
       open: false,
       groups: []
     };
@@ -49,7 +50,7 @@ export default class ListsPage extends React.Component {
     // call back function for getLists request function
     const getPersonalListCallback = (response) => {
       const listObjs = response.lists;
-      this.setState({
+      this.setState({ listArray: listObjs,
         lists: listObjs
           .filter((obj) => !obj.archived)
           .map((listObject) =>
@@ -91,6 +92,7 @@ export default class ListsPage extends React.Component {
           openDrawer={this.handleToggle}
           pageType="personal"
           reloadCallback={this.componentWillMount}
+          lists={this.state.listArray}
         />
 
         <Drawer
