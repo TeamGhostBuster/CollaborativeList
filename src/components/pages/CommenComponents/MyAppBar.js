@@ -1,6 +1,7 @@
 import React from 'react';
 import { AppBar, IconButton } from 'material-ui';
 import MenuBtn from 'material-ui/svg-icons/navigation/menu';
+import SearchPage from 'components';
 import AppBarIconMenu from '../CommenComponents/AppBarIconMenu';
 
 class MyAppBar extends React.Component {

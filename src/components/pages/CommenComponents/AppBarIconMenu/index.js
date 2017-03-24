@@ -48,7 +48,7 @@ class AppBarIconMenu extends React.Component {
           targetOrigin={{ horizontal: 'right', vertical: 'top' }}
         >
           <MenuItem onTouchTap={this.retrieveArchivedListDialogOpen}>Trash</MenuItem>
-          <MenuItem> <SearchBar/> </MenuItem>
+          <MenuItem href="/search">Search</MenuItem>
         </IconMenu>
         {this.state.retrieveListDialog}
       </div>
