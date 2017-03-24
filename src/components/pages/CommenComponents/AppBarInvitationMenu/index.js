@@ -22,13 +22,6 @@ class AppBarInvitationMenu extends React.Component {
       const invitationObjs = response.invitation;
       this.setState({
         invitationCards: invitationObjs
-          .map((invitationObj) => <InvitationMenuCard
-            id={invitationObj.id}
-            groupId={invitationObj.group.id}
-            groupName={`Group: ${invitationObj.group.name}`}
-            inviter={`${invitationObj.inviter.first_name} ${invitationObj.inviter.last_name}`}
-            close={this.handleRequestClose}
-          />)
       });
     };
     console.log('loading');
@@ -69,7 +62,14 @@ class AppBarInvitationMenu extends React.Component {
           onRequestClose={this.handleRequestClose}
         >
           <Menu>
-            {this.state.invitationCards}
+            {this.state.invitationCards
+              .map((invitationObj) => <InvitationMenuCard
+                id={invitationObj.id}
+                groupId={invitationObj.group.id}
+                groupName={`Group: ${invitationObj.group.name}`}
+                inviter={`${invitationObj.inviter.first_name} ${invitationObj.inviter.last_name}`}
+                close={this.handleRequestClose}
+              />)}
           </Menu>
         </Popover>
       </div>

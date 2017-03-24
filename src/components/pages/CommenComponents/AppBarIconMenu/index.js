@@ -70,6 +70,7 @@ class AppBarIconMenu extends React.Component {
       return (
         <div>
           <IconMenu
+            className="AppBarIconMenu"
             iconButtonElement={<IconButton><MoreVertIcon color={'#ffffff'} /></IconButton>}
             anchorOrigin={{ horizontal: 'right', vertical: 'top' }}
             targetOrigin={{ horizontal: 'right', vertical: 'top' }}

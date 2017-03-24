@@ -1,5 +1,5 @@
-import React, {PropTypes} from 'react';
-import {injectGlobal} from 'styled-components';
+import React, { PropTypes } from 'react';
+import { injectGlobal } from 'styled-components';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
@@ -16,7 +16,7 @@ injectGlobal`
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 const muiTheme = getMuiTheme();
 
-const App = ({children}) => {
+const App = ({ children }) => {
   return (
     <MuiThemeProvider muiTheme={muiTheme}>
       {children}

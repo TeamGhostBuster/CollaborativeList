@@ -11,9 +11,9 @@ import TopBar from './ArticleDetailSub/TopBar';
 import DetailView from './ArticleDetailSub/DetailView';
 
 export default class ArticleDialog extends React.Component {
-  constructor(isOpen, close, id, list_id) {
+  constructor(props) {
     // props: {isOpen :bool, close: function, id: string, list_id: string}
-    super(isOpen, close, id, list_id);
+    super(props);
     this.state = { title: '', description: '', url: undefined, tags: undefined, comments: undefined, detail: undefined };
 
     this.getArticleInfo = this.getArticleInfo.bind(this);
@@ -29,6 +29,7 @@ export default class ArticleDialog extends React.Component {
       },
     };
   }
+
 
   componentWillMount() {
     this.getArticleInfo();
@@ -81,8 +82,13 @@ export default class ArticleDialog extends React.Component {
       <Dialog open={this.props.isOpen} actions={actions} autoScrollBodyContent onRequestClose={this.props.close}>
         <Paper>
           <TopBar
-            title={this.state.title} list_id={this.props.list_id} article_id={this.props.id}
+            title={this.state.title}
+            list_id={this.props.list_id}
+            article_id={this.props.id}
             close={this.props.close}
+            refreshPage={this.props.refreshPage}
+            group={this.props.group}
+            groupId={this.props.groupId}
           />
           {this.state.detail}
           {this.state.comments}
@@ -108,4 +114,9 @@ ArticleDialog.propTypes = {
   // list id
   list_id: React.PropTypes.string.isRequired,
 
+  group: React.PropTypes.string,
+
+  groupId: React.PropTypes.string,
+
+  refreshPage: React.PropTypes.func.isRequired
 };

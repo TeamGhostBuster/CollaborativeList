@@ -15,6 +15,7 @@ export default class ListsPage extends React.Component {
     super(props);
     this.state = {
       lists: [<div key="something" />],
+      listArray: undefined,
       open: false,
       groups: []
     };
@@ -41,13 +42,15 @@ export default class ListsPage extends React.Component {
     };
   }
 
-  componentWillMount() {
+  componentWillMount(childCall) {
     // thi is part of the constructor, but it can be used as a callback function for a child node.
-
+    if (childCall){
+      this.setState({lists: false})
+    }
     // call back function for getLists request function
     const getPersonalListCallback = (response) => {
       const listObjs = response.lists;
-      this.setState({
+      this.setState({ listArray: listObjs,
         lists: listObjs
           .filter((obj) => !obj.archived)
           .map((listObject) =>
@@ -83,12 +86,13 @@ export default class ListsPage extends React.Component {
 
   render() {
     return (
-      <PageTemplate test={this.props.test}>
+      <PageTemplate>
         <MyAppBar
           title="Personal List"
           openDrawer={this.handleToggle}
           pageType="personal"
           reloadCallback={this.componentWillMount}
+          lists={this.state.listArray}
         />
 
         <Drawer
