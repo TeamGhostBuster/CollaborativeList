@@ -12,7 +12,8 @@ class MyAppBar extends React.Component {
 
     this.styles = {
       bar: {
-        width: '100%'
+        width: '100%',
+        background: cyan500,
       },
       righttoolbar: {
         background: cyan500,
@@ -50,32 +51,54 @@ class MyAppBar extends React.Component {
   }
 
   render() {
+      //
+      // <AppBar
+      //   style={this.styles.bar}
+      //   iconElementLeft={
+      //     <Toolbar style={this.styles.righttoolbar}>
+      //
+      //       <ToolbarGroup firstChild>
+      //         <IconButton name="drawerButton" onTouchTap={this.props.openDrawer}>
+      //           <MenuBtn color={'#ffffff'} />
+      //         </IconButton>
+      //         <ToolbarTitle text={this.props.title} style={this.styles.title} />
+      //       </ToolbarGroup>
+      //
+      //       <ToolbarGroup>
+      //         <AppBarSearchBox
+      //           pageType={this.props.pageType}
+      //           groupId={this.props.groupId}
+      //           reloadCallback={this.props.reloadCallback}
+      //           lists={this.props.lists}
+      //         />
+      //       </ToolbarGroup>
+      //
+      //     </Toolbar>
+      //   }
+      //   iconElementRight={this.rightButtons}
+      // />
     return (
-      <AppBar
-        style={this.styles.bar}
-        iconElementLeft={
-          <Toolbar style={this.styles.righttoolbar}>
+      <Toolbar style={this.styles.bar}>
+        <ToolbarGroup>
+          <IconButton name="drawerButton" onTouchTap={this.props.openDrawer}>
+            <MenuBtn color={'#ffffff'} />
+          </IconButton>
+          <ToolbarTitle text={this.props.title} style={this.styles.title} />
+        </ToolbarGroup>
+        <ToolbarGroup>
 
-            <ToolbarGroup firstChild>
-              <IconButton name="drawerButton" onTouchTap={this.props.openDrawer}>
-                <MenuBtn color={'#ffffff'} />
-              </IconButton>
-              <ToolbarTitle text={this.props.title} style={this.styles.title} />
-            </ToolbarGroup>
+          <AppBarSearchBox
+            pageType={this.props.pageType}
+            groupId={this.props.groupId}
+            reloadCallback={this.props.reloadCallback}
+            lists={this.props.lists}
+          />
+        </ToolbarGroup>
 
-            <ToolbarGroup>
-              <AppBarSearchBox
-                pageType={this.props.pageType}
-                groupId={this.props.groupId}
-                reloadCallback={this.props.reloadCallback}
-                lists={this.props.lists}
-              />
-            </ToolbarGroup>
-
-          </Toolbar>
-        }
-        iconElementRight={this.rightButtons}
-      />
+        <ToolbarGroup>
+          {this.rightButtons}
+        </ToolbarGroup>
+      </Toolbar>
     );
   }
 }

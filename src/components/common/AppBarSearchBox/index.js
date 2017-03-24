@@ -1,7 +1,9 @@
 import React from 'react';
-import { AutoComplete, Paper, MenuItem } from 'material-ui';
+import { AutoComplete, Paper, MenuItem, ToolbarGroup, IconButton } from 'material-ui';
 import { Client } from 'elasticsearch';
 import { SearchItem } from 'components';
+import SearchIcon from 'material-ui/svg-icons/action/search'
+import CancelIcon from 'material-ui/svg-icons/navigation/cancel'
 import SearchResultDialog from './SearchResultDialog'
 
 class AppBarSearchBox extends React.Component {
@@ -74,7 +76,7 @@ class AppBarSearchBox extends React.Component {
     if (index !== -1){
 
       console.log("app bar search box:" ,this.props.lists,this.state.dataSource,index);
-      const articleId = this.state.dataSource.length===1? this.state.dataSource[0].value.props.articleId : this.state.dataSource[index].value.props.articleId;
+      const articleId = this.state.dataSource.length <= index? this.state.dataSource[0].value.props.articleId : this.state.dataSource[index].value.props.articleId;
 
       this.setState({dialog: <SearchResultDialog pageType={this.props.pageType} groupId={this.props.groupId}
                                                  isOpen={true} close={this.dialogClose} id={articleId} lists={this.props.lists} reloadCallback={this.props.reloadCallback} />})
@@ -92,7 +94,8 @@ class AppBarSearchBox extends React.Component {
 
   render() {
     return (
-      <Paper style={this.styles} zDepth={1} >
+      <Paper style={this.styles} zDepth={1}>
+          <IconButton iconStyle={{color:'#9E9E9E'}} style={{cursor:'auto', bottom:'2px'}}><SearchIcon/></IconButton>
         <AutoComplete
           hintText="Search"
           dataSource={this.state.dataSource}
@@ -100,9 +103,13 @@ class AppBarSearchBox extends React.Component {
           searchText={this.state.inputValue}
           onUpdateInput={(val) => this.handleUpdateInput(val)}
           onNewRequest={(shit, index) => {this.handleAdd(shit, index)}}
-          fullWidth
+          listStyle={{color:'white'}}
+          style={{width:"75%",bottom:'10px'}}
+
         />
         {this.state.dialog}
+          {this.state.inputValue === ''? undefined : <IconButton style={{bottom:'2px'}} iconStyle={{color:'#9E9E9E'}}
+                                                                 onTouchTap={()=>{this.setState({inputValue:''})}}><CancelIcon/></IconButton>}
       </Paper>
     );
   }
