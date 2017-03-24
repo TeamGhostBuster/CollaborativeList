@@ -17,6 +17,14 @@ function requireLogIn() {
         if (response.error === 'invalid_token') {
           console.log('invalid token');
           browserHistory.push('/login');
+        } else {
+          window.OneSignal.push(() => {
+            window.OneSignal.sendTag('email', response.email)
+              .then(() => {
+                console.log('Successfully send tag');
+                console.log(response.email);
+              });
+          });
         }
       } else if (xhr.readyState == 4) {
         console.log('invalide http request');
@@ -29,7 +37,7 @@ function requireLogIn() {
 
 // it's just a base container that requires login before rendering
 const PageTemplate = (props) => {
-    requireLogIn();
+  requireLogIn();
 
   return (
     <div {...props} />
