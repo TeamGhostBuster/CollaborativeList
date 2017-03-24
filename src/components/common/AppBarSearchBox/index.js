@@ -8,8 +8,6 @@ class AppBarSearchBox extends React.Component {
   constructor(props) {
     super(props);
 
-    this.selected=false;
-
     this.state = {
       dataSource: [],
       inputValue: '',
@@ -69,7 +67,6 @@ class AppBarSearchBox extends React.Component {
   }
 
   dialogClose(){
-    this.selected=false;
     this.setState({dialog:false});
   }
 
@@ -85,14 +82,12 @@ class AppBarSearchBox extends React.Component {
   };
 
   handleUpdateInput = (value) => {
-    if (!this.selected){
-      const self = this;
-      this.setState({
-        inputValue: value
-      }, () => {
-        self.performSearch();
-      });
-    }
+    const self = this;
+    this.setState({
+      inputValue: value
+    }, () => {
+      self.performSearch();
+    });
   };
 
   render() {
@@ -104,7 +99,7 @@ class AppBarSearchBox extends React.Component {
           filter={AutoComplete.noFilter}
           searchText={this.state.inputValue}
           onUpdateInput={(val) => this.handleUpdateInput(val)}
-          onNewRequest={(shit, index) => {this.selected=true; this.handleAdd(shit, index)}}
+          onNewRequest={(shit, index) => {this.handleAdd(shit, index)}}
           fullWidth
         />
         {this.state.dialog}
