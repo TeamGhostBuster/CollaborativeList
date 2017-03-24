@@ -35,10 +35,18 @@ function requireLogIn() {
   }
 }
 
+function notificationListenr() {
+  window.OneSignal.on('Received notification', (event) => {
+    console.log('Get notification');
+    console.log(event.content);
+    // This callback fires every time the event occurs
+  });
+}
+
 // it's just a base container that requires login before rendering
 const PageTemplate = (props) => {
   requireLogIn();
-
+  notificationListenr();
   return (
     <div {...props} />
   );
