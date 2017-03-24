@@ -13,7 +13,7 @@ module.exports = {
 
     const path = group === 'true' ? `/group/${groupId}/lists/retrieve` : '/user/lists/retrieve';
 
-    const body = { lists: listIds  };
+    const body = { lists: listIds };
     console.log(body);
     http.put(path, body)
       .then(

@@ -41,9 +41,11 @@ export default class GroupListsPage extends React.Component {
     };
   }
 
-  componentWillMount() {
+  componentWillMount(childCall) {
     // thi is part of the constructor, but it can be used as a callback function for a child node.
-
+    if (childCall){
+      this.setState({lists: false})
+    }
     // call back function for getLists request function
     const getGroupListCallback = (response) => {
       console.log(response);
@@ -106,6 +108,7 @@ export default class GroupListsPage extends React.Component {
           <NavDrawerPersonalItem />
           <Divider />
           {this.state.groups}
+
           <Divider />
           <NavDrawerCreateGroupItem reloadCallback={this.componentWillMount}/>
         </Drawer>

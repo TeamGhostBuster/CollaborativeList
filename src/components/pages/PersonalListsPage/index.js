@@ -41,12 +41,13 @@ export default class ListsPage extends React.Component {
     };
   }
 
-  componentWillMount() {
+  componentWillMount(childCall) {
     // thi is part of the constructor, but it can be used as a callback function for a child node.
-
+    if (childCall){
+      this.setState({lists: false})
+    }
     // call back function for getLists request function
     const getPersonalListCallback = (response) => {
-      console.log('list page index', response);
       const listObjs = response.lists;
       this.setState({
         lists: listObjs
