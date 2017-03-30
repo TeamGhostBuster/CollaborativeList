@@ -3,13 +3,15 @@ import Dialog from 'material-ui/Dialog';
 import TextField from 'material-ui/TextField';
 import deepOrangeA400 from 'material-ui/styles/colors';
 import FlatButton from 'material-ui/FlatButton';
+import Snackbar from 'material-ui/Snackbar'
 import CreateGroupRequest from '../../../Requests/CreateGroupRequest'
 
 export default class CreateGroupDialog extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { name: '', members: '', description: '', requireName: 'required' };
+    this.state = { name: '', members: '', description: '', requireName: 'required' , snackbarOpen:false};
 
+    this.snackbarClose = this.snackbarClose.bind(this);
     this.handleClose = this.handleClose.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.submitToServer = this.submitToServer.bind(this);
@@ -58,6 +60,10 @@ export default class CreateGroupDialog extends React.Component {
     }
   }
 
+  snackbarClose(){
+    this.setState({snackbarOpen:false})
+  }
+
   submitToServer() {
     const cb = ()=>{
       this.props.reloadCallback();
@@ -66,13 +72,17 @@ export default class CreateGroupDialog extends React.Component {
       this.handleClose();
     };
 
+    const err = ()=>{
+      this.setState({snackbarOpen:true})
+    };
+
     const data = {
       name: this.state.name,
       members: this.state.members,
       description: this.state.description
     };
 
-    CreateGroupRequest.post(data,cb);
+    CreateGroupRequest.post(data,cb, err);
 
   }
 
@@ -97,6 +107,7 @@ export default class CreateGroupDialog extends React.Component {
             fullWidth multiLine hintText="Optional" floatingLabelText="Description"
             onChange={this.descriptionChange}
           />
+          <Snackbar message="Invalid Email" open={this.state.snackbarOpen} onRequestClose={this.snackbarClose} autoHideDuration={3000}/>
         </Dialog>
     );
   }
