@@ -274,7 +274,7 @@ Name          | `test_create_group_reading_list`
 Purpose       | Verify that click on create list button will open a dialog
 Purpose       | Verify that click on cancel button will close the dialog
 Purpose       | Verify that click on submit without required field won't close the dialog
-Purpose       | Verify that click on submit with required field will close the dialog and a new list with correct name will show up 
+Purpose       | Verify that click on submit with required field will close the dialog and a new list with correct name will show up
 Reference     |[US 2.4](https://teamghostbuster.github.io/CollaborativeList/requirement-document/user-stories/#2-Create)
 
 
@@ -315,7 +315,7 @@ Reference     |[US 3.10](https://teamghostbuster.github.io/CollaborativeList/req
 
 ## Test Cases (Jest/enzyme/chai)
 
-## Strategy
+### Strategy
 We are building a SPA in 2017, with the perfect tool created by some great companies, like Facebook, Airbnb, etc. We would be able test each React component seperately instead of using Selenium for acceptance testing without knowing what exactly go wrong. We are using `enzyme` to render the component, `jest` as unit test framework, and `sinon` to mockout the network call. We are able to determine if the component is rendered properly with the fake data we feed in there, and find out if the component will behave properly after certain event is trigger. However, with the limited amount of time, I am only able to complete a part of test cases with this approach.
 The reason I personally pick this testing approach is:
 
@@ -324,6 +324,23 @@ The reason I personally pick this testing approach is:
 * Has been proved to be the best practise for React unit testing by developers from the community, industry, etc.
 * Less pain.
 
+### Usage
+Assume you have `yarn` install already.
+
+`yarn run test`
+
+### Sample Output
+```
+PASS  src/components/pages/CommenComponents/AppBarInvitationMenu/index.test.js
+PASS  src/components/common/ArchivedListItem/index.test.js
+PASS  src/components/pages/CommenComponents/RetrieveArchivedListDialog/index.test.js
+PASS  src/components/pages/HomePage/index.test.js
+
+Test Suites: 4 passed, 4 total
+Tests:       4 passed, 4 total
+Snapshots:   0 total
+Time:        3.841s
+```
+
 ## Note
  - More tests will be added upon next release.
-
