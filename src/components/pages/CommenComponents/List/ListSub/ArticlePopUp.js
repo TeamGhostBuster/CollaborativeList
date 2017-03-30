@@ -51,7 +51,7 @@ export default class ArticlePopUp extends React.Component {
 
     this.submitToServer = this.submitToServer.bind(this);
     this.tagDelete = this.tagDelete.bind(this);
-    this.rendeTag = this.rendeTag.bind(this);
+    this.renderTag = this.renderTag.bind(this);
   }
 
   /*= ====================handling text field==================================*/
@@ -119,7 +119,7 @@ export default class ArticlePopUp extends React.Component {
         this.setState({ title: '' });
         this.setState({ description: '' });
         this.setState({ url: '' });
-        this.setState({ tags: [] });
+        this.setState({ tags: [], tagsData:[] });
         this.setState({ requireTitle: 'required' });
         this.setState({ requireDescription: 'required' });
         this.setState({ open: false });
@@ -161,7 +161,7 @@ export default class ArticlePopUp extends React.Component {
     this.setState({ tags: this.tags });
   }
 
-  rendeTag(data) {
+  renderTag(data) {
     return (
       <Chip
         key={data.key}
@@ -208,7 +208,7 @@ export default class ArticlePopUp extends React.Component {
         <br /><br />
 
         <div style={this.styles.wrapper}>
-          {this.state.tagsData.map(this.rendeTag, this)}
+          {this.state.tagsData.map(this.renderTag, this)}
         </div>
 
         <Dialog
