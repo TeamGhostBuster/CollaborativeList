@@ -32,6 +32,6 @@ def test_authentication(url, u, p, driver, wait):
     driver.switch_to.window(driver.window_handles[0])
 
     # make sure we are logged in
-    assert len(wait.until(EC.presence_of_all_elements_located((By.XPATH, "//h1[text()='Personal List']")))) > 0
+    assert len(wait.until(EC.presence_of_all_elements_located((By.XPATH, "//span[text()='Personal List']")))) > 0
 
 
