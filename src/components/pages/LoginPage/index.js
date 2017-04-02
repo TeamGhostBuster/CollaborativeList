@@ -9,7 +9,7 @@ import { Card, CardTitle } from 'material-ui/Card';
 const success = (response) => {
   console.log('Login in');
   // save Google Oauth2 access token into cookie
-  cookie.save('Access-Token', response.accessToken);
+  localStorage.token = response.accessToken;
   browserHistory.push('/');
 };
 
@@ -19,7 +19,7 @@ const error = (response) => {
 };
 
 function checkLogIn() {
-  const token = cookie.load('Access-Token');
+  const token = localStorage.token;
   if (token !== undefined) {
     const url = `https://www.googleapis.com/oauth2/v3/tokeninfo?access_token=${token}`;
     const xhr = new XMLHttpRequest();

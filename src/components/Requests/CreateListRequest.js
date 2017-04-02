@@ -2,7 +2,7 @@ module.exports = {
   post(group, dataObject, callback) {
     const cookie = require('react-cookie');
     const Axios = require('axios');
-    const token = cookie.load('Access-Token');
+    const token = localStorage.token;
 
     const http = Axios.create({
       baseURL: 'https://api.vfree.org',

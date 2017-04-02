@@ -4,7 +4,7 @@ module.exports = {
     const cookie = require('react-cookie');
     const host = 'https://api.vfree.org';
     const path = `/user/article/${articleId}`;
-    const token = cookie.load('Access-Token');
+    const token = localStorage.token;
 
     const http = Axios.create({
       baseURL: host,

@@ -2,7 +2,7 @@ module.exports = {
   post(baseListId, targetListid, articleId, groupId, group, callback) {
     const Axios = require('axios');
     const cookie = require('react-cookie');
-    const token = cookie.load('Access-Token');
+    const token = localStorage.token;
     const host = 'https://api.vfree.org';
 
     const http = Axios.create({
@@ -14,13 +14,12 @@ module.exports = {
       }
     });
 
-    // TODO
-    // const path = group === 'true' ?
-    //   `/group/${groupId}/list/${baseListId}/article/${articleId}/copy/list/${targetListid}` :
-    //   `/user/list/${baseListId}/article/${articleId}/copy/list/${targetListid}`;
-    const path = `/user/list/${baseListId}/article/${articleId}/copy/list/${targetListid}`;
+    const path = group === 'true' ?
+      `/user/list/${baseListId}/article/${articleId}/share/group/${groupId}/list/${targetListid}` :
+      `/user/list/${baseListId}/article/${articleId}/copy/list/${targetListid}`;
+    // const path = `/user/list/${baseListId}/article/${articleId}/copy/list/${targetListid}`;
 
-    http.put(path)
+    http.post(path)
       .then((respond) => {
         if (respond.status === 200) {
           callback();

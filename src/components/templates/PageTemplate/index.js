@@ -3,7 +3,7 @@ import cookie from 'react-cookie';
 import { browserHistory } from 'react-router';
 
 function requireLogIn() {
-  const token = cookie.load('Access-Token');
+  const token = localStorage.token;
   if (token === undefined) {
     browserHistory.push('/login');
   } else {
@@ -13,9 +13,15 @@ function requireLogIn() {
     xhr.open('POST', url);
     xhr.onreadystatechange = function () {
       if (xhr.readyState == 4 && xhr.status == 200) {
+
         const response = JSON.parse(xhr.response);
+        if (response.emali){
+          localStorage.cl_email = response.email;
+        }
         if (response.error === 'invalid_token') {
           console.log('invalid token');
+          delete localStorage.token;
+          delete localStorage.cl_email;
           browserHistory.push('/login');
         }
       } else if (xhr.readyState == 4) {
@@ -29,7 +35,7 @@ function requireLogIn() {
 
 // it's just a base container that requires login before rendering
 const PageTemplate = (props) => {
-    requireLogIn();
+  requireLogIn();
 
   return (
     <div {...props} />
