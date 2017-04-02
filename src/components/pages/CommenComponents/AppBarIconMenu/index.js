@@ -3,7 +3,7 @@ import { IconMenu, MenuItem, IconButton } from 'material-ui';
 import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
 import RetrieveArchivedListDialog from '../RetrieveArchivedListDialog';
 import { InviteMemberDialog } from 'components';
-
+import LogOut from '../../../Requests/LogOut'
 class AppBarIconMenu extends React.Component {
   constructor(props) {
     super(props);
@@ -76,6 +76,7 @@ class AppBarIconMenu extends React.Component {
             targetOrigin={{ horizontal: 'right', vertical: 'top' }}
           >
             <MenuItem onTouchTap={this.retrieveArchivedListDialogOpen}>Trash</MenuItem>
+            <MenuItem onTouchTap={LogOut.logout}>Log Out</MenuItem>
           </IconMenu>
         </div>);
     } else {
@@ -89,6 +90,7 @@ class AppBarIconMenu extends React.Component {
           >
             <MenuItem onTouchTap={this.retrieveArchivedListDialogOpen}>Trash</MenuItem>
             <MenuItem onTouchTap={this.inviteMemberDialogOpen}>Invite</MenuItem>
+            <MenuItem onTouchTap={LogOut.logout}>Log Out</MenuItem>
           </IconMenu>
         </div>);
     }
