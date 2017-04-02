@@ -15,7 +15,7 @@ function requireLogIn() {
       if (xhr.readyState == 4 && xhr.status == 200) {
 
         const response = JSON.parse(xhr.response);
-        if (response.emali){
+        if (response.email){
           localStorage.cl_email = response.email;
         }
         if (response.error === 'invalid_token') {

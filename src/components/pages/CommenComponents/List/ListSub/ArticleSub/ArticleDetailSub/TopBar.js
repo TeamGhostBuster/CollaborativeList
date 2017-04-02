@@ -1,6 +1,7 @@
 import React from 'react';
 import Delete from 'material-ui/svg-icons/action/delete';
 import ContentCopy from 'material-ui/svg-icons/content/content-copy';
+import DeleteForever from 'material-ui/svg-icons/action/delete-forever';
 import { MenuItem } from 'material-ui'
 import { Toolbar, ToolbarGroup, ToolbarTitle, IconButton, IconMenu } from 'material-ui';
 import ArchiveArticleRequest from '../../../../../../Requests/ArchiveArticleRequest';
@@ -22,35 +23,10 @@ export default class TopBar extends React.Component {
     };
 
     this.remove = this.remove.bind(this);
+    this.archive = this.archive.bind(this);
     this.componentWillMount = this.componentWillMount.bind(this);
   }
-  //
-  // componentWillMount() {
-  //   const getListsCallback = (response) => {
-  //     const listObjs = response.lists;
-  //     this.setState({
-  //       listItems: listObjs
-  //         .filter((obj) => !obj.archived)
-  //         .map((listObject) => <ArticleDialogTopbarShareMenuItem
-  //           key={listObject.id}
-  //           name={listObject.name}
-  //           articleId={this.props.article_id}
-  //           baseListId={this.props.list_id}
-  //           targetListId={listObject.id}
-  //           group={this.props.group}
-  //           groupId={this.props.groupId}
-  //           close={this.props.close}
-  //           refreshPage={this.props.refreshPage}
-  //         />)
-  //     });
-  //   };
-  //
-  //   if (this.props.group === 'true') {
-  //     GetGroupListsRequest.get(this.props.groupId, getListsCallback);
-  //   } else {
-  //     GetUserListsRequest.get(getListsCallback);
-  //   }
-  // }
+
   componentWillMount(){
     const formPersonalLists = (response)=>{
       this.setState({listItems:this.state.listItems.concat(
@@ -89,12 +65,20 @@ export default class TopBar extends React.Component {
   }
 
   remove() {
-    // send the delete request
+    // send the delete request, remove permanently
     ArchiveArticleRequest.delete(
       this.props.list_id,
       this.props.article_id,
-      this.props.close
+      this.props.refreshPage
     );
+  }
+
+  archive(){
+    ArchiveArticleRequest.archive(
+      this.props.list_id,
+      this.props.article_id,
+      this.props.close
+    )
   }
 
   render() {
@@ -103,6 +87,10 @@ export default class TopBar extends React.Component {
       <IconMenu iconButtonElement={<IconButton tooltip="Copy To Other Lists"><ContentCopy /></IconButton>}>
         {this.state.listItems}
       </IconMenu>;
+
+    const destroyButton = localStorage.cl_email === this.props.email?
+      <IconButton name="DestroyButton" tooltip="Remove From DataBase" onTouchTap={this.remove}><DeleteForever /></IconButton>
+      :false
     return (
       <Toolbar>
         <ToolbarGroup>
@@ -113,8 +101,8 @@ export default class TopBar extends React.Component {
         </ToolbarGroup>
         <ToolbarGroup>
           {shareButton}
-          <IconButton name="RemoveButton" tooltip="Remove" onTouchTap={this.remove}><Delete /></IconButton>
-          <IconButton name="DestroyButton" tooltip="Remove From DataBase" ><Delete /></IconButton>
+          <IconButton name="RemoveButton" tooltip="Remove" onTouchTap={this.archive}><Delete /></IconButton>
+          {destroyButton}
         </ToolbarGroup>
       </Toolbar>
     );
@@ -138,5 +126,7 @@ TopBar.propTypes = {
 
   groupId: React.PropTypes.string,
 
-  refreshPage: React.PropTypes.func.isRequired
+  refreshPage: React.PropTypes.func.isRequired,
+
+  email: React.PropTypes.string.isRequired,
 };

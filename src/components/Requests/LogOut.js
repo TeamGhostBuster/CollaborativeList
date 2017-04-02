@@ -1,3 +1,7 @@
-/**
- * Created by Aaron on 4/2/2017.
- */
+module.exports = {
+  logout(){
+    delete localStorage.token;
+    delete localStorage.cl_email;
+    window.location.assign('/login')
+  },
+};
