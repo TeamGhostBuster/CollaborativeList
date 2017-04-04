@@ -1,488 +1,508 @@
 {
     "docs": [
         {
-            "location": "/",
-            "text": "Collaborative Lists\n\u00b6\n\n\nOverview\n\u00b6\n\n\nLive demo\n\n\nExperimental Live Demo\n\n\nCollaborative List API\n\n\nPM Stuff\n\u00b6\n\n\nStoryMap\n\n\nIssue&Bug Tracker/Timeline",
+            "location": "/", 
+            "text": "Collaborative Lists\n\n\nOverview\n\n\nLive demo\n\n\nExperimental Live Demo\n\n\nCollaborative List API\n\n\nPM Stuff\n\n\nStoryMap\n\n\nIssue\nBug Tracker/Timeline", 
             "title": "Collaborative Lists"
-        },
+        }, 
         {
-            "location": "/#collaborative-lists",
-            "text": "",
+            "location": "/#collaborative-lists", 
+            "text": "", 
             "title": "Collaborative Lists"
-        },
+        }, 
         {
-            "location": "/#overview",
-            "text": "Live demo  Experimental Live Demo  Collaborative List API",
+            "location": "/#overview", 
+            "text": "Live demo  Experimental Live Demo  Collaborative List API", 
             "title": "Overview"
-        },
+        }, 
         {
-            "location": "/#pm-stuff",
-            "text": "StoryMap  Issue&Bug Tracker/Timeline",
+            "location": "/#pm-stuff", 
+            "text": "StoryMap  Issue Bug Tracker/Timeline", 
             "title": "PM Stuff"
-        },
+        }, 
         {
-            "location": "/installation/",
-            "text": "Installation\n\u00b6\n\n\nRequirements\n\u00b6\n\n\n\n\nDocker\n\n\nDocker Compose\n\n\n\n\nSteps\n\u00b6\n\n\n\n\n\n\nClone our project from Github.\n\n\n$ git clone https://github.com/TeamGhostBuster/restful-api.git\n\n\n$ git clone https://github.com/TeamGhostBuster/CollaborativeList.git\n\n\n\n\n\n\nFor the \nrestful-api\n, if you run into any error, just try to restart the container that fails. \n\n\n$ docker-compose up -d\n\n\n\n\n\n\nFor the \nCollaborativeList\n, it can be accessed through \nhttp://localhost:3000\n by default.\n\n\n$ docker-compose up -d\n\n\n\n\n\n\nConfiguration\n\u00b6\n\n\n\n\nModify the \ndocker-compose.yml\n file under the \nCollaborativeList\n folder, set \nGOOGLE_CLIENT_ID\n environment variable to the one you obtain from Google Developer Console.\n\n\nModify the \ndocker-compose.yml\n file under the \nCollaborativeList\n folder, set \nAPI_URL\n environment able to the host where you are running the \nrestful-api\n.",
+            "location": "/installation/", 
+            "text": "Installation\n\n\nRequirements\n\n\n\n\nDocker\n\n\nDocker Compose\n\n\n\n\nNotes\n\n\n\n\nSince we expect you to be a experienced Linux server user, this documentation will not cover anything about how to setup a Linux server, how to install packages on a Linux server, etc.\n\n\nFor installation of Docker please refer to the \nDocker documentation\n\n\nWe recommend the use of NGINX as a reverse proxy server and to setup the SSL certification for security purposes. For further instruction, please refer to the \nNGINX documentation\n.\n\n\nWe only support installation via Docker.\n\n\n\n\nSteps\n\n\n\n\n\n\nClone our project from Github.\n\n\n$ git clone https://github.com/TeamGhostBuster/restful-api.git\n\n\n$ git clone https://github.com/TeamGhostBuster/CollaborativeList.git\n\n\n\n\n\n\nFor the \nrestful-api\n backend, if you run into any errors, you can usually resolve them by restarting the container that fails.   \n\n\n$ docker-compose up -d\n\n\n\n\n\n\nThe \nCollaborativeList\n frontend can be accessed through \nhttp://localhost:3000\n by default. \n\n\n$ ./build.sh\n\n\n\n\n\n\nConfiguration\n\n\n\n\nModify the \ndocker-compose.yml\n file under the \nCollaborativeList\n folder and set the \nGOOGLE_CLIENT_ID\n environment variable to the one you obtain from Google Developer Console.\n\n\nGo to the \nGoogle Developer Console\n to obtain an OAuth client ID. For further instruction, please refer to Google's official documentation.\n\n\nSetup your domain name at the Google Developer Console, since google does not allow addresses like \nlocalhost\n or \n127.0.0.1\n to use its service.\n\n\n\n\n\n\nModify the \ndocker-compose.yml\n file under the \nCollaborativeList\n folder, set \nAPI_URL\n environment variable to the host where you are running the \nrestful-api\n.\n\n\n\n\nDevelopment\n\n\nSince we are using the RESTful architecture for this system, it is possible to integrate a multitude of different client-side software with the existing API.\n\n\nFront-end\n\n\nThe front end is built with \nReact\n, making it easy to customize the UI components, theme, or virtually anything else to fit your personal needs. For detailed development environment setup instructions, please refer to the \nREADME.md\n file under our \nGithub repository\n.\n\n\nBack-end\n\n\nThe back end is build with Flask, MongoDB, and Elasticsearch. Since Flask is a relatively lightweight web framework, you may develop new features and customize existing ones easily. Our development environment comes with the Docker image as well. For setup instructions, please refer to our \nGithub repository\n.", 
             "title": "Installation"
-        },
+        }, 
         {
-            "location": "/installation/#installation",
-            "text": "",
+            "location": "/installation/#installation", 
+            "text": "", 
             "title": "Installation"
-        },
+        }, 
         {
-            "location": "/installation/#requirements",
-            "text": "Docker  Docker Compose",
+            "location": "/installation/#requirements", 
+            "text": "Docker  Docker Compose", 
             "title": "Requirements"
-        },
+        }, 
         {
-            "location": "/installation/#steps",
-            "text": "Clone our project from Github.  $ git clone https://github.com/TeamGhostBuster/restful-api.git  $ git clone https://github.com/TeamGhostBuster/CollaborativeList.git    For the  restful-api , if you run into any error, just try to restart the container that fails.   $ docker-compose up -d    For the  CollaborativeList , it can be accessed through  http://localhost:3000  by default.  $ docker-compose up -d",
+            "location": "/installation/#notes", 
+            "text": "Since we expect you to be a experienced Linux server user, this documentation will not cover anything about how to setup a Linux server, how to install packages on a Linux server, etc.  For installation of Docker please refer to the  Docker documentation  We recommend the use of NGINX as a reverse proxy server and to setup the SSL certification for security purposes. For further instruction, please refer to the  NGINX documentation .  We only support installation via Docker.", 
+            "title": "Notes"
+        }, 
+        {
+            "location": "/installation/#steps", 
+            "text": "Clone our project from Github.  $ git clone https://github.com/TeamGhostBuster/restful-api.git  $ git clone https://github.com/TeamGhostBuster/CollaborativeList.git    For the  restful-api  backend, if you run into any errors, you can usually resolve them by restarting the container that fails.     $ docker-compose up -d    The  CollaborativeList  frontend can be accessed through  http://localhost:3000  by default.   $ ./build.sh", 
             "title": "Steps"
-        },
+        }, 
         {
-            "location": "/installation/#configuration",
-            "text": "Modify the  docker-compose.yml  file under the  CollaborativeList  folder, set  GOOGLE_CLIENT_ID  environment variable to the one you obtain from Google Developer Console.  Modify the  docker-compose.yml  file under the  CollaborativeList  folder, set  API_URL  environment able to the host where you are running the  restful-api .",
+            "location": "/installation/#configuration", 
+            "text": "Modify the  docker-compose.yml  file under the  CollaborativeList  folder and set the  GOOGLE_CLIENT_ID  environment variable to the one you obtain from Google Developer Console.  Go to the  Google Developer Console  to obtain an OAuth client ID. For further instruction, please refer to Google's official documentation.  Setup your domain name at the Google Developer Console, since google does not allow addresses like  localhost  or  127.0.0.1  to use its service.    Modify the  docker-compose.yml  file under the  CollaborativeList  folder, set  API_URL  environment variable to the host where you are running the  restful-api .", 
             "title": "Configuration"
-        },
+        }, 
         {
-            "location": "/requirement-document/project-overview/",
-            "text": "Project Overview\n\u00b6\n\n\nCollaborative Lists\n is a project management tool for academics and their colleagues to facilitate and coordinate group study sessions. Via a web-based interface, users can save and organize external links to scholarly papers (or journal articles, videos, etc.), share them with the other members of their reading group(s), and participate in a voting system determining which of the shared articles the group will collectively study. Designed to be lightweight and user-friendly, the application can run on any modern browser with a minimum-effort installation.",
-            "title": "Project Overview"
-        },
+            "location": "/installation/#development", 
+            "text": "Since we are using the RESTful architecture for this system, it is possible to integrate a multitude of different client-side software with the existing API.", 
+            "title": "Development"
+        }, 
         {
-            "location": "/requirement-document/project-overview/#project-overview",
-            "text": "Collaborative Lists  is a project management tool for academics and their colleagues to facilitate and coordinate group study sessions. Via a web-based interface, users can save and organize external links to scholarly papers (or journal articles, videos, etc.), share them with the other members of their reading group(s), and participate in a voting system determining which of the shared articles the group will collectively study. Designed to be lightweight and user-friendly, the application can run on any modern browser with a minimum-effort installation.",
-            "title": "Project Overview"
-        },
-        {
-            "location": "/requirement-document/project-glossary/",
-            "text": "Collaborative List Glossary\n\u00b6\n\n\nThe following terms and definitions are to be taken into consideration for all documentation of our product, unless stated otherwise.\n\n\nThis list is not static and may be subject to alteration.\n\n\n\n\n\n\nArticle\n: An external link to a scholarly paper saved by the user; may include comments, private tags, etc.\n\n\n\n\n\n\nElection\n: The process by which the members of a group vote up or down other members' nominations; the winner of an election is then assumed to be the group consensus\n\n\n\n\n\n\nLibrary\n: A user's total collection of articles\n\n\n\n\n\n\nModerator\n: The leader of a reading group; has unique privileges relative to other group members\n\n\n\n\n\n\nNominate\n: The process of a group member suggesting an article for the group to collectively study\n\n\n\n\n\n\nReading Group\n: A collection of users where each individual can nominate articles and/or vote on others' suggestions, lead by a single moderator\n\n\n\n\n\n\nReading List\n: A subset of a user's library that contains articles selected by the user; may be named or ordered however the user wishes\n\n\n\n\n\n\nUser\n: Anybody who logs into the application with a valid account",
-            "title": "Project Glossary"
-        },
-        {
-            "location": "/requirement-document/project-glossary/#collaborative-list-glossary",
-            "text": "The following terms and definitions are to be taken into consideration for all documentation of our product, unless stated otherwise.  This list is not static and may be subject to alteration.    Article : An external link to a scholarly paper saved by the user; may include comments, private tags, etc.    Election : The process by which the members of a group vote up or down other members' nominations; the winner of an election is then assumed to be the group consensus    Library : A user's total collection of articles    Moderator : The leader of a reading group; has unique privileges relative to other group members    Nominate : The process of a group member suggesting an article for the group to collectively study    Reading Group : A collection of users where each individual can nominate articles and/or vote on others' suggestions, lead by a single moderator    Reading List : A subset of a user's library that contains articles selected by the user; may be named or ordered however the user wishes    User : Anybody who logs into the application with a valid account",
-            "title": "Collaborative List Glossary"
-        },
-        {
-            "location": "/requirement-document/storyboard/",
-            "text": "Storyboard\n\u00b6",
-            "title": "Storyboard"
-        },
-        {
-            "location": "/requirement-document/storyboard/#storyboard",
-            "text": "",
-            "title": "Storyboard"
-        },
-        {
-            "location": "/requirement-document/user-stories/",
-            "text": "User Story\n\u00b6\n\n\n1. Authentication\n\u00b6\n\n\n\n\n1.1 As a user, I can login through Oauth2 provider (Google/Facebook/Github).\n\n\nLogin button is recognizable.\n\n\nCliking the login button will direct user to the provider's page for authentication\n\n\n\n\n\n\n\n\n2. Create\n\u00b6\n\n\n\n\n2.1 As a user, I can create a reading list.\n\n\nThe reading list is displayed.\n\n\nCreating a list will lead to a form filling in the necessary information about the list.\n\n\nWhen the action is done, there should be a list object on the server.\n\n\n\n\n\n\n2.2 As a user, I can create a reading group.\n\n\nThe group is displayed.\n\n\nWhen the action is done, there should be a new group object on the server.\n\n\n\n\n\n\n2.3 As a user, I can add metadata tags to each article.\n\n\nThe tag is displayed.\n\n\nThe tag is associated with the article\n\n\n\n\n\n\n2.4 As a user, I can create reading lists for the group.\n\n\nThe list is displayed under the group.\n\n\n\n\n\n\n2.5 As a user, I can create a new article in my personal list.\n\n\nThe article is displayed in the coressponding list.\n\n\nThe article is saved into the database.\n\n\nThe article is duplicated to the ElasticSearch.\n\n\n\n\n\n\n2.6 As a user, I can create a new article in group list.\n\n\nThe article is displayed in the coressponding list.\n\n\nThe article is saved into the database.\n\n\nThe article is duplicated to the ElasticSearch.\n\n\n\n\n\n\n\n\n3. Edit\n\u00b6\n\n\n\n\n3.1 As a user, I can add description to each article.\n\n\nI can see the description.\n\n\nIt is saved to the database.\n\n\n\n\n\n\n3.2 As a user, I can comment on each article.\n\n\nI can see the comment.\n\n\nIt is saved to the database.\n\n\n\n\n\n\n3.3 As a user, I can rename lists.\n\n\nThe list name is changed.\n\n\nThe new list name is displayed.\n\n\n\n\n\n\n3.4 As a user, I can merge lists.\n\n\nThe new list is displayed\n\n\nPrevious lists are gone.\n\n\n\n\n\n\n3.5 As a user, I can partition lists.\n\n\nA new list is displayed.\n\n\nPrevious list is splited into two.\n\n\n\n\n\n\n3.6 As a user, I can copy articles from one list to another.\n\n\nA duplicated article is displayed in another list.\n\n\n\n\n\n\n3.7 As a user, I can move articles from one list to another.\n\n\nThe article is displyed in another list.\n\n\nThe article is no longer in the previous list.\n\n\n\n\n\n\n3.8 As a user, I can delete articles from lists.\n\n\nThe article is not in the list anymore.\n\n\n\n\n\n\n3.9 As a user, I can archive lists.\n\n\nThe list will not be displayed.\n\n\nUser may retrive it.\n\n\n\n\n\n\n3.10 As a user, I can retrieve archived lists.\n\n\nThe list is displayed.\n\n\n\n\n\n\n\n\n4. Share\n\u00b6\n\n\n\n\n4.1 As a user, I can grant/revoke read/write access of reading list to others.\n\n\nOthers will able/unable to read/write my list.\n\n\n\n\n\n\n4.2 As a user, I can share my reading list to a group.\n\n\nThe reading list will show up in the group's reading list.\n\n\nThe group has ownership to the new list.\n\n\n\n\n\n\n4.3 As a user, I can upvote/downvote each article once.\n\n\nIt will indicate that the vote has changed.\n\n\n\n\n\n\n4.4 As a user, I can hide my comments on articles.\n\n\nOther user cannot see my comment.\n\n\n\n\n\n\n\n\n5. Moderator\n\u00b6\n\n\n\n\n5.1 As a moderator, I can invite people to join my group.\n\n\nThe group will show up in the user's group list.\n\n\n\n\n\n\n5.2 As a moderator, I can block people in my group.\n\n\nThe user who got blocked will no longer able to take any action in the group.\n\n\n\n\n\n\n5.3 As a moderator, I can kick out people from my group.\n\n\nThe user who got kicked will lose access to the group.\n\n\n\n\n\n\n5.4 As a moderator, I can delete an article and keep people from reposting it.\n\n\nThe article I deleted cannot be posted by other user.\n\n\n\n\n\n\n5.5 As a moderator, I can set a limit on how many suggestions each person can submit\n\n\nUser cannot suggest amount of articles above the limit.\n\n\nWhen user excess the limit, the user will receive a alert.\n\n\n\n\n\n\n5.6 As a moderator, I can make someone else in the group the moderator.\n\n\nThe user will have ownership of the group.\n\n\n\n\n\n\n\n\n6. Search/Filter\n\u00b6\n\n\n\n\n6.1 As a user, I can search article by tags.\n\n\nI can see articles that match.\n\n\nI can add one of them to my own list.\n\n\n\n\n\n\n6.2 As a user, I can search article by name and description.\n\n\nI can see articles that match.\n\n\nI can add one of them to my own list.\n\n\n\n\n\n\n6.3 As a user, I can filter article by tags.\n\n\nI can see articles that match.\n\n\nI can add one of them to my own list.\n\n\n\n\n\n\n6.4 As a user, I can filter article by name and description.\n\n\nI can see articles that match.\n\n\nI can add one of them to my own list.\n\n\n\n\n\n\n6.5 As a user, I can search a group by group name.\n\n\nI can see articles that match.\n\n\nI can add one of them to my own list.\n\n\n\n\n\n\n\n\n7. Notification\n\u00b6\n\n\n\n\n7.1 As a user, I can receive voting notification whenever it changes.\n\n\nI can see a alert on my browser.\n\n\n\n\n\n\n7.2 As a user, I can receive notification when the voting end.\n\n\nI can see a alert on my browser.",
-            "title": "User Story"
-        },
-        {
-            "location": "/requirement-document/user-stories/#user-story",
-            "text": "",
-            "title": "User Story"
-        },
-        {
-            "location": "/requirement-document/user-stories/#1-authentication",
-            "text": "1.1 As a user, I can login through Oauth2 provider (Google/Facebook/Github).  Login button is recognizable.  Cliking the login button will direct user to the provider's page for authentication",
-            "title": "1. Authentication"
-        },
-        {
-            "location": "/requirement-document/user-stories/#2-create",
-            "text": "2.1 As a user, I can create a reading list.  The reading list is displayed.  Creating a list will lead to a form filling in the necessary information about the list.  When the action is done, there should be a list object on the server.    2.2 As a user, I can create a reading group.  The group is displayed.  When the action is done, there should be a new group object on the server.    2.3 As a user, I can add metadata tags to each article.  The tag is displayed.  The tag is associated with the article    2.4 As a user, I can create reading lists for the group.  The list is displayed under the group.    2.5 As a user, I can create a new article in my personal list.  The article is displayed in the coressponding list.  The article is saved into the database.  The article is duplicated to the ElasticSearch.    2.6 As a user, I can create a new article in group list.  The article is displayed in the coressponding list.  The article is saved into the database.  The article is duplicated to the ElasticSearch.",
-            "title": "2. Create"
-        },
-        {
-            "location": "/requirement-document/user-stories/#3-edit",
-            "text": "3.1 As a user, I can add description to each article.  I can see the description.  It is saved to the database.    3.2 As a user, I can comment on each article.  I can see the comment.  It is saved to the database.    3.3 As a user, I can rename lists.  The list name is changed.  The new list name is displayed.    3.4 As a user, I can merge lists.  The new list is displayed  Previous lists are gone.    3.5 As a user, I can partition lists.  A new list is displayed.  Previous list is splited into two.    3.6 As a user, I can copy articles from one list to another.  A duplicated article is displayed in another list.    3.7 As a user, I can move articles from one list to another.  The article is displyed in another list.  The article is no longer in the previous list.    3.8 As a user, I can delete articles from lists.  The article is not in the list anymore.    3.9 As a user, I can archive lists.  The list will not be displayed.  User may retrive it.    3.10 As a user, I can retrieve archived lists.  The list is displayed.",
-            "title": "3. Edit"
-        },
-        {
-            "location": "/requirement-document/user-stories/#4-share",
-            "text": "4.1 As a user, I can grant/revoke read/write access of reading list to others.  Others will able/unable to read/write my list.    4.2 As a user, I can share my reading list to a group.  The reading list will show up in the group's reading list.  The group has ownership to the new list.    4.3 As a user, I can upvote/downvote each article once.  It will indicate that the vote has changed.    4.4 As a user, I can hide my comments on articles.  Other user cannot see my comment.",
-            "title": "4. Share"
-        },
-        {
-            "location": "/requirement-document/user-stories/#5-moderator",
-            "text": "5.1 As a moderator, I can invite people to join my group.  The group will show up in the user's group list.    5.2 As a moderator, I can block people in my group.  The user who got blocked will no longer able to take any action in the group.    5.3 As a moderator, I can kick out people from my group.  The user who got kicked will lose access to the group.    5.4 As a moderator, I can delete an article and keep people from reposting it.  The article I deleted cannot be posted by other user.    5.5 As a moderator, I can set a limit on how many suggestions each person can submit  User cannot suggest amount of articles above the limit.  When user excess the limit, the user will receive a alert.    5.6 As a moderator, I can make someone else in the group the moderator.  The user will have ownership of the group.",
-            "title": "5. Moderator"
-        },
-        {
-            "location": "/requirement-document/user-stories/#6-searchfilter",
-            "text": "6.1 As a user, I can search article by tags.  I can see articles that match.  I can add one of them to my own list.    6.2 As a user, I can search article by name and description.  I can see articles that match.  I can add one of them to my own list.    6.3 As a user, I can filter article by tags.  I can see articles that match.  I can add one of them to my own list.    6.4 As a user, I can filter article by name and description.  I can see articles that match.  I can add one of them to my own list.    6.5 As a user, I can search a group by group name.  I can see articles that match.  I can add one of them to my own list.",
-            "title": "6. Search/Filter"
-        },
-        {
-            "location": "/requirement-document/user-stories/#7-notification",
-            "text": "7.1 As a user, I can receive voting notification whenever it changes.  I can see a alert on my browser.    7.2 As a user, I can receive notification when the voting end.  I can see a alert on my browser.",
-            "title": "7. Notification"
-        },
-        {
-            "location": "/requirement-document/technical-resources/",
-            "text": "Technical Resources\n\u00b6\n\n\nFront-end\n\u00b6\n\n\n\n\nReact\n\n\nReact Components for Elasticsearch\n\n\n\n\nBack-end\n\u00b6\n\n\n\n\nFlask\n\n\nMongoEngine\n\n\nMongoDB Schema Design\n\n\n\n\nPush Notification\n\u00b6\n\n\n\n\nOneSignal\n\n\n\n\nDeployment\n\u00b6\n\n\n\n\nDocker\n\n\nGit-Webhook",
-            "title": "Technical Resources"
-        },
-        {
-            "location": "/requirement-document/technical-resources/#technical-resources",
-            "text": "",
-            "title": "Technical Resources"
-        },
-        {
-            "location": "/requirement-document/technical-resources/#front-end",
-            "text": "React  React Components for Elasticsearch",
+            "location": "/installation/#front-end", 
+            "text": "The front end is built with  React , making it easy to customize the UI components, theme, or virtually anything else to fit your personal needs. For detailed development environment setup instructions, please refer to the  README.md  file under our  Github repository .", 
             "title": "Front-end"
-        },
+        }, 
         {
-            "location": "/requirement-document/technical-resources/#back-end",
-            "text": "Flask  MongoEngine  MongoDB Schema Design",
+            "location": "/installation/#back-end", 
+            "text": "The back end is build with Flask, MongoDB, and Elasticsearch. Since Flask is a relatively lightweight web framework, you may develop new features and customize existing ones easily. Our development environment comes with the Docker image as well. For setup instructions, please refer to our  Github repository .", 
             "title": "Back-end"
-        },
+        }, 
         {
-            "location": "/requirement-document/technical-resources/#push-notification",
-            "text": "OneSignal",
+            "location": "/requirement-document/project-overview/", 
+            "text": "Project Overview\n\n\nCollaborative Lists\n is a project management tool for academics and their colleagues to facilitate and coordinate group study sessions. Via a web-based interface, users can save and organize external links to scholarly papers (or journal articles, videos, etc.), share them with the other members of their reading group(s), and participate in a voting system determining which of the shared articles the group will collectively study. Designed to be lightweight and user-friendly, the application can run on any modern browser with a minimum-effort installation.", 
+            "title": "Project Overview"
+        }, 
+        {
+            "location": "/requirement-document/project-overview/#project-overview", 
+            "text": "Collaborative Lists  is a project management tool for academics and their colleagues to facilitate and coordinate group study sessions. Via a web-based interface, users can save and organize external links to scholarly papers (or journal articles, videos, etc.), share them with the other members of their reading group(s), and participate in a voting system determining which of the shared articles the group will collectively study. Designed to be lightweight and user-friendly, the application can run on any modern browser with a minimum-effort installation.", 
+            "title": "Project Overview"
+        }, 
+        {
+            "location": "/requirement-document/project-glossary/", 
+            "text": "Collaborative List Glossary\n\n\nThe following terms and definitions are to be taken into consideration for all documentation of our product, unless stated otherwise.\n\n\nThis list is not static and may be subject to alteration.\n\n\n\n\n\n\nArticle\n: An external link to a scholarly paper saved by the user; may include comments, private tags, etc.\n\n\n\n\n\n\nElection\n: The process by which the members of a group vote up or down other members' nominations; the winner of an election is then assumed to be the group consensus\n\n\n\n\n\n\nLibrary\n: A user's total collection of articles\n\n\n\n\n\n\nModerator\n: The leader of a reading group; has unique privileges relative to other group members\n\n\n\n\n\n\nNominate\n: The process of a group member suggesting an article for the group to collectively study\n\n\n\n\n\n\nReading Group\n: A collection of users where each individual can nominate articles and/or vote on others' suggestions, lead by a single moderator\n\n\n\n\n\n\nReading List\n: A subset of a user's library that contains articles selected by the user; may be named or ordered however the user wishes\n\n\n\n\n\n\nUser\n: Anybody who logs into the application with a valid account", 
+            "title": "Project Glossary"
+        }, 
+        {
+            "location": "/requirement-document/project-glossary/#collaborative-list-glossary", 
+            "text": "The following terms and definitions are to be taken into consideration for all documentation of our product, unless stated otherwise.  This list is not static and may be subject to alteration.    Article : An external link to a scholarly paper saved by the user; may include comments, private tags, etc.    Election : The process by which the members of a group vote up or down other members' nominations; the winner of an election is then assumed to be the group consensus    Library : A user's total collection of articles    Moderator : The leader of a reading group; has unique privileges relative to other group members    Nominate : The process of a group member suggesting an article for the group to collectively study    Reading Group : A collection of users where each individual can nominate articles and/or vote on others' suggestions, lead by a single moderator    Reading List : A subset of a user's library that contains articles selected by the user; may be named or ordered however the user wishes    User : Anybody who logs into the application with a valid account", 
+            "title": "Collaborative List Glossary"
+        }, 
+        {
+            "location": "/requirement-document/storyboard/", 
+            "text": "Storyboard", 
+            "title": "Storyboard"
+        }, 
+        {
+            "location": "/requirement-document/storyboard/#storyboard", 
+            "text": "", 
+            "title": "Storyboard"
+        }, 
+        {
+            "location": "/requirement-document/user-stories/", 
+            "text": "User Story\n\n\n1. Authentication\n\n\n\n\n1.1 As a user, I can login through Oauth2 provider (Google/Facebook/Github).\n\n\nLogin button is recognizable.\n\n\nCliking the login button will direct user to the provider's page for authentication\n\n\n\n\n\n\n\n\n2. Create\n\n\n\n\n2.1 As a user, I can create a reading list.\n\n\nThe reading list is displayed.\n\n\nCreating a list will lead to a form filling in the necessary information about the list.\n\n\nWhen the action is done, there should be a list object on the server.\n\n\n\n\n\n\n2.2 As a user, I can create a reading group.\n\n\nThe group is displayed.\n\n\nWhen the action is done, there should be a new group object on the server.\n\n\n\n\n\n\n2.3 As a user, I can add metadata tags to each article.\n\n\nThe tag is displayed.\n\n\nThe tag is associated with the article\n\n\n\n\n\n\n2.4 As a user, I can create reading lists for the group.\n\n\nThe list is displayed under the group.\n\n\n\n\n\n\n2.5 As a user, I can create a new article in my personal list.\n\n\nThe article is displayed in the coressponding list.\n\n\nThe article is saved into the database.\n\n\nThe article is duplicated to the ElasticSearch.\n\n\n\n\n\n\n2.6 As a user, I can create a new article in group list.\n\n\nThe article is displayed in the coressponding list.\n\n\nThe article is saved into the database.\n\n\nThe article is duplicated to the ElasticSearch.\n\n\n\n\n\n\n\n\n3. Edit\n\n\n\n\n3.1 As a user, I can add description to each article.\n\n\nI can see the description.\n\n\nIt is saved to the database.\n\n\n\n\n\n\n3.2 As a user, I can comment on each article.\n\n\nI can see the comment.\n\n\nIt is saved to the database.\n\n\n\n\n\n\n3.3 As a user, I can rename lists.\n\n\nThe list name is changed.\n\n\nThe new list name is displayed.\n\n\n\n\n\n\n3.4 As a user, I can merge lists.\n\n\nThe new list is displayed\n\n\nPrevious lists are gone.\n\n\n\n\n\n\n3.5 As a user, I can partition lists.\n\n\nA new list is displayed.\n\n\nPrevious list is splited into two.\n\n\n\n\n\n\n3.6 As a user, I can copy articles from one list to another.\n\n\nA duplicated article is displayed in another list.\n\n\n\n\n\n\n3.7 As a user, I can move articles from one list to another.\n\n\nThe article is displyed in another list.\n\n\nThe article is no longer in the previous list.\n\n\n\n\n\n\n3.8 As a user, I can delete articles from lists.\n\n\nThe article is not in the list anymore.\n\n\n\n\n\n\n3.9 As a user, I can archive lists.\n\n\nThe list will not be displayed.\n\n\nUser may retrive it.\n\n\n\n\n\n\n3.10 As a user, I can retrieve archived lists.\n\n\nThe list is displayed.\n\n\n\n\n\n\n\n\n4. Share\n\n\n\n\n4.1 As a user, I can grant/revoke read/write access of reading list to others.\n\n\nOthers will able/unable to read/write my list.\n\n\n\n\n\n\n4.2 As a user, I can share my reading list to a group.\n\n\nThe reading list will show up in the group's reading list.\n\n\nThe group has ownership to the new list.\n\n\n\n\n\n\n4.3 As a user, I can upvote/downvote each article once.\n\n\nIt will indicate that the vote has changed.\n\n\n\n\n\n\n4.4 As a user, I can hide my comments on articles.\n\n\nOther user cannot see my comment.\n\n\n\n\n\n\n\n\n5. Moderator\n\n\n\n\n5.1 As a moderator, I can invite people to join my group.\n\n\nThe group will show up in the user's group list.\n\n\n\n\n\n\n5.2 As a moderator, I can block people in my group.\n\n\nThe user who got blocked will no longer able to take any action in the group.\n\n\n\n\n\n\n5.3 As a moderator, I can kick out people from my group.\n\n\nThe user who got kicked will lose access to the group.\n\n\n\n\n\n\n5.4 As a moderator, I can delete an article and keep people from reposting it.\n\n\nThe article I deleted cannot be posted by other user.\n\n\n\n\n\n\n5.5 As a moderator, I can set a limit on how many suggestions each person can submit\n\n\nUser cannot suggest amount of articles above the limit.\n\n\nWhen user excess the limit, the user will receive a alert.\n\n\n\n\n\n\n5.6 As a moderator, I can make someone else in the group the moderator.\n\n\nThe user will have ownership of the group.\n\n\n\n\n\n\n\n\n6. Search/Filter\n\n\n\n\n6.1 As a user, I can search article by tags.\n\n\nI can see articles that match.\n\n\nI can add one of them to my own list.\n\n\n\n\n\n\n6.2 As a user, I can search article by name and description.\n\n\nI can see articles that match.\n\n\nI can add one of them to my own list.\n\n\n\n\n\n\n6.3 As a user, I can filter article by tags.\n\n\nI can see articles that match.\n\n\nI can add one of them to my own list.\n\n\n\n\n\n\n6.4 As a user, I can filter article by name and description.\n\n\nI can see articles that match.\n\n\nI can add one of them to my own list.\n\n\n\n\n\n\n6.5 As a user, I can search a group by group name.\n\n\nI can see articles that match.\n\n\nI can add one of them to my own list.\n\n\n\n\n\n\n\n\n7. Notification\n\n\n\n\n7.1 As a user, I can receive voting notification whenever it changes.\n\n\nI can see a alert on my browser.\n\n\n\n\n\n\n7.2 As a user, I can receive notification when the voting end.\n\n\nI can see a alert on my browser.", 
+            "title": "User Story"
+        }, 
+        {
+            "location": "/requirement-document/user-stories/#user-story", 
+            "text": "", 
+            "title": "User Story"
+        }, 
+        {
+            "location": "/requirement-document/user-stories/#1-authentication", 
+            "text": "1.1 As a user, I can login through Oauth2 provider (Google/Facebook/Github).  Login button is recognizable.  Cliking the login button will direct user to the provider's page for authentication", 
+            "title": "1. Authentication"
+        }, 
+        {
+            "location": "/requirement-document/user-stories/#2-create", 
+            "text": "2.1 As a user, I can create a reading list.  The reading list is displayed.  Creating a list will lead to a form filling in the necessary information about the list.  When the action is done, there should be a list object on the server.    2.2 As a user, I can create a reading group.  The group is displayed.  When the action is done, there should be a new group object on the server.    2.3 As a user, I can add metadata tags to each article.  The tag is displayed.  The tag is associated with the article    2.4 As a user, I can create reading lists for the group.  The list is displayed under the group.    2.5 As a user, I can create a new article in my personal list.  The article is displayed in the coressponding list.  The article is saved into the database.  The article is duplicated to the ElasticSearch.    2.6 As a user, I can create a new article in group list.  The article is displayed in the coressponding list.  The article is saved into the database.  The article is duplicated to the ElasticSearch.", 
+            "title": "2. Create"
+        }, 
+        {
+            "location": "/requirement-document/user-stories/#3-edit", 
+            "text": "3.1 As a user, I can add description to each article.  I can see the description.  It is saved to the database.    3.2 As a user, I can comment on each article.  I can see the comment.  It is saved to the database.    3.3 As a user, I can rename lists.  The list name is changed.  The new list name is displayed.    3.4 As a user, I can merge lists.  The new list is displayed  Previous lists are gone.    3.5 As a user, I can partition lists.  A new list is displayed.  Previous list is splited into two.    3.6 As a user, I can copy articles from one list to another.  A duplicated article is displayed in another list.    3.7 As a user, I can move articles from one list to another.  The article is displyed in another list.  The article is no longer in the previous list.    3.8 As a user, I can delete articles from lists.  The article is not in the list anymore.    3.9 As a user, I can archive lists.  The list will not be displayed.  User may retrive it.    3.10 As a user, I can retrieve archived lists.  The list is displayed.", 
+            "title": "3. Edit"
+        }, 
+        {
+            "location": "/requirement-document/user-stories/#4-share", 
+            "text": "4.1 As a user, I can grant/revoke read/write access of reading list to others.  Others will able/unable to read/write my list.    4.2 As a user, I can share my reading list to a group.  The reading list will show up in the group's reading list.  The group has ownership to the new list.    4.3 As a user, I can upvote/downvote each article once.  It will indicate that the vote has changed.    4.4 As a user, I can hide my comments on articles.  Other user cannot see my comment.", 
+            "title": "4. Share"
+        }, 
+        {
+            "location": "/requirement-document/user-stories/#5-moderator", 
+            "text": "5.1 As a moderator, I can invite people to join my group.  The group will show up in the user's group list.    5.2 As a moderator, I can block people in my group.  The user who got blocked will no longer able to take any action in the group.    5.3 As a moderator, I can kick out people from my group.  The user who got kicked will lose access to the group.    5.4 As a moderator, I can delete an article and keep people from reposting it.  The article I deleted cannot be posted by other user.    5.5 As a moderator, I can set a limit on how many suggestions each person can submit  User cannot suggest amount of articles above the limit.  When user excess the limit, the user will receive a alert.    5.6 As a moderator, I can make someone else in the group the moderator.  The user will have ownership of the group.", 
+            "title": "5. Moderator"
+        }, 
+        {
+            "location": "/requirement-document/user-stories/#6-searchfilter", 
+            "text": "6.1 As a user, I can search article by tags.  I can see articles that match.  I can add one of them to my own list.    6.2 As a user, I can search article by name and description.  I can see articles that match.  I can add one of them to my own list.    6.3 As a user, I can filter article by tags.  I can see articles that match.  I can add one of them to my own list.    6.4 As a user, I can filter article by name and description.  I can see articles that match.  I can add one of them to my own list.    6.5 As a user, I can search a group by group name.  I can see articles that match.  I can add one of them to my own list.", 
+            "title": "6. Search/Filter"
+        }, 
+        {
+            "location": "/requirement-document/user-stories/#7-notification", 
+            "text": "7.1 As a user, I can receive voting notification whenever it changes.  I can see a alert on my browser.    7.2 As a user, I can receive notification when the voting end.  I can see a alert on my browser.", 
+            "title": "7. Notification"
+        }, 
+        {
+            "location": "/requirement-document/technical-resources/", 
+            "text": "Technical Resources\n\n\nFront-end\n\n\n\n\nReact\n\n\nReact Components for Elasticsearch\n\n\n\n\nBack-end\n\n\n\n\nFlask\n\n\nMongoEngine\n\n\nMongoDB Schema Design\n\n\n\n\nPush Notification\n\n\n\n\nOneSignal\n\n\n\n\nDeployment\n\n\n\n\nDocker\n\n\nGit-Webhook", 
+            "title": "Technical Resources"
+        }, 
+        {
+            "location": "/requirement-document/technical-resources/#technical-resources", 
+            "text": "", 
+            "title": "Technical Resources"
+        }, 
+        {
+            "location": "/requirement-document/technical-resources/#front-end", 
+            "text": "React  React Components for Elasticsearch", 
+            "title": "Front-end"
+        }, 
+        {
+            "location": "/requirement-document/technical-resources/#back-end", 
+            "text": "Flask  MongoEngine  MongoDB Schema Design", 
+            "title": "Back-end"
+        }, 
+        {
+            "location": "/requirement-document/technical-resources/#push-notification", 
+            "text": "OneSignal", 
             "title": "Push Notification"
-        },
+        }, 
         {
-            "location": "/requirement-document/technical-resources/#deployment",
-            "text": "Docker  Git-Webhook",
+            "location": "/requirement-document/technical-resources/#deployment", 
+            "text": "Docker  Git-Webhook", 
             "title": "Deployment"
-        },
+        }, 
         {
-            "location": "/requirement-document/similar-products/",
-            "text": "Similar Products\n\u00b6\n\n\n\n\nTrello\n\n\ndapulse",
+            "location": "/requirement-document/similar-products/", 
+            "text": "Similar Products\n\n\n\n\nTrello\n\n\ndapulse", 
             "title": "Similar Products"
-        },
+        }, 
         {
-            "location": "/requirement-document/similar-products/#similar-products",
-            "text": "Trello  dapulse",
+            "location": "/requirement-document/similar-products/#similar-products", 
+            "text": "Trello  dapulse", 
             "title": "Similar Products"
-        },
+        }, 
         {
-            "location": "/software-design/software-design/",
-            "text": "Software Design\n\u00b6\n\n\nArchitecture Diagram\n\u00b6",
+            "location": "/software-design/software-design/", 
+            "text": "Software Design\n\n\nArchitecture Diagram", 
             "title": "System Overview"
-        },
+        }, 
         {
-            "location": "/software-design/software-design/#software-design",
-            "text": "",
+            "location": "/software-design/software-design/#software-design", 
+            "text": "", 
             "title": "Software Design"
-        },
+        }, 
         {
-            "location": "/software-design/software-design/#architecture-diagram",
-            "text": "",
+            "location": "/software-design/software-design/#architecture-diagram", 
+            "text": "", 
             "title": "Architecture Diagram"
-        },
+        }, 
         {
-            "location": "/software-design/detail-design/",
-            "text": "Object-\u00adoriented Analysis\n\u00b6\n\n\nComponent Model\n\u00b6\n\n\n\n\nLogical Model (Back-end)\n\u00b6\n\n\n\n\nCore Dynamics Behaviours and Information Flow (Service-level)\n\u00b6",
+            "location": "/software-design/detail-design/", 
+            "text": "Object-\u00adoriented Analysis\n\n\nComponent Model\n\n\n\n\nLogical Model (Back-end)\n\n\n\n\nCore Dynamics Behaviours and Information Flow (Service-level)", 
             "title": "Detail Design"
-        },
+        }, 
         {
-            "location": "/software-design/detail-design/#object-oriented-analysis",
-            "text": "",
+            "location": "/software-design/detail-design/#object-oriented-analysis", 
+            "text": "", 
             "title": "Object-\u00adoriented Analysis"
-        },
+        }, 
         {
-            "location": "/software-design/detail-design/#component-model",
-            "text": "",
+            "location": "/software-design/detail-design/#component-model", 
+            "text": "", 
             "title": "Component Model"
-        },
+        }, 
         {
-            "location": "/software-design/detail-design/#logical-model-back-end",
-            "text": "",
+            "location": "/software-design/detail-design/#logical-model-back-end", 
+            "text": "", 
             "title": "Logical Model (Back-end)"
-        },
+        }, 
         {
-            "location": "/software-design/detail-design/#core-dynamics-behaviours-and-information-flow-service-level",
-            "text": "",
+            "location": "/software-design/detail-design/#core-dynamics-behaviours-and-information-flow-service-level", 
+            "text": "", 
             "title": "Core Dynamics Behaviours and Information Flow (Service-level)"
-        },
+        }, 
         {
-            "location": "/software-design/testing/",
-            "text": "Testing\n\u00b6\n\n\nTest Cases (Backend)\n\u00b6\n\n\nStrategy\n\u00b6\n\n\nFor the backend, we will have another instance of software running in a isolated docker container isolated with our production environment for unit testing. The unit test runs with pytest, a Python test framework, and it can run automatically. Since the backend essentially is providing RESTful API to the client, the way we test the API is by send HTTP request to our testing server to verify responses' status code and content. By doing so, we can easily implement new feature, refactor code, or make any other changes, then test it with existing test cases.\n\n\nUsage\n\u00b6\n\n\nThe test cases is located under the \ntests\n folder, replace the access token with your own one.\n\n\n$ make \ntest\n\n\nSample Console Output\n\u00b6\n\n\n==================================================== test session starts ====================================================\nplatform linux -- Python 3.5.2, pytest-3.0.6, py-1.4.32, pluggy-0.4.0\nrootdir: /home/app, inifile:\nplugins: ordering-0.4\ncollected 6 items\n\ntest/test_list.py .\ntest/test_article.py .\ntest/test_list.py ....\n\n================================================= 6 passed in 0.32 seconds ==================================================\n\n\n\n\n\nTest Case 1\n\u00b6\n\n\n\n\n\n\n\n\nItem\n\n\nDetail\n\n\n\n\n\n\n\n\n\n\nName\n\n\ntest_create_user_list\n\n\n\n\n\n\nPurpose\n\n\nVerify that user would be able to create a reading list.\n\n\n\n\n\n\nReference\n\n\nUS 2.1\n\n\n\n\n\n\n\n\nTest Case 2\n\u00b6\n\n\n\n\n\n\n\n\nItem\n\n\nDetail\n\n\n\n\n\n\n\n\n\n\nName\n\n\ntest_get_user_all_lists\n\n\n\n\n\n\nPurpose\n\n\nVerify that user would be able to get his reading lists.\n\n\n\n\n\n\nReference\n\n\nUS 2.1\n\n\n\n\n\n\n\n\nTest Case 3\n\u00b6\n\n\n\n\n\n\n\n\nItem\n\n\nDetail\n\n\n\n\n\n\n\n\n\n\nName\n\n\ntest_create_article_for_user\n\n\n\n\n\n\nPurpose\n\n\nVerify that user would be able to create an article under a personal list.\n\n\n\n\n\n\nReference\n\n\nUS 2.5\n \nUS 2.3\n \nUS 3.1\n\n\n\n\n\n\n\n\nTest Case 4\n\u00b6\n\n\n\n\n\n\n\n\nItem\n\n\nDetail\n\n\n\n\n\n\n\n\n\n\nName\n\n\ntest_delete_article_from_list\n\n\n\n\n\n\nPurpose\n\n\nVerify that user would be able to delete an article under a personal list.\n\n\n\n\n\n\nReference\n\n\nUS 3.8\n\n\n\n\n\n\n\n\nTest Case 5\n\u00b6\n\n\n\n\n\n\n\n\nItem\n\n\nDetail\n\n\n\n\n\n\n\n\n\n\nName\n\n\ntest_archive_user_list\n\n\n\n\n\n\nPurpose\n\n\nVerify that user would be able to archive a personal list.\n\n\n\n\n\n\nReference\n\n\nUS 3.9\n\n\n\n\n\n\n\n\nTest Case 6\n\u00b6\n\n\n\n\n\n\n\n\nItem\n\n\nDetail\n\n\n\n\n\n\n\n\n\n\nName\n\n\ntest_retrieve_user_list\n\n\n\n\n\n\nPurpose\n\n\nVerify that user would be able to retrieve a archived personal list.\n\n\n\n\n\n\nReference\n\n\nUS 3.10\n\n\n\n\n\n\n\n\nTest Case 7\n\u00b6\n\n\n\n\n\n\n\n\nItem\n\n\nDetail\n\n\n\n\n\n\n\n\n\n\nName\n\n\ntest_post_comment_to_article\n\n\n\n\n\n\nPurpose\n\n\nVerify that user can post comment to a article\n\n\n\n\n\n\nReference\n\n\nUS 3.2\n\n\n\n\n\n\n\n\nTest Case 8\n\u00b6\n\n\n\n\n\n\n\n\nItem\n\n\nDetail\n\n\n\n\n\n\n\n\n\n\nName\n\n\ntest_create_group\n\n\n\n\n\n\nPurpose\n\n\nVerify that user can create a reading group\n\n\n\n\n\n\nReference\n\n\nUS 2.2\n\n\n\n\n\n\n\n\nTest Case 9\n\u00b6\n\n\n\n\n\n\n\n\nItem\n\n\nDetail\n\n\n\n\n\n\n\n\n\n\nName\n\n\ntest_create_group_list\n\n\n\n\n\n\nPurpose\n\n\nVerify that user can create a list in a group\n\n\n\n\n\n\nReference\n\n\nUS 2.4\n\n\n\n\n\n\n\n\nTest Case 10\n\u00b6\n\n\n\n\n\n\n\n\nItem\n\n\nDetail\n\n\n\n\n\n\n\n\n\n\nName\n\n\ntest_create_article_for_group\n\n\n\n\n\n\nPurpose\n\n\nVerify that user can create article in a group list\n\n\n\n\n\n\nReference\n\n\nUS 2.5\n\n\n\n\n\n\n\n\nTest Case 11\n\u00b6\n\n\n\n\n\n\n\n\nItem\n\n\nDetail\n\n\n\n\n\n\n\n\n\n\nName\n\n\ntest_upvote_article\n\n\n\n\n\n\nPurpose\n\n\nVerify that user can up vote article\n\n\n\n\n\n\nReference\n\n\nUS 4.3\n\n\n\n\n\n\n\n\nTest Case 12\n\u00b6\n\n\n\n\n\n\n\n\nItem\n\n\nDetail\n\n\n\n\n\n\n\n\n\n\nName\n\n\ntest_downvote_article\n\n\n\n\n\n\nPurpose\n\n\nVerify that user can down vote article\n\n\n\n\n\n\nReference\n\n\nUS 4.3\n\n\n\n\n\n\n\n\nTest Case 13\n\u00b6\n\n\n\n\n\n\n\n\nItem\n\n\nDetail\n\n\n\n\n\n\n\n\n\n\nName\n\n\ntest_user_cannot_vote_twice\n\n\n\n\n\n\nPurpose\n\n\nVerify that user can vote twice\n\n\n\n\n\n\nReference\n\n\nUS 4.3\n\n\n\n\n\n\n\n\nTest Case 14\n\u00b6\n\n\n\n\n\n\n\n\nItem\n\n\nDetail\n\n\n\n\n\n\n\n\n\n\nName\n\n\ntest_rename_list\n\n\n\n\n\n\nPurpose\n\n\nVerify that user can rename list\n\n\n\n\n\n\nReference\n\n\nUS 3.3\n\n\n\n\n\n\n\n\nTest Case 15\n\u00b6\n\n\n\n\n\n\n\n\nItem\n\n\nDetail\n\n\n\n\n\n\n\n\n\n\nName\n\n\ntest_partition_list\n\n\n\n\n\n\nPurpose\n\n\nVerify that user can partition list\n\n\n\n\n\n\nReference\n\n\nUS 3.5\n\n\n\n\n\n\n\n\nTest Case 16\n\u00b6\n\n\n\n\n\n\n\n\nItem\n\n\nDetail\n\n\n\n\n\n\n\n\n\n\nName\n\n\ntest_merge_list\n\n\n\n\n\n\nPurpose\n\n\nVerify that user can merge list\n\n\n\n\n\n\nReference\n\n\nUS 3.4\n\n\n\n\n\n\n\n\nTest Case 17\n\u00b6\n\n\n\n\n\n\n\n\nItem\n\n\nDetail\n\n\n\n\n\n\n\n\n\n\nName\n\n\ntest_copy_move_list\n\n\n\n\n\n\nPurpose\n\n\nVerify that user can copy/move articles to another list\n\n\n\n\n\n\nReference\n\n\nUS 3.6 US 3.7\n\n\n\n\n\n\n\n\nTest Case 18\n\u00b6\n\n\n\n\n\n\n\n\nItem\n\n\nDetail\n\n\n\n\n\n\n\n\n\n\nName\n\n\ntest_share_list\n\n\n\n\n\n\nPurpose\n\n\nVerify that user can share list to group\n\n\n\n\n\n\nReference\n\n\nUS 4.2\n\n\n\n\n\n\n\n\nTest Case 19\n\u00b6\n\n\n\n\n\n\n\n\nItem\n\n\nDetail\n\n\n\n\n\n\n\n\n\n\nName\n\n\ntest_invite_member\n\n\n\n\n\n\nPurpose\n\n\nVerify that user can send invitation to group.\n\n\n\n\n\n\nReference\n\n\nUS 5.1\n\n\n\n\n\n\n\n\nTest Cases (Selenium)\n\u00b6\n\n\nStrategy\n\u00b6\n\n\nFor the frontend, we will run a local instance of the software and bypass the google login by providing it with a mock server. The automation test is using Selenium with firefox, written in python.We will test the application by checking if it is sending the right HTTP requests and displaying the right output based on the HTTP response from backend.\n\n\nUsage\n\u00b6\n\n\nBefore run the tests, make sure you have python3 with selenium and \ngeckodriver\n for firefox driver. Make sure the driver is in your PATH, e.g. place it in /usr/bin or /usr/local/bin.\nMake sure that you have already logged in to the website at least once. Make sure there's no lists in the account.\n\n\nto install selenium:\n\npip install selenium\n\n\nto run all the tests, go to the root directory and use:\n\npython ./test/test.py <username> <password>\n\n\nTest Case 1\n\u00b6\n\n\n\n\n\n\n\n\nItem\n\n\nDetail\n\n\n\n\n\n\n\n\n\n\nName\n\n\ntest_authentication\n\n\n\n\n\n\nPurpose\n\n\nVerify that the login button is clear and clickable\n\n\n\n\n\n\nReference\n\n\nUS 1\n\n\n\n\n\n\n\n\nTest Case 2\n\u00b6\n\n\n\n\n\n\n\n\nItem\n\n\nDetail\n\n\n\n\n\n\n\n\n\n\nName\n\n\ntest_create_personal_reading_list\n\n\n\n\n\n\nPurpose\n\n\nVerify that click on create list button will open a dialog\n\n\n\n\n\n\nPurpose\n\n\nVerify that click on cancel button will close the dialog\n\n\n\n\n\n\nPurpose\n\n\nVerify that click on submit without required field won't close the dialog\n\n\n\n\n\n\nPurpose\n\n\nVerify that click on submit with required field will close the dialog and a new list with correct name will show up\n\n\n\n\n\n\nReference\n\n\nUS 2.1\n\n\n\n\n\n\n\n\nTest Case 3\n\u00b6\n\n\n\n\n\n\n\n\nItem\n\n\nDetail\n\n\n\n\n\n\n\n\n\n\nName\n\n\ntest_create_group\n\n\n\n\n\n\nPurpose\n\n\nVerify that click on create group button will open a dialog\n\n\n\n\n\n\nPurpose\n\n\nVerify that click on cancel button will close the dialog\n\n\n\n\n\n\nPurpose\n\n\nVerify that click on submit without required field won't close the dialog\n\n\n\n\n\n\nPurpose\n\n\nVerify that click on submit with required field will close the dialog and a new group with correct name will show up\n\n\n\n\n\n\nReference\n\n\nUS 2.2\n\n\n\n\n\n\n\n\nTest Case 4\n\u00b6\n\n\n\n\n\n\n\n\nItem\n\n\nDetail\n\n\n\n\n\n\n\n\n\n\nName\n\n\ntest_archive_personal_reading_list\n\n\n\n\n\n\nPurpose\n\n\nVerify that archive an empty personal reading list, it will disapear from the page\n\n\n\n\n\n\nPurpose\n\n\nVerify that archive an non-empty personal reading list, it will disapear from the page\n\n\n\n\n\n\nReference\n\n\nUS 3.9\n\n\n\n\n\n\n\n\nTest Case 5\n\u00b6\n\n\n\n\n\n\n\n\nItem\n\n\nDetail\n\n\n\n\n\n\n\n\n\n\nName\n\n\ntest_create_article_for_person_list\n\n\n\n\n\n\nPurpose\n\n\nVerify that click on add article button will open a dialog\n\n\n\n\n\n\nPurpose\n\n\nVerify that click on cancel button will close the dialog\n\n\n\n\n\n\nPurpose\n\n\nVerify that click on submit without required field won't close the dialog\n\n\n\n\n\n\nPurpose\n\n\nVerify that click on submit with required field will close the dialog and a new article with correct name will show up\n\n\n\n\n\n\nPurpose\n\n\nVerify that you can add tag\n\n\n\n\n\n\nReference\n\n\nUS 2.5\n \nUS 2.3\n\n\n\n\n\n\n\n\nTest Case 6\n\u00b6\n\n\n\n\n\n\n\n\nItem\n\n\nDetail\n\n\n\n\n\n\n\n\n\n\nName\n\n\ntest_view_article_from_person_list\n\n\n\n\n\n\nPurpose\n\n\nVerify that click on details button, a dialog with correct name, descriptipn, tag and url will pop up\n\n\n\n\n\n\nPurpose\n\n\nVerify that click on cancel button will close the dialog\n\n\n\n\n\n\nReference\n\n\nUS 2.3\n\n\n\n\n\n\n\n\nTest Case 7\n\u00b6\n\n\n\n\n\n\n\n\nItem\n\n\nDetail\n\n\n\n\n\n\n\n\n\n\nName\n\n\ntest_comment_on_article_from_personal_list\n\n\n\n\n\n\nPurpose\n\n\nVerify that the comment with right conetent shows up after click on submit\n\n\n\n\n\n\nPurpose\n\n\nVerify that the comment does not show up after click on cancel\n\n\n\n\n\n\nReference\n\n\nUS 3.2\n\n\n\n\n\n\n\n\nTest Case 8\n\u00b6\n\n\n\n\n\n\n\n\nItem\n\n\nDetail\n\n\n\n\n\n\n\n\n\n\nName\n\n\ntest_rename_list\n\n\n\n\n\n\nPurpose\n\n\nVerify that the article name changed after submit\n\n\n\n\n\n\nReference\n\n\nUS 3.3\n\n\n\n\n\n\n\n\nTest Case 9\n\u00b6\n\n\n\n\n\n\n\n\nItem\n\n\nDetail\n\n\n\n\n\n\n\n\n\n\nName\n\n\ntest_partition_list\n\n\n\n\n\n\nPurpose\n\n\nVerify that the there's a new list after partition\n\n\n\n\n\n\nReference\n\n\nUS 3.5\n\n\n\n\n\n\n\n\nTest Case 10\n\u00b6\n\n\n\n\n\n\n\n\nItem\n\n\nDetail\n\n\n\n\n\n\n\n\n\n\nName\n\n\ntest_merge_list\n\n\n\n\n\n\nPurpose\n\n\nVerify that the list being merged is gone\n\n\n\n\n\n\nReference\n\n\nUS 3.4\n\n\n\n\n\n\n\n\nTest Case 11\n\u00b6\n\n\n\n\n\n\n\n\nItem\n\n\nDetail\n\n\n\n\n\n\n\n\n\n\nName\n\n\ntest_share_list\n\n\n\n\n\n\nPurpose\n\n\nVerify that the there's a new list after partition\n\n\n\n\n\n\nReference\n\n\nUS 4.2\n\n\n\n\n\n\n\n\nTest Case 12\n\u00b6\n\n\n\n\n\n\n\n\nItem\n\n\nDetail\n\n\n\n\n\n\n\n\n\n\nName\n\n\ntest_create_group_reading_list\n\n\n\n\n\n\nPurpose\n\n\nVerify that click on create list button will open a dialog\n\n\n\n\n\n\nPurpose\n\n\nVerify that click on cancel button will close the dialog\n\n\n\n\n\n\nPurpose\n\n\nVerify that click on submit without required field won't close the dialog\n\n\n\n\n\n\nPurpose\n\n\nVerify that click on submit with required field will close the dialog and a new list with correct name will show up\n\n\n\n\n\n\nReference\n\n\nUS 2.4\n\n\n\n\n\n\n\n\nTest Case 13\n\u00b6\n\n\n\n\n\n\n\n\nItem\n\n\nDetail\n\n\n\n\n\n\n\n\n\n\nName\n\n\ntest_create_article_for_group_list\n\n\n\n\n\n\nPurpose\n\n\nVerify that click on add article button will open a dialog\n\n\n\n\n\n\nPurpose\n\n\nVerify that click on cancel button will close the dialog\n\n\n\n\n\n\nPurpose\n\n\nVerify that click on submit without required field won't close the dialog\n\n\n\n\n\n\nPurpose\n\n\nVerify that click on submit with required field will close the dialog and a new article with correct name and 0 vote count will show up\n\n\n\n\n\n\nReference\n\n\nUS 2.6\n\n\n\n\n\n\n\n\nTest Case 13\n\u00b6\n\n\n\n\n\n\n\n\nItem\n\n\nDetail\n\n\n\n\n\n\n\n\n\n\nName\n\n\ntest_delete_article\n\n\n\n\n\n\nPurpose\n\n\nVerify that click on remove button will close the details dialog\n\n\n\n\n\n\nPurpose\n\n\nVerify that the article is not shown in the list\n\n\n\n\n\n\nReference\n\n\nUS 3.8\n\n\n\n\n\n\n\n\nTest Case 14\n\u00b6\n\n\n\n\n\n\n\n\nItem\n\n\nDetail\n\n\n\n\n\n\n\n\n\n\nName\n\n\ntest_vote_on_article_from_group_list\n\n\n\n\n\n\nPurpose\n\n\nVerify that you can you can only give an article (+1, 0, -1) votes\n\n\n\n\n\n\nReference\n\n\nUS 4.3\n\n\n\n\n\n\n\n\nTest Case 15\n\u00b6\n\n\n\n\n\n\n\n\nItem\n\n\nDetail\n\n\n\n\n\n\n\n\n\n\nName\n\n\ntest_retrieve_user_archived_list\n\n\n\n\n\n\nPurpose\n\n\nVerify that the archived list is back\n\n\n\n\n\n\nReference\n\n\nUS 3.10\n\n\n\n\n\n\n\n\nTest Cases (Jest/enzyme/chai)\n\u00b6\n\n\nStrategy\n\u00b6\n\n\nWe are building a SPA in 2017, with the perfect tool created by some great companies, like Facebook, Airbnb, etc. We would be able test each React component seperately instead of using Selenium for acceptance testing without knowing what exactly go wrong. We are using \nenzyme\n to render the component, \njest\n as unit test framework, and \nsinon\n to mockout the network call. We are able to determine if the component is rendered properly with the fake data we feed in there, and find out if the component will behave properly after certain event is trigger. However, with the limited amount of time, I am only able to complete a part of test cases with this approach.\nThe reason I personally pick this testing approach is:\n\n\n\n\nIt's hard to write comprehensive test cases for React app with Selenium.\n\n\nHelping us break down test cases into each single react component, more throughout than the Selenium.\n\n\nHas been proved to be the best practise for React unit testing by developers from the community, industry, etc.\n\n\nLess pain.\n\n\n\n\nUsage\n\u00b6\n\n\nAssume you have \nyarn\n install already.\n\n\nyarn run test\n\n\nSample Output\n\u00b6\n\n\nPASS  src/components/pages/CommenComponents/AppBarInvitationMenu/index.test.js\nPASS  src/components/common/ArchivedListItem/index.test.js\nPASS  src/components/pages/CommenComponents/RetrieveArchivedListDialog/index.test.js\nPASS  src/components/pages/HomePage/index.test.js\n\nTest Suites: 4 passed, 4 total\nTests:       4 passed, 4 total\nSnapshots:   0 total\nTime:        3.841s\n\n\n\n\n\nNote\n\u00b6\n\n\n\n\nMore tests will be added upon next release.",
+            "location": "/software-design/testing/", 
+            "text": "Testing\n\n\nTest Cases (Backend)\n\n\nStrategy\n\n\nFor the backend, we will have another instance of software running in a isolated docker container isolated with our production environment for unit testing. The unit test runs with pytest, a Python test framework, and it can run automatically. Since the backend essentially is providing RESTful API to the client, the way we test the API is by send HTTP request to our testing server to verify responses' status code and content. By doing so, we can easily implement new feature, refactor code, or make any other changes, then test it with existing test cases.\n\n\nUsage\n\n\nThe test cases is located under the \ntests\n folder, replace the access token with your own one.\n\n\n$ make \ntest\n\n\nSample Console Output\n\n\n==================================================== test session starts ====================================================\nplatform linux -- Python 3.5.2, pytest-3.0.6, py-1.4.32, pluggy-0.4.0\nrootdir: /home/app, inifile:\nplugins: ordering-0.4\ncollected 6 items\n\ntest/test_list.py .\ntest/test_article.py .\ntest/test_list.py ....\n\n================================================= 6 passed in 0.32 seconds ==================================================\n\n\n\n\n\nTest Case 1\n\n\n\n\n\n\n\n\nItem\n\n\nDetail\n\n\n\n\n\n\n\n\n\n\nName\n\n\ntest_create_user_list\n\n\n\n\n\n\nPurpose\n\n\nVerify that user would be able to create a reading list.\n\n\n\n\n\n\nReference\n\n\nUS 2.1\n\n\n\n\n\n\n\n\nTest Case 2\n\n\n\n\n\n\n\n\nItem\n\n\nDetail\n\n\n\n\n\n\n\n\n\n\nName\n\n\ntest_get_user_all_lists\n\n\n\n\n\n\nPurpose\n\n\nVerify that user would be able to get his reading lists.\n\n\n\n\n\n\nReference\n\n\nUS 2.1\n\n\n\n\n\n\n\n\nTest Case 3\n\n\n\n\n\n\n\n\nItem\n\n\nDetail\n\n\n\n\n\n\n\n\n\n\nName\n\n\ntest_create_article_for_user\n\n\n\n\n\n\nPurpose\n\n\nVerify that user would be able to create an article under a personal list.\n\n\n\n\n\n\nReference\n\n\nUS 2.5\n \nUS 2.3\n \nUS 3.1\n\n\n\n\n\n\n\n\nTest Case 4\n\n\n\n\n\n\n\n\nItem\n\n\nDetail\n\n\n\n\n\n\n\n\n\n\nName\n\n\ntest_delete_article_from_list\n\n\n\n\n\n\nPurpose\n\n\nVerify that user would be able to delete an article under a personal list.\n\n\n\n\n\n\nReference\n\n\nUS 3.8\n\n\n\n\n\n\n\n\nTest Case 5\n\n\n\n\n\n\n\n\nItem\n\n\nDetail\n\n\n\n\n\n\n\n\n\n\nName\n\n\ntest_archive_user_list\n\n\n\n\n\n\nPurpose\n\n\nVerify that user would be able to archive a personal list.\n\n\n\n\n\n\nReference\n\n\nUS 3.9\n\n\n\n\n\n\n\n\nTest Case 6\n\n\n\n\n\n\n\n\nItem\n\n\nDetail\n\n\n\n\n\n\n\n\n\n\nName\n\n\ntest_retrieve_user_list\n\n\n\n\n\n\nPurpose\n\n\nVerify that user would be able to retrieve a archived personal list.\n\n\n\n\n\n\nReference\n\n\nUS 3.10\n\n\n\n\n\n\n\n\nTest Case 7\n\n\n\n\n\n\n\n\nItem\n\n\nDetail\n\n\n\n\n\n\n\n\n\n\nName\n\n\ntest_post_comment_to_article\n\n\n\n\n\n\nPurpose\n\n\nVerify that user can post comment to a article\n\n\n\n\n\n\nReference\n\n\nUS 3.2\n\n\n\n\n\n\n\n\nTest Case 8\n\n\n\n\n\n\n\n\nItem\n\n\nDetail\n\n\n\n\n\n\n\n\n\n\nName\n\n\ntest_create_group\n\n\n\n\n\n\nPurpose\n\n\nVerify that user can create a reading group\n\n\n\n\n\n\nReference\n\n\nUS 2.2\n\n\n\n\n\n\n\n\nTest Case 9\n\n\n\n\n\n\n\n\nItem\n\n\nDetail\n\n\n\n\n\n\n\n\n\n\nName\n\n\ntest_create_group_list\n\n\n\n\n\n\nPurpose\n\n\nVerify that user can create a list in a group\n\n\n\n\n\n\nReference\n\n\nUS 2.4\n\n\n\n\n\n\n\n\nTest Case 10\n\n\n\n\n\n\n\n\nItem\n\n\nDetail\n\n\n\n\n\n\n\n\n\n\nName\n\n\ntest_create_article_for_group\n\n\n\n\n\n\nPurpose\n\n\nVerify that user can create article in a group list\n\n\n\n\n\n\nReference\n\n\nUS 2.5\n\n\n\n\n\n\n\n\nTest Case 11\n\n\n\n\n\n\n\n\nItem\n\n\nDetail\n\n\n\n\n\n\n\n\n\n\nName\n\n\ntest_upvote_article\n\n\n\n\n\n\nPurpose\n\n\nVerify that user can up vote article\n\n\n\n\n\n\nReference\n\n\nUS 4.3\n\n\n\n\n\n\n\n\nTest Case 12\n\n\n\n\n\n\n\n\nItem\n\n\nDetail\n\n\n\n\n\n\n\n\n\n\nName\n\n\ntest_downvote_article\n\n\n\n\n\n\nPurpose\n\n\nVerify that user can down vote article\n\n\n\n\n\n\nReference\n\n\nUS 4.3\n\n\n\n\n\n\n\n\nTest Case 13\n\n\n\n\n\n\n\n\nItem\n\n\nDetail\n\n\n\n\n\n\n\n\n\n\nName\n\n\ntest_user_cannot_vote_twice\n\n\n\n\n\n\nPurpose\n\n\nVerify that user can vote twice\n\n\n\n\n\n\nReference\n\n\nUS 4.3\n\n\n\n\n\n\n\n\nTest Case 14\n\n\n\n\n\n\n\n\nItem\n\n\nDetail\n\n\n\n\n\n\n\n\n\n\nName\n\n\ntest_rename_list\n\n\n\n\n\n\nPurpose\n\n\nVerify that user can rename list\n\n\n\n\n\n\nReference\n\n\nUS 3.3\n\n\n\n\n\n\n\n\nTest Case 15\n\n\n\n\n\n\n\n\nItem\n\n\nDetail\n\n\n\n\n\n\n\n\n\n\nName\n\n\ntest_partition_list\n\n\n\n\n\n\nPurpose\n\n\nVerify that user can partition list\n\n\n\n\n\n\nReference\n\n\nUS 3.5\n\n\n\n\n\n\n\n\nTest Case 16\n\n\n\n\n\n\n\n\nItem\n\n\nDetail\n\n\n\n\n\n\n\n\n\n\nName\n\n\ntest_merge_list\n\n\n\n\n\n\nPurpose\n\n\nVerify that user can merge list\n\n\n\n\n\n\nReference\n\n\nUS 3.4\n\n\n\n\n\n\n\n\nTest Case 17\n\n\n\n\n\n\n\n\nItem\n\n\nDetail\n\n\n\n\n\n\n\n\n\n\nName\n\n\ntest_copy_move_list\n\n\n\n\n\n\nPurpose\n\n\nVerify that user can copy/move articles to another list\n\n\n\n\n\n\nReference\n\n\nUS 3.6 US 3.7\n\n\n\n\n\n\n\n\nTest Case 18\n\n\n\n\n\n\n\n\nItem\n\n\nDetail\n\n\n\n\n\n\n\n\n\n\nName\n\n\ntest_share_list\n\n\n\n\n\n\nPurpose\n\n\nVerify that user can share list to group\n\n\n\n\n\n\nReference\n\n\nUS 4.2\n\n\n\n\n\n\n\n\nTest Case 19\n\n\n\n\n\n\n\n\nItem\n\n\nDetail\n\n\n\n\n\n\n\n\n\n\nName\n\n\ntest_invite_member\n\n\n\n\n\n\nPurpose\n\n\nVerify that user can send invitation to group.\n\n\n\n\n\n\nReference\n\n\nUS 5.1\n\n\n\n\n\n\n\n\nTest Cases (Selenium)\n\n\nStrategy\n\n\nFor the frontend, we will run a local instance of the software and bypass the google login by providing it with a mock server. The automation test is using Selenium with firefox, written in python.We will test the application by checking if it is sending the right HTTP requests and displaying the right output based on the HTTP response from backend.\n\n\nUsage\n\n\nBefore run the tests, make sure you have python3 with selenium and \ngeckodriver\n for firefox driver. Make sure the driver is in your PATH, e.g. place it in /usr/bin or /usr/local/bin.\nMake sure that you have already logged in to the website at least once. Make sure there's no lists in the account.\n\n\nto install selenium:\n\npip install selenium\n\n\nto run all the tests, go to the root directory and use:\n\npython ./test/test.py \nusername\n \npassword\n\n\nTest Case 1\n\n\n\n\n\n\n\n\nItem\n\n\nDetail\n\n\n\n\n\n\n\n\n\n\nName\n\n\ntest_authentication\n\n\n\n\n\n\nPurpose\n\n\nVerify that the login button is clear and clickable\n\n\n\n\n\n\nReference\n\n\nUS 1\n\n\n\n\n\n\n\n\nTest Case 2\n\n\n\n\n\n\n\n\nItem\n\n\nDetail\n\n\n\n\n\n\n\n\n\n\nName\n\n\ntest_create_personal_reading_list\n\n\n\n\n\n\nPurpose\n\n\nVerify that click on create list button will open a dialog\n\n\n\n\n\n\nPurpose\n\n\nVerify that click on cancel button will close the dialog\n\n\n\n\n\n\nPurpose\n\n\nVerify that click on submit without required field won't close the dialog\n\n\n\n\n\n\nPurpose\n\n\nVerify that click on submit with required field will close the dialog and a new list with correct name will show up\n\n\n\n\n\n\nReference\n\n\nUS 2.1\n\n\n\n\n\n\n\n\nTest Case 3\n\n\n\n\n\n\n\n\nItem\n\n\nDetail\n\n\n\n\n\n\n\n\n\n\nName\n\n\ntest_create_group\n\n\n\n\n\n\nPurpose\n\n\nVerify that click on create group button will open a dialog\n\n\n\n\n\n\nPurpose\n\n\nVerify that click on cancel button will close the dialog\n\n\n\n\n\n\nPurpose\n\n\nVerify that click on submit without required field won't close the dialog\n\n\n\n\n\n\nPurpose\n\n\nVerify that click on submit with required field will close the dialog and a new group with correct name will show up\n\n\n\n\n\n\nReference\n\n\nUS 2.2\n\n\n\n\n\n\n\n\nTest Case 4\n\n\n\n\n\n\n\n\nItem\n\n\nDetail\n\n\n\n\n\n\n\n\n\n\nName\n\n\ntest_archive_personal_reading_list\n\n\n\n\n\n\nPurpose\n\n\nVerify that archive an empty personal reading list, it will disapear from the page\n\n\n\n\n\n\nPurpose\n\n\nVerify that archive an non-empty personal reading list, it will disapear from the page\n\n\n\n\n\n\nReference\n\n\nUS 3.9\n\n\n\n\n\n\n\n\nTest Case 5\n\n\n\n\n\n\n\n\nItem\n\n\nDetail\n\n\n\n\n\n\n\n\n\n\nName\n\n\ntest_create_article_for_person_list\n\n\n\n\n\n\nPurpose\n\n\nVerify that click on add article button will open a dialog\n\n\n\n\n\n\nPurpose\n\n\nVerify that click on cancel button will close the dialog\n\n\n\n\n\n\nPurpose\n\n\nVerify that click on submit without required field won't close the dialog\n\n\n\n\n\n\nPurpose\n\n\nVerify that click on submit with required field will close the dialog and a new article with correct name will show up\n\n\n\n\n\n\nPurpose\n\n\nVerify that you can add tag\n\n\n\n\n\n\nReference\n\n\nUS 2.5\n \nUS 2.3\n\n\n\n\n\n\n\n\nTest Case 6\n\n\n\n\n\n\n\n\nItem\n\n\nDetail\n\n\n\n\n\n\n\n\n\n\nName\n\n\ntest_view_article_from_person_list\n\n\n\n\n\n\nPurpose\n\n\nVerify that click on details button, a dialog with correct name, descriptipn, tag and url will pop up\n\n\n\n\n\n\nPurpose\n\n\nVerify that click on cancel button will close the dialog\n\n\n\n\n\n\nReference\n\n\nUS 2.3\n\n\n\n\n\n\n\n\nTest Case 7\n\n\n\n\n\n\n\n\nItem\n\n\nDetail\n\n\n\n\n\n\n\n\n\n\nName\n\n\ntest_comment_on_article_from_personal_list\n\n\n\n\n\n\nPurpose\n\n\nVerify that the comment with right conetent shows up after click on submit\n\n\n\n\n\n\nPurpose\n\n\nVerify that the comment does not show up after click on cancel\n\n\n\n\n\n\nReference\n\n\nUS 3.2\n\n\n\n\n\n\n\n\nTest Case 8\n\n\n\n\n\n\n\n\nItem\n\n\nDetail\n\n\n\n\n\n\n\n\n\n\nName\n\n\ntest_rename_list\n\n\n\n\n\n\nPurpose\n\n\nVerify that the article name changed after submit\n\n\n\n\n\n\nReference\n\n\nUS 3.3\n\n\n\n\n\n\n\n\nTest Case 9\n\n\n\n\n\n\n\n\nItem\n\n\nDetail\n\n\n\n\n\n\n\n\n\n\nName\n\n\ntest_partition_list\n\n\n\n\n\n\nPurpose\n\n\nVerify that the there's a new list after partition\n\n\n\n\n\n\nReference\n\n\nUS 3.5\n\n\n\n\n\n\n\n\nTest Case 10\n\n\n\n\n\n\n\n\nItem\n\n\nDetail\n\n\n\n\n\n\n\n\n\n\nName\n\n\ntest_merge_list\n\n\n\n\n\n\nPurpose\n\n\nVerify that the list being merged is gone\n\n\n\n\n\n\nReference\n\n\nUS 3.4\n\n\n\n\n\n\n\n\nTest Case 11\n\n\n\n\n\n\n\n\nItem\n\n\nDetail\n\n\n\n\n\n\n\n\n\n\nName\n\n\ntest_share_list\n\n\n\n\n\n\nPurpose\n\n\nVerify that the there's a new list after partition\n\n\n\n\n\n\nReference\n\n\nUS 4.2\n\n\n\n\n\n\n\n\nTest Case 12\n\n\n\n\n\n\n\n\nItem\n\n\nDetail\n\n\n\n\n\n\n\n\n\n\nName\n\n\ntest_create_group_reading_list\n\n\n\n\n\n\nPurpose\n\n\nVerify that click on create list button will open a dialog\n\n\n\n\n\n\nPurpose\n\n\nVerify that click on cancel button will close the dialog\n\n\n\n\n\n\nPurpose\n\n\nVerify that click on submit without required field won't close the dialog\n\n\n\n\n\n\nPurpose\n\n\nVerify that click on submit with required field will close the dialog and a new list with correct name will show up\n\n\n\n\n\n\nReference\n\n\nUS 2.4\n\n\n\n\n\n\n\n\nTest Case 13\n\n\n\n\n\n\n\n\nItem\n\n\nDetail\n\n\n\n\n\n\n\n\n\n\nName\n\n\ntest_create_article_for_group_list\n\n\n\n\n\n\nPurpose\n\n\nVerify that click on add article button will open a dialog\n\n\n\n\n\n\nPurpose\n\n\nVerify that click on cancel button will close the dialog\n\n\n\n\n\n\nPurpose\n\n\nVerify that click on submit without required field won't close the dialog\n\n\n\n\n\n\nPurpose\n\n\nVerify that click on submit with required field will close the dialog and a new article with correct name and 0 vote count will show up\n\n\n\n\n\n\nReference\n\n\nUS 2.6\n\n\n\n\n\n\n\n\nTest Case 13\n\n\n\n\n\n\n\n\nItem\n\n\nDetail\n\n\n\n\n\n\n\n\n\n\nName\n\n\ntest_delete_article\n\n\n\n\n\n\nPurpose\n\n\nVerify that click on remove button will close the details dialog\n\n\n\n\n\n\nPurpose\n\n\nVerify that the article is not shown in the list\n\n\n\n\n\n\nReference\n\n\nUS 3.8\n\n\n\n\n\n\n\n\nTest Case 14\n\n\n\n\n\n\n\n\nItem\n\n\nDetail\n\n\n\n\n\n\n\n\n\n\nName\n\n\ntest_vote_on_article_from_group_list\n\n\n\n\n\n\nPurpose\n\n\nVerify that you can you can only give an article (+1, 0, -1) votes\n\n\n\n\n\n\nReference\n\n\nUS 4.3\n\n\n\n\n\n\n\n\nTest Case 15\n\n\n\n\n\n\n\n\nItem\n\n\nDetail\n\n\n\n\n\n\n\n\n\n\nName\n\n\ntest_retrieve_user_archived_list\n\n\n\n\n\n\nPurpose\n\n\nVerify that the archived list is back\n\n\n\n\n\n\nReference\n\n\nUS 3.10\n\n\n\n\n\n\n\n\nTest Cases (Jest/enzyme/chai)\n\n\nStrategy\n\n\nWe are building a SPA in 2017, with the perfect tool created by some great companies, like Facebook, Airbnb, etc. We would be able test each React component seperately instead of using Selenium for acceptance testing without knowing what exactly go wrong. We are using \nenzyme\n to render the component, \njest\n as unit test framework, and \nsinon\n to mockout the network call. We are able to determine if the component is rendered properly with the fake data we feed in there, and find out if the component will behave properly after certain event is trigger. However, with the limited amount of time, I am only able to complete a part of test cases with this approach.\nThe reason I personally pick this testing approach is:\n\n\n\n\nIt's hard to write comprehensive test cases for React app with Selenium.\n\n\nHelping us break down test cases into each single react component, more throughout than the Selenium.\n\n\nHas been proved to be the best practise for React unit testing by developers from the community, industry, etc.\n\n\nLess pain.\n\n\n\n\nUsage\n\n\nAssume you have \nyarn\n install already.\n\n\nyarn run test\n\n\nSample Output\n\n\nPASS  src/components/pages/CommenComponents/AppBarInvitationMenu/index.test.js\nPASS  src/components/common/ArchivedListItem/index.test.js\nPASS  src/components/pages/CommenComponents/RetrieveArchivedListDialog/index.test.js\nPASS  src/components/pages/HomePage/index.test.js\n\nTest Suites: 4 passed, 4 total\nTests:       4 passed, 4 total\nSnapshots:   0 total\nTime:        3.841s\n\n\n\n\n\nNote\n\n\n\n\nMore tests will be added upon next release.", 
             "title": "Testing"
-        },
+        }, 
         {
-            "location": "/software-design/testing/#testing",
-            "text": "",
+            "location": "/software-design/testing/#testing", 
+            "text": "", 
             "title": "Testing"
-        },
+        }, 
         {
-            "location": "/software-design/testing/#test-cases-backend",
-            "text": "",
+            "location": "/software-design/testing/#test-cases-backend", 
+            "text": "", 
             "title": "Test Cases (Backend)"
-        },
+        }, 
         {
-            "location": "/software-design/testing/#strategy",
-            "text": "For the backend, we will have another instance of software running in a isolated docker container isolated with our production environment for unit testing. The unit test runs with pytest, a Python test framework, and it can run automatically. Since the backend essentially is providing RESTful API to the client, the way we test the API is by send HTTP request to our testing server to verify responses' status code and content. By doing so, we can easily implement new feature, refactor code, or make any other changes, then test it with existing test cases.",
+            "location": "/software-design/testing/#strategy", 
+            "text": "For the backend, we will have another instance of software running in a isolated docker container isolated with our production environment for unit testing. The unit test runs with pytest, a Python test framework, and it can run automatically. Since the backend essentially is providing RESTful API to the client, the way we test the API is by send HTTP request to our testing server to verify responses' status code and content. By doing so, we can easily implement new feature, refactor code, or make any other changes, then test it with existing test cases.", 
             "title": "Strategy"
-        },
+        }, 
         {
-            "location": "/software-design/testing/#usage",
-            "text": "The test cases is located under the  tests  folder, replace the access token with your own one.  $ make  test",
+            "location": "/software-design/testing/#usage", 
+            "text": "The test cases is located under the  tests  folder, replace the access token with your own one.  $ make  test", 
             "title": "Usage"
-        },
+        }, 
         {
-            "location": "/software-design/testing/#sample-console-output",
-            "text": "==================================================== test session starts ====================================================\nplatform linux -- Python 3.5.2, pytest-3.0.6, py-1.4.32, pluggy-0.4.0\nrootdir: /home/app, inifile:\nplugins: ordering-0.4\ncollected 6 items\n\ntest/test_list.py .\ntest/test_article.py .\ntest/test_list.py ....\n\n================================================= 6 passed in 0.32 seconds ==================================================",
+            "location": "/software-design/testing/#sample-console-output", 
+            "text": "==================================================== test session starts ====================================================\nplatform linux -- Python 3.5.2, pytest-3.0.6, py-1.4.32, pluggy-0.4.0\nrootdir: /home/app, inifile:\nplugins: ordering-0.4\ncollected 6 items\n\ntest/test_list.py .\ntest/test_article.py .\ntest/test_list.py ....\n\n================================================= 6 passed in 0.32 seconds ==================================================", 
             "title": "Sample Console Output"
-        },
+        }, 
         {
-            "location": "/software-design/testing/#test-case-1",
-            "text": "Item  Detail      Name  test_create_user_list    Purpose  Verify that user would be able to create a reading list.    Reference  US 2.1",
+            "location": "/software-design/testing/#test-case-1", 
+            "text": "Item  Detail      Name  test_create_user_list    Purpose  Verify that user would be able to create a reading list.    Reference  US 2.1", 
             "title": "Test Case 1"
-        },
+        }, 
         {
-            "location": "/software-design/testing/#test-case-2",
-            "text": "Item  Detail      Name  test_get_user_all_lists    Purpose  Verify that user would be able to get his reading lists.    Reference  US 2.1",
+            "location": "/software-design/testing/#test-case-2", 
+            "text": "Item  Detail      Name  test_get_user_all_lists    Purpose  Verify that user would be able to get his reading lists.    Reference  US 2.1", 
             "title": "Test Case 2"
-        },
+        }, 
         {
-            "location": "/software-design/testing/#test-case-3",
-            "text": "Item  Detail      Name  test_create_article_for_user    Purpose  Verify that user would be able to create an article under a personal list.    Reference  US 2.5   US 2.3   US 3.1",
+            "location": "/software-design/testing/#test-case-3", 
+            "text": "Item  Detail      Name  test_create_article_for_user    Purpose  Verify that user would be able to create an article under a personal list.    Reference  US 2.5   US 2.3   US 3.1", 
             "title": "Test Case 3"
-        },
+        }, 
         {
-            "location": "/software-design/testing/#test-case-4",
-            "text": "Item  Detail      Name  test_delete_article_from_list    Purpose  Verify that user would be able to delete an article under a personal list.    Reference  US 3.8",
+            "location": "/software-design/testing/#test-case-4", 
+            "text": "Item  Detail      Name  test_delete_article_from_list    Purpose  Verify that user would be able to delete an article under a personal list.    Reference  US 3.8", 
             "title": "Test Case 4"
-        },
+        }, 
         {
-            "location": "/software-design/testing/#test-case-5",
-            "text": "Item  Detail      Name  test_archive_user_list    Purpose  Verify that user would be able to archive a personal list.    Reference  US 3.9",
+            "location": "/software-design/testing/#test-case-5", 
+            "text": "Item  Detail      Name  test_archive_user_list    Purpose  Verify that user would be able to archive a personal list.    Reference  US 3.9", 
             "title": "Test Case 5"
-        },
+        }, 
         {
-            "location": "/software-design/testing/#test-case-6",
-            "text": "Item  Detail      Name  test_retrieve_user_list    Purpose  Verify that user would be able to retrieve a archived personal list.    Reference  US 3.10",
+            "location": "/software-design/testing/#test-case-6", 
+            "text": "Item  Detail      Name  test_retrieve_user_list    Purpose  Verify that user would be able to retrieve a archived personal list.    Reference  US 3.10", 
             "title": "Test Case 6"
-        },
+        }, 
         {
-            "location": "/software-design/testing/#test-case-7",
-            "text": "Item  Detail      Name  test_post_comment_to_article    Purpose  Verify that user can post comment to a article    Reference  US 3.2",
+            "location": "/software-design/testing/#test-case-7", 
+            "text": "Item  Detail      Name  test_post_comment_to_article    Purpose  Verify that user can post comment to a article    Reference  US 3.2", 
             "title": "Test Case 7"
-        },
+        }, 
         {
-            "location": "/software-design/testing/#test-case-8",
-            "text": "Item  Detail      Name  test_create_group    Purpose  Verify that user can create a reading group    Reference  US 2.2",
+            "location": "/software-design/testing/#test-case-8", 
+            "text": "Item  Detail      Name  test_create_group    Purpose  Verify that user can create a reading group    Reference  US 2.2", 
             "title": "Test Case 8"
-        },
+        }, 
         {
-            "location": "/software-design/testing/#test-case-9",
-            "text": "Item  Detail      Name  test_create_group_list    Purpose  Verify that user can create a list in a group    Reference  US 2.4",
+            "location": "/software-design/testing/#test-case-9", 
+            "text": "Item  Detail      Name  test_create_group_list    Purpose  Verify that user can create a list in a group    Reference  US 2.4", 
             "title": "Test Case 9"
-        },
+        }, 
         {
-            "location": "/software-design/testing/#test-case-10",
-            "text": "Item  Detail      Name  test_create_article_for_group    Purpose  Verify that user can create article in a group list    Reference  US 2.5",
+            "location": "/software-design/testing/#test-case-10", 
+            "text": "Item  Detail      Name  test_create_article_for_group    Purpose  Verify that user can create article in a group list    Reference  US 2.5", 
             "title": "Test Case 10"
-        },
+        }, 
         {
-            "location": "/software-design/testing/#test-case-11",
-            "text": "Item  Detail      Name  test_upvote_article    Purpose  Verify that user can up vote article    Reference  US 4.3",
+            "location": "/software-design/testing/#test-case-11", 
+            "text": "Item  Detail      Name  test_upvote_article    Purpose  Verify that user can up vote article    Reference  US 4.3", 
             "title": "Test Case 11"
-        },
+        }, 
         {
-            "location": "/software-design/testing/#test-case-12",
-            "text": "Item  Detail      Name  test_downvote_article    Purpose  Verify that user can down vote article    Reference  US 4.3",
+            "location": "/software-design/testing/#test-case-12", 
+            "text": "Item  Detail      Name  test_downvote_article    Purpose  Verify that user can down vote article    Reference  US 4.3", 
             "title": "Test Case 12"
-        },
+        }, 
         {
-            "location": "/software-design/testing/#test-case-13",
-            "text": "Item  Detail      Name  test_user_cannot_vote_twice    Purpose  Verify that user can vote twice    Reference  US 4.3",
+            "location": "/software-design/testing/#test-case-13", 
+            "text": "Item  Detail      Name  test_user_cannot_vote_twice    Purpose  Verify that user can vote twice    Reference  US 4.3", 
             "title": "Test Case 13"
-        },
+        }, 
         {
-            "location": "/software-design/testing/#test-case-14",
-            "text": "Item  Detail      Name  test_rename_list    Purpose  Verify that user can rename list    Reference  US 3.3",
+            "location": "/software-design/testing/#test-case-14", 
+            "text": "Item  Detail      Name  test_rename_list    Purpose  Verify that user can rename list    Reference  US 3.3", 
             "title": "Test Case 14"
-        },
+        }, 
         {
-            "location": "/software-design/testing/#test-case-15",
-            "text": "Item  Detail      Name  test_partition_list    Purpose  Verify that user can partition list    Reference  US 3.5",
+            "location": "/software-design/testing/#test-case-15", 
+            "text": "Item  Detail      Name  test_partition_list    Purpose  Verify that user can partition list    Reference  US 3.5", 
             "title": "Test Case 15"
-        },
+        }, 
         {
-            "location": "/software-design/testing/#test-case-16",
-            "text": "Item  Detail      Name  test_merge_list    Purpose  Verify that user can merge list    Reference  US 3.4",
+            "location": "/software-design/testing/#test-case-16", 
+            "text": "Item  Detail      Name  test_merge_list    Purpose  Verify that user can merge list    Reference  US 3.4", 
             "title": "Test Case 16"
-        },
+        }, 
         {
-            "location": "/software-design/testing/#test-case-17",
-            "text": "Item  Detail      Name  test_copy_move_list    Purpose  Verify that user can copy/move articles to another list    Reference  US 3.6 US 3.7",
+            "location": "/software-design/testing/#test-case-17", 
+            "text": "Item  Detail      Name  test_copy_move_list    Purpose  Verify that user can copy/move articles to another list    Reference  US 3.6 US 3.7", 
             "title": "Test Case 17"
-        },
+        }, 
         {
-            "location": "/software-design/testing/#test-case-18",
-            "text": "Item  Detail      Name  test_share_list    Purpose  Verify that user can share list to group    Reference  US 4.2",
+            "location": "/software-design/testing/#test-case-18", 
+            "text": "Item  Detail      Name  test_share_list    Purpose  Verify that user can share list to group    Reference  US 4.2", 
             "title": "Test Case 18"
-        },
+        }, 
         {
-            "location": "/software-design/testing/#test-case-19",
-            "text": "Item  Detail      Name  test_invite_member    Purpose  Verify that user can send invitation to group.    Reference  US 5.1",
+            "location": "/software-design/testing/#test-case-19", 
+            "text": "Item  Detail      Name  test_invite_member    Purpose  Verify that user can send invitation to group.    Reference  US 5.1", 
             "title": "Test Case 19"
-        },
+        }, 
         {
-            "location": "/software-design/testing/#test-cases-selenium",
-            "text": "",
+            "location": "/software-design/testing/#test-cases-selenium", 
+            "text": "", 
             "title": "Test Cases (Selenium)"
-        },
+        }, 
         {
-            "location": "/software-design/testing/#strategy_1",
-            "text": "For the frontend, we will run a local instance of the software and bypass the google login by providing it with a mock server. The automation test is using Selenium with firefox, written in python.We will test the application by checking if it is sending the right HTTP requests and displaying the right output based on the HTTP response from backend.",
+            "location": "/software-design/testing/#strategy_1", 
+            "text": "For the frontend, we will run a local instance of the software and bypass the google login by providing it with a mock server. The automation test is using Selenium with firefox, written in python.We will test the application by checking if it is sending the right HTTP requests and displaying the right output based on the HTTP response from backend.", 
             "title": "Strategy"
-        },
+        }, 
         {
-            "location": "/software-design/testing/#usage_1",
-            "text": "Before run the tests, make sure you have python3 with selenium and  geckodriver  for firefox driver. Make sure the driver is in your PATH, e.g. place it in /usr/bin or /usr/local/bin.\nMake sure that you have already logged in to the website at least once. Make sure there's no lists in the account.  to install selenium: pip install selenium  to run all the tests, go to the root directory and use: python ./test/test.py <username> <password>",
+            "location": "/software-design/testing/#usage_1", 
+            "text": "Before run the tests, make sure you have python3 with selenium and  geckodriver  for firefox driver. Make sure the driver is in your PATH, e.g. place it in /usr/bin or /usr/local/bin.\nMake sure that you have already logged in to the website at least once. Make sure there's no lists in the account.  to install selenium: pip install selenium  to run all the tests, go to the root directory and use: python ./test/test.py  username   password", 
             "title": "Usage"
-        },
+        }, 
         {
-            "location": "/software-design/testing/#test-case-1_1",
-            "text": "Item  Detail      Name  test_authentication    Purpose  Verify that the login button is clear and clickable    Reference  US 1",
+            "location": "/software-design/testing/#test-case-1_1", 
+            "text": "Item  Detail      Name  test_authentication    Purpose  Verify that the login button is clear and clickable    Reference  US 1", 
             "title": "Test Case 1"
-        },
+        }, 
         {
-            "location": "/software-design/testing/#test-case-2_1",
-            "text": "Item  Detail      Name  test_create_personal_reading_list    Purpose  Verify that click on create list button will open a dialog    Purpose  Verify that click on cancel button will close the dialog    Purpose  Verify that click on submit without required field won't close the dialog    Purpose  Verify that click on submit with required field will close the dialog and a new list with correct name will show up    Reference  US 2.1",
+            "location": "/software-design/testing/#test-case-2_1", 
+            "text": "Item  Detail      Name  test_create_personal_reading_list    Purpose  Verify that click on create list button will open a dialog    Purpose  Verify that click on cancel button will close the dialog    Purpose  Verify that click on submit without required field won't close the dialog    Purpose  Verify that click on submit with required field will close the dialog and a new list with correct name will show up    Reference  US 2.1", 
             "title": "Test Case 2"
-        },
+        }, 
         {
-            "location": "/software-design/testing/#test-case-3_1",
-            "text": "Item  Detail      Name  test_create_group    Purpose  Verify that click on create group button will open a dialog    Purpose  Verify that click on cancel button will close the dialog    Purpose  Verify that click on submit without required field won't close the dialog    Purpose  Verify that click on submit with required field will close the dialog and a new group with correct name will show up    Reference  US 2.2",
+            "location": "/software-design/testing/#test-case-3_1", 
+            "text": "Item  Detail      Name  test_create_group    Purpose  Verify that click on create group button will open a dialog    Purpose  Verify that click on cancel button will close the dialog    Purpose  Verify that click on submit without required field won't close the dialog    Purpose  Verify that click on submit with required field will close the dialog and a new group with correct name will show up    Reference  US 2.2", 
             "title": "Test Case 3"
-        },
+        }, 
         {
-            "location": "/software-design/testing/#test-case-4_1",
-            "text": "Item  Detail      Name  test_archive_personal_reading_list    Purpose  Verify that archive an empty personal reading list, it will disapear from the page    Purpose  Verify that archive an non-empty personal reading list, it will disapear from the page    Reference  US 3.9",
+            "location": "/software-design/testing/#test-case-4_1", 
+            "text": "Item  Detail      Name  test_archive_personal_reading_list    Purpose  Verify that archive an empty personal reading list, it will disapear from the page    Purpose  Verify that archive an non-empty personal reading list, it will disapear from the page    Reference  US 3.9", 
             "title": "Test Case 4"
-        },
+        }, 
         {
-            "location": "/software-design/testing/#test-case-5_1",
-            "text": "Item  Detail      Name  test_create_article_for_person_list    Purpose  Verify that click on add article button will open a dialog    Purpose  Verify that click on cancel button will close the dialog    Purpose  Verify that click on submit without required field won't close the dialog    Purpose  Verify that click on submit with required field will close the dialog and a new article with correct name will show up    Purpose  Verify that you can add tag    Reference  US 2.5   US 2.3",
+            "location": "/software-design/testing/#test-case-5_1", 
+            "text": "Item  Detail      Name  test_create_article_for_person_list    Purpose  Verify that click on add article button will open a dialog    Purpose  Verify that click on cancel button will close the dialog    Purpose  Verify that click on submit without required field won't close the dialog    Purpose  Verify that click on submit with required field will close the dialog and a new article with correct name will show up    Purpose  Verify that you can add tag    Reference  US 2.5   US 2.3", 
             "title": "Test Case 5"
-        },
+        }, 
         {
-            "location": "/software-design/testing/#test-case-6_1",
-            "text": "Item  Detail      Name  test_view_article_from_person_list    Purpose  Verify that click on details button, a dialog with correct name, descriptipn, tag and url will pop up    Purpose  Verify that click on cancel button will close the dialog    Reference  US 2.3",
+            "location": "/software-design/testing/#test-case-6_1", 
+            "text": "Item  Detail      Name  test_view_article_from_person_list    Purpose  Verify that click on details button, a dialog with correct name, descriptipn, tag and url will pop up    Purpose  Verify that click on cancel button will close the dialog    Reference  US 2.3", 
             "title": "Test Case 6"
-        },
+        }, 
         {
-            "location": "/software-design/testing/#test-case-7_1",
-            "text": "Item  Detail      Name  test_comment_on_article_from_personal_list    Purpose  Verify that the comment with right conetent shows up after click on submit    Purpose  Verify that the comment does not show up after click on cancel    Reference  US 3.2",
+            "location": "/software-design/testing/#test-case-7_1", 
+            "text": "Item  Detail      Name  test_comment_on_article_from_personal_list    Purpose  Verify that the comment with right conetent shows up after click on submit    Purpose  Verify that the comment does not show up after click on cancel    Reference  US 3.2", 
             "title": "Test Case 7"
-        },
+        }, 
         {
-            "location": "/software-design/testing/#test-case-8_1",
-            "text": "Item  Detail      Name  test_rename_list    Purpose  Verify that the article name changed after submit    Reference  US 3.3",
+            "location": "/software-design/testing/#test-case-8_1", 
+            "text": "Item  Detail      Name  test_rename_list    Purpose  Verify that the article name changed after submit    Reference  US 3.3", 
             "title": "Test Case 8"
-        },
+        }, 
         {
-            "location": "/software-design/testing/#test-case-9_1",
-            "text": "Item  Detail      Name  test_partition_list    Purpose  Verify that the there's a new list after partition    Reference  US 3.5",
+            "location": "/software-design/testing/#test-case-9_1", 
+            "text": "Item  Detail      Name  test_partition_list    Purpose  Verify that the there's a new list after partition    Reference  US 3.5", 
             "title": "Test Case 9"
-        },
+        }, 
         {
-            "location": "/software-design/testing/#test-case-10_1",
-            "text": "Item  Detail      Name  test_merge_list    Purpose  Verify that the list being merged is gone    Reference  US 3.4",
+            "location": "/software-design/testing/#test-case-10_1", 
+            "text": "Item  Detail      Name  test_merge_list    Purpose  Verify that the list being merged is gone    Reference  US 3.4", 
             "title": "Test Case 10"
-        },
+        }, 
         {
-            "location": "/software-design/testing/#test-case-11_1",
-            "text": "Item  Detail      Name  test_share_list    Purpose  Verify that the there's a new list after partition    Reference  US 4.2",
+            "location": "/software-design/testing/#test-case-11_1", 
+            "text": "Item  Detail      Name  test_share_list    Purpose  Verify that the there's a new list after partition    Reference  US 4.2", 
             "title": "Test Case 11"
-        },
+        }, 
         {
-            "location": "/software-design/testing/#test-case-12_1",
-            "text": "Item  Detail      Name  test_create_group_reading_list    Purpose  Verify that click on create list button will open a dialog    Purpose  Verify that click on cancel button will close the dialog    Purpose  Verify that click on submit without required field won't close the dialog    Purpose  Verify that click on submit with required field will close the dialog and a new list with correct name will show up    Reference  US 2.4",
+            "location": "/software-design/testing/#test-case-12_1", 
+            "text": "Item  Detail      Name  test_create_group_reading_list    Purpose  Verify that click on create list button will open a dialog    Purpose  Verify that click on cancel button will close the dialog    Purpose  Verify that click on submit without required field won't close the dialog    Purpose  Verify that click on submit with required field will close the dialog and a new list with correct name will show up    Reference  US 2.4", 
             "title": "Test Case 12"
-        },
+        }, 
         {
-            "location": "/software-design/testing/#test-case-13_1",
-            "text": "Item  Detail      Name  test_create_article_for_group_list    Purpose  Verify that click on add article button will open a dialog    Purpose  Verify that click on cancel button will close the dialog    Purpose  Verify that click on submit without required field won't close the dialog    Purpose  Verify that click on submit with required field will close the dialog and a new article with correct name and 0 vote count will show up    Reference  US 2.6",
+            "location": "/software-design/testing/#test-case-13_1", 
+            "text": "Item  Detail      Name  test_create_article_for_group_list    Purpose  Verify that click on add article button will open a dialog    Purpose  Verify that click on cancel button will close the dialog    Purpose  Verify that click on submit without required field won't close the dialog    Purpose  Verify that click on submit with required field will close the dialog and a new article with correct name and 0 vote count will show up    Reference  US 2.6", 
             "title": "Test Case 13"
-        },
+        }, 
         {
-            "location": "/software-design/testing/#test-case-13_2",
-            "text": "Item  Detail      Name  test_delete_article    Purpose  Verify that click on remove button will close the details dialog    Purpose  Verify that the article is not shown in the list    Reference  US 3.8",
+            "location": "/software-design/testing/#test-case-13_2", 
+            "text": "Item  Detail      Name  test_delete_article    Purpose  Verify that click on remove button will close the details dialog    Purpose  Verify that the article is not shown in the list    Reference  US 3.8", 
             "title": "Test Case 13"
-        },
+        }, 
         {
-            "location": "/software-design/testing/#test-case-14_1",
-            "text": "Item  Detail      Name  test_vote_on_article_from_group_list    Purpose  Verify that you can you can only give an article (+1, 0, -1) votes    Reference  US 4.3",
+            "location": "/software-design/testing/#test-case-14_1", 
+            "text": "Item  Detail      Name  test_vote_on_article_from_group_list    Purpose  Verify that you can you can only give an article (+1, 0, -1) votes    Reference  US 4.3", 
             "title": "Test Case 14"
-        },
+        }, 
         {
-            "location": "/software-design/testing/#test-case-15_1",
-            "text": "Item  Detail      Name  test_retrieve_user_archived_list    Purpose  Verify that the archived list is back    Reference  US 3.10",
+            "location": "/software-design/testing/#test-case-15_1", 
+            "text": "Item  Detail      Name  test_retrieve_user_archived_list    Purpose  Verify that the archived list is back    Reference  US 3.10", 
             "title": "Test Case 15"
-        },
+        }, 
         {
-            "location": "/software-design/testing/#test-cases-jestenzymechai",
-            "text": "",
+            "location": "/software-design/testing/#test-cases-jestenzymechai", 
+            "text": "", 
             "title": "Test Cases (Jest/enzyme/chai)"
-        },
+        }, 
         {
-            "location": "/software-design/testing/#strategy_2",
-            "text": "We are building a SPA in 2017, with the perfect tool created by some great companies, like Facebook, Airbnb, etc. We would be able test each React component seperately instead of using Selenium for acceptance testing without knowing what exactly go wrong. We are using  enzyme  to render the component,  jest  as unit test framework, and  sinon  to mockout the network call. We are able to determine if the component is rendered properly with the fake data we feed in there, and find out if the component will behave properly after certain event is trigger. However, with the limited amount of time, I am only able to complete a part of test cases with this approach.\nThe reason I personally pick this testing approach is:   It's hard to write comprehensive test cases for React app with Selenium.  Helping us break down test cases into each single react component, more throughout than the Selenium.  Has been proved to be the best practise for React unit testing by developers from the community, industry, etc.  Less pain.",
+            "location": "/software-design/testing/#strategy_2", 
+            "text": "We are building a SPA in 2017, with the perfect tool created by some great companies, like Facebook, Airbnb, etc. We would be able test each React component seperately instead of using Selenium for acceptance testing without knowing what exactly go wrong. We are using  enzyme  to render the component,  jest  as unit test framework, and  sinon  to mockout the network call. We are able to determine if the component is rendered properly with the fake data we feed in there, and find out if the component will behave properly after certain event is trigger. However, with the limited amount of time, I am only able to complete a part of test cases with this approach.\nThe reason I personally pick this testing approach is:   It's hard to write comprehensive test cases for React app with Selenium.  Helping us break down test cases into each single react component, more throughout than the Selenium.  Has been proved to be the best practise for React unit testing by developers from the community, industry, etc.  Less pain.", 
             "title": "Strategy"
-        },
+        }, 
         {
-            "location": "/software-design/testing/#usage_2",
-            "text": "Assume you have  yarn  install already.  yarn run test",
+            "location": "/software-design/testing/#usage_2", 
+            "text": "Assume you have  yarn  install already.  yarn run test", 
             "title": "Usage"
-        },
+        }, 
         {
-            "location": "/software-design/testing/#sample-output",
-            "text": "PASS  src/components/pages/CommenComponents/AppBarInvitationMenu/index.test.js\nPASS  src/components/common/ArchivedListItem/index.test.js\nPASS  src/components/pages/CommenComponents/RetrieveArchivedListDialog/index.test.js\nPASS  src/components/pages/HomePage/index.test.js\n\nTest Suites: 4 passed, 4 total\nTests:       4 passed, 4 total\nSnapshots:   0 total\nTime:        3.841s",
+            "location": "/software-design/testing/#sample-output", 
+            "text": "PASS  src/components/pages/CommenComponents/AppBarInvitationMenu/index.test.js\nPASS  src/components/common/ArchivedListItem/index.test.js\nPASS  src/components/pages/CommenComponents/RetrieveArchivedListDialog/index.test.js\nPASS  src/components/pages/HomePage/index.test.js\n\nTest Suites: 4 passed, 4 total\nTests:       4 passed, 4 total\nSnapshots:   0 total\nTime:        3.841s", 
             "title": "Sample Output"
-        },
+        }, 
         {
-            "location": "/software-design/testing/#note",
-            "text": "More tests will be added upon next release.",
+            "location": "/software-design/testing/#note", 
+            "text": "More tests will be added upon next release.", 
             "title": "Note"
-        },
+        }, 
         {
-            "location": "/contribution-code/",
-            "text": "Contribution Code\n\u00b6\n\n\nStyle Guide\n\u00b6\n\n\nPEP8 -- Style Guide for Python Code\n\n\nPull Request\n\u00b6\n\n\nAll changes to the code in the future should be submitted as a PR, and each PR should be reviewed and tested before being merge to the master branch.",
+            "location": "/contribution-code/", 
+            "text": "Contribution Code\n\n\nStyle Guide\n\n\nPEP8 -- Style Guide for Python Code\n\n\nPull Request\n\n\nAll changes to the code in the future should be submitted as a PR, and each PR should be reviewed and tested before being merge to the master branch.", 
             "title": "Contribution Code"
-        },
+        }, 
         {
-            "location": "/contribution-code/#contribution-code",
-            "text": "",
+            "location": "/contribution-code/#contribution-code", 
+            "text": "", 
             "title": "Contribution Code"
-        },
+        }, 
         {
-            "location": "/contribution-code/#style-guide",
-            "text": "PEP8 -- Style Guide for Python Code",
+            "location": "/contribution-code/#style-guide", 
+            "text": "PEP8 -- Style Guide for Python Code", 
             "title": "Style Guide"
-        },
+        }, 
         {
-            "location": "/contribution-code/#pull-request",
-            "text": "All changes to the code in the future should be submitted as a PR, and each PR should be reviewed and tested before being merge to the master branch.",
+            "location": "/contribution-code/#pull-request", 
+            "text": "All changes to the code in the future should be submitted as a PR, and each PR should be reviewed and tested before being merge to the master branch.", 
             "title": "Pull Request"
-        },
+        }, 
         {
-            "location": "/credits/",
-            "text": "Credit\n\u00b6\n\n\nContributors\n\u00b6\n\n\n\n\nAaron(Hongyang) Liu\n\n\nMichael(Zichun) Lin\n\n\nMichael Rijlaarsdam\n\n\nStephen Larsen\n\n\n\n\nOpen Source Components\n\u00b6\n\n\n\n\n\n\nBackend\n\n\n\n\nElasticSearch\n\n\nFlask\n\n\nMongoDB\n\n\npytest\n\n\nA bunch of awesome libraries...\n\n\n\n\n\n\n\n\nFront-end\n\n\n\n\nReactJS\n\n\nOur starter kit\n\n\nA bunch of awesome libraries...",
+            "location": "/credits/", 
+            "text": "Credit\n\n\nContributors\n\n\n\n\nAaron(Hongyang) Liu\n\n\nMichael(Zichun) Lin\n\n\nMichael Rijlaarsdam\n\n\nStephen Larsen\n\n\n\n\nOpen Source Components\n\n\n\n\n\n\nBackend\n\n\n\n\nElasticSearch\n\n\nFlask\n\n\nMongoDB\n\n\npytest\n\n\nA bunch of awesome libraries...\n\n\n\n\n\n\n\n\nFront-end\n\n\n\n\nReactJS\n\n\nOur starter kit\n\n\nA bunch of awesome libraries...", 
             "title": "Credit"
-        },
+        }, 
         {
-            "location": "/credits/#credit",
-            "text": "",
+            "location": "/credits/#credit", 
+            "text": "", 
             "title": "Credit"
-        },
+        }, 
         {
-            "location": "/credits/#contributors",
-            "text": "Aaron(Hongyang) Liu  Michael(Zichun) Lin  Michael Rijlaarsdam  Stephen Larsen",
+            "location": "/credits/#contributors", 
+            "text": "Aaron(Hongyang) Liu  Michael(Zichun) Lin  Michael Rijlaarsdam  Stephen Larsen", 
             "title": "Contributors"
-        },
+        }, 
         {
-            "location": "/credits/#open-source-components",
-            "text": "Backend   ElasticSearch  Flask  MongoDB  pytest  A bunch of awesome libraries...     Front-end   ReactJS  Our starter kit  A bunch of awesome libraries...",
+            "location": "/credits/#open-source-components", 
+            "text": "Backend   ElasticSearch  Flask  MongoDB  pytest  A bunch of awesome libraries...     Front-end   ReactJS  Our starter kit  A bunch of awesome libraries...", 
             "title": "Open Source Components"
         }
     ]
