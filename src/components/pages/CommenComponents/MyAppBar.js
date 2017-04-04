@@ -2,6 +2,7 @@ import React from 'react';
 import { AppBar, IconButton, Toolbar, ToolbarGroup, ToolbarTitle } from 'material-ui';
 import MenuBtn from 'material-ui/svg-icons/navigation/menu';
 import AppBarIconMenu from '../CommenComponents/AppBarIconMenu';
+import GroupInfo from '../CommenComponents/GroupInfo'
 import AppBarInvitationMenu from './AppBarInvitationMenu';
 import { cyan500 } from 'material-ui/styles/colors';
 import AppBarSearchBox from '../../common/AppBarSearchBox';
@@ -34,7 +35,22 @@ class MyAppBar extends React.Component {
       }
     };
 
-    this.rightButtons = (
+    this.rightButtons = this.props.pageType==='group'?
+      (
+        // <Toolbar style={this.styles.righttoolbar}>
+        <ToolbarGroup lastChild>
+          <GroupInfo groupId={this.props.groupId}/>
+          <AppBarInvitationMenu
+            reloadCallback={this.props.reloadCallback}
+          />
+          <AppBarIconMenu
+            pageType={this.props.pageType}
+            groupId={this.props.groupId}
+            reloadCallback={this.props.reloadCallback}
+          />
+        </ToolbarGroup>
+        // </Toolbar>
+      ) : (
       // <Toolbar style={this.styles.righttoolbar}>
         <ToolbarGroup lastChild>
           <AppBarInvitationMenu

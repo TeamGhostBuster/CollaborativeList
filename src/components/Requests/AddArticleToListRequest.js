@@ -1,7 +1,7 @@
 const Axios = require('axios');
 const cookie = require('react-cookie');
 
-const token = cookie.load('Access-Token');
+const token = localStorage.token
 const host = 'https://api.vfree.org';
 
 module.exports = {

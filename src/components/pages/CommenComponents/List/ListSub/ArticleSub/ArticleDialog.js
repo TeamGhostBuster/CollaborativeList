@@ -89,6 +89,7 @@ export default class ArticleDialog extends React.Component {
             refreshPage={this.props.refreshPage}
             group={this.props.group}
             groupId={this.props.groupId}
+            email={this.props.email}
           />
           {this.state.detail}
           {this.state.comments}
@@ -118,5 +119,7 @@ ArticleDialog.propTypes = {
 
   groupId: React.PropTypes.string,
 
-  refreshPage: React.PropTypes.func.isRequired
+  refreshPage: React.PropTypes.func.isRequired,
+
+  email: React.PropTypes.string.isRequired,
 };

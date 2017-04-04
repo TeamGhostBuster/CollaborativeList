@@ -1,6 +1,7 @@
 import React from 'react';
 // import ThumbUp from 'material-ui/svg-icons/action/thumb-up'
 // import ThumbDown from 'material-ui/svg-icons/action/thumb-down'
+import Snackbar from 'material-ui/Snackbar'
 import Up from 'material-ui/svg-icons/hardware/keyboard-arrow-up';
 import Down from 'material-ui/svg-icons/hardware/keyboard-arrow-down';
 import IconButton from 'material-ui/IconButton';
@@ -14,12 +15,19 @@ export default class VoteButton extends React.Component {
     this.name = this.props.action === 'up' ? 'Upvote' : 'Downvote';
 
     this.vote = this.vote.bind(this);
+    this.closeSnack = this.closeSnack.bind(this);
+
+    this.state = {snack:false};
 
     this.styles = {
       smallIcon: {
         padding: '0', width: '20px', height: '20px'
       }
     };
+  }
+
+  closeSnack(){
+    this.setState({snack:false})
   }
 
   vote() {
@@ -29,15 +37,20 @@ export default class VoteButton extends React.Component {
       this.props.groupId,
       this.props.listId,
       this.props.id,
-      this.props.refresh
+      this.props.refresh,
+      ()=>{this.setState({snack:true})}
     );
   }
 
   render() {
     return (
+      <div>
+      <Snackbar message="You've already voted" open={this.state.snack} onRequestClose={this.closeSnack} autoHideDuration={4000}/>
       <IconButton name={this.name} iconStyle={this.styles.smallIcon} onTouchTap={this.vote}>
         {this.icon}
+
       </IconButton>
+      </div>
     );
   }
 }
