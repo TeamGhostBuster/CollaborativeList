@@ -7,7 +7,7 @@
 ## Notes
 * Since we expect you to be a experienced Linux server user, this documentation will not cover anything about how to setup a Linux server, how to install packages on a Linux server, etc.
 * For installation of Docker please refer to the [Docker documentation](https://store.docker.com/editions/community/docker-ce-server-ubuntu?tab=description)
-* We recommend the use of NGINX as a reverse proxy server for the application, and to setup the SSL certification for security purposes. For further instruction, please refer to the [NGINX documentation](https://www.nginx.com/resources/admin-guide/reverse-proxy/).
+* We recommend the use of NGINX as a reverse proxy server and to setup the SSL certification for security purposes. For further instruction, please refer to the [NGINX documentation](https://www.nginx.com/resources/admin-guide/reverse-proxy/).
 * We only support installation via Docker.
 
 ## Steps
