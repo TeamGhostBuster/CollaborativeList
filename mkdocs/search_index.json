@@ -2,7 +2,7 @@
     "docs": [
         {
             "location": "/",
-            "text": "Collaborative Lists\n\u00b6\n\n\nOverview\n\u00b6\n\n\nLive demo\n\n\nExperimental Live Demo\n\n\nCollaborative List API\n\n\nPM Stuff\n\u00b6\n\n\nStoryMap\n\n\nIssue&Bug Tracker/Timeline",
+            "text": "Collaborative Lists\n\u00b6\n\n\nOverview\n\u00b6\n\n\nLive demo\n\n\nExperimental Live Demo\n\n\nCollaborative List API\n\n\nManual\n\u00b6\n\n\nInstallation\n\n\nGet Started\n\n\nPM Stuff\n\u00b6\n\n\nStoryMap\n\n\nIssue&Bug Tracker/Timeline",
             "title": "Collaborative Lists"
         },
         {
@@ -14,6 +14,11 @@
             "location": "/#overview",
             "text": "Live demo  Experimental Live Demo  Collaborative List API",
             "title": "Overview"
+        },
+        {
+            "location": "/#manual",
+            "text": "Installation  Get Started",
+            "title": "Manual"
         },
         {
             "location": "/#pm-stuff",
@@ -74,6 +79,61 @@
             "location": "/installation/#useful-links",
             "text": "Docker Documentations  Flask Documentations",
             "title": "Useful Links"
+        },
+        {
+            "location": "/manual/",
+            "text": "Tutorial\n\u00b6\n\n\nGet started\n\u00b6\n\n\nOpen up the web page, you may login with your Google account.\n\n\nCreate list\n\u00b6\n\n\nYou are about to have a seminar for your Psychology course with your friends. You may have a list pagers or any other reading materials to discuess in the upcoming seminar, and you can start with creating a reading list.\n\n\n\n\nGo ahead and press the button at the right-corner of the main page right after you login.\n\n\n\nCreate article\n\u00b6\n\n\nAwesome, you have a new reading list right now. And then, you want add a book named \nPsych 101: Psychology Facts, Basics, Statistics, Tests, and More\n which you found at \nAmazon.ca\n. Click the \nAdd Article\n button, then type in the book's name, description, url, and tags.\n\n\n\nEdit article\n\u00b6\n\n\nHowever, you do not want this book anymore, then you can click the \nDETAIL\n button on the article card. You can permanently delete the book, remove the book from your own reading list for the sake of sharing between other users, or copy the book to another list.\n\n\n\nCreate group\n\u00b6\n\n\nAlright, now you have a list article, and you would like to let your friends know about them as well. You can create a reading group, and invite your friend to the group. Click the \nnav\n button at the top-left corner, then click the \nCreate Group\n button.\n\n\n\nShare article to group\n\u00b6\n\n\nAfter you create a reading list in the group, you may share the book from your own personal list to the group.\n\n\n\nInvite user\n\u00b6\n\n\nYou just created a new reading group, and have a bunch of reading materials in it. It is time to let your friend know about it. Click the \nmenu\n button at the top-right corner, then select \nInvite\n option. Type in your friends' email address.\n\n\n\nAccept invitation\n\u00b6\n\n\nIt seems like your buddy get the invitation. Go ahead and accept it.\n\n\n\nGroup info\n\u00b6\n\n\nCheckout the group information. Press the top-right \nreverseinfo\n button.",
+            "title": "User Manual"
+        },
+        {
+            "location": "/manual/#tutorial",
+            "text": "",
+            "title": "Tutorial"
+        },
+        {
+            "location": "/manual/#get-started",
+            "text": "Open up the web page, you may login with your Google account.",
+            "title": "Get started"
+        },
+        {
+            "location": "/manual/#create-list",
+            "text": "You are about to have a seminar for your Psychology course with your friends. You may have a list pagers or any other reading materials to discuess in the upcoming seminar, and you can start with creating a reading list.   Go ahead and press the button at the right-corner of the main page right after you login.",
+            "title": "Create list"
+        },
+        {
+            "location": "/manual/#create-article",
+            "text": "Awesome, you have a new reading list right now. And then, you want add a book named  Psych 101: Psychology Facts, Basics, Statistics, Tests, and More  which you found at  Amazon.ca . Click the  Add Article  button, then type in the book's name, description, url, and tags.",
+            "title": "Create article"
+        },
+        {
+            "location": "/manual/#edit-article",
+            "text": "However, you do not want this book anymore, then you can click the  DETAIL  button on the article card. You can permanently delete the book, remove the book from your own reading list for the sake of sharing between other users, or copy the book to another list.",
+            "title": "Edit article"
+        },
+        {
+            "location": "/manual/#create-group",
+            "text": "Alright, now you have a list article, and you would like to let your friends know about them as well. You can create a reading group, and invite your friend to the group. Click the  nav  button at the top-left corner, then click the  Create Group  button.",
+            "title": "Create group"
+        },
+        {
+            "location": "/manual/#share-article-to-group",
+            "text": "After you create a reading list in the group, you may share the book from your own personal list to the group.",
+            "title": "Share article to group"
+        },
+        {
+            "location": "/manual/#invite-user",
+            "text": "You just created a new reading group, and have a bunch of reading materials in it. It is time to let your friend know about it. Click the  menu  button at the top-right corner, then select  Invite  option. Type in your friends' email address.",
+            "title": "Invite user"
+        },
+        {
+            "location": "/manual/#accept-invitation",
+            "text": "It seems like your buddy get the invitation. Go ahead and accept it.",
+            "title": "Accept invitation"
+        },
+        {
+            "location": "/manual/#group-info",
+            "text": "Checkout the group information. Press the top-right  reverseinfo  button.",
+            "title": "Group info"
         },
         {
             "location": "/requirement-document/project-overview/",
