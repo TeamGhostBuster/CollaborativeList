@@ -30,3 +30,11 @@ After you create a reading list in the group, you may share the book from your o
 ## Invite user
 You just created a new reading group, and have a bunch of reading materials in it. It is time to let your friend know about it. Click the `menu` button at the top-right corner, then select `Invite` option. Type in your friends' email address.
 ![img](/img/invite_user.png)
+
+## Accept invitation
+It seems like your buddy get the invitation. Go ahead and accept it.
+![img](/img/invitation_card.png)
+
+## Group info
+Checkout the group information. Press the top-right `reverseinfo` button.
+![img](/img/group_info.png)
