@@ -9,6 +9,7 @@ pages:
     - Collaborative Lists: index.md
     - Installation: installation.md
     - User Manual: manual.md
+    - Chrome Extension: extension.md
     - Software Requirements:
         - Project Overview: requirement-document/project-overview.md
         - Project Glossary: requirement-document/project-glossary.md

@@ -6,6 +6,7 @@ The Google Chrome extension can be accessed via its [Github repository](https://
 Development instructions are included in the repository's README and will not be described here.
 
 However, if you wish to use the extension as-is, you must load it as an unpacked extension into Google Chrome. To do so:
+
 1. Open Chrome and go to `chrome://extensions` in the address bar
 2. Enable developer mode and load an unpacked extension
 3. Select the `/app/` directory
