@@ -28,7 +28,7 @@ export default class ArticleCard extends React.Component {
 
   closeShit() {
     this.setState({ open: false });
-    this.props.refreshPage();
+    this.props.refreshPage(true);
   }
 
   render() {
@@ -68,7 +68,7 @@ export default class ArticleCard extends React.Component {
         <ArticleDialog
           isOpen={this.state.open} close={this.closeDialog} list_id={this.props.list_id}
           id={this.props.id} group={this.props.group} groupId={this.props.groupId}
-          refreshPage={this.closeShit}
+          refreshPage={this.closeShit} email={this.props.email}
         />
       </li>
     );
@@ -97,5 +97,8 @@ ArticleCard.propTypes = {
   // callback function to refresh parent
   refresh: React.PropTypes.func.isRequired,
 
-  refreshPage: React.PropTypes.func.isRequired
+  // refresh the whole page
+  refreshPage: React.PropTypes.func.isRequired,
+
+  email: React.PropTypes.string.isRequired,
 };

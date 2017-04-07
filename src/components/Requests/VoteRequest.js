@@ -1,8 +1,8 @@
 module.exports = {
-  post(action, groupId, listId, articleId, callback) {
+  post(action, groupId, listId, articleId, callback, errorCallback) {
     const Axios = require('axios');
     const cookie = require('react-cookie');
-    const token = cookie.load('Access-Token');
+    const token = localStorage.token;
     const host = 'https://api.vfree.org';
 
     const http = Axios.create({
@@ -25,10 +25,8 @@ module.exports = {
       .catch(
         (err) => {
           console.log(err);
-          if (err.status === 401) {
-            console.log('invalid token');
-          } else {
-            console.log('invalid request of lists info');
+          if (err.response.status === 403){
+            errorCallback();
           }
         });
   }

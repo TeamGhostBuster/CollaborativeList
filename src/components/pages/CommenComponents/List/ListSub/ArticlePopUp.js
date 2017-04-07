@@ -6,6 +6,7 @@ import ContentAdd from 'material-ui/svg-icons/content/add';
 import deepOrangeA400 from 'material-ui/styles/colors';
 import FlatButton from 'material-ui/FlatButton';
 import Chip from 'material-ui/Chip';
+import Snackbar from 'material-ui/Snackbar'
 import CreateArticleRequest from '../../../../Requests/CreateArticleRequest';
 
 export default class ArticlePopUp extends React.Component {
@@ -22,7 +23,8 @@ export default class ArticlePopUp extends React.Component {
       tags: [],
       tagsData: [],
       requireTitle: 'required',
-      requireDescription: 'required'
+      requireDescription: 'required',
+      invalidURLOpen: false,
     };
 
     this.styles = {
@@ -36,6 +38,7 @@ export default class ArticlePopUp extends React.Component {
     };
 
     // binding
+    this.snackbarClose = this.snackbarClose.bind(this);
     this.titleChange = this.titleChange.bind(this);
     this.descriptionChange = this.descriptionChange.bind(this);
     this.urlChange = this.urlChange.bind(this);
@@ -96,7 +99,7 @@ export default class ArticlePopUp extends React.Component {
     this.setState({ open: false });
   }
 
-  submitToServer(callback) {
+  submitToServer(callback, errorCallback) {
     const data = {
       title: this.state.title,
       description: this.state.description,
@@ -108,8 +111,12 @@ export default class ArticlePopUp extends React.Component {
       this.props.listId,
       this.props.group,
       this.props.groupId,
-      data, callback
+      data, callback,errorCallback
     );
+  }
+
+  snackbarClose(){
+    this.setState({invalidURLOpen:false,requireOpen:false})
   }
 
   handleSubmit() {
@@ -124,7 +131,11 @@ export default class ArticlePopUp extends React.Component {
         this.setState({ requireDescription: 'required' });
         this.setState({ open: false });
       };
-      this.submitToServer(cb);
+
+      const err = ()=>{
+        this.setState({invalidURLOpen:true})
+      };
+      this.submitToServer(cb, err);
     }
   }
 
@@ -202,7 +213,7 @@ export default class ArticlePopUp extends React.Component {
         />
         <br />
         <TextField
-          fullWidth multiLine hintText="Optional" floatingLabelText="URL"
+          fullWidth multiLine hintText="Example: http://article.com" floatingLabelText="URL"
           onChange={this.urlChange} id="ArticleURLInput"
         />
         <br /><br />
@@ -236,6 +247,7 @@ export default class ArticlePopUp extends React.Component {
         >
           {form}
         </Dialog>
+        <Snackbar message="Invalid URL" autoHideDuration={4000} open={this.state.invalidURLOpen} onRequestClose={this.snackbarClose}/>
       </div>
     );
   }

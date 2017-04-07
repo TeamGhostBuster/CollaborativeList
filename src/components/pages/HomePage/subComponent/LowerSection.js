@@ -25,7 +25,7 @@ export default class LowerSection extends React.Component {
   }
 
   getGroups(callback) {
-    const token = cookie.load('Access-Token');
+    const token = localStorage.token;
 
     const http = Axios.create({
       baseURL: 'https://api.vfree.org',
