@@ -17,4 +17,4 @@ Setup environment variable, replace the id with your own. By default it can be a
 ## Documentation
 * [Requirement Documentation](https://teamghostbuster.github.io/CollaborativeList/)
 
-* [API Documentation](https://teamghostbuster.github.io/server/)
+* [API Documentation](https://teamghostbuster.github.io/restful-api)

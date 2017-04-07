@@ -178,6 +178,7 @@ export default class List extends React.Component {
           key={article.id} id={article.id} list_id={this.props.id}
           title={article.title} group={this.props.group} groupId={this.props.groupId}
           refresh={this.componentWillMount} vote={article.vote_count} refreshPage={this.updatePage}
+          email={article.creator.email}
         />
     );
 

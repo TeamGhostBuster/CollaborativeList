@@ -1,8 +1,8 @@
 module.exports = {
-  post(dataObject, callback) {
+  post(dataObject, callback, errorCallback) {
     const cookie = require('react-cookie');
     const Axios = require('axios');
-    const token = cookie.load('Access-Token');
+    const token = localStorage.token;
 
 
     const http = Axios.create({
@@ -23,7 +23,7 @@ module.exports = {
         if (err.status === 401) {
           console.log('invalid token');
         } else {
-          console.log('invalid request of lists info1111');
+          errorCallback();
         }
       });
   }
