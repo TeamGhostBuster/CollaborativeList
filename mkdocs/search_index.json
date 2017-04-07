@@ -2,7 +2,7 @@
     "docs": [
         {
             "location": "/", 
-            "text": "Collaborative Lists\n\n\nOverview\n\n\nLive demo\n\n\nExperimental Live Demo\n\n\nCollaborative List API\n\n\nManual\n\n\nInstallation\n\n\nGet Started\n\n\nPM Stuff\n\n\nStoryMap\n\n\nIssue\nBug Tracker/Timeline", 
+            "text": "Collaborative Lists\n\n\nOverview\n\n\nLive demo\n\n\nExperimental Live Demo\n\n\nCollaborative List API\n\n\nManual\n\n\nInstallation\n\n\nGet Started\n\n\nExtension\n\n\nPM Stuff\n\n\nStoryMap\n\n\nIssue\nBug Tracker/Timeline", 
             "title": "Collaborative Lists"
         }, 
         {
@@ -17,7 +17,7 @@
         }, 
         {
             "location": "/#manual", 
-            "text": "Installation  Get Started", 
+            "text": "Installation  Get Started  Extension", 
             "title": "Manual"
         }, 
         {
