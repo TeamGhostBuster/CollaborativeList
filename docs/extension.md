@@ -15,6 +15,7 @@ A second option is to load the packaged app into Chrome by dragging and dropping
 
 ## Usage
 To use the extension, make sure you are signed into the correct Google account in your browser, then simply click the icon and select a list. From there, you can choose to either:
+
 - create an article using the current page, which will use the title of the page as the article's title and store the current url, or
 - enter your own title and (optional) url, it should be noted that the URL must be a valid https:// url
 
