@@ -244,8 +244,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#docker-image-overviewe" title="Docker image overviewe" class="md-nav__link">
-    Docker image overviewe
+  <a href="#docker-image-overview" title="Docker image overview" class="md-nav__link">
+    Docker image overview
   </a>
   
 </li>
@@ -512,8 +512,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#docker-image-overviewe" title="Docker image overviewe" class="md-nav__link">
-    Docker image overviewe
+  <a href="#docker-image-overview" title="Docker image overview" class="md-nav__link">
+    Docker image overview
   </a>
   
 </li>
@@ -544,8 +544,10 @@
 <ul>
 <li>Since we expect you to be a experienced Linux server user, this documentation will not cover anything about how to setup a Linux server, how to install packages on a Linux server, etc.</li>
 <li>For installation of Docker please refer to the <a href="https://store.docker.com/editions/community/docker-ce-server-ubuntu?tab=description">Docker documentation</a></li>
-<li>We recommend the use of NGINX as a reverse proxy server and to setup the SSL certification for security purposes. For further instruction, please refer to the <a href="https://www.nginx.com/resources/admin-guide/reverse-proxy/">NGINX documentation</a>.</li>
+<li>We recommend the use of NGINX as a reverse proxy server and to enable the <code class="codehilite">HTTPS</code> for security purposes. You may obtain a free SSL certificate from <a href="https://letsencrypt.org/">Let's Encrypt</a>. For further instruction, please refer to the <a href="https://www.nginx.com/resources/admin-guide/reverse-proxy/">NGINX documentation</a>.</li>
 <li>We only support installation via Docker.</li>
+<li>More custom configuration please refer to the <code class="codehilite">config.py</code> file under the <code class="codehilite">app</code> directory.</li>
+<li>For experimental features please refer to the <code class="codehilite">push_notification</code> branch under the <a href="https://github.com/TeamGhostBuster/CollaborativeList">repo</a>. And check out <a href="https://demo-dev.vfree.org">demo-dev.vfree.org</a></li>
 </ul>
 <h2 id="steps">Steps<a class="headerlink" href="#steps" title="Permanent link">&para;</a></h2>
 <ol>
@@ -574,19 +576,19 @@
 </li>
 <li>Modify the <code class="codehilite">docker-compose.yml</code> file under the <code class="codehilite">CollaborativeList</code> folder, set <code class="codehilite">API_URL</code> environment variable to the host where you are running the <code class="codehilite">restful-api</code>.</li>
 </ol>
-<h2 id="docker-image-overviewe">Docker image overviewe<a class="headerlink" href="#docker-image-overviewe" title="Permanent link">&para;</a></h2>
+<h2 id="docker-image-overview">Docker image overview<a class="headerlink" href="#docker-image-overview" title="Permanent link">&para;</a></h2>
 <ul>
 <li>flaskapp - The universal backend API</li>
 <li>raspberry - The frontend React app</li>
 <li>mongo - A cluster of MongoDB instances</li>
-<li>elastic - The elasticsearch to provide search feature to the React app</li>
+<li>elastic - The ElasticSearch to provide search feature to the React app</li>
 </ul>
 <h1 id="development">Development<a class="headerlink" href="#development" title="Permanent link">&para;</a></h1>
 <p>Since we are using the RESTful architecture for this system, it is possible to integrate a multitude of different client-side software with the existing API.</p>
 <h2 id="front-end">Front-end<a class="headerlink" href="#front-end" title="Permanent link">&para;</a></h2>
 <p>The front end is built with <a href="https://facebook.github.io/react/">React</a>, making it easy to customize the UI components, theme, or virtually anything else to fit your personal needs. For detailed development environment setup instructions, please refer to the <code class="codehilite">README.md</code> file under our <a href="https://github.com/TeamGhostBuster/CollaborativeList">Github repository</a>.</p>
 <h2 id="back-end">Back-end<a class="headerlink" href="#back-end" title="Permanent link">&para;</a></h2>
-<p>The back end is build with Flask, MongoDB, and Elasticsearch. Since Flask is a relatively lightweight web framework, you may develop new features and customize existing ones easily. Our development environment comes with the Docker image as well. For setup instructions, please refer to our <a href="https://github.com/TeamGhostBuster/restful-api">Github repository</a>.</p>
+<p>The back end is build with Flask, MongoDB, and ElasticSearch. Since Flask is a relatively lightweight web framework, you may develop new features and customize existing ones easily. Our development environment comes with the Docker image as well. For setup instructions, please refer to our <a href="https://github.com/TeamGhostBuster/restful-api">Github repository</a>.</p>
 <h2 id="useful-links">Useful Links<a class="headerlink" href="#useful-links" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="https://docs.docker.com/">Docker Documentations</a></li>
