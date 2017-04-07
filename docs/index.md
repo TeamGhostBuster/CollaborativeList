@@ -7,6 +7,13 @@
 
 [Collaborative List API](https://teamghostbuster.github.io/CollaborativeList/)
 
+## Manual
+[Installation](/installation/)
+
+[Get Started](/manual)
+
+[Extension Guide](/extension)
+
 ## PM Stuff
 [StoryMap](https://realtimeboard.com/app/board/o9J_k07kDVQ=/)
 
