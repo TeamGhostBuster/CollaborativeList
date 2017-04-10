@@ -1,7 +1,7 @@
 # CollaborativeList
 
 ## Get started
-[Video Tutorial](https://youtu.be/CE2iBlbb4iE)
+[Video Tutorial](https://youtu.be/lCPjhToUwLQ)
 
 ## Usage
 ### Docker (Recommended)
