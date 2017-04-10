@@ -1,5 +1,8 @@
 # CollaborativeList
 
+## Get started
+[Video Tutorial](https://youtu.be/CE2iBlbb4iE)
+
 ## Usage
 ### Docker (Recommended)
 Specify your google client id in the `build.sh` file. By default it can be accessed at `localhost:3000`
